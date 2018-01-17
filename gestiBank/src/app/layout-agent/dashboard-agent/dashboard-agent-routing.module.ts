@@ -7,8 +7,8 @@ const routes: Routes = [
 		path: '',
         component: DashboardAgentComponent,
         children: [
-            { path: '', redirectTo: 'dashboardAgent' },
-            { path: 'dashboardAgent', loadChildren: './dashboard-agent/dashboardAgent.module#DashboardAgentModule' }
+            { path: '', redirectTo: 'dashboard' },
+            { path: 'dashboard', loadChildren: './dashboard-agent/dashboardAgent.module#DashboardAgentModule' }
            
         ]
 
