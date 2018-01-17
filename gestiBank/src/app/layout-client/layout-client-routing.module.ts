@@ -3,9 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutClientComponent } from './layout-client.component';
 
 const routes: Routes = [
-	{
-		path: '',
-        component: LayoutClientComponent
+    {
+		    path: '',
+        component: LayoutClientComponent,
+        children: [
+            { path: '', redirectTo: 'dashboard' },
+            { path: 'dashboard', loadChildren: './dashboard-client/dashboard-client.module#DashboardClientModule' },
+        ]
     }
 ];
 
