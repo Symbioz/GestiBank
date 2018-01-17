@@ -4,12 +4,12 @@ import { TranslateService } from '@ngx-translate/core';
 import { routerTransition } from '../../router.animations';
 
 @Component({
-  	selector: 'app-dashboard-agent',
-  	templateUrl: './dashboard-agent.component.html',
-  	styleUrls: ['./dashboard-agent.component.scss'],
+  	selector: 'app-dashboard-client',
+  	templateUrl: './dashboard-client.component.html',
+  	styleUrls: ['./dashboard-client.component.scss'],
     animations: [routerTransition()]
 })
-export class DashboardAgentComponent {
+export class DashboardClientComponent {
 
 	pushRightClass: string = 'push-right';
 

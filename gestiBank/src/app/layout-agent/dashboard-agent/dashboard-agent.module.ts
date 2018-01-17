@@ -5,7 +5,10 @@ import { DashboardAgentRoutingModule } from './dashboard-agent-routing.module';
 import { DashboardAgentComponent } from './dashboard-agent.component';
 
 @NgModule({
-  imports: [CommonModule,DashboardAgentRoutingModule],
+  imports: [
+    CommonModule,
+    DashboardAgentRoutingModule
+  ],
   declarations: [DashboardAgentComponent]
 })
 export class DashboardAgentModule { }

@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { routerTransition } from '../../router.animations';
 
 @Component({
-  	selector: 'app-dashboard-agent',
-  	templateUrl: './dashboard-agent.component.html',
-  	styleUrls: ['./dashboard-agent.component.scss'],
-    animations: [routerTransition()]
+    selector: 'app-sidebar',
+    templateUrl: './sidebar.component.html',
+    styleUrls: ['./sidebar.component.scss']
 })
-export class DashboardAgentComponent {
+export class SidebarComponent {
+    isActive: boolean = false;
+    showMenu: string = '';
+    pushRightClass: string = 'push-right';
 
-	pushRightClass: string = 'push-right';
-
-
-  	constructor(private translate: TranslateService, public router: Router) {
+    constructor(private translate: TranslateService, public router: Router) {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
         this.translate.setDefaultLang('en');
         const browserLang = this.translate.getBrowserLang();
@@ -30,7 +28,19 @@ export class DashboardAgentComponent {
             }
         });
     }
-  	    
+
+    eventCalled() {
+        this.isActive = !this.isActive;
+    }
+
+    addExpandClass(element: any) {
+        if (element === this.showMenu) {
+            this.showMenu = '0';
+        } else {
+            this.showMenu = element;
+        }
+    }
+
     isToggled(): boolean {
         const dom: Element = document.querySelector('body');
         return dom.classList.contains(this.pushRightClass);
@@ -41,4 +51,16 @@ export class DashboardAgentComponent {
         dom.classList.toggle(this.pushRightClass);
     }
 
+    rltAndLtr() {
+        const dom: any = document.querySelector('body');
+        dom.classList.toggle('rtl');
+    }
+
+    changeLang(language: string) {
+        this.translate.use(language);
+    }
+
+    onLoggedout() {
+        localStorage.removeItem('isLoggedin');
+    }
 }

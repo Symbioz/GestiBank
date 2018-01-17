@@ -3,15 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutAgentComponent } from './layout-agent.component';
 
 const routes: Routes = [
-	{
-		path: '',
+	 {
+		    path: '',
         component: LayoutAgentComponent,
         children: [
             { path: '', redirectTo: 'dashboard' },
-            { path: 'dashboard', loadChildren: './dashboard-agent/dashboardAgent.module#DashboardAgentModule' }
-           
+            { path: 'dashboard', loadChildren: './dashboard-agent/dashboard-agent.module#DashboardAgentModule' },
         ]
-
     }
 ];
 
