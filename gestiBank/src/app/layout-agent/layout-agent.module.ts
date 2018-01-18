@@ -11,6 +11,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
 
+
 @NgModule({
   	imports: [CommonModule, LayoutAgentRoutingModule,TranslateModule,
         NgbDropdownModule.forRoot()],

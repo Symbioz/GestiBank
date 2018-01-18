@@ -1,7 +1,7 @@
 {
     "Dashboard": "Tableau de bord",
     "Charts": "Hit-parade",
-    "Tables": "Tableaux",
+    "Clients": "Clients",
     "Forms": "Froms",
     "Bootstrap Element": "Bootstrap Élément",
     "Bootstrap Grid": "Bootstrap Grille",
@@ -27,5 +27,7 @@
     "Pending Task" : "Tâche en attente",
     "In queue" : "Dans la queue",
     "Mail" : "Courrier",
-    "View All" : "Voir tout"
+    "View All" : "Voir tout",
+
+        "Clients": "Clients"
 }
