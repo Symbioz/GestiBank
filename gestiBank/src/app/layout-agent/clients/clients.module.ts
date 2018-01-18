@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { ClientsRoutingModule } from './clients-routing.module';
 import {ClientsComponent} from './clients.component';
+import { TableauClientsComponent } from './tableau-clients/tableau-clients.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    ClientsRoutingModule
+    ClientsRoutingModule,
+    TranslateModule.forChild()
   ],
-  declarations: [ClientsComponent]
+  declarations: [ClientsComponent,TableauClientsComponent]
 })
 export class ClientsModule { }

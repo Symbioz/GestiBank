@@ -29,5 +29,6 @@
     "Mail" : "Mail",
     "View All" : "View All",
 
-        "Clients": "Customers"
+        "Clients": "Customers",
+        "Nom": "Name"
 }
