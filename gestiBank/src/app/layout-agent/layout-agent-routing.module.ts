@@ -9,6 +9,7 @@ const routes: Routes = [
         children: [
             { path: '', redirectTo: 'dashboard' },
             { path: 'dashboard', loadChildren: './dashboard-agent/dashboard-agent.module#DashboardAgentModule' },
+             { path: 'clients', loadChildren: './clients/clients.module#ClientsModule' }
         ]
     }
 ];
