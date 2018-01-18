@@ -11,11 +11,11 @@ import { routerTransition } from '../../router.animations';
 })
 export class DashboardClientComponent {
 
-	constructor(private translate: TranslateService) {
+	  constructor(private translate: TranslateService) {
         this.translate.addLangs(['en', 'fr']);
-        this.translate.setDefaultLang('en');
+        this.translate.setDefaultLang('fr');
         const browserLang = this.translate.getBrowserLang();
-        this.translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
+        this.translate.use(browserLang.match(/en|fr/) ? browserLang : 'fr');
     }
 
 

@@ -22,5 +22,21 @@
     "Pending Task" : "Tâche en attente",
     "In queue" : "Dans la queue",
     "Mail" : "Courrier",
-    "View All" : "Voir tout"
+    "View All" : "Voir tout",
+    "Notifications" : "Notifications", 
+    "Mes comptes" : "Mes comptes", 
+    "Consultations" : "Consultations",
+    "Relevés" : "Relevés", 
+    "Télécharger" : "Télécharger",
+    "Imprimer RIB" : "Imprimer RIB",
+    "Virements" : "Virements",
+    "Passer un virement" : "Passer un virement",
+    "Suivre un virement" : "Suivre un virement",
+    "Gestion du budget" : "Gestion du budget",
+    "Ma situation" : "Ma situation",
+    "Depenses et revenus" : "Depenses et revenus",
+    "Services & Contrats" : "Services & Contrats",
+    "Mes demandes" : "Mes demandes",
+    "Mes services" : "Mes services",
+    "Mes contrats" : "Mes contrats"
 }

@@ -14,9 +14,9 @@ export class SidebarComponent {
 
     constructor(private translate: TranslateService, public router: Router) {
         this.translate.addLangs(['en', 'fr']);
-        this.translate.setDefaultLang('en');
+        this.translate.setDefaultLang('fr');
         const browserLang = this.translate.getBrowserLang();
-        this.translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
+        this.translate.use(browserLang.match(/en|fr/) ? browserLang : 'fr');
 
         this.router.events.subscribe(val => {
             if (
