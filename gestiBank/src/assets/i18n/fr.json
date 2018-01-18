@@ -29,6 +29,14 @@
     "Mail" : "Courrier",
     "View All" : "Voir tout",
 
-        "Clients": "Clients",
-        "Nom": "Nom"
+    "Clients": "Clients",
+    "Nom": "Nom",
+    "Identifiant":"Username",
+    "Prénom": "Prénom",
+    "Couriel":"Couriel",
+    "Adresse":"Adresse",
+    "Numéro de téléphone":"Numéro de téléphone" ,
+    "NombrEnfants": "Nombre d'enfants",
+    "Situation":"Situation",
+    "ListCli":"Liste des clients"
 }
