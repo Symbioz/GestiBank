@@ -9,34 +9,34 @@
         </a>
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('mescomptes')">
-                <span><i class="fa fa-plus"></i>&nbsp; {{ 'Mes comptes' | translate }}</span>
+                <span><i class="fa fa-plus"></i>&nbsp;&nbsp; {{ 'Mes comptes' | translate }}</span>
             </a>
             <li class="nested" [class.expand]="showMenu === 'mescomptes'">
                 <ul class="submenu">
                     <li>
-                        <a [routerLink]="['/client/notifications']" [routerLinkActive]="['router-link-active']" class="list-group-item"><span>{{ 'Consultations' | translate }}</span></a>
+                        <a [routerLink]="['/client/consultations']" [routerLinkActive]="['router-link-active']" class="list-group-item"><span>{{ 'Consultations' | translate }}</span></a>
                     </li>
                     <li>
-                        <a [routerLink]="['/client/notifications']" [routerLinkActive]="['router-link-active']" class="list-group-item"><span>{{ 'Relevés' | translate }}</span></a>
+                        <a [routerLink]="['/client/releves']" [routerLinkActive]="['router-link-active']" class="list-group-item"><span>{{ 'Releves' | translate }}</span></a>
                     </li>
-                    <li>
-                        <a [routerLink]="['/client/notifications']" [routerLinkActive]="['router-link-active']" class="list-group-item"><span>{{ 'Imprimer RIB' | translate }}</span></a>
-                    </li>
+                    <!-- <li>
+                        <a [routerLink]="['/client/RIB']" [routerLinkActive]="['router-link-active']" class="list-group-item"><span>{{ 'Imprimer RIB' | translate }}</span></a>
+                    </li> -->
                 </ul>
             </li>
         </div>
-        <a [routerLink]="['/client/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/client/virements']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-table"></i>&nbsp;{{ 'Virements' | translate }}
         </a>
-        <a [routerLink]="['/client/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/client/demandes']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-edit"></i>&nbsp;{{ 'Mes demandes' | translate }}
         </a>
         <div class="header-fields">
             <div class="nested-menu">
-                <a class="list-group-item" (click)="addExpandClass('languages')">
-                    <span><i class="fa fa-language"></i>&nbsp; {{ 'Language' | translate }} <b class="caret"></b></span>
+                <a class="list-group-item" (click)="addExpandClass('langues')">
+                    <span><i class="fa fa-language"></i>&nbsp; {{ 'Langue' | translate }} <b class="caret"></b></span>
                 </a>
-                <li class="nested" [class.expand]="showMenu === 'languages'">
+                <li class="nested" [class.expand]="showMenu === 'langues'">
                     <ul class="submenu">
                         <li>
                             <a href="javascript:void(0)" (click)="changeLang('en')">
