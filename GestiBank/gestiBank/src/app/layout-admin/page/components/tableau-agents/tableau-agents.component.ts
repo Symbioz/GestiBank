@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tableau-agents.component.scss']
 })
 export class TableauAgentsComponent implements OnInit {
+  
+  name : string = "Jennnifer";
+   
+
 
   constructor() { }
 
