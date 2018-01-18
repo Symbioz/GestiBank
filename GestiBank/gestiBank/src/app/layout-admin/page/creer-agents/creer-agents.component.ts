@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TranslateService } from '@ngx-translate/core';
+ 	
 @Component({
   selector: 'app-creer-agents',
   templateUrl: './creer-agents.component.html',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreerAgentsComponent implements OnInit {
 
-  constructor() { }
-
+   constructor(private translate: TranslateService) {
+        this.translate.addLangs(['en', 'fr']);
+        this.translate.setDefaultLang('fr');
+        const browserLang = this.translate.getBrowserLang();
+        this.translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
+    }
   ngOnInit() {
   }
 

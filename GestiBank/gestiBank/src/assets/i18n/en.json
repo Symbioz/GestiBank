@@ -28,7 +28,32 @@
     "In queue" : "In queue",
     "Mail" : "Mail",
     "View All" : "View All",
-    "Agent Management" : "Agent Management",
-    "Account management": "Account management",
-    "Name":"Name"
+
+    "GestionDesAgents" : "Agent Management",
+    "GestionDesComptes" : "Account management",
+
+    "Welcome":"Welcome",
+
+    "Matricule":"Register number",
+    "Nom":"Name",
+    "Prenom": "FirstName",
+    "Telephone": "Phone number",
+    "MotDePasse": "Password",
+    "DateDebutContrat" :"contract start date",
+    "Editer": "Edit",
+    "Supprimer": "Delete",
+
+    "ListAgents": "Agents List",
+    "ListeOuvertureCompte": "List account opening",
+    "EnCours":"In progress",
+    "Traitee": "processed",
+    "AjouterAgents":"Add Agents",
+
+    "IdDemande":"Id Request",
+    "DateDemande":"Request Date",
+    "Statut":"status",
+    "Affectation":"assignment ",
+    "DateAffectation":"Assignment  Date",
+    "Oui":"Yes",
+    "Non":"no"
 }

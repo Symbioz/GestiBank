@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-gestion-agents',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GestionAgentsComponent implements OnInit {
 
-  constructor() { }
+   constructor(private translate: TranslateService) {
+        this.translate.addLangs(['en', 'fr']);
+        this.translate.setDefaultLang('fr');
+        const browserLang = this.translate.getBrowserLang();
+        this.translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
+    }
 
   ngOnInit() {
   }
