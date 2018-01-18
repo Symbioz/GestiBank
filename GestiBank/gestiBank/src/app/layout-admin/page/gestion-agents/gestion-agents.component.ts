@@ -13,9 +13,14 @@ export class GestionAgentsComponent implements OnInit {
         this.translate.setDefaultLang('fr');
         const browserLang = this.translate.getBrowserLang();
         this.translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
+        
     }
 
   ngOnInit() {
   }
+
+  changeLang(language: string) {
+        this.translate.use(language);
+    }
 
 }

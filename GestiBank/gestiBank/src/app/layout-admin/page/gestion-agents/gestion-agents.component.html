@@ -1,21 +1,20 @@
-<div class="container">
 
-    <div class="row">
-       <h4>{{'ListAgents' | translate}}</h4>
-       <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-10" type="text" placeholder="chercher un agent par matricule ou par nom" >
-        </form>
-    </div>
+      <h4>{{'ListAgents' | translate}}</h4>      <app-chercher></app-chercher>
+ 
     
-  
-<app-tableau-agents><app-tableau-agents>
+
+      <app-tableau-agents></app-tableau-agents>  
+      <app-bouton-creation-agents></app-bouton-creation-agents>
+
  
 
-    <div class="row">
-    <a [routerLink]="['creerAgents']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-user-plus"></i>{{ 'AjouterAgents' | translate }}
-    </a>    
-</div>
+
+
+ 
+
+
+
+
 
 
      

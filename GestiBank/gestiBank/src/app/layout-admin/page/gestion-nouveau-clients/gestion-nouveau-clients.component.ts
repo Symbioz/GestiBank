@@ -18,4 +18,8 @@ export class GestionNouveauClientsComponent implements OnInit {
   ngOnInit() {
   }
 
+  changeLang(language: string) {
+        this.translate.use(language);
+    }
+
 }

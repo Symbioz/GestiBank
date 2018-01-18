@@ -11,8 +11,9 @@ const routes: Routes = [
             { path: 'dashboardAdmin', loadChildren: './dashboard-admin/dashboard-admin.module#DashboardAdminModule' },
             { path: 'gestionAgents', loadChildren: './page/gestion-agents/gestion-agents.module#GestionAgentsModule' },
             { path: 'gestionAgents/creerAgents', loadChildren: './page/creer-agents/creer-agents.module#CreerAgentsModule' },
-            { path: 'gestionNouveauClients', loadChildren: './page/gestion-nouveau-clients/gestion-nouveau-clients.module#GestionNouveauClientsModule' },
             { path: 'gestionAgents/editerAgents', loadChildren: './page/editer-agents/editer-agents.module#EditerAgentsModule' },
+            { path: 'gestionNouveauClients', loadChildren: './page/gestion-nouveau-clients/gestion-nouveau-clients.module#GestionNouveauClientsModule' },
+            { path: 'editerAgents', loadChildren: './page/editer-agents/editer-agents.module#EditerAgentsModule' },
         ]
     }
 ];

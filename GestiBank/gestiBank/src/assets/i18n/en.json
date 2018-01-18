@@ -55,5 +55,6 @@
     "Affectation":"assignment ",
     "DateAffectation":"Assignment  Date",
     "Oui":"Yes",
-    "Non":"no"
+    "Non":"no",
+    "EditerAgent":" Edit Agent"
 }
