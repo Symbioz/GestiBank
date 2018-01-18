@@ -38,5 +38,7 @@
     "Numéro de téléphone" : "PhoneNumber",
     "NombrEnfants": "Number of children",
     "Situation":"Family situation",
-    "ListCli":"List of customers"
+    "ListCli":"List of customers",
+    "Information": "Information",
+    "Comptes": "Accounts"
 }

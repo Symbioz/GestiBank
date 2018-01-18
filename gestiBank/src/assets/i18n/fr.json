@@ -31,12 +31,14 @@
 
     "Clients": "Clients",
     "Nom": "Nom",
-    "Identifiant":"Username",
+    "Identifiant":"Identifiant",
     "Prénom": "Prénom",
     "Couriel":"Couriel",
     "Adresse":"Adresse",
     "Numéro de téléphone":"Numéro de téléphone" ,
     "NombrEnfants": "Nombre d'enfants",
     "Situation":"Situation",
-    "ListCli":"Liste des clients"
+    "ListCli":"Liste des clients",
+    "Information": "Information",
+    "Comptes": "Comptes"
 }
