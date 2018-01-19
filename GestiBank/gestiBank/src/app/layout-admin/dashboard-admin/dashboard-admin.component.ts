@@ -10,11 +10,8 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class DashboardAdminComponent implements OnInit {
 
-   constructor(private translate: TranslateService) {
-        this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
-        this.translate.setDefaultLang('fr');
-        const browserLang = this.translate.getBrowserLang();
-        this.translate.use(browserLang.match(/en|fr|ur|es|it|fa|de/) ? browserLang : 'en');
+   constructor() {
+        
     }
 
   ngOnInit() {

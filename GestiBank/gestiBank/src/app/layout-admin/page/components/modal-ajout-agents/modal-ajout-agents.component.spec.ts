@@ -1,21 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableauAgentsComponent } from './tableau-agents.component';
+import { ModalAjoutAgentsComponent } from './modal-ajout-agents.component';
 
-
-describe('TableauAgentsComponent', () => {
-  let component: TableauAgentsComponent;
-  let fixture: ComponentFixture<TableauAgentsComponent>;
+describe('ModalAjoutAgentsComponent', () => {
+  let component: ModalAjoutAgentsComponent;
+  let fixture: ComponentFixture<ModalAjoutAgentsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableauAgentsComponent ]
+      declarations: [ ModalAjoutAgentsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TableauAgentsComponent);
+    fixture = TestBed.createComponent(ModalAjoutAgentsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

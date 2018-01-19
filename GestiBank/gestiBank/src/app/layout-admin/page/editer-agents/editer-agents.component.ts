@@ -9,18 +9,12 @@ import { TranslateService } from '@ngx-translate/core';
 export class EditerAgentsComponent implements OnInit {
 
   constructor(private translate: TranslateService) {
-        this.translate.addLangs(['en', 'fr']);
-        this.translate.setDefaultLang('fr');
-        const browserLang = this.translate.getBrowserLang();
-        this.translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
-
+      
     }
 
   ngOnInit() {
   }
 
-  changeLang(language: string) {
-        this.translate.use(language);
-    }
+  
 
 }

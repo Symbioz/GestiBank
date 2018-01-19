@@ -1,21 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableauAgentsComponent } from './tableau-agents.component';
+import { InfoAgentsComponent } from './info-agents.component';
 
-
-describe('TableauAgentsComponent', () => {
-  let component: TableauAgentsComponent;
-  let fixture: ComponentFixture<TableauAgentsComponent>;
+describe('InfoAgentsComponent', () => {
+  let component: InfoAgentsComponent;
+  let fixture: ComponentFixture<InfoAgentsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableauAgentsComponent ]
+      declarations: [ InfoAgentsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TableauAgentsComponent);
+    fixture = TestBed.createComponent(InfoAgentsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

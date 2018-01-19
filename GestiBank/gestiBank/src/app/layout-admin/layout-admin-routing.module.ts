@@ -14,6 +14,8 @@ const routes: Routes = [
             { path: 'gestionAgents/editerAgents', loadChildren: './page/editer-agents/editer-agents.module#EditerAgentsModule' },
             { path: 'gestionNouveauClients', loadChildren: './page/gestion-nouveau-clients/gestion-nouveau-clients.module#GestionNouveauClientsModule' },
             { path: 'editerAgents', loadChildren: './page/editer-agents/editer-agents.module#EditerAgentsModule' },
+            { path: 'infoAgents', loadChildren: './page/editer-agents/editer-agents.module#EditerAgentsModule' },
+            { path: 'gestionAgents/infoAgents', loadChildren: './page/info-agents/info-agents.module#InfoAgentsModule' },
         ]
     }
 ];
