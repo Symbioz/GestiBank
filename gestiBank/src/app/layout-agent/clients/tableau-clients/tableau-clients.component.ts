@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import {InfoClient} from '../infoClients';
 
 @Component({
   selector: 'app-tableau-clients',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tableau-clients.component.scss']
 })
 export class TableauClientsComponent implements OnInit {
+
+   @Input() maListe:InfoClient[];
+
+
 
   constructor() { }
 

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
+import {InfoClient} from '../infoClients';
+
 @Component({
     selector: 'app-modal',
     templateUrl: './modal.component.html',
@@ -9,6 +11,9 @@ import { TranslateService } from '@ngx-translate/core';
 export class ModalComponent {
     closeResult: string;
     constructor(private modalService: NgbModal) { }
+
+
+
 
     open(content) {
         this.modalService.open(content).result.then((result) => {

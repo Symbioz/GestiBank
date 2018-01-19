@@ -1,48 +1,34 @@
 <div class="card mb-3">
-                <div class="card-header">{{'ListCli'|translate}}</div>
-                <div class="card-body table-responsive">
-                    <table class="table table-hover table-striped">
-                        <thead>
-                        <tr>
-                        	<th>{{'Identifiant'|translate}}</th>
-                            <th>{{'Nom'|translate}}</th>
-                            <th>{{'Prénom'|translate}}</th>
-                             <th>{{'Couriel'|translate}}</th>
-                            <th>{{'Adresse'|translate}}</th>
-                            <th>{{'Numéro de téléphone'|translate}}</th>
-                            <th>{{'NombrEnfants'|translate}}</th>
-                           	<th>{{'Situation'|translate}}</th>
-                            <th>{{'Info'|translate}}</th>
-                        </tr>
+    <div class="card-header">{{'ListCli'|translate}}</div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover table-striped">
+            <thead>
+            <tr>
+            	<th>{{'Identifiant'|translate}}</th>
+                <th>{{'Nom'|translate}}</th>
+                <th>{{'Prénom'|translate}}</th>
+                 <th>{{'Couriel'|translate}}</th>
+                <th>{{'Adresse'|translate}}</th>
+                <th>{{'Numéro de téléphone'|translate}}</th>
+                <th>{{'NombrEnfants'|translate}}</th>
+               	<th>{{'Situation'|translate}}</th>
+                <th>{{'Info'|translate}}</th>
+            </tr>
 
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Longuet</td>
-                            <td>Guillaume</td>
-                            <td>blabla@gmail.com</td>
-                            <td>1 rue machin 59000 Lille </td>
-                            <td>060000000</td>
-                            <td>0</td>
-                            <td>Célibataire</td>
-                            <td><app-modal></app-modal></td>
-
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>De Galles</td>
-                            <td>Perceval</td>
-                            <td>Kaamelott@gmail.com</td>
-                            <td>1 rue C'est pas faux 59000 Sloubi324 </td>
-                            <td>060000000</td>
-                            <td>0</td>
-                            <td>On en a gros</td>
-                             <td><app-modal></app-modal></td>
-
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-      
-            </div>
+            </thead>
+            <tbody>
+            <tr *ngFor="let client of maListe">
+                <td>{{client.id}}</td>
+                <td>{{client.nom}}</td>
+                <td>{{client.prenom}}</td>
+                <td>{{client.couriel}}</td>
+                <td>{{client.adresse}} </td>
+                <td>{{client.numTel}}</td>
+                <td>{{client.nbEnfants}}</td>
+                <td>{{client.situation}}</td>
+                <td><app-modal></app-modal></td>
+    
+            </tbody>
+        </table>
+    </div>    
+</div>
