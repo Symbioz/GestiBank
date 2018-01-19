@@ -3,21 +3,16 @@ import { TranslateService } from '@ngx-translate/core';
 import { routerTransition } from '../../router.animations';
 
 @Component({
-  selector: 'app-virements',
-  templateUrl: './virements.component.html',
-  styleUrls: ['./virements.component.scss'],
+    selector: 'app-virements',
+    templateUrl: './virements.component.html',
+    styleUrls: ['./virements.component.scss'],
     animations: [routerTransition()]
 })
 export class VirementsComponent implements OnInit {
 
-  	constructor(private translate: TranslateService) {
-        this.translate.addLangs(['en', 'fr']);
-        this.translate.setDefaultLang('fr');
-        const browserLang = this.translate.getBrowserLang();
-        this.translate.use(browserLang.match(/en|fr/) ? browserLang : 'fr');
-    }
+    constructor() {}
 
-  	ngOnInit() {
-  	}
+    ngOnInit() {
+      }
 
 }

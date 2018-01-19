@@ -10,14 +10,9 @@ import { routerTransition } from '../../router.animations';
 })
 export class RelevesComponent implements OnInit {
 
-  	constructor(private translate: TranslateService) {
-        this.translate.addLangs(['en', 'fr']);
-        this.translate.setDefaultLang('fr');
-        const browserLang = this.translate.getBrowserLang();
-        this.translate.use(browserLang.match(/en|fr/) ? browserLang : 'fr');
-    }
+  	constructor() {}
 
-  	ngOnInit() {
-  	}
+    ngOnInit() {
+      }
 
 }
