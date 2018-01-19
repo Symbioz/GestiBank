@@ -11,7 +11,7 @@ export class ClientsComponent implements OnInit {
 
 
 clients=[  new InfoClient(1,"sdjkhqdklfugh","Guilaume","blabla@gmail.com","1rue machin Lille","0606060606",0,"celibataire"),
-      new InfoClient(2, "Le Gaulois","Provençal","Kaamelott@gmail","1 rue C'est pas faux 59000 Sloubi324","060000000",0,"On en a gros"];
+      new InfoClient(2, "Le Gaulois","Provençal","Kaamelott@gmail","1 rue C'est pas faux 59000 Sloubi324","060000000",0,"On en a gros")];
 
 
  constructor(){}

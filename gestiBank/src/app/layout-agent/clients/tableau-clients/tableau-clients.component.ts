@@ -9,6 +9,7 @@ import {InfoClient} from '../infoClients';
 export class TableauClientsComponent implements OnInit {
 
    @Input() maListe:InfoClient[];
+   
 
 
 

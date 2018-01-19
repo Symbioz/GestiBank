@@ -12,7 +12,7 @@ export class ModalComponent {
     closeResult: string;
     constructor(private modalService: NgbModal) { }
 
-
+@Input() clientModal:InfoClient;
 
 
     open(content) {
