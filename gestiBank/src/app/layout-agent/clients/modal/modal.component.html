@@ -8,14 +8,13 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body" >
-                        <table class="table table-hover table-striped">
+                    <div class="modal-body" *ngIf="!(modif)">
+                        <table class="table table-striped">
                             <thead>
                             <tr>
                                 <th></th>
                                 <th></th>
-                                <th></th>
-                                <th></th>
+                            
 
                             </tr>
 
@@ -24,16 +23,6 @@
                             <tr>
                                 <td>{{'Identifiant'|translate}}</td>
                                 <td>{{clientModal.id}}</td>
-                                <td>    
-                                    <form role="form">
-                                        <fieldset class="form-group">
-                                            <input class="form-control" placeholder="{{clientModal.id}}">
-                                        </fieldset>
-                                    </form>
-                                </td>
-                                <td>
-                                    
-                                </td>
                             </tr>
                             <tr>
                                 <td>{{'Nom'|translate}}</td>
@@ -66,7 +55,92 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="modal-footer">
+                     <div class="modal-body" *ngIf="(modif)">
+                        <table class="table  table-striped">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                               
+
+                            </tr>
+
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{'Identifiant'|translate}}</td>
+                               
+                                <td>    
+                                    <form role="form">                                       
+                                            <input class="form-control" placeholder="{{clientModal.id}}">                                       
+                                    </form>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td>{{'Nom'|translate}}</td>
+                                <td>    
+                                    <form role="form">                               
+                                            <input class="form-control" placeholder="{{clientModal.nom}}">                    
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{'Prénom'|translate}}</td>
+                                 <td>    
+                                    <form role="form">
+                                            <input class="form-control" placeholder="{{clientModal.prenom}}">
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{'Couriel'|translate}}</td>
+                                <td>    
+                                    <form role="form">
+                                            <input class="form-control" placeholder="{{clientModal.couriel}}">
+                                    </form>
+                                </td>
+                            </tr>   
+                            <tr>
+                                 <td>{{'Adresse'|translate}}</td>
+                                 <td>    
+                                    <form role="form">
+                                         <input class="form-control" placeholder="{{clientModal.adresse}}">
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td>{{'Numéro de téléphone'|translate}}</td>    
+                              <td>    
+                                    <form role="form">
+                                            <input class="form-control" placeholder="{{clientModal.numTel}}">
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                 <td>{{'NombrEnfants'|translate}}</td>
+                                <td>    
+                                    <form role="form">
+                                            <input class="form-control" placeholder="{{clientModal.nbEnfants}}">
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{'Situation'|translate}}</td>
+                                <td>    
+                                    <form role="form">
+                                            <input class="form-control" placeholder="{{clientModal.situation}}">
+                                    </form>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer" >
+                        <button *ngIf="!(modif)" type="button" class="btn btn-secondary" (click)="modif=true">Modif</button>
+                   
+                        <button *ngIf="(modif)" type="button" class="btn btn-secondary" (click)="modif=false">Sauvegarder</button>
+
                         <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
                     </div>
                 </ng-template>

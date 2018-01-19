@@ -10,6 +10,7 @@ import {InfoClient} from '../infoClients';
 })
 export class ModalComponent {
     closeResult: string;
+    modif:boolean;
     constructor(private modalService: NgbModal) { }
 
 @Input() clientModal:InfoClient;
