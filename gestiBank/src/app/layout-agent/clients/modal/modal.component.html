@@ -1,15 +1,54 @@
 
             
-                <button class="btn btn-primary" (click)="open(content)">{{'Informations'| translate}}</button>
+                <button class="btn btn-primary" (click)="open(content)">{{'Info'| translate}}</button>
                 <ng-template #content let-c="close" let-d="dismiss">
                     <div class="modal-header">
-                        <h4 class="modal-title">Modal title</h4>
+                        <h4 class="modal-title">{{'Info'| translate}}</h4>
                         <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>One fine body&hellip;</p>
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                     
+
+                        </tr>
+
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{{'Identifiant'|translate}}</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>{{'Nom'|translate}}</td>
+                            <td>Longuet</td>
+                        </tr>
+                        <tr>
+                            <td>{{'Prénom'|translate}}</td>
+                            <td>Guillaume</td>
+                        </tr>
+                        <tr>
+                            <td>{{'Couriel'|translate}}</td>
+                            <td>blabla@gmail.com</td>
+                        </tr>   
+                        <tr>
+                             <td>{{'Adresse'|translate}}</td>
+                             <td>1 rue machin 59000 Lille </td>
+                        </tr>
+                          <td>{{'Numéro de téléphone'|translate}}</td>    
+                          <td>060000000</td>
+                        <tr>
+                             <td>{{'NombrEnfants'|translate}}</td>
+                             <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>{{'Situation'|translate}}</td>
+                            <td>Célibataire</td>
+                        </tr>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
