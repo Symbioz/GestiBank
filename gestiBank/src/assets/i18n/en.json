@@ -40,5 +40,7 @@
     "Situation":"Family situation",
     "ListCli":"List of customers",
     "Info": "Info/set",
-    "Comptes": "Accounts"
+    "Comptes": "Accounts",
+    "Editer":"Edit",
+    "Supprimer":"Delete"
 }

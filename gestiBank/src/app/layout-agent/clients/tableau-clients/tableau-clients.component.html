@@ -8,11 +8,9 @@
                 <th>{{'Nom'|translate}}</th>
                 <th>{{'Prénom'|translate}}</th>
                  <th>{{'Couriel'|translate}}</th>
-                <th>{{'Adresse'|translate}}</th>
-                <th>{{'Numéro de téléphone'|translate}}</th>
-                <th>{{'NombrEnfants'|translate}}</th>
-               	<th>{{'Situation'|translate}}</th>
                 <th>{{'Info'|translate}}</th>
+               
+  
             </tr>
 
             </thead>
@@ -22,13 +20,12 @@
                 <td>{{client.nom}}</td>
                 <td>{{client.prenom}}</td>
                 <td>{{client.couriel}}</td>
-                <td>{{client.adresse}} </td>
-                <td>{{client.numTel}}</td>
-                <td>{{client.nbEnfants}}</td>
-                <td>{{client.situation}}</td>
                 <td><app-modal [clientModal]="client"></app-modal></td>
+             
             </tr>
             </tbody>
         </table>
     </div>    
 </div>
+
+ 

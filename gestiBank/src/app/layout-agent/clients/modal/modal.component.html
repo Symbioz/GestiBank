@@ -1,6 +1,6 @@
 
             
-                <button class="btn btn-primary" (click)="open(content)">{{'Info'| translate}}</button>
+                <button class="btn btn-success btn-xs" (click)="open(content)"></button>
                 <ng-template #content let-c="close" let-d="dismiss">
                     <div class="modal-header">
                         <h4 class="modal-title">{{'Info'| translate}}</h4>
@@ -9,47 +9,62 @@
                         </button>
                     </div>
                     <div class="modal-body" >
-                        <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
+                        <table class="table table-hover table-striped">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
 
+                            </tr>
 
-                        </tr>
-
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>{{'Identifiant'|translate}}</td>
-                            <td>{{clientModal.id}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{'Nom'|translate}}</td>
-                            <td>{{clientModal.nom}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{'Prénom'|translate}}</td>
-                            <td>{{clientModal.prenom}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{'Couriel'|translate}}</td>
-                            <td>{{clientModal.couriel}}</td>
-                        </tr>   
-                        <tr>
-                             <td>{{'Adresse'|translate}}</td>
-                             <td>{{clientModal.adresse}}</td>
-                        </tr>
-                          <td>{{'Numéro de téléphone'|translate}}</td>    
-                          <td>{{clientModal.numTel}}</td>
-                        <tr>
-                             <td>{{'NombrEnfants'|translate}}</td>
-                             <td>{{clientModal.nbEnfants}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{'Situation'|translate}}</td>
-                            <td>{{clientModal.situation}}</td>
-                        </tr>
-                        </tbody>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{'Identifiant'|translate}}</td>
+                                <td>{{clientModal.id}}</td>
+                                <td>    
+                                    <form role="form">
+                                        <fieldset class="form-group">
+                                            <input class="form-control" placeholder="{{clientModal.id}}">
+                                        </fieldset>
+                                    </form>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{'Nom'|translate}}</td>
+                                <td>{{clientModal.nom}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{'Prénom'|translate}}</td>
+                                <td>{{clientModal.prenom}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{'Couriel'|translate}}</td>
+                                <td>{{clientModal.couriel}}</td>
+                            </tr>   
+                            <tr>
+                                 <td>{{'Adresse'|translate}}</td>
+                                 <td>{{clientModal.adresse}}</td>
+                            </tr>
+                            <tr>
+                              <td>{{'Numéro de téléphone'|translate}}</td>    
+                              <td>{{clientModal.numTel}}</td>
+                            </tr>
+                            <tr>
+                                 <td>{{'NombrEnfants'|translate}}</td>
+                                 <td>{{clientModal.nbEnfants}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{'Situation'|translate}}</td>
+                                <td>{{clientModal.situation}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>

@@ -40,5 +40,7 @@
     "Situation":"Situation",
     "ListCli":"Liste des clients",
     "Info": "Info/modifier",
-    "Comptes": "Comptes"
+    "Comptes": "Comptes",
+    "Editer":"Editer",
+    "Supprimer":"Supprimer"
 }
