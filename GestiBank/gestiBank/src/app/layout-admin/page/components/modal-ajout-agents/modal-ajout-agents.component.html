@@ -1,3 +1,34 @@
-<p>
-  modal-ajout-agents works!
-</p>
+           
+                <button class="btn btn-success btn-xs" (click)="open(content)"></button>
+                <ng-template #content let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">{{'CreerAgent' | translate}}</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" >
+                        <form role="form">
+
+		                <fieldset class="form-group">
+		                    <label>{{ 'Matricule' | translate }}</label>
+		                    <input class="form-control" placeholder="Matricule" type="text">
+		                    <label>{{ 'Nom' | translate }}</label>
+		                    <input class="form-control" placeholder="Nom" type="text">
+		                    <label>{{ 'Prenom' | translate }}</label>
+		                    <input class="form-control" placeholder="Prenom" type="text">
+		                    <label>{{ 'MotDePasse' | translate }}</label>
+		                    <input class="form-control" placeholder="Mot de passe" type="password">
+		                    <label> {{'DateDebutContrat'| translate}}</label>
+		                    <input class="form-control" placeholder="date de debut de contrat" type="date">
+
+		                </fieldset>
+               
+                <button type="submit" class="btn btn-secondary"> {{'AjouterAgents' | translate}}</button>
+
+  </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+                    </div>
+                </ng-template>
