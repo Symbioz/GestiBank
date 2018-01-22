@@ -1,7 +1,54 @@
 <div class="row">
-        <a [routerLink]="['creerAgents']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+       <!-- <a [routerLink]="['creerAgents']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                 <i class="fa fa-user-plus"></i> {{ 'AjouterAgents' | translate }}
-        </a>    
+        </a>  -->
 </div> 
-  <button class="btn btn-success btn-xs" (click)="open(content)"></button>
+
+
+
+   <button class="btn btn-success btn-xs" (click)="open(content)"><i class="fa fa-user-plus"></i> {{ 'AjouterAgents' | translate }}</button>
     
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card mb-3">
+            
+           
+            <div class="card-body">
+                
+                <ng-template #content let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">creer un agent</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+
+                <fieldset class="form-group">
+                    <label>{{ 'Matricule' | translate }}</label>
+                    <input class="form-control" placeholder="Matricule" type="text">
+                    <label>{{ 'Nom' | translate }}</label>
+                    <input class="form-control" placeholder="Nom" type="text">
+                    <label>{{ 'Prenom' | translate }}</label>
+                    <input class="form-control" placeholder="Prenom" type="text">
+                    <label>{{ 'MotDePasse' | translate }}</label>
+                    <input class="form-control" placeholder="Mot de passe" type="password">
+                    <label> {{'DateDebutContrat'| translate}}</label>
+                    <input class="form-control" placeholder="Mot de passe" type="date">
+
+                </fieldset>
+               
+                <button type="submit" class="btn btn-secondary"> {{'AjouterAgents' | translate}}</button>
+
+  </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+                    </div>
+                </ng-template>
+            </div>
+        
+    </div>
+</div>  

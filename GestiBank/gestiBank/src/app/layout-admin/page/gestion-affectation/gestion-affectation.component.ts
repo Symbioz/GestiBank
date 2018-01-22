@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Agents} from './agents';
+
 
 @Component({
   selector: 'app-gestion-affectation',

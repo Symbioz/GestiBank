@@ -7,10 +7,9 @@ import { LayoutAdminRoutingModule } from './layout-admin-routing.module';
 import { LayoutAdminComponent } from './layout-admin.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ModalAjoutAgentsComponent } from './page/components/modal-ajout-agents/modal-ajout-agents.component';
 
 @NgModule({
   	imports: [CommonModule, LayoutAdminRoutingModule, TranslateModule,NgbDropdownModule.forRoot()],
-  	declarations: [LayoutAdminComponent, HeaderComponent, SidebarComponent, ModalAjoutAgentsComponent]
+  	declarations: [LayoutAdminComponent, HeaderComponent, SidebarComponent]
 })
 export class LayoutAdminModule { }
