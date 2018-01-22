@@ -1,17 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
-//import {Agents} from '../../../page/gestion-agents/agents';
-//import { CreerAgentsComponent } from './creer-agents.component';
 
 @Component({
-  selector: 'app-bouton-creation-agents',
-  templateUrl: './bouton-creation-agents.component.html',
-  styleUrls: ['./bouton-creation-agents.component.scss']
+  selector: 'app-bouton-suppression-agents',
+  templateUrl: './bouton-suppression-agents.component.html',
+  styleUrls: ['./bouton-suppression-agents.component.scss']
 })
-export class BoutonCreationAgentsComponent  {
+export class BoutonSuppressionAgentsComponent implements OnInit {
 
-    closeResult: string;
+  closeResult: string;
     constructor(private modalService: NgbModal) { }
     
     open(content) {
@@ -31,7 +29,8 @@ export class BoutonCreationAgentsComponent  {
             return  `with: ${reason}`;
         }
     }
-    
 
- 
+  ngOnInit() {
+  }
+
 }

@@ -11,14 +11,9 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <div class="card mb-3">
-            
-           
-            <div class="card-body">
-                
                 <ng-template #content let-c="close" let-d="dismiss">
                     <div class="modal-header">
-                        <h4 class="modal-title">creer un agent</h4>
+                        <h4 class="modal-title">{{'AjouterAgents' | translate}}</h4>
                         <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -40,7 +35,7 @@
 
                 </fieldset>
                
-                <button type="submit" class="btn btn-secondary"> {{'AjouterAgents' | translate}}</button>
+                <button type="submit" class="btn btn-success btn-xs"> {{'AjouterAgents' | translate}}</button>
 
   </form>
                     </div>
@@ -48,7 +43,4 @@
                         <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
                     </div>
                 </ng-template>
-            </div>
-        
-    </div>
 </div>  

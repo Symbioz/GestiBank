@@ -8,6 +8,7 @@ import { GestionAgentsComponent } from './gestion-agents.component';
 import { TableauAgentsComponent}  from '../components/tableau-agents/tableau-agents.component';
 import { BoutonCreationAgentsComponent} from '../components/bouton-creation-agents/bouton-creation-agents.component';
 import { ChercherComponent} from '../components/chercher/chercher.component';
+import { BoutonSuppressionAgentsComponent } from '../components/bouton-suppression-agents/bouton-suppression-agents.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { ChercherComponent} from '../components/chercher/chercher.component';
     NgbModule.forRoot(),
 
   ],
-  declarations: [GestionAgentsComponent,TableauAgentsComponent,BoutonCreationAgentsComponent,ChercherComponent]
+  declarations: [GestionAgentsComponent,TableauAgentsComponent,BoutonCreationAgentsComponent,ChercherComponent,BoutonSuppressionAgentsComponent]
 })
 export class GestionAgentsModule { }
