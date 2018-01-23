@@ -5,7 +5,7 @@
         <div class="col col-sm-6">
         <div class="card">
             <div class="card-body">
-                <div class="btn-group btn-group-toggle mb-3" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
+                <div class="btn-group btn-group-toggle mb-3" ngbRadioGroup name="affecter" [(ngModel)]="affecter">
                     <label ngbButtonLabel class="btn-primary">
                         <input ngbButton type="radio" [value]="all"> Tous
                     </label>
@@ -23,7 +23,7 @@
     <div class="col col-sm-6">
         <div class="card">
             <div class="card-body">
-                <div class="btn-group btn-group-toggle mb-3" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
+                <div class="btn-group btn-group-toggle mb-3" ngbRadioGroup name="Statut" [(ngModel)]="Statut">
                     <label ngbButtonLabel class="btn-primary">
                         <input ngbButton type="radio" [value]="all"> Tous
                     </label>
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-<app-tableau-demande-compte></app-tableau-demande-compte>
+<app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" ></app-tableau-demande-compte>
  
 
     

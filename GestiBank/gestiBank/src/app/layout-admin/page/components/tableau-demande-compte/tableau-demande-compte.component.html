@@ -16,10 +16,8 @@
                      <th>{{ 'IdDemande' | translate }}</th>
                      <th>{{ 'Affecter' | translate }}</th>
                     </thead>
-
-   <!-- Information mise en dur, à modifier en cherchant  dans l'Objet Agent -->
     <tbody>
-      <tr *ngFor="let demande of ListeDemande"> <!-- <tr *ngFor="let client of ListeClients"> -->
+      <tr *ngFor="let demande of ListeDemande"> 
               <td>{{demande.dateDemande}}</td>
               <td>{{demande.client.nom}}</td>
               <td>{{demande.client.prenom}}</td>
@@ -29,14 +27,11 @@
               <td>{{demande.idDemande}}</td>
               <td>{{demande.client.idAgent}}</td> 
               <td>
-                <select class="form-control">
-                        <option>agent 1</option>
-                        <option>agent 2</option>
-                        <option>agent 3</option>
-                        <option>agent 4</option>
-                        <option>agent 5</option>
-                    </select>
+                   <select>
+                                   <option *ngFor=" let agent of ListeAgents">{{ agent.matricule }}</option>
+                                </select> 
               </td>
+              <td><app-bouton-validation-affectation></app-bouton-validation-affectation></td>
        </tr>
     </tbody>
         

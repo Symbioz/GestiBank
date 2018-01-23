@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
-import {Client} from '../../../page/gestion-nouveau-clients/client';
 import {Demande} from '../../../page/gestion-nouveau-clients/demande';
+import {Agents} from '../../../page/gestion-agents/agents';
 
 @Component({
   selector: 'app-tableau-demande-compte',
@@ -10,7 +10,7 @@ import {Demande} from '../../../page/gestion-nouveau-clients/demande';
 export class TableauDemandeCompteComponent implements OnInit {
   
 @Input() ListeDemande:Demande[];
-
+@Input() ListeAgents:Agents[];
 
   constructor() { }
 

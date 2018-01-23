@@ -24,11 +24,11 @@
                             <td>{{agent.email}}</td>
                             <td>{{agent.telephone}} </td>
 
-                            <td><p><app-boutton-edition-agents></app-boutton-edition-agents></p></td>
+                            <td><p><app-boutton-edition-agents [agentModal]='agent'></app-boutton-edition-agents></p></td>
 
                             <td><p> <app-bouton-suppression-agents></app-bouton-suppression-agents></p></td>
 
-                            <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-info btn-xs fa fa-eye" data-title="Edit" data-toggle="modal" data-target="#edit"  [routerLink]="['infoAgents']" [routerLinkActive]="['router-link-active']" ></button></p></td>
+                            <td><button class="btn btn-info btn-xs fa fa-eye"   [routerLink]="['infoAgents']" [routerLinkActive]="['router-link-active']" ></button></td>
                         </tr> 
                         </tbody>
                     </table>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { InfoAgentsRoutingModule } from './info-agents-routing.module';
 import { InfoAgentsComponent } from './info-agents.component';
@@ -13,7 +14,8 @@ import { BoutonValidationAffectationComponent } from '../components/bouton-valid
   imports: [
     CommonModule,
     InfoAgentsRoutingModule,
-    TranslateModule
+    TranslateModule,
+    NgbModule.forRoot(),
 
   ],
   declarations: [InfoAgentsComponent,TableauClientsAgentComponent,BoutonValidationAffectationComponent]

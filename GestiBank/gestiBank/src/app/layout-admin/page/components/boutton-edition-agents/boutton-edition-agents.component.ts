@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
+import {Agents} from '../../../page/gestion-agents/agents';
 
 @Component({
   selector: 'app-boutton-edition-agents',
@@ -12,6 +13,8 @@ export class BouttonEditionAgentsComponent implements OnInit {
     closeResult: string;
     
     constructor(private modalService: NgbModal) { }
+
+    @Input() agentModal:Agents;
     
     open(content) {
         this.modalService.open(content).result.then((result) => {

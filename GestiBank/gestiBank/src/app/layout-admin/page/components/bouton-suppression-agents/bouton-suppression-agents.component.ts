@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class BoutonSuppressionAgentsComponent implements OnInit {
 
-  closeResult: string;
+    closeResult: string;
     constructor(private modalService: NgbModal) { }
     
     open(content) {

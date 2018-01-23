@@ -18,7 +18,7 @@
                             <td>{{client.prenom}}</td>
                             <td>
                                 <select>
-                                   <option ng-options="agent for agent in ListeAgents"></option>
+                                   <option *ngFor=" let agent of ListeAgents">{{ agent.matricule }}</option>
                                 </select> 
                             </td>
                             <td><app-bouton-validation-affectation></app-bouton-validation-affectation></td>
@@ -31,4 +31,4 @@
                 
 </div>
 
-
+   
