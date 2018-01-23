@@ -1,50 +1,7 @@
-<p>list des clients </p>
+<h4>{{'ListClients' | translate}}</h4>
+
+<app-tableau-clients-agent  [ListeAgents] = "agents" [ListeClients] = "client" ></app-tableau-clients-agent>
+  
+ 
 
 
-
-<div class="card mb-3">
-      
-                <div class="card-body table-responsive">
-                    <table class="table table-hover table-striped">
-                        <thead>
-                        <tr>
-                            <th>Id client</th>
-                            <th>NOM</th>
-                            <th>PReNOM</th>
-                            <th>Reaffecter</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>vincent</td>
-                            <td>jennifer</td>
-                            <td>
-			                <select class="form-control">
-			                        <option>agent 1</option>
-			                        <option>agent 2</option>
-			                        <option>agent 3</option>
-			                        <option>agent 4</option>
-			                        <option>agent 5</option>
-			                    </select>
-              				</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>
-			                <select class="form-control">
-			                        <option>agent 1</option>
-			                        <option>agent 2</option>
-			                        <option>agent 3</option>
-			                        <option>agent 4</option>
-			                        <option>agent 5</option>
-			                    </select>
-              				</td>
-                        </tr>
-                        
-                        </tbody>
-                    </table>
-                </div>
-            </div>

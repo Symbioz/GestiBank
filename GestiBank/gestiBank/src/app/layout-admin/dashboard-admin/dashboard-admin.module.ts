@@ -5,11 +5,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DashboardAdminRoutingModule } from './dashboard-admin-routing.module';
 import { DashboardAdminComponent } from './dashboard-admin.component';
 
+import { StatModule } from '../../shared';
+
 @NgModule({
   imports: [
     CommonModule,
     DashboardAdminRoutingModule,
-    TranslateModule
+    TranslateModule,
+    StatModule
   ],
   declarations: [DashboardAdminComponent]
 })

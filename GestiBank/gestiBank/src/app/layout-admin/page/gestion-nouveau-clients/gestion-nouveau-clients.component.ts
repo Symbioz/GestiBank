@@ -11,7 +11,7 @@ import {Demande} from './demande';
 })
 export class GestionNouveauClientsComponent implements OnInit {
     /*
-    clients =[  new Client(1,"vin","Guilaume","blabla@gmail.com","1rue machin Lille","0606060606",0,"celibataire",573),
+       clients =[  new Client(1,"vin","Guilaume","blabla@gmail.com","1rue machin Lille","0606060606",0,"celibataire",573),
        new Client(2, "Le Gaulois","Provençal","Kaamelott@gmail","1 rue C'est pas faux 59000 Sloubi324","060000000",0,"On en a gros", 1337)];*/
     
 

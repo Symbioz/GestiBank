@@ -8,6 +8,7 @@ import { LayoutAdminComponent } from './layout-admin.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
+
 @NgModule({
   	imports: [CommonModule, LayoutAdminRoutingModule, TranslateModule,NgbDropdownModule.forRoot()],
   	declarations: [LayoutAdminComponent, HeaderComponent, SidebarComponent]

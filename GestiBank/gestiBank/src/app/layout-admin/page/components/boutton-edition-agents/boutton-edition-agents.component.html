@@ -1,15 +1,11 @@
-
-            
-                <button class="btn btn-danger btn-xs fa fa-trash"  (click)="open(content)"></button>
-                <ng-template #content let-c="close" let-d="dismiss">
+ <button class="btn btn btn-primary btn-xs fa fa-pencil"  (click)="open(content)"></button>
+ <ng-template #content let-c="close" let-d="dismiss">
                     <div class="modal-body">
-                        <p>{{ 'QuestionSuppression' | translate}}</p>
-                        <p>Si Oui faire ensuite le test si l agent à au moins 1 client</p>
+                    	<p>{{ 'Editer' | translate}}</p>
+                        <p>Inserer formulaire avec preremplisage</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success btn-xs" >{{ 'Oui' | translate }}</button>
                         <button type="button" class="btn btn-danger btn-xs" (click)="c('Close click')">{{ 'Non' | translate }}</button>
                     </div>
-                </ng-template>
-         
-    
+</ng-template>

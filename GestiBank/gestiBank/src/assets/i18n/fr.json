@@ -39,6 +39,7 @@
     "Supprimer": "Supprimer",
 
     "ListAgents": "Liste des agents",
+    "ListClients": "Liste des clients",
     "ListeOuvertureCompte":"Liste des demandes d ouverture de compte",
     "EnCours": "En cours",
     "Traitee": "Traitee",
@@ -51,5 +52,7 @@
     "Oui":"Oui",
     "Non": "Non",
     "EditerAgent": "Editer l'agent",
-    "QuestionSuppression":"Etes vous sur de vouloir supprimer cette agent ?"
+    "QuestionSuppression":"Etes vous sur de vouloir supprimer cette agent ?",
+    "Valider":"Valider",
+    "Reaffecter":"Reaffecter"
     }

@@ -1,10 +1,8 @@
-
-            
-                <button class="btn btn-danger btn-xs fa fa-trash"  (click)="open(content)"></button>
+ <button class="btn btn-success btn-xs fa fa-check"  (click)="open(content)"></button>
                 <ng-template #content let-c="close" let-d="dismiss">
                     <div class="modal-body">
                         <p>{{ 'QuestionSuppression' | translate}}</p>
-                        <p>Si Oui faire ensuite le test si l agent à au moins 1 client</p>
+                        <p>nom de l'agent</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success btn-xs" >{{ 'Oui' | translate }}</button>

@@ -9,6 +9,7 @@ import { TableauAgentsComponent}  from '../components/tableau-agents/tableau-age
 import { BoutonCreationAgentsComponent} from '../components/bouton-creation-agents/bouton-creation-agents.component';
 import { ChercherComponent} from '../components/chercher/chercher.component';
 import { BoutonSuppressionAgentsComponent } from '../components/bouton-suppression-agents/bouton-suppression-agents.component';
+import { BouttonEditionAgentsComponent } from '../components/boutton-edition-agents/boutton-edition-agents.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { BoutonSuppressionAgentsComponent } from '../components/bouton-suppressi
     NgbModule.forRoot(),
 
   ],
-  declarations: [GestionAgentsComponent,TableauAgentsComponent,BoutonCreationAgentsComponent,ChercherComponent,BoutonSuppressionAgentsComponent]
+  declarations: [GestionAgentsComponent,TableauAgentsComponent,BoutonCreationAgentsComponent,ChercherComponent,BoutonSuppressionAgentsComponent,BouttonEditionAgentsComponent]
 })
 export class GestionAgentsModule { }
