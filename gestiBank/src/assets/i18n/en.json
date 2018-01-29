@@ -43,5 +43,7 @@
     "Comptes": "Accounts",
     "Editer":"Edit",
     "Supprimer":"Delete",
-    "Demande":"Requests"
+    "Demande":"Requests",
+    "Inscription":"Inscription requests"
+
 }
