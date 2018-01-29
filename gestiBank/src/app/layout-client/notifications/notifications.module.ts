@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { NotificationsRoutingModule } from './notifications-routing.module';
@@ -12,6 +13,7 @@ import { TabNotificationsComponent } from './tab-notifications/tab-notifications
    	 	CommonModule,
     	NotificationsRoutingModule,
         TranslateModule,
+        NgbAlertModule.forRoot(),
         PageHeaderModule
   	],
   	declarations: [NotificationsComponent, TabNotificationsComponent]
