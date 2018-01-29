@@ -1,13 +1,20 @@
+import { Component } from '@angular/core';
+
+enum TypeOp { debit, credit }
+
+
 export class Operation {
-	ref: number
+	ref: number;
 	date: String;
 	libelle: String;
 	montant: number;
+	typeOp: TypeOp;
 	
-	constructor(ref: number, date:String, libelle: String, montant: number){
+	constructor(ref: number, date:String, libelle: String, montant: number, typeOp: TypeOp){
 		this.ref = ref;
 		this.date = date;
 		this.libelle = libelle;
 		this.montant = montant;
+		this.typeOp = typeOp;
 	}
 }

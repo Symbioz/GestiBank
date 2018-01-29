@@ -1,11 +1,11 @@
 export class Notification {
 	id: number;
-	importance: String;
+	type: String;
 	message: String;
 
-	constructor(id: number, importance: String, message: String){
+	constructor(id: number, type: String, message: String){
 		this.id = id;
-		this.importance = importance;
+		this.type = type;
 		this.message = message;
 	}
 
