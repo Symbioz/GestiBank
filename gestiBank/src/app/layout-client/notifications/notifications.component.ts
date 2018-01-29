@@ -15,11 +15,11 @@ export class NotificationsComponent implements OnInit {
 
 
 
-	//Tests : création d'une liste de notification pour un client donné
-	notifications = [	new Notification(6501, "important", "virement refusé"),
-					 	new Notification(6502, "information", "chequier arrivé en agence"),
-					 	new Notification(6503, "succes", "mot de passe changé avec succès"),
-					 	new Notification(6504, "information", "un nouveau conseiller vous a été attribué")];
+  	//Tests : création d'une liste de notification pour un client donné
+  	notifications = [	new Notification(6501, "danger", "Virement refusé"),
+          					 	new Notification(6502, "info", "Chequier arrivé en agence"),
+          					 	new Notification(6503, "success", "Mot de passe changé avec succès"),
+          					 	new Notification(6504, "info", "Un nouveau conseiller vous a été attribué")];
 
   	constructor() {}
 
