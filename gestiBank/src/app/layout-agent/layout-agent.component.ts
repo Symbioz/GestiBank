@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-layout-agent',
   templateUrl: './layout-agent.component.html',
@@ -7,7 +8,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LayoutAgentComponent implements OnInit {
 
-  constructor(){    }
 
   ngOnInit() {
   }

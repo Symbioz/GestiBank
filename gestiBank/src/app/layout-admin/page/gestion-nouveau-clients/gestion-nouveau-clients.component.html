@@ -1,0 +1,47 @@
+   <div class="container">
+    <div class="row">
+        <h4>{{ 'ListeOuvertureCompte' | translate }}</h4>
+
+        <div class="col col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="btn-group btn-group-toggle mb-3" ngbRadioGroup name="affecter" [(ngModel)]="affecter">
+                    <label ngbButtonLabel class="btn-primary">
+                        <input ngbButton type="radio" [value]="all"> Tous
+                    </label>
+                    <label ngbButtonLabel class="btn-primary">
+                        <input ngbButton type="radio" value="affect"> Affecté
+                    </label>
+                    <label ngbButtonLabel class="btn-primary">
+                        <input ngbButton type="radio" [value]="reAffect"> ReAffect
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="btn-group btn-group-toggle mb-3" ngbRadioGroup name="Statut" [(ngModel)]="Statut">
+                    <label ngbButtonLabel class="btn-primary">
+                        <input ngbButton type="radio" [value]="all"> Tous
+                    </label>
+                    <label ngbButtonLabel class="btn-primary">
+                        <input ngbButton type="radio" value="affect"> En cours
+                    </label>
+                    <label ngbButtonLabel class="btn-primary">
+                        <input ngbButton type="radio" [value]="reAffect"> Terminé
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" ></app-tableau-demande-compte>
+ 
+
+    
+
+  
+</div>
