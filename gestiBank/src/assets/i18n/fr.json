@@ -14,11 +14,6 @@
     "Language": "Langue",
     "English": "Anglais",
     "French": "Français",
-    "Urdu": "Ourdou",
-    "Spanish": "Spanish",
-    "Italian": "Italien",
-    "Farsi": "Farsi",
-    "German": "Allemand",
     "Search" : "Chercher",
     "Settings" : "Paramètres",
     "Profile" : "Profile",
@@ -28,6 +23,7 @@
     "In queue" : "Dans la queue",
     "Mail" : "Courrier",
     "View All" : "Voir tout",
+
 
     "Clients": "Clients",
     "Nom": "Nom",
@@ -44,5 +40,36 @@
     "Editer":"Editer",
     "Supprimer":"Supprimer",
     "Demande":"Demande en cours",
-    "Inscription":"Demande d'inscription"
-}
+    "Inscription":"Demande d'inscription",
+
+    "GestionDesAgents" :"Gestion des agents",
+    "GestionDesComptes":"Gestion des comptes",
+    
+    "Bienvenue":"Bienvenue sur l'espace d'administration ",
+
+    "Matricule":"Matricule",
+  
+    "Prenom": "Prenom",
+    "Telephone":"Telephone",
+    "MotDePasse":"Mot de passe",
+    "DateDebutContrat":"Date de debut de contrat",
+
+    "ListAgents": "Liste des agents",
+    "ListClients": "Liste des clients",
+    "ListeOuvertureCompte":"Liste des demandes d ouverture de compte",
+    "EnCours": "En cours",
+    "Traitee": "Traitee",
+    "AjouterAgents":"Ajouter un agent",
+    "IdDemande":"ID de la demande",
+    "DateDemande":"Date de la demande",
+    "Statut":"Statut",
+    "Affectation":"Affectation",
+    "DateAffectation":"Date d'Affectation",
+    "Oui":"Oui",
+    "Non": "Non",
+    "EditerAgent": "Editer l'agent",
+    "QuestionSuppression":"Etes vous sur de vouloir supprimer cette agent ?",
+    "Valider":"Valider",
+    "Reaffecter":"Reaffecter"
+    }
+

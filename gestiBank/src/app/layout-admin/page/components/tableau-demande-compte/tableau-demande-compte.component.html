@@ -1,0 +1,38 @@
+   <div class="col-md-12">
+        
+        <div class="table-responsive">
+
+           <table id="mytable" class="table table-bordred table-striped">
+                   
+                    <thead>
+                     <th>{{ 'DateDemande' | translate }}</th>
+                     <th>{{ 'Nom' | translate }}</th>
+                     <th>{{ 'Prenom' | translate }}</th>
+                     <th>{{ 'Status' | translate }}</th>
+                     <th>{{ 'Affectation' | translate }}</th>
+                     <th>{{ 'NomAgents' | translate }}</th>
+                     <th>{{ 'IdDemande' | translate }}</th>
+                     <th>{{ 'Affecter' | translate }}</th>
+                    </thead>
+    <tbody>
+      <tr *ngFor="let demande of ListeDemande"> 
+              <td>{{demande.dateDemande}}</td>
+              <td>{{demande.client.nom}}</td>
+              <td>{{demande.client.prenom}}</td>
+              <td>{{demande.status}}</td>
+              <td>{{ 'Oui' | translate}}</td>
+              <td>{{demande.client.idAgent}}</td> 
+              <td>{{demande.idDemande}}</td>
+              
+              <td>
+                   <select>
+                                   <option *ngFor=" let agent of ListeAgents">{{ agent.matricule }}</option>
+                                </select> 
+              </td>
+              <td><app-bouton-validation-affectation></app-bouton-validation-affectation></td>
+       </tr>
+    </tbody>
+        
+</table>
+</div>
+</div>

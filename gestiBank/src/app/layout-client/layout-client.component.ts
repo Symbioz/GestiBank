@@ -12,4 +12,5 @@ export class LayoutClientComponent implements OnInit {
   	ngOnInit() {
   	}
 
+
 }
