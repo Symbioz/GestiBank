@@ -30,7 +30,7 @@ export class ConsultationsComponent implements OnInit {
 
 	//Tests : création d'une liste de compte
 	comptes = [	new Compte("Compte Bancaire", 1234567890000, 1000, "01/01/1900", 0, 0, this.operationsCpt1),
-				new Compte("Compte remunéré", 1234567890100, 10000, "12/07/1998", 0, 0, this.operationsCpt2)];
+				new Compte("Compte Remunéré", 1234567890100, 10000, "12/07/1998", 0, 0, this.operationsCpt2)];
 
   	constructor() {}
 
