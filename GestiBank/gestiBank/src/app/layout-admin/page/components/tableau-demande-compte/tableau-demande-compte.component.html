@@ -8,10 +8,8 @@
                      <th>{{ 'DateDemande' | translate }}</th>
                      <th>{{ 'Nom' | translate }}</th>
                      <th>{{ 'Prenom' | translate }}</th>
-                     <th>{{ 'DateDemande' | translate }}</th>
                      <th>{{ 'Status' | translate }}</th>
                      <th>{{ 'Affectation' | translate }}</th>
-                     <th>{{ 'DateAffectation' | translate }}</th>
                      <th>{{ 'NomAgents' | translate }}</th>
                      <th>{{ 'IdDemande' | translate }}</th>
                      <th>{{ 'Affecter' | translate }}</th>
@@ -21,11 +19,11 @@
               <td>{{demande.dateDemande}}</td>
               <td>{{demande.client.nom}}</td>
               <td>{{demande.client.prenom}}</td>
-              <td>10/01/2018</td>
               <td>{{demande.status}}</td>
               <td>{{ 'Oui' | translate}}</td>
-              <td>{{demande.idDemande}}</td>
               <td>{{demande.client.idAgent}}</td> 
+              <td>{{demande.idDemande}}</td>
+              
               <td>
                    <select>
                                    <option *ngFor=" let agent of ListeAgents">{{ agent.matricule }}</option>
