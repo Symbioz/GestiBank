@@ -1,0 +1,24 @@
+<ngb-alert [type]="alert.type" (close)="closeAlert(alert)" *ngFor="let alert of alerts">{{ alert.message }}</ngb-alert>
+
+<!-- <ngb-alert [type]="alert.type" (close)="closeAlert(alert)" *ngFor="let alert of alerts">{{ alert.message }}</ngb-alert> -->
+
+<!-- <div class="card mb-3">
+    <div class="card-header">{{ 'Liste des notifications' | translate }}</div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover table-striped">
+            <thead>
+	            <tr>
+	            	<th>{{ 'Status' | translate }}</th>
+	                <th>{{ 'Message' | translate }}</th>
+	            </tr>
+            </thead>
+            <tbody>
+	            <tr *ngFor="let notif of notifs">
+	                <td>{{notif.status}}</td>
+	                <td>{{notif.message}}</td>
+	            </tr>
+            </tbody>
+        </table>
+    </div>    
+</div> -->
+

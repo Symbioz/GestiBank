@@ -1,0 +1,73 @@
+<div class="card mb-3">
+    <div class="card-body">
+    	<!-- zone avec onglets -->
+        <ngb-tabset>
+        	<!-- premier onglet -->
+            <ngb-tab title="Liste des comptes">
+                <ng-template ngbTabContent>
+                	<!-- Tableau contenant les comptes (Type / N° / Libellé / Solde / Relevé) -->
+                	<div class="card mb-3">
+                		<div class="card-body table-responsive">
+                    	<!-- <table class="card-body table table-hover table-striped"> -->
+		                <table class="card-body table table-hover table-sm">
+		                    <thead>
+		                    <!-- <br/> -->
+			                    <!-- ligne de titres -->
+			                    <tr>
+			                        <th>Type de compte</th>
+			                        <th>Numero de compte</th>
+			                        <th>Libellé</th>
+			                        <th>Solde</th>
+			                        <!-- <th>Relevé</th> -->
+			                    </tr>
+		                    </thead>
+		                    <tbody>
+		                    	<!-- recupération de la liste des comptes -->
+			                    <tr *ngFor="let compte of comptes">
+			                    	<!-- scope : permet de mettre en 'surbrillance' la ligne consultée -->
+			                        <td scope="row">{{ compte.type }}</td>
+			                        <td>{{ compte.rib }}</td>
+			                        <td></td>
+			                        <td>{{ compte.solde }}</td>
+			                        <!-- <td></td> -->
+			                    </tr>
+		                    </tbody>
+		                </table>
+		            	</div>
+		            </div>
+                </ng-template>
+            </ngb-tab>
+            <!-- deuxième onglet -->
+            <ngb-tab>
+                <ng-template ngbTabTitle>Details des opérations</ng-template>
+                <ng-template ngbTabContent>
+                    <!--  -->
+					<div class="col-xl-8 form-group">
+						<br/>
+						<p> Selection du compte</p>
+					    <select class="form-control" (change)="selectCompte(compte)">
+					    	<option *ngFor="let compte of comptes; let i='index'">{{ compte.type }} | {{compte.rib}} - {{comptes[i].rib}}</option>
+					    </select>
+
+				    </div>
+				    <div class="col-xl-8 form-group">
+				    	<p>RIB : {{selectedCompte.rib}} </p>
+				    </div>
+			   		<!-- <div *ngIf="(true)" class="col-xl-8 form-group">
+				    	<p>IBAN : {{compte.rib}}</p>
+				    	<p>Type : {{selectedCompte.type}}</p>
+				    </div> -->
+                	<!--  -->
+
+                </ng-template>
+            </ngb-tab>
+            <!-- troisième onglet désactivé (future amélioration) -->
+            <ngb-tab title="..." [disabled]="true">
+                <ng-template ngbTabContent>
+                    
+				    
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+    </div>
+</div>
