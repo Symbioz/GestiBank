@@ -19,7 +19,8 @@ export class NotificationsComponent implements OnInit {
   	notifications = [	new Notification(6501, "danger", "Virement refusé"),
           					 	new Notification(6502, "info", "Chequier arrivé en agence"),
           					 	new Notification(6503, "success", "Mot de passe changé avec succès"),
-          					 	new Notification(6504, "info", "Un nouveau conseiller vous a été attribué")];
+                      new Notification(6504, "warning", "Une autorisation de prélévement à été ajouté"),
+          					 	new Notification(6505, "info", "Un nouveau conseiller vous a été attribué")];
 
   	constructor() {}
 
