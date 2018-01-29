@@ -42,5 +42,6 @@
     "Info": "Info/set",
     "Comptes": "Accounts",
     "Editer":"Edit",
-    "Supprimer":"Delete"
+    "Supprimer":"Delete",
+    "Demande":"Requests"
 }

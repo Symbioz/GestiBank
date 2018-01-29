@@ -16,6 +16,9 @@ export class DashboardAgentComponent implements OnInit{
  		
 	pushRightClass: string = 'push-right';
 
+     ngOnInit() {
+    // ...
+      }
 
   	constructor(){
           this.sliders.push(
