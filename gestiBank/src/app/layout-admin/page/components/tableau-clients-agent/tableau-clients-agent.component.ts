@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import {Client} from '../../../../../models/client';
-import {Agents} from '../../../../../models/agents';
+import {Agent} from '../../../../../models/agent';
 
 @Component({
   selector: 'app-tableau-clients-agent',
@@ -10,7 +10,7 @@ import {Agents} from '../../../../../models/agents';
 export class TableauClientsAgentComponent implements OnInit {
 
    @Input() ListeClients:Client[];
-   @Input() ListeAgents:Agents[];
+   @Input() ListeAgents:Agent[];
   constructor() { }
 
   ngOnInit() {

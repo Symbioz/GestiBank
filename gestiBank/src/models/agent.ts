@@ -1,7 +1,8 @@
 import {Utilisateur} from './utilisateur';
 import {Adresse} from './adresse';
 
-export class Agents extends Utilisateur {
+export class Agent extends Utilisateur {
+
 	matricule: number;
    
      constructor(matricule: number,nom:String, prenom: String, email:String, telephone: String, motDePasse : String, adresse : Adresse){
