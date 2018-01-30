@@ -18,7 +18,7 @@ export class TabsetComptesComponent implements OnInit {
 
 	selectCompte(cpt: Compte):void {
 		this.selectedCompte = cpt;
-    console.log("Selected RIB = " + cpt.rib);
+    /*console.log("Selected RIB = " + cpt.rib);*/
 	}
 
   	

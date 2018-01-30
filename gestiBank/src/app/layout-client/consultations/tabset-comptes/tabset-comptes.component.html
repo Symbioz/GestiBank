@@ -54,7 +54,8 @@
 					   
 
 				    </div>
-				    <div class="col-xl-8 form-group">
+				    <!-- <div class="col-xl-8 form-group"> -->
+				    <div class="col-xl-8 form-group" *ngIf="(selectedCompte)">
 				    	<p>RIB : {{selectedCompte.rib}} </p>
 				    </div>
 			   		<!-- <div *ngIf="(true)" class="col-xl-8 form-group">
