@@ -44,9 +44,14 @@
 					<div class="col-xl-8 form-group">
 						<br/>
 						<p> Selection du compte</p>
-					    <select class="form-control" (change)="selectCompte(compte)">
-					    	<option *ngFor="let compte of comptes; let i='index'">{{ compte.type }} | {{compte.rib}} - {{comptes[i].rib}}</option>
+					    <select class="form-control" [ngModel]="comptes" (ngModelChange)="selectCompte($event)">
+					    	<!--<option *ngFor="let compte of comptes; let i='index'">{{ compte.type }} | {{comptes[i].rib}}</option>-->
+					    	<option [ngValue]="compte" *ngFor="let compte of comptes">{{ compte.type }}  | {{compte.rib}} </option>
 					    </select>
+
+					    
+
+					   
 
 				    </div>
 				    <div class="col-xl-8 form-group">

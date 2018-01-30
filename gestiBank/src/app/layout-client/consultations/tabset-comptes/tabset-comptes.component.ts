@@ -13,11 +13,12 @@ import { Compte } from '../../../../models';
 export class TabsetComptesComponent implements OnInit {
 
 	@Input() comptes: Compte[];
-  	selectedCompte: Compte;
+  selectedCompte: Compte;
 	
 
 	selectCompte(cpt: Compte):void {
 		this.selectedCompte = cpt;
+    console.log("Selected RIB = " + cpt.rib);
 	}
 
   	
