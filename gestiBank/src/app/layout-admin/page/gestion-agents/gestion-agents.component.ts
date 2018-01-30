@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Agents} from './agents';
+import { Agents} from '../../../../models/agents';
+import { Adresse}from '../../../../models/adresse';
 
 
 @Component({
@@ -10,8 +11,8 @@ import { Agents} from './agents';
 })
 
 export class GestionAgentsComponent implements OnInit {
-	agents = [new Agents(573,"jennifer","Vincent", "vincentjenni@gmail.com", "0265989855"),
-	          new Agents(1337, "jess", "vinc", "jess@fre.fr", "0154521545")
+	agents = [new Agents(1337,"jennifer","Vincent", "vincentjenni@gmail.com", "0265989855", "test", new Adresse("rue de lille",59200,"lille")),
+	          new Agents(576,"jess", "vinc", "jess@fre.fr", "0154521545","test1",new Adresse("rue de lille",59200,"lille"))
 	];
 
    constructor() {

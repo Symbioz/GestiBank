@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
-//import {Agents} from '../../../page/gestion-agents/agents';
-//import { CreerAgentsComponent } from './creer-agents.component';
+import {Agents} from '../../../../../models/agents';
 
 @Component({
   selector: 'app-bouton-creation-agents',
@@ -31,6 +30,9 @@ export class BoutonCreationAgentsComponent  {
             return  `with: ${reason}`;
         }
     }
+
+    
+    
     
 
  

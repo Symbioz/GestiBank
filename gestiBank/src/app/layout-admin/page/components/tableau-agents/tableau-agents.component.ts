@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-import {Agents} from '../../../page/gestion-agents/agents';
+import {Agents} from '../../../../../models/agents';
 
 @Component({
   selector: 'app-tableau-agents',

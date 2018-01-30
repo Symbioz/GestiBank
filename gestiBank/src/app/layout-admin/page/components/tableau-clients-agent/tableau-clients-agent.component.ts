@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
-import {Client} from '../../../page/gestion-nouveau-clients/client';
-import {Agents} from '../../../page/gestion-agents/agents';
+import {Client} from '../../../../../models/client';
+import {Agents} from '../../../../../models/agents';
 
 @Component({
   selector: 'app-tableau-clients-agent',

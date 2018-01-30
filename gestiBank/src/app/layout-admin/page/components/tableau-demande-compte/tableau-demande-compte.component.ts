@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
-import {Demande} from '../../../page/gestion-nouveau-clients/demande';
-import {Agents} from '../../../page/gestion-agents/agents';
+import {Demande} from '../../../../../models/demande';
+import {Agents} from '../../../../../models/agents';
 
 @Component({
   selector: 'app-tableau-demande-compte',

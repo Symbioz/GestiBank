@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {Client} from './client';
-import {Demande} from './demande';
-import {Agents} from '../gestion-agents/agents';
+import {Client} from '../../../../models/client';
+import {Demande} from '../../../../models/demande';
+import {Agents} from '../../../../models/agents';
 
 @Component({
   selector: 'app-gestion-nouveau-clients',

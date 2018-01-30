@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Client} from '../gestion-nouveau-clients/client';
-import { Agents} from '../gestion-agents/agents';
+import { Client} from '../../../../models/client';
+import { Agents} from '../../../../models/agents';
 
 @Component({
   selector: 'app-info-agents',
