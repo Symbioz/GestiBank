@@ -54,14 +54,36 @@
 					   
 
 				    </div>
-				    <!-- <div class="col-xl-8 form-group"> -->
-				    <div class="col-xl-8 form-group" *ngIf="(selectedCompte)">
+				    <div *ngIf="(selectedCompte)" class="col-xl-8 form-group">
 				    	<p>RIB : {{selectedCompte.rib}} </p>
-				    </div>
-			   		<!-- <div *ngIf="(true)" class="col-xl-8 form-group">
-				    	<p>IBAN : {{compte.rib}}</p>
 				    	<p>Type : {{selectedCompte.type}}</p>
-				    </div> -->
+
+				    	<!-- Tableau contenant les operations liés au compte sélectionné -->
+	            		<!-- <div class="card-body table-responsive"> -->
+	                	<!-- <table class="card-body table table-hover table-striped"> -->
+		                <table class="card-body table table-hover table-striped">
+		                    <thead>
+		                    <!-- <br/> -->
+			                    <!-- ligne de titres -->
+			                    <tr>
+			                        <th>Date</th>
+			                        <th>Libellé</th>
+			                        <th>Montant</th>
+			                    </tr>
+		                    </thead>
+		                    <tbody>
+		                    	<!-- recupération de la liste des comptes -->
+			                   	<tr *ngFor="let op of selectedCompte.historique">
+			                   	<!-- scope : permet de mettre en 'surbrillance' la ligne consultée -->
+			                       <td scope="row">{{ op.date }}</td>
+			                       <td>{{ op.libelle }}</td>
+			                       <td>{{ op.montant }}</td>
+			                    </tr>
+		                    </tbody>
+		                </table>
+		            	
+				    </div>
+			   		
                 	<!--  -->
 
                 </ng-template>

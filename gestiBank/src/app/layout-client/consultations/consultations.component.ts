@@ -17,7 +17,7 @@ enum TypeOp { debit, credit }
 export class ConsultationsComponent implements OnInit {
 
 	//Tests : création de listes d'opération
-	operationsCpt1 = [	new Operation(8011, "02/01/2018", "facture edf", 76.56, TypeOp.debit),,
+	operationsCpt1 = [	new Operation(8011, "02/01/2018", "facture edf", 76.56, TypeOp.debit),
 						new Operation(8015, "03/01/2018", "facture telephone", 10, TypeOp.debit),
 						new Operation(8089, "05/01/2018", "facture box", 29.90, TypeOp.debit),
 						new Operation(8109, "05/01/2018", "remboursement", 13, TypeOp.debit),
