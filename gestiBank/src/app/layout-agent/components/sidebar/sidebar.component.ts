@@ -29,6 +29,10 @@ export class SidebarComponent {
         });
     }
 
+    changeLang(language: string) {
+        this.translate.use(language);
+    }
+
     eventCalled() {
         this.isActive = !this.isActive;
     }
@@ -56,9 +60,7 @@ export class SidebarComponent {
         dom.classList.toggle('rtl');
     }
 
-    changeLang(language: string) {
-        this.translate.use(language);
-    }
+    
 
     onLoggedout() {
         localStorage.removeItem('isLoggedin');

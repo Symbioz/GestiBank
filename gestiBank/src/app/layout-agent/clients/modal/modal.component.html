@@ -137,12 +137,12 @@
                         </table>
                     </div>
                     <div class="modal-footer" >
-                        <button *ngIf="!(modif)" type="button" class="btn btn-secondary" (click)="modif=true">Modif</button>
+                        <button *ngIf="!(modif)" type="submit" class="btn btn-secondary" (click)="modif=true">Modif</button>
                    
-                        <button *ngIf="(modif)" type="button" class="btn btn-secondary" (click)="modif=false">Sauvegarder</button>
+                        <button *ngIf="(modif)" type="submit" class="btn btn-secondary" (click)="modif=false">Sauvegarder</button>
 
                         <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
                     </div>
                 </ng-template>
 
-        
+    
