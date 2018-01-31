@@ -6,7 +6,6 @@ export class Demande {
      status:    Boolean;
      client:    Client;
      
-
      constructor(idDemande:number,dateDemande:String, status:Boolean, client:Client ){
      	this.idDemande = idDemande;
           this.dateDemande = dateDemande;
