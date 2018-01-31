@@ -41,23 +41,28 @@
                 <ng-template ngbTabTitle>Details des opérations</ng-template>
                 <ng-template ngbTabContent>
                     <!--  -->
-					<div class="col-xl-8 form-group">
-						<br/>
-						<p> Selection du compte</p>
-					    <select class="form-control" [ngModel]="comptes" (ngModelChange)="selectCompte($event)">
-					    	<!--<option *ngFor="let compte of comptes; let i='index'">{{ compte.type }} | {{comptes[i].rib}}</option>-->
-					    	<option [ngValue]="compte" *ngFor="let compte of comptes">{{ compte.type }}  | {{compte.rib}} </option>
-					    </select>
+					<div class="row">
+						<div class="col-xl-8 form-group">
+							<br/>
+							<select class="form-control" [ngModel]="comptes" (ngModelChange)="selectCompte($event)">
+						    	<!-- Affichage d'un message (ngvalue doit reprendre le ngmodel) -->
+						    	<option [ngValue]="comptes" selected hidden>-- Selection du compte --</option>
+						    	<!-- Affichage de la liste de compte (ngvalue prend un élt de la liste) -->
+						    	<option *ngFor="let compte of comptes" [ngValue]="compte">{{ compte.type }}  | {{compte.rib}} </option>
+						    </select>
+					    </div>
+					    <div class="col-xl-4 form-group">
 
-					    
-
-					   
-
-				    </div>
-				    <div *ngIf="(selectedCompte)" class="col-xl-8 form-group">
-				    	<p>RIB : {{selectedCompte.rib}} </p>
+						</div>
+					</div>
+				    
+				    <div *ngIf="(selectedCompte)" class="col-xl-12 form-group">
+				    	<!-- séparateur de zone -->
+						<hr/>
+						<!-- Affichage des informations du compte sélectionné -->
+				    	<h2>Compte n°{{selectedCompte.rib}} </h2>
 				    	<p>Type : {{selectedCompte.type}}</p>
-
+						
 				    	<!-- Tableau contenant les operations liés au compte sélectionné -->
 	            		<!-- <div class="card-body table-responsive"> -->
 	                	<!-- <table class="card-body table table-hover table-striped"> -->
