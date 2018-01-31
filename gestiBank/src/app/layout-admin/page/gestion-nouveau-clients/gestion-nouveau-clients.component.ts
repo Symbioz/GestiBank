@@ -19,6 +19,7 @@ import { DemandeService} from '../../../../services/demande.service';
 export class GestionNouveauClientsComponent implements OnInit {
     agents: any[];
     demande:any[];
+    nbDemande = 0;
 
     model: any = 1;
     public radioGroupForm: FormGroup;
@@ -32,6 +33,7 @@ export class GestionNouveauClientsComponent implements OnInit {
 
         this.agents = this.agentService.getAgents();
         this.demande = this.DemandeService.getDemandes();
+
     }
 
  
