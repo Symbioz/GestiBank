@@ -146,7 +146,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     adresse: {rue: '1 rue CestpasFaux',  ville: 'Sloubi334', cp: '59000'},
     numTel: '0683657416',
     nbEnfants: 0,
-    situationMatrimoniale: 'célibataire',
+    situation: 'célibataire',
     comptes: []
     //demandes: []
   },
@@ -160,7 +160,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     adresse: {rue: '3 rue des accacias',  ville: 'Massy', cp: '91000'},
     numTel: '0616582364',
     nbEnfants: 2,
-    situationMatrimoniale: 'marié',
+    situation: 'marié',
     comptes: []
     //demandes: [demandeCompteEpargne]
   },
@@ -174,7 +174,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
     numTel: '0683657416',
     nbEnfants: 0,
-    situationMatrimoniale: 'pacsé',
+    situation: 'pacsé',
     comptes: []
     //demandes: [new DemandeChequier()]
   },
@@ -188,7 +188,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
     numTel: '0683657416',
     nbEnfants: 3,
-    situationMatrimoniale: 'marié',
+    situation: 'marié',
     comptes: []
     //demandes: []
   },
@@ -202,7 +202,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
     numTel: '0683657416',
     nbEnfants: 1,
-    situationMatrimoniale: 'marié',
+    situation: 'marié',
     comptes: []
     //demandes: []
   },
@@ -216,7 +216,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
     numTel: '0683657416',
     nbEnfants: 0,
-    situationMatrimoniale: 'célibataire',
+    situation: 'célibataire',
     comptes: []
     //demandes: []
   },
@@ -230,7 +230,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
     numTel: '0683657416',
     nbEnfants: 2,
-    situationMatrimoniale: 'marié',
+    situation: 'marié',
     comptes: []
     //demandes: []
   },

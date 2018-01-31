@@ -15,7 +15,7 @@
 
             </thead>
             <tbody>
-            <tr *ngFor="let client of maListe">
+            <tr *ngFor="let client of  clients| async">
                 <td>{{client.id}}</td>
                 <td>{{client.nom}}</td>
                 <td>{{client.prenom}}</td>

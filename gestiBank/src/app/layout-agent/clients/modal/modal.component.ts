@@ -1,11 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
-import {clients} from '../../../shared/data';
+import {Demande,DemandeChequier,DemandeModif,DemandeCreationCompte,Client,clients} from '../../../../data/data';
+import {UserService} from '../../../../services/userService';
+import {NotificationsComponent} from '../../components/notifications/notifications.component';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/finally';
+
 
 @Component({
     selector: 'app-modal',
     templateUrl: './modal.component.html',
+    providers: [UserService],
     styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
@@ -13,22 +19,16 @@ export class ModalComponent {
     modif:boolean;
 
   notif: NotificationsComponent = new NotificationsComponent(); // Notification qui s'affiche quand on clique sur certains boutons
-  conseillers: Observable<Conseiller[]>; // pour récupérer la liste des conseillers afin de leur affecter des clients
-  demandes: Observable<DemandeInscription[]>;
+  demandes: Observable<Demande[]>;
   clients: Observable<Client[]>;
   isLoading = false; // simulation de latence
   isLoadingClient = false; // pour les clients dans l'onglet modif
-  isSearching = false; // quand on affiche une liste de conseillers après avoir chercher dans une input text
-  conseillerRecherche: string = ''; // garder sous la main le conseiller recherché
-  clientRecherche: string = ''; // garder sous la main le client recherché
-  selectedDemande: DemandeInscription; // garder sous la main la demande que l'on va affecter à un conseiller
-  selectedClient: Client; // Pour l'onglet modifs
-  selectedConseiller: Conseiller; // Pour l'onglet modifs
+  isSearching = false; // quand on affiche une liste de clients après avoir chercher dans une input text
+ 
+ 
+ @Input() clientModal:Client;
 
-
-
-
-    constructor(private modalService: NgbModal,private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService) { }
+    constructor(private modalService: NgbModal,private userService: UserService) { }
 
     ngOnInit() {
         this.getClients
@@ -36,9 +36,16 @@ export class ModalComponent {
 
     getClients() { // récupère tous les clients via le service
     this.isLoadingClient = true;
-    this.clients = this.clientService.getClients() 
+    this.clients = this.userService.getClients() 
                         // Normalement à faire : error handling
                         .finally(() => this.isLoadingClient = false);
+     }
+
+     getDemandes() { // récupère tous les conseillers via le service
+    this.isLoading = true;
+    this.demandes = this.userService.getDemandes()
+                        // Normalement à faire : error handling
+                        .finally(() => this.isLoading = false);
   }
 
     open(content) {

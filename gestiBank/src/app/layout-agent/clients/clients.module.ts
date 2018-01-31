@@ -7,7 +7,7 @@ import { ClientsRoutingModule } from './clients-routing.module';
 import {ClientsComponent} from './clients.component';
 import { TableauClientsComponent } from './tableau-clients/tableau-clients.component';
 import {ModalComponent} from './modal/modal.component';
-
+import {UserService} from '../../../services/userService';
 
 
 @NgModule({
@@ -17,6 +17,7 @@ import {ModalComponent} from './modal/modal.component';
     TranslateModule.forChild(),
      NgbModule.forRoot()
   ],
+ providers: [UserService],
   declarations: [ClientsComponent,TableauClientsComponent,ModalComponent]
 })
 export class ClientsModule { }

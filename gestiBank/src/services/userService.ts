@@ -4,15 +4,15 @@ import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 
-import { Demande, DemandeInscription, demandesInscription, clients } from './data';
+import { Demande, DemandeInscription, demandesInscription, clients,Client } from '../data/data';
 
 @Injectable()
-export class DemandeService {
+export class UserService {
 
 	delayMs = 500;
 
   	// Fake server get; assume nothing can go wrong
-  	getDemandesInscription(): Observable<DemandeInscription[]> {
+  	getDemandes(): Observable<Demande[]> {
     	return of(demandesInscription).delay(this.delayMs); // simulate latency with delay
   	}
 
@@ -21,11 +21,12 @@ export class DemandeService {
   	}
 
   	// Fake server update; assume nothing can go wrong
-  	updateDemandeInscription(demande: Demande): Observable<DemandeInscription>  {
+  	updateDemande(demande: Demande): Observable<Demande>  {
 	    const oldDemande = demandesInscription.find(d => d.id === demande.id);
 	    const newDemande = Object.assign(oldDemande, demande); // Demo: mutate cached hero
 	    return of(newDemande).delay(this.delayMs); // simulate latency with delay
 	}
+
 
 	filtrerDemandes(filtre: string){
       	//On parcours la table en decroissance pour eviter l auto modification des index

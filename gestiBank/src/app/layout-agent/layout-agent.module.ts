@@ -10,6 +10,7 @@ import { LayoutAgentComponent } from './layout-agent.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 
 
@@ -17,6 +18,6 @@ import { ModalComponent } from './components/modal/modal.component';
 @NgModule({
   	imports: [CommonModule, LayoutAgentRoutingModule,TranslateModule,
         NgbDropdownModule.forRoot()],
-  	declarations: [LayoutAgentComponent, HeaderComponent, SidebarComponent, ModalComponent]
+  	declarations: [LayoutAgentComponent, HeaderComponent, SidebarComponent, ModalComponent,  NotificationsComponent]
 })
 export class LayoutAgentModule { }
