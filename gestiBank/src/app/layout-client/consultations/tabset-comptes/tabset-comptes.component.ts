@@ -12,18 +12,22 @@ import { Compte, Operation, TypeOp } from '../../../../models';
 
 export class TabsetComptesComponent implements OnInit {
 
-	@Input() comptes: Compte[];
-  selectedCompte: Compte;
-	
+    //Gestion du select compte
+  	@Input() comptes: Compte[];
+    selectedCompte: Compte;
 
-	selectCompte(cpt: Compte):void {
-		this.selectedCompte = cpt;
-    /*console.log("Selected RIB = " + cpt.rib);*/
-	}
+  	selectCompte(cpt: Compte):void {
+  		this.selectedCompte = cpt;
+      /*console.log("Selected RIB = " + cpt.rib);*/
+  	}
 
-  	
+    //Gestion de la zone 'collapse'
+    public isCollapsed = true;	
+
+    //Constructeurs
   	constructor() { }
 
+    //Init
   	ngOnInit() {
   	}
 
