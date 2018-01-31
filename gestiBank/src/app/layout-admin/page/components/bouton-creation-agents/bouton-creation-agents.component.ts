@@ -35,26 +35,8 @@ export class BoutonCreationAgentsComponent implements OnInit  {
 
     formCreationAgent :FormGroup;
 
-    ngOninit(){
+    ngOnInit(){
+    }
 
-    this.formCreationAgent = new FormGroup({
-           nom: new FormControl;
-
-    })
-    
-
-
-
-    
-
-    save()
-     {
-    console.log("OKAYY"){
-     }
-
-    
-    
-    
-
- 
+   
 }

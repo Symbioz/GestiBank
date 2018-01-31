@@ -14,7 +14,7 @@ export class BouttonEditionAgentsComponent implements OnInit {
     
     constructor(private modalService: NgbModal) { }
 
-    @Input() agentModal:Agents;
+    @Input() agentModal:Agent;
     
     open(content) {
         this.modalService.open(content).result.then((result) => {
