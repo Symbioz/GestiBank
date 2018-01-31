@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Agent} from '../../../../../models/agent';
 
 @Component({
@@ -8,7 +9,7 @@ import {Agent} from '../../../../../models/agent';
   templateUrl: './bouton-creation-agents.component.html',
   styleUrls: ['./bouton-creation-agents.component.scss']
 })
-export class BoutonCreationAgentsComponent  {
+export class BoutonCreationAgentsComponent implements OnInit  {
 
     closeResult: string;
     constructor(private modalService: NgbModal) { }
@@ -30,6 +31,26 @@ export class BoutonCreationAgentsComponent  {
             return  `with: ${reason}`;
         }
     }
+
+
+    formCreationAgent :FormGroup;
+
+    ngOninit(){
+
+    this.formCreationAgent = new FormGroup({
+           nom: new FormControl;
+
+    })
+    
+
+
+
+    
+
+    save()
+     {
+    console.log("OKAYY"){
+     }
 
     
     

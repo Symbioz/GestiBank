@@ -9,7 +9,7 @@ import {Agent} from '../../../../../models/agent';
 export class TableauAgentsComponent implements OnInit {
   
   
-  @Input() ListeAgents:Agents[];
+  @Input() ListeAgents:Agent[];
   
   ngOnInit() {
   }

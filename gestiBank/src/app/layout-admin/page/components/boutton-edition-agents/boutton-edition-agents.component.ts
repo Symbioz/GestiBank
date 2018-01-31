@@ -1,7 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
-import {Agent} from '../../../../../models/agent';
+import { Agent} from '../../../../../models/agent';
 
 @Component({
   selector: 'app-boutton-edition-agents',

@@ -6,10 +6,11 @@ import { LayoutAdminRoutingModule } from './layout-admin-routing.module';
 import { LayoutAdminComponent } from './layout-admin.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  	imports: [CommonModule, LayoutAdminRoutingModule, TranslateModule,NgbDropdownModule.forRoot()],
+  	imports: [CommonModule, LayoutAdminRoutingModule, TranslateModule,NgbDropdownModule.forRoot(),ReactiveFormsModule],
   	declarations: [LayoutAdminComponent, HeaderComponent, SidebarComponent]
 })
 export class LayoutAdminModule { }

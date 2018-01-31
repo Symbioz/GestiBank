@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Agent} from '../../../../models/agents';
+import { Agent} from '../../../../models/agent';
 import { Adresse}from '../../../../models/adresse';
 
 
