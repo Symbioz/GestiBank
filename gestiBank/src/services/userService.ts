@@ -28,15 +28,20 @@ export class UserService {
 	}
 
 
-	filtrerDemandes(filtre: string){
+	updateClient(client: Client): Observable<Client>  {
+	    const oldClient = clients.find(c => c.id === client.id);
+	    const newClient = Object.assign(oldClient, client); // Demo: mutate cached hero
+	    return of(newClient).delay(this.delayMs); // simulate latency with delay
+	}
+	filtrerClient(filtre: string){
       	//On parcours la table en decroissance pour eviter l auto modification des index
 		var temp = [];
-		for(var i=0; i<demandesInscription.length; i++){      		
-         	temp.push(demandesInscription[i]);
+		for(var i=0; i<clients.length; i++){      		
+         	temp.push(clients[i]);
       	} // plutôt que de copier le tableau, on pourrait utiliser un push, mais il faudrait repenser aux conditions  
 
-       	for (var i=demandesInscription.length -1; i>=0; i--){         
-	         if(filtre == 'affectee' && demandesInscription[i].dateAffectation == undefined){           
+       	for (var i=clients.length -1; i>=0; i--){         
+	         if(filtre == 'affectee' && clients[i].dateAffectation == undefined){           
 	           temp.splice(i, 1);           
 	         } else if (filtre == 'nonAffectee' && demandesInscription[i].dateAffectation != undefined){         
 	           temp.splice(i, 1);   
