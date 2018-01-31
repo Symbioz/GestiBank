@@ -61,23 +61,23 @@
 						<hr/>
 						<!-- Affichage des informations du compte sélectionné -->
 				    	<h2>Compte n°{{selectedCompte.rib}} </h2>
-				    	<p>Type : {{selectedCompte.type}}</p>
+				    	<!-- <p>Type : {{selectedCompte.type}}</p> -->
 				    	<p>Solde au (insérer date du jour) : {{selectedCompte.solde}}</p>
-						<div class="row">
-				            <div class="card-body">
-				                <!-- <p> -->
+						<div>
+				            <!-- <div class="card-body"> -->
+				                <div>
 				                    <button type="button" class="btn btn-link" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-				                        Voir plus de détails
+				                        <p>Voir plus de détails</p>
 				                    </button>
-				                <!-- </p> -->
+				                </div>
 				                <div id="collapseExample" [ngbCollapse]="isCollapsed">
 				                    <!-- <div class="card-body"> -->
-			                            Date d'ouverture du compte : {{selectedCompte.dateCreation}}
-			                            Découvert autorisé : {{selectedCompte.decouvert}}
+			                            <p>Date d'ouverture du compte : {{selectedCompte.dateCreation}}</p>
+			                            <p>Découvert autorisé : {{selectedCompte.decouvert}}</p>
 
 			                        <!-- </div> -->
 				                </div>
-				            </div>
+				            <!-- </div> -->
 						</div>
 						<h5>Détails des opérations</h5>
 				    	<!-- Tableau contenant les operations liés au compte sélectionné -->
