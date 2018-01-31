@@ -55,7 +55,7 @@
 
 						</div>
 					</div>
-				    
+				    <!-- Affichage des détails seulement si un compte a été sélectionné -->
 				    <div *ngIf="(selectedCompte)" class="col-xl-12 form-group">
 				    	<!-- séparateur de zone -->
 						<hr/>
@@ -73,7 +73,8 @@
 			                    <tr>
 			                        <th>Date</th>
 			                        <th>Libellé</th>
-			                        <th>Montant</th>
+			                        <th>Débit</th>
+			                        <th>Crédit</th>
 			                    </tr>
 		                    </thead>
 		                    <tbody>
@@ -82,15 +83,13 @@
 			                   	<!-- scope : permet de mettre en 'surbrillance' la ligne consultée -->
 			                       <td scope="row">{{ op.date }}</td>
 			                       <td>{{ op.libelle }}</td>
-			                       <td>{{ op.montant }}</td>
+			                       <td><span *ngIf="op.typeOp==0">-{{ op.montant }} €</span></td>
+			                       <td><span *ngIf="op.typeOp==1">+{{ op.montant }} €</span></td>
 			                    </tr>
 		                    </tbody>
 		                </table>
 		            	
-				    </div>
-			   		
-                	<!--  -->
-
+				    </div><!-- fin du ngIf -->
                 </ng-template>
             </ngb-tab>
             <!-- troisième onglet désactivé (future amélioration) -->

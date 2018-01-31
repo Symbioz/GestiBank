@@ -25,11 +25,11 @@ export class ConsultationsComponent implements OnInit {
 						new Operation(8298, "05/01/2018", "salaire", 1800, TypeOp.credit)];
 
 	//Tests : création de listes d'opération
-	operationsCpt2 = [	new Operation(8011, "01/01/2018", "interets", 65.98, TypeOp.debit),
+	operationsCpt2 = [	new Operation(8011, "01/01/2018", "interets", 65.98, TypeOp.credit),
 						new Operation(8011, "12/01/2018", "virement", 2500, TypeOp.credit)];						
 
 	//Tests : création d'une liste de compte
-	comptes = [	new Compte("Compte Bancaire", 1234567890000, 1000, "01/01/1900", 0, 0, this.operationsCpt1),
+	comptes = [	new Compte("Compte Bancaire", 1234567890000, 1000, "01/01/1900", 0, 300, this.operationsCpt1),
 				new Compte("Compte Remunéré", 1234567890100, 10000, "12/07/1998", 0, 0, this.operationsCpt2)];
 
   	constructor() {}

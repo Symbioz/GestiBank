@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-enum TypeOp { debit, credit }
+export enum TypeOp { debit, credit }
 
 
 export class Operation {

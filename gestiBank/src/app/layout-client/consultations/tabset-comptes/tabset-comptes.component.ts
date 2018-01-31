@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Compte } from '../../../../models';
+import { Compte, Operation, TypeOp } from '../../../../models';
 
 @Component({
   selector: 'app-tabset-comptes',
