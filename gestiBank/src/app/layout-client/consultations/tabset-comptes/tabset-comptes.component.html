@@ -64,16 +64,16 @@
 				    	<p>Type : {{selectedCompte.type}}</p>
 						<div class="row">
 				            <div class="card-body">
-				                <p>
-				                    <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-				                        Détails
+				                <!-- <p> -->
+				                    <button type="button" class="btn btn-link" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+				                        Voir plus de détails
 				                    </button>
-				                    <a data-toggle="collapse" href="#collapseExample" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">View more details</a>
-				                </p>
+				                <!-- </p> -->
 				                <div id="collapseExample" [ngbCollapse]="isCollapsed">
-				                    <div class="card-body">
-			                            You can collapse this card by clicking Toggle
-			                        </div>
+				                    <!-- <div class="card-body"> -->
+			                            Découvert autorisé : {{selectedCompte.decouvert}}
+
+			                        <!-- </div> -->
 				                </div>
 				            </div>
 						</div>
@@ -92,6 +92,13 @@
 			                    </tr>
 		                    </thead>
 		                    <tbody>
+		                    	<!-- ajout d'une ligne correspodnant aux agios dus à la prochaine échéance -->
+		                    	<tr *ngIf="agios!=0">
+		                    		<td>...</td>
+		                    		<td>agios</td>
+		                    		<td>-{{selectedCompte.agios}}</td>
+		                    		<td></td>
+		                    	</tr>
 		                    	<!-- recupération de la liste des comptes -->
 			                   	<tr *ngFor="let op of selectedCompte.historique">
 			                   	<!-- scope : permet de mettre en 'surbrillance' la ligne consultée -->
