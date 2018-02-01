@@ -1,8 +1,9 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,Input } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Agent} from '../../../../../models/agent';
+
 
 @Component({
   selector: 'app-bouton-creation-agents',
@@ -32,6 +33,8 @@ export class BoutonCreationAgentsComponent implements OnInit  {
         }
     }
 
+   @Input() agentModal:Agent; 
+
 
     formCreationAgent :FormGroup;
 
@@ -39,7 +42,8 @@ export class BoutonCreationAgentsComponent implements OnInit  {
     }
 
     addUser(){
-       alert ('test');
+      alert ('test');
+       
     }
 
    

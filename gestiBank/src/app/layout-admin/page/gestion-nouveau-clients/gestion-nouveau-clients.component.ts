@@ -8,13 +8,14 @@ import {Adresse} from '../../../../models/adresse';
 
 import { AgentService} from '../../../../services/agent.service';
 import { DemandeService} from '../../../../services/demande.service';
+import { InscriptionService} from '../../../../services/inscription.service';
 
 
 @Component({
   selector: 'app-gestion-nouveau-clients',
   templateUrl: './gestion-nouveau-clients.component.html',
   styleUrls: ['./gestion-nouveau-clients.component.scss'],
-  providers: [AgentService,DemandeService]
+  providers: [AgentService,DemandeService, InscriptionService]
 })
 export class GestionNouveauClientsComponent implements OnInit {
     agents: any[];
@@ -24,7 +25,7 @@ export class GestionNouveauClientsComponent implements OnInit {
     model: any = 1;
     public radioGroupForm: FormGroup;
    
-    constructor(private formBuilder: FormBuilder,private agentService: AgentService, private DemandeService: DemandeService) {}
+    constructor(private formBuilder: FormBuilder,private agentService: AgentService, private DemandeService: DemandeService, private inscriptionService : InscriptionService) {}
 
     ngOnInit() {
         this.radioGroupForm = this.formBuilder.group({
@@ -32,8 +33,8 @@ export class GestionNouveauClientsComponent implements OnInit {
         });
 
         this.agents = this.agentService.getAgents();
-        this.demande = this.DemandeService.getDemandes();
-
+        //this.demande = this.DemandeService.getDemandes();
+        this.demande = this.inscriptionService.getInscriptions();
     }
 
  
