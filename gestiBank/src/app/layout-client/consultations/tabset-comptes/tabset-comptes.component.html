@@ -62,7 +62,7 @@
 						<!-- Affichage des informations du compte sélectionné -->
 				    	<h2>Compte n°{{selectedCompte.rib}} </h2>
 				    	<!-- <p>Type : {{selectedCompte.type}}</p> -->
-				    	<p>Solde au {{ today | date : 'dd/MM'}} : {{selectedCompte.solde}}</p>
+				    	<p align=right>Solde au {{ today | date : 'dd/MM'}} : {{selectedCompte.solde}} Euros</p>
 						<div>
 				            <!-- <div class="card-body"> -->
 				                <div>
@@ -70,14 +70,14 @@
 				                        <p>Voir plus de détails</p>
 				                    </button>
 				                </div>
-				                <div>
-								    <a data-toggle="collapse" href="/client/consultations" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Voir plus de détails 2</a>
-				                </div>
+				                <!-- <div>
+				               		<a data-toggle="collapse" href="./#collapseExample" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Voir plus de détails 2</a>
+				                </div> -->
 				                <div id="collapseExample" [ngbCollapse]="isCollapsed">
 				                    <!-- <div class="card-body"> -->
 			                            <p>Date d'ouverture du compte : {{selectedCompte.dateCreation}}</p>
 			                            <p>Découvert autorisé : {{selectedCompte.decouvert}}</p>
-
+										<br/>
 			                        <!-- </div> -->
 				                </div>
 				            <!-- </div> -->

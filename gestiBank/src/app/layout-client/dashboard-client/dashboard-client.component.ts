@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { routerTransition } from '../../router.animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Compte} from '../../../../models';
 
 @Component({
   	selector: 'app-dashboard-client',
@@ -9,6 +11,9 @@ import { routerTransition } from '../../router.animations';
     animations: [routerTransition()]
 })
 export class DashboardClientComponent implements OnInit {
+
+	//Gestion du select compte
+  	@Input() comptes: Compte[];
 
 	constructor() {}
 
