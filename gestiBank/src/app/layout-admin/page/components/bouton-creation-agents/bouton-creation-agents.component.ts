@@ -38,5 +38,9 @@ export class BoutonCreationAgentsComponent implements OnInit  {
     ngOnInit(){
     }
 
+    addUser(){
+       alert ('test');
+    }
+
    
 }

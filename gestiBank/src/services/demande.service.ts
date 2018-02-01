@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Demande} from '../models/demande';
 import { Client}  from '../models/client';
+import { Adresse} from '../models/adresse';
 
 @Injectable()
 export class DemandeService {
 
   //demande: any[];
-  demande = [ new Demande(1, "10/12/2015", true ,new Client(1,"sdjkhqdklfugh","Guilaume","blabla@gmail.com","1rue machin Lille","0606060606",0,"celibataire",573)), 
-                 new Demande(3, "10:01/2017", false, new Client(2, "Le Gaulois","Provençal","Kaamelott@gmail","1 rue C'est pas faux 59000 Sloubi324","060000000",0,"On en a gros", 1337))
+  demande = [ new Demande(1, "10/12/2015", true ,new Client("sdjkhqdklfugh","Guilaume","blabla@gmail.com","0606060606","test",new Adresse("rue de lille",59200,"lille"), 1, 2, "celib", 1337)), 
+              
+
+              new Demande(3, "10:01/2017", false, new Client("Le Gaulois","Provençal","Kaamelott@gmail","060000000","test",new Adresse("rue de lille",59200,"lille"), 2, 0, "couple", 573))
      ];
   
   nbDemande= 0;

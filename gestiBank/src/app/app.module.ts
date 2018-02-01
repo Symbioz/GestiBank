@@ -13,6 +13,7 @@ import { AuthGuard } from './shared';
 
 import { AgentService} from '../services/agent.service';
 import { DemandeService} from '../services/demande.service';
+import { ClientService} from  '../services/client.service'
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -38,7 +39,7 @@ export function createTranslateLoader(http: HttpClient) {
         FormsModule
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard,AgentService,DemandeService],
+    providers: [AuthGuard,AgentService,DemandeService,ClientService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

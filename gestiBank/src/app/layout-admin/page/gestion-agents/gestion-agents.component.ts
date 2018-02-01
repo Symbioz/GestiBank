@@ -9,7 +9,7 @@ import { AgentService} from '../../../../services/agent.service';
   selector: 'app-gestion-agents',
   templateUrl: './gestion-agents.component.html',
   styleUrls: ['./gestion-agents.component.scss'],
-  providers: [AgentService]
+  providers: [AgentService],
 })
 
 export class GestionAgentsComponent implements OnInit {
@@ -25,14 +25,8 @@ export class GestionAgentsComponent implements OnInit {
      this.agents = this.agentService.getAgents();
   }
 
-   /*addAgent(){
-     this.agentService.addAgent();
-   }*/
-
-   addAgent(){
-     console.log("ajouter agent");
-     alert("test");
-   }
+   
+  
 
   
 

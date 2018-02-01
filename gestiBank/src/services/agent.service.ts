@@ -18,24 +18,7 @@ export class AgentService {
   getAgents(){
       
      return this.agents;
+    }   
+
 }
-   
-   //Fonction d'ajout d'un agent
-   addAgent(){
-
-   }
-
-
-   //Fonction d'édition d'un agent
-   editAgent(){
-
-   }
-
-
-   //Fonction de suppression d'un agent
-   deleteAgent(){
-
-   }
-
   
-}

@@ -5,8 +5,8 @@ export class Agent extends Utilisateur {
 
 	matricule: number;
    
-     constructor(matricule: number,nom:String, prenom: String, email:String, telephone: String, motDePasse : String, adresse : Adresse){
-          super(nom, prenom, email, telephone, motDePasse , adresse);
+     constructor(matricule: number,nom:String, prenom: String, email:String, numTel: String, motDePasse : String, adresse : Adresse){
+          super(nom, prenom, email, numTel, motDePasse ,  adresse);
           this.matricule = matricule;
      }
 
