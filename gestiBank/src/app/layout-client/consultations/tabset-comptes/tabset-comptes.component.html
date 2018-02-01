@@ -62,13 +62,16 @@
 						<!-- Affichage des informations du compte sélectionné -->
 				    	<h2>Compte n°{{selectedCompte.rib}} </h2>
 				    	<!-- <p>Type : {{selectedCompte.type}}</p> -->
-				    	<p>Solde au (insérer date du jour) : {{selectedCompte.solde}}</p>
+				    	<p>Solde au {{ today | date : 'dd/MM'}} : {{selectedCompte.solde}}</p>
 						<div>
 				            <!-- <div class="card-body"> -->
 				                <div>
 				                    <button type="button" class="btn btn-link" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
 				                        <p>Voir plus de détails</p>
 				                    </button>
+				                </div>
+				                <div>
+								    <a data-toggle="collapse" href="/client/consultations" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Voir plus de détails 2</a>
 				                </div>
 				                <div id="collapseExample" [ngbCollapse]="isCollapsed">
 				                    <!-- <div class="card-body"> -->

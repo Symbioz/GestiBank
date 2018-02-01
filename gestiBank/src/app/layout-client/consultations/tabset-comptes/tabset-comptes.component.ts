@@ -21,6 +21,10 @@ export class TabsetComptesComponent implements OnInit {
       /*console.log("Selected RIB = " + cpt.rib);*/
   	}
 
+    //Génération de la date du jour
+
+    today: Date = new Date();
+
     //Gestion de la zone 'collapse'
     public isCollapsed = true;	
 
