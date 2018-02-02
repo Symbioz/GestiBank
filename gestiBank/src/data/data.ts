@@ -14,12 +14,29 @@ export class Personne {  // ajouter password (dans java)
   couriel: string;
   adresse: Adresse;
   numTel: String;
+  constructor ( id: number,   prenom: string,  nom: string,    nomUtilisateur: string,  password: string,  couriel: string,  adresse: Adresse,  numTel: String){
+  this.id=id;
+  this.prenom=prenom;
+  this.nom=nom;
+  this.nomUtilisateur=nomUtilisateur;
+  this.couriel=couriel;
+  this.password=password;
+  this.couriel=couriel;
+  this.adresse=adresse;
+  this.numTel=numTel;
+
+  }
 }
 
 export class Adresse { // dans java on a ajouté le numéro : inutile, je pense ça va avec rue
-    rue = "";
-    ville = "";
-    cp = "";   // à changer dans java
+    rue : string;
+    ville : string;
+    cp : number;   // à changer dans java
+    constructor(rue:String,cp:number,ville:string){
+      this.rue=rue;
+      this.ville=ville;
+      this.cp=cp;
+    }
 }
 
 export class SuperAdmin extends Personne { 
@@ -39,7 +56,17 @@ export class Client extends Personne {
   nbEnfants: number;
   situation: string;
   comptes: Compte[];
+  constructor( id: number,   prenom: string,  nom: string,    nomUtilisateur: string,  password: string,  couriel: string,  adresse: Adresse,  numTel: String, nbEnfants: number,  situation: string,  comptes: Compte[]) {
+    super(id,   prenom, nom ,  nomUtilisateur, password, couriel, adresse, numTel);
+    this.nbEnfants=nbEnfants;
+    this.situation=situation;
+    this.comptes=comptes;
+  }
+ 
+} 
+
 }
+
 
 export class Compte {
   code: number;

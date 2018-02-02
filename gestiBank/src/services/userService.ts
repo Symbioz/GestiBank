@@ -28,7 +28,7 @@ export class UserService {
 	}
 
 
-	updateClient(client: Client): Observable<Client>  {
+	modifierClient(client: Client): Observable<Client>  {
 	    const oldClient = clients.find(c => c.id === client.id);
 	    const newClient = Object.assign(oldClient, client); // Demo: mutate cached hero
 	    return of(newClient).delay(this.delayMs); // simulate latency with delay
@@ -41,11 +41,7 @@ export class UserService {
       	} // plutôt que de copier le tableau, on pourrait utiliser un push, mais il faudrait repenser aux conditions  
 
        	for (var i=clients.length -1; i>=0; i--){         
-	         if(filtre == 'affectee' && clients[i].dateAffectation == undefined){           
-	           temp.splice(i, 1);           
-	         } else if (filtre == 'nonAffectee' && demandesInscription[i].dateAffectation != undefined){         
-	           temp.splice(i, 1);   
-	         } else if (filtre == 'enCours' && demandesInscription[i].statut != 'en cours') {
+	  			if (filtre == 'enCours' && demandesInscription[i].statut != 'en cours') {
 	           temp.splice(i, 1);
 	         } else if (filtre == 'traitee' && demandesInscription[i].statut != 'traitée') {
 	           temp.splice(i, 1);

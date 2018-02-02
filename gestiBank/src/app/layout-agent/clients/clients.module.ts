@@ -8,14 +8,16 @@ import {ClientsComponent} from './clients.component';
 import { TableauClientsComponent } from './tableau-clients/tableau-clients.component';
 import {ModalComponent} from './modal/modal.component';
 import {UserService} from '../../../services/userService';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule, 
     ClientsRoutingModule,
     TranslateModule.forChild(),
-     NgbModule.forRoot()
+     NgbModule.forRoot(),
+     FormsModule,
+    ReactiveFormsModule
   ],
  providers: [UserService],
   declarations: [ClientsComponent,TableauClientsComponent,ModalComponent]
