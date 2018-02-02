@@ -16,6 +16,8 @@ import { DemandeService} from '../services/demande.service';
 import { ClientService} from  '../services/client.service';
 import { InscriptionService} from '../services/inscription.service';
 
+
+
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
     // for development
@@ -38,7 +40,8 @@ export function createTranslateLoader(http: HttpClient) {
         }),
         AppRoutingModule,
         FormsModule,
-        ReactiveFormsModule 
+        ReactiveFormsModule,
+
     ],
     declarations: [AppComponent],
     providers: [AuthGuard,AgentService,DemandeService,ClientService,InscriptionService],

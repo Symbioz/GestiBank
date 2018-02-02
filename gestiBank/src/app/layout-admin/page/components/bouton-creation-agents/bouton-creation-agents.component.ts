@@ -1,8 +1,9 @@
-import { Component,OnInit,Input } from '@angular/core';
+import { Component,OnInit,Input,Output } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Agent} from '../../../../../models/agent';
+import { NgForm, FormControl, FormGroup, Validators} from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { Agent} from '../../../../../models/agent';
 
 
 @Component({
@@ -12,6 +13,11 @@ import {Agent} from '../../../../../models/agent';
 })
 export class BoutonCreationAgentsComponent implements OnInit  {
 
+      
+    agent: Agent;
+
+    agentform: FormGroup;
+    
     closeResult: string;
     constructor(private modalService: NgbModal) { }
     
@@ -38,13 +44,27 @@ export class BoutonCreationAgentsComponent implements OnInit  {
 
     formCreationAgent :FormGroup;
 
-    ngOnInit(){
-    }
+    
 
     addUser(){
       alert ('test');
        
     }
 
-   
+    onSubmit(addMountForm: NgForm){
+      alert ('test');
+      console.log("adding form values ");
+      console.log(addMountForm.value);
+    }
+
+    ngOnInit() {
+
+      
+
+      this.agentform = new FormGroup({
+          matricule: new FormControl ('', Validators.required),
+      } );
+  }
+
+
 }
