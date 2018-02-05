@@ -9,7 +9,7 @@ import model.Agent;
 
 public class AgentDAO {
 
-	static HashMap<String, Agent> usersMap = createMap();
+	static HashMap<String, Agent> agentsMap = createMap();
 	
     static HashMap<String, Agent> createMap()
     {

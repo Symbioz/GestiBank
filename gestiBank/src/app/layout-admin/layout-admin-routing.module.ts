@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutAdminComponent } from './layout-admin.component';
+import { HttpModule } from '@angular/http';
 
 const routes: Routes = [
 	{
@@ -17,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),HttpModule],
   exports: [RouterModule]
 })
 export class LayoutAdminRoutingModule { }

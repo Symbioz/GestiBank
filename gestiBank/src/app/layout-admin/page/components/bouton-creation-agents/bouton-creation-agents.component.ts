@@ -26,7 +26,7 @@ export class BoutonCreationAgentsComponent implements OnInit  {
 
 constructor(  private route: ActivatedRoute,
               private router: Router,
-              //private agentService: AgentService,
+              private agentService: AgentService,
               private modalService: NgbModal) { }
 
 
