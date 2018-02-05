@@ -4,7 +4,8 @@ import { DashboardAdminComponent } from './dashboard-admin.component';
 
 const routes: Routes = [
      {
-        path: '', component: DashboardAdminComponent
+        path: '',
+        component: DashboardAdminComponent
     }
 ];
 

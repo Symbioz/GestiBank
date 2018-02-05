@@ -13,43 +13,48 @@
                     </div>
 
                     <div class="modal-body">
-                        <!--<form   novalidate [formGroup]="agentform"  >-->
-                        <form (ngSubmit)="onSubmit(agentform)"  [formGroup]="agentform" >
+                        <form (ngSubmit)="onSubmit(agentForm)"  [formGroup]="agentForm" >
                
-
                         <fieldset class="form-group">
                             <label for="matricule">{{ 'Matricule' | translate }}</label>
                             <input id="matricule" class="form-control" placeholder="Matricule" type="text" required ngControl="matricule"
                             formControlName="matricule" > 
 
                             <label for="nom">{{ 'Nom' | translate }}</label>
-                            <input id="nom" class="form-control" placeholder="Nom" type="text" required ngControl="nom"  >
+                            <input id="nom" class="form-control" placeholder="Nom" type="text" required ngControl="nom" 
+                            formControlName="nom" >
                             
                             <label for="prenom">{{ 'Prenom' | translate }}</label>
-                            <input id="prenom" class="form-control" placeholder="Prenom" type="text" required ngControl="prenom" >
+                            <input id="prenom" class="form-control" placeholder="Prenom" type="text" required ngControl="prenom" 
+                            formControlName="prenom">
 
                             <label for="voie">{{ 'Voie' | translate }}</label>
-                            <input id="voie" class="form-control" placeholder="numero + rue " type="text" required ngControl="voie"  >
+                            <input id="voie" class="form-control" placeholder="numero + rue " type="text" required ngControl="voie" 
+                            formControlName="voie" >
 
                             <label for="codePostal">{{ 'CodePostal' | translate }}</label>
-                            <input id="codePostal" class="form-control" placeholder="Code postal " type="number" required ngControl="codePostal"  >
+                            <input id="codePostal" class="form-control" placeholder="Code postal " type="number" required ngControl="codePostal"
+                            formControlName="codePostal"  >
 
                             <label for="ville">{{ 'Ville' | translate }}</label>
-                            <input id="ville" class="form-control" placeholder="ville " type="text" required ngControl="ville"  >
+                            <input id="ville" class="form-control" placeholder="ville " type="text" required ngControl="ville"
+                            formControlName="ville"  >
 
                             <label for="telephone">{{ 'Telephone' | translate }}</label>
-                            <input id="telephone" class="form-control" placeholder="telephone" type="text" required ngControl="telephone"  >
+                            <input id="telephone" class="form-control" placeholder="telephone" type="text" required ngControl="telephone"
+                            formControlName="telephone"  >
 
                             <label for="motDePasse">{{ 'MotDePasse' | translate }}</label>
-                            <input id="motDePasse" class="form-control" placeholder="Mot de passe" type="password" required ngControl="motDePasse"  >
+                            <input id="motDePasse" class="form-control" placeholder="Mot de passe" type="password" required ngControl="motDePasse"
+                            formControlName="motDePasse"  >
 
                             <label for="dateDebutContrat"> {{'DateDebutContrat'| translate}}</label>
-                            <input id="dateDebutContrat" class="form-control" placeholder="Mot de passe" type="date" required ngControl="dateDebutContrat" >
+                            <input id="dateDebutContrat" class="form-control" placeholder="Mot de passe" type="date" required ngControl="dateDebutContrat"
+                            formControlName="dateDebutContrat" >
                             
                         </fieldset>
-                       <!--
-                        <button type="submit" class="btn btn-success btn-xs" (click)="addUser()"> {{'AjouterAgents' | translate}}</button> -->
-                        <button type="submit" class="btn btn-success btn-xs"> </button>
+                      
+                        <button type="submit" class="btn btn-success btn-xs">{{'AjouterAgents' | translate}} </button>
 
                          </form>
                     </div>
@@ -61,28 +66,3 @@
 </div>  
 </div>
 
-<!--<div class ="container">
-    <div class ="row">
-        <div class="col">
-            <section>
-                <form (ngSubmit)="onSubmit(addMountForm)" #addMountForm="ngForm" >
-                    <fieldset>
-                        <div class="form-group">
-                            <label>Matricule</label>
-                            <input type="text"
-                                   class="form-control"
-                                   formControlName="matricule">
-                        </div>
-                        
-                        
-                    </fieldset> 
-
-                    <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Submit</button>
-                    <button type="button" class="btn btn-warning" (click)="redirectUserPage()">Cancel</button>
-                    <pre>  {{userForm.valuer | json }}</pre>
-            
-              </form>
-            </section>
-        <div>
-    </div>
-</div>-->

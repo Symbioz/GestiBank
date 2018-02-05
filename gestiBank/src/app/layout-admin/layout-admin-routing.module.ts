@@ -7,7 +7,7 @@ const routes: Routes = [
 		path: '',
         component: LayoutAdminComponent,
         children: [
-            { path: '', redirectTo: 'dashboardAdmin' },
+            //{ path: '', redirectTo: 'dashboardAdmin' },
             { path: 'dashboardAdmin', loadChildren: './dashboard-admin/dashboard-admin.module#DashboardAdminModule' },
             { path: 'gestionAgents', loadChildren: './page/gestion-agents/gestion-agents.module#GestionAgentsModule' },
             { path: 'gestionNouveauClients', loadChildren: './page/gestion-nouveau-clients/gestion-nouveau-clients.module#GestionNouveauClientsModule' },

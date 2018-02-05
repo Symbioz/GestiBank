@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import {Agent} from '../../../../../models/agent';
+import { HttpModule } from '@angular/http';
 
 @Component({
   selector: 'app-tableau-agents',

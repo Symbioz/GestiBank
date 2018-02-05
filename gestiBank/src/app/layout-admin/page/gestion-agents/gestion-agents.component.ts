@@ -3,7 +3,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { Agent} from '../../../../models/agent';
 import { Adresse}from '../../../../models/adresse';
 import { AgentService} from '../../../../services/agent.service';
-
+import { Router} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'; 
+import { HttpModule } from '@angular/http';
 
 @Component({
   selector: 'app-gestion-agents',
@@ -14,21 +16,30 @@ import { AgentService} from '../../../../services/agent.service';
 
 export class GestionAgentsComponent implements OnInit {
 	
-   agents: any[];
+   private agents : Agent[];
 
-   constructor(private agentService: AgentService) {
-      
-   }
+   constructor(
+     private agentService: AgentService
+     ) {}
 
 
   ngOnInit() {
-     this.agents = this.agentService.getAgents();
+      //this.agents = this.agentService.getAgents();
+      this.getAllAgents();
   }
 
-   
-  
+  getAllAgents(){
+      this.agentService.findAll().subscribe(
+         agents => {
+           this.agents = agents;
+         },
+         err => {
+           console.log(err);
+         }
 
-  
+      );
+  }
+
 
 }
 

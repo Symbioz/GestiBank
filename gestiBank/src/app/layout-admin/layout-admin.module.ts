@@ -7,6 +7,9 @@ import { LayoutAdminComponent } from './layout-admin.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FormsModule, FormGroup,FormControl, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'; 
+import { HttpModule } from '@angular/http';
+
 
 import { GestionAgentsModule} from './page/gestion-agents/gestion-agents.module'
 import { GestionAgentsComponent}  from './page/gestion-agents/gestion-agents.component';
@@ -15,8 +18,6 @@ import { GestionAgentsComponent}  from './page/gestion-agents/gestion-agents.com
 //import { ChercherComponent} from './page/components/chercher/chercher.component';
 //import { BoutonSuppressionAgentsComponent } from './page/components/bouton-suppression-agents/bouton-suppression-agents.component';
 //import { BouttonEditionAgentsComponent } from './page/components/boutton-edition-agents/boutton-edition-agents.component';
-
-
 
 @NgModule({
   	imports: [CommonModule, LayoutAdminRoutingModule, TranslateModule,NgbDropdownModule.forRoot(),ReactiveFormsModule,FormsModule,GestionAgentsModule],

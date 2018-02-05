@@ -11,6 +11,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 
+import { HttpModule } from '@angular/http';
+
+import { LayoutAdminModule } from './layout-admin/layout-admin.module';
+
 import { AgentService} from '../services/agent.service';
 import { DemandeService} from '../services/demande.service';
 import { ClientService} from  '../services/client.service';
@@ -41,6 +45,7 @@ export function createTranslateLoader(http: HttpClient) {
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
+        LayoutAdminModule
 
     ],
     declarations: [AppComponent],

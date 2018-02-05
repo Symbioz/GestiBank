@@ -10,6 +10,8 @@ import { AgentService} from '../../../../services/agent.service';
 import { DemandeService} from '../../../../services/demande.service';
 import { InscriptionService} from '../../../../services/inscription.service';
 
+import { HttpClientModule } from '@angular/common/http'; 
+import { HttpModule } from '@angular/http';
 
 @Component({
   selector: 'app-gestion-nouveau-clients',
@@ -32,7 +34,7 @@ export class GestionNouveauClientsComponent implements OnInit {
             model: 'middle'
         });
 
-        this.agents = this.agentService.getAgents();
+        //this.agents = this.agentService.getAgents();
         //this.demande = this.DemandeService.getDemandes();
         this.demande = this.inscriptionService.getInscriptions();
     }
