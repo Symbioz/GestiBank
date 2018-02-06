@@ -10,6 +10,11 @@
                             <th>{{ 'Prenom' | translate }}</th>
                             <th>{{ 'Email' | translate }}</th>
                             <th>{{ 'Telephone' | translate }}</th>
+
+                            <th>{{ 'voie' | translate }}</th>
+                            <th>{{ 'code postale' | translate }}</th>
+                            <th>{{ 'ville' | translate }}</th>
+                            <th>{{ 'date debut contrat' | translate }}</th>
                             <th>{{ 'Editer' | translate }}</th>
                             <th>{{ 'Supprimer' | translate }}</th>
                             <th>{{ 'Information' |translate}}</th>
@@ -22,7 +27,11 @@
                             <td>{{agent.nom}}</td>
                             <td>{{agent.prenom}}</td>
                             <td>{{agent.email}}</td>
-                            <td>{{agent.telephone}} </td>
+                            <td>{{agent.numTel}} </td>
+                            <td>{{agent.adresse.voie}} </td>
+                            <td>{{agent.adresse.codePostal}} </td>
+                            <td>{{agent.adresse.ville}} </td>
+                            <td>{{agent.dateDebutContrat}} </td>
 
                             <td><p><app-boutton-edition-agents [agentModal]='agent'></app-boutton-edition-agents></p></td>
 

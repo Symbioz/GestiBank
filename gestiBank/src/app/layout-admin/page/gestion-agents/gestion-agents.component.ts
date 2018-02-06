@@ -24,8 +24,8 @@ export class GestionAgentsComponent implements OnInit {
 
 
   ngOnInit() {
-      //this.agents = this.agentService.getAgents();
-      this.getAllAgents();
+      this.agents = this.agentService.getAgents();
+      //this.getAllAgents();
   }
 
   getAllAgents(){

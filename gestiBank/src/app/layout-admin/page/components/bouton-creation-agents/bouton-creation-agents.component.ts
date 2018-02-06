@@ -6,6 +6,8 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router} from '@angular/router';
 
 import { Agent} from '../../../../../models/agent';
+import { Adresse} from '../../../../../models/adresse';
+
 import { AgentService} from '../../../../../services/agent.service';
 
 import { HttpModule } from '@angular/http';
@@ -62,6 +64,7 @@ constructor(  private route: ActivatedRoute,
           matricule: new FormControl ('', Validators.required),
           nom: new FormControl ('', Validators.required),
           prenom: new FormControl ('', Validators.required),
+          email : new FormControl ('', Validators.required),
           voie: new FormControl ('', Validators.required),
           codePostal: new FormControl ('', Validators.required),
           ville: new FormControl ('', Validators.required),
@@ -80,23 +83,26 @@ constructor(  private route: ActivatedRoute,
         
         
       let agent: Agent = new Agent(
+          
           this.agentForm.controls['matricule'].value,
           this.agentForm.controls['nom'].value,
           this.agentForm.controls['prenom'].value,
-          this.agentForm.controls['voie'].value,
+          this.agentForm.controls['email'].value,
           this.agentForm.controls['telephone'].value,
           this.agentForm.controls['motDePasse'].value,
-          this.agentForm.controls['dateDebutContrat'].value
+          this.agentForm.controls['dateDebutContrat'].value,
+          new Adresse(
+            this.agentForm.controls['voie'].value,
+            this.agentForm.controls['codePostal'].value,
+            this.agentForm.controls['ville'].value,)
           );
       console.log(addAgentForm.value);
-
-          this.agentService.saveAgent(agent).subscribe();
+          this.agentService.saveAgent(agent);
+          
     }
 
-    this.agentForm.reset();
-    this.router.navigate(['/admin/gestionAgents']);
+    //this.agentForm.reset();
+   // this.router.navigate(['/admin/gestionAgents']);
   }
-
-
 
 }

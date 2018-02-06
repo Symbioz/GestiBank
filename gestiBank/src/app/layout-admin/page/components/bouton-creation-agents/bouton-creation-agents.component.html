@@ -1,7 +1,5 @@
-
-   <button class="btn btn-success btn-xs" (click)="open(content)"><i class="fa fa-user-plus"></i> {{ 'AjouterAgents' | translate }}</button>
+<button class="btn btn-success btn-xs" (click)="open(content)"><i class="fa fa-user-plus"></i> {{ 'AjouterAgents' | translate }}</button>
     
-
 <div class="row">
     <div class="col-sm-12">
                 <ng-template #content let-c="close" let-d="dismiss">
@@ -27,6 +25,10 @@
                             <label for="prenom">{{ 'Prenom' | translate }}</label>
                             <input id="prenom" class="form-control" placeholder="Prenom" type="text" required ngControl="prenom" 
                             formControlName="prenom">
+
+                            <label for="email">{{ 'email' | translate }}</label>
+                            <input id="email" class="form-control" placeholder="email" type="text" required ngControl="email" 
+                            formControlName="email">
 
                             <label for="voie">{{ 'Voie' | translate }}</label>
                             <input id="voie" class="form-control" placeholder="numero + rue " type="text" required ngControl="voie" 
