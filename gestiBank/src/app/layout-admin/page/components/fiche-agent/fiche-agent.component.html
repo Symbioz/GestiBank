@@ -15,14 +15,12 @@
                             <th>{{ 'code postale' | translate }}</th>
                             <th>{{ 'ville' | translate }}</th>
                             <th>{{ 'date debut contrat' | translate }}</th>
-                            <th>{{ 'Editer' | translate }}</th>
-                            <th>{{ 'Supprimer' | translate }}</th>
-                            <th>{{ 'Information' |translate}}</th>
+                            
                         </tr>
                         </thead>
 
                         <tbody>
-                        <tr *ngFor="let agent of ListeAgents">
+                        <!--<tr>
                             <td>{{agent.matricule}}</td>
                             <td>{{agent.nom}}</td>
                             <td>{{agent.prenom}}</td>
@@ -32,13 +30,7 @@
                             <td>{{agent.adresse.codePostal}} </td>
                             <td>{{agent.adresse.ville}} </td>
                             <td>{{agent.dateDebutContrat}} </td>
-
-                            <td><p><app-boutton-edition-agents [agentModal]='agent'></app-boutton-edition-agents></p></td>
-
-                            <td><p> <app-bouton-suppression-agents [agentModal]='agent'></app-bouton-suppression-agents></p></td>
-
-                            <td><button class="btn btn-info btn-xs fa fa-eye"   [routerLink]="['infoAgents']" [routerLinkActive]="['router-link-active']" ></button></td>
-                        </tr> 
+                        </tr> -->
                         </tbody>
                     </table>
                 </div>

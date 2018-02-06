@@ -13,6 +13,7 @@ import { HttpModule } from '@angular/http';
 
 import { GestionAgentsModule} from './page/gestion-agents/gestion-agents.module'
 import { GestionAgentsComponent}  from './page/gestion-agents/gestion-agents.component';
+
 //import { TableauAgentsComponent}  from './page/components/tableau-agents/tableau-agents.component';
 //import { BoutonCreationAgentsComponent} from './page/components/bouton-creation-agents/bouton-creation-agents.component';
 //import { ChercherComponent} from './page/components/chercher/chercher.component';

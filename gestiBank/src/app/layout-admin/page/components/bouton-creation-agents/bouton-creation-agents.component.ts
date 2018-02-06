@@ -102,7 +102,7 @@ constructor(  private route: ActivatedRoute,
     }
 
     //this.agentForm.reset();
-   // this.router.navigate(['/admin/gestionAgents']);
+   this.router.navigate(['/admin/gestionAgents']);
   }
 
 }

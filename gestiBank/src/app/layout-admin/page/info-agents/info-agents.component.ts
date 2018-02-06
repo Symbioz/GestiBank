@@ -20,14 +20,14 @@ export class InfoAgentsComponent implements OnInit {
   /*constructor(private agentService: AgentService, private clientService: ClientService) {
       
    }*/
-   constructor() {
-      
-   }
+
+   constructor(){}
+   
 
 
   ngOnInit() {
      //this.agents = this.agentService.getAgents();
-     //this.client= this.clientService.getClients();
+     //this.client = this.clientService.getClients();
   }
  
 }

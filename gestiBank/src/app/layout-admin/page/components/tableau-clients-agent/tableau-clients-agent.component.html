@@ -12,10 +12,10 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr *ngFor="let client of ListeClients">
-                            <td>{{client.id}}</td>
-                            <td>{{client.nom}}</td>
-                            <td>{{client.prenom}}</td>
+                        <tr *ngFor="let agent of ListeAgents">
+                            <td>{{agent.client.id}}</td>
+                            <td>{{agent.client.nom}}</td>
+                            <td>{{agent.client.prenom}}</td>
                             <td>
                                 <select>
                                    <option *ngFor=" let agent of ListeAgents">{{ agent.matricule }}</option>

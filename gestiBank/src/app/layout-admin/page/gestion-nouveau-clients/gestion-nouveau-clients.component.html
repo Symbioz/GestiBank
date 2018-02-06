@@ -1,7 +1,7 @@
    <div class="container">
     <div class="row">
         <h4>{{ 'ListeOuvertureCompte' | translate }}</h4>
-
+<!--
         <div class="col col-sm-6">
         <div class="card">
             <div class="card-body">
@@ -36,9 +36,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-<app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" ></app-tableau-demande-compte>
+<app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" [ListeInscription] ="inscription" ></app-tableau-demande-compte>
  
 
     

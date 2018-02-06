@@ -22,6 +22,7 @@ import { HttpModule } from '@angular/http';
 export class GestionNouveauClientsComponent implements OnInit {
     agents: any[];
     demande:any[];
+    inscription:any[];
     nbDemande = 0;
 
     model: any = 1;
@@ -34,9 +35,9 @@ export class GestionNouveauClientsComponent implements OnInit {
             model: 'middle'
         });
 
-        //this.agents = this.agentService.getAgents();
-        //this.demande = this.DemandeService.getDemandes();
-        this.demande = this.inscriptionService.getInscriptions();
+        this.agents = this.agentService.getAgents();
+        this.demande = this.DemandeService.getDemandes();
+        this.inscription = this.inscriptionService.getInscriptions();
     }
 
  

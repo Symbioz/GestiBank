@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { InfoAgentsRoutingModule } from './info-agents-routing.module';
+
 import { InfoAgentsComponent } from './info-agents.component';
 import { TableauClientsAgentComponent}  from '../components/tableau-clients-agent/tableau-clients-agent.component';
+import { FicheAgentComponent}  from '../components/fiche-agent/fiche-agent.component';
 //import { BoutonValidationAffectationComponent } from '../components/bouton-validation-affectation/bouton-validation-affectation.component';
 
 
@@ -18,6 +19,6 @@ import { TableauClientsAgentComponent}  from '../components/tableau-clients-agen
     NgbModule.forRoot(),
 
   ],
-  declarations: [InfoAgentsComponent,TableauClientsAgentComponent]
+  declarations: [InfoAgentsComponent,TableauClientsAgentComponent,FicheAgentComponent]
 })
 export class InfoAgentsModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import {Demande} from '../../../../../models/demande';
 import {Agent} from '../../../../../models/agent';
+import {Inscription} from '../../../../../models/inscription';
 
 @Component({
   selector: 'app-tableau-demande-compte',
@@ -10,6 +11,7 @@ import {Agent} from '../../../../../models/agent';
 export class TableauDemandeCompteComponent implements OnInit {
   
 @Input() ListeDemande:Demande[];
+@Input() ListeInscription: Inscription[]
 @Input() ListeAgents:Agent[];
 
   constructor() { }

@@ -15,19 +15,19 @@
                      <th>{{ 'Affecter' | translate }}</th>
                     </thead>
     <tbody>
-      <tr *ngFor="let demande of ListeDemande"> 
-              <td>{{demande.dateDemande}}</td>
-              <td>{{demande.client.nom}}</td>
-              <td>{{demande.client.prenom}}</td>
-              <td>{{demande.status}}</td>
+      <tr *ngFor="let inscription of ListeInscription"> 
+              <td>{{inscription.dateDemande}}</td>
+              <td>{{inscription.client.nom}}</td>
+              <td>{{inscription.client.prenom}}</td>
+              <td>{{inscription.status}}</td>
               <td>{{ 'Oui' | translate}}</td>
-              <td>{{demande.client.idAgent}}</td> 
-              <td>{{demande.idDemande}}</td>
+              <td>{{inscription.client.idAgent}}</td> 
+              <td>{{inscription.idDemande}}</td>
               
               <td>
                    <select>
-                                   <option *ngFor=" let agent of ListeAgents">{{ agent.matricule }}</option>
-                                </select> 
+                          <option *ngFor=" let agent of ListeAgents">{{ agent.matricule }}</option>
+                  </select> 
               </td>
               <td><app-bouton-validation-affectation></app-bouton-validation-affectation></td>
        </tr>
