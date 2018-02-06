@@ -35,7 +35,7 @@
                             </tr>
                             <tr>
                                 <td>{{'Couriel'|translate}}</td>
-                                <td>{{clientModal.nomUtilisateur}}</td>
+                                <td>{{clientModal.couriel}}</td>
                             </tr>   
                             <tr>
                                 <td>{{'password'|translate}}</td>
@@ -60,7 +60,7 @@
                             </tbody>
                         </table>
                     </div>
-                     <div class="modal-body" *ngIf="(modif)">
+                     <div class="modal-body" *ngIf="(modif)" [formGroup]="userForm" (ngSubmit)="onSubmit()">
                        
                         <table class="table  table-striped">
                             <thead>
@@ -78,7 +78,9 @@
                                
                                 <td>    
                                                                    
-                                            <input class="form-control" [(ngModel)]="clientTemp.id" placeholder="{{clientModal.id}}">  </td>
+                                            <input  type = "text" 
+                                                    class="form-control" 
+                                                    formControlName="clientTemp.id">  </td>
                                 <td> 
                                              <button type="button" class="btn btn-secondary" (click)="modifierClient()">Sauvegarder</button>
                                      
@@ -146,9 +148,9 @@
 
                     </div>
                     <div class="modal-footer" >
-                        <button *ngIf="!(modif)" type="submit" class="btn btn-secondary" (click)="modif=true">Modif</button>
+                        <button *ngIf="!(modif)" type="button" class="btn btn-secondary" (click)="modif=true">Modif</button>
                    
-                        <button *ngIf="(modif)" type="submit" class="btn btn-secondary" (click)="modif=false">Info</button>
+                        <button *ngIf="(modif)" type="button" class="btn btn-secondary" (click)="modif=false">Info</button>
 
                         <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
                     </div>

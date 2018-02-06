@@ -21,7 +21,6 @@ export class Personne {  // ajouter password (dans java)
   this.nomUtilisateur=nomUtilisateur;
   this.couriel=couriel;
   this.password=password;
-  this.couriel=couriel;
   this.adresse=adresse;
   this.numTel=numTel;
 
@@ -65,7 +64,7 @@ export class Client extends Personne {
  
 } 
 
-}
+
 
 
 export class Compte {
