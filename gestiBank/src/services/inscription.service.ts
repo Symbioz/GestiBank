@@ -36,5 +36,13 @@ export class InscriptionService {
 
     }
 
+    getDemandeOuverture() {
+    for(let inscriptionEnCours of this.inscriptions){
+      if(inscriptionEnCours.status ===false){
+        return inscriptionEnCours;
+      }
+    }
+  }
+
 
 }
