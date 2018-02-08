@@ -16,6 +16,7 @@ const routes: Routes = [
             { path: 'gestionAgents', loadChildren: './page/gestion-agents/gestion-agents.module#GestionAgentsModule' },
             { path: 'gestionNouveauClients', loadChildren: './page/gestion-nouveau-clients/gestion-nouveau-clients.module#GestionNouveauClientsModule' },
             { path: 'gestionAgents/infoAgents', loadChildren: './page/info-agents/info-agents.module#InfoAgentsModule' },
+            { path: 'gestionAgents/infoAgents/:id', loadChildren: './page/info-agents/info-agents.module#InfoAgentsModule' },
         ]
     }
 ];

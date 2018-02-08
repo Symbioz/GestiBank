@@ -35,9 +35,11 @@
 
                             <td><p><app-boutton-edition-agents [agentModal]='agent'></app-boutton-edition-agents></p></td>
 
-                            <td><p> <app-bouton-suppression-agents [agentModal]='agent'></app-bouton-suppression-agents></p></td>
+                            <td><p> <app-bouton-suppression-agents [agentModal]='agent' [ListeClients]='client'></app-bouton-suppression-agents></p></td>
 
-                            <td><button class="btn btn-info btn-xs fa fa-eye"   [routerLink]="['infoAgents']" [routerLinkActive]="['router-link-active']" ></button></td>
+                            <!-- <td><button class="btn btn-info btn-xs fa fa-eye"   [routerLink]="['infoAgents/(agent.matricule)']" [routerLinkActive]="['router-link-active']" ></button></td> -->
+
+                            <td><button class="btn btn-info btn-xs fa fa-eye" (click)="voirInfo(agent.matricule)"></button></td>
                         </tr> 
                         </tbody>
                     </table>

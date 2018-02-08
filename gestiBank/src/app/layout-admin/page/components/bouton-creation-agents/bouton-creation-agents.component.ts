@@ -31,9 +31,6 @@ constructor(  private route: ActivatedRoute,
               private agentService: AgentService,
               private modalService: NgbModal) { }
 
-
-
-    
     //Pour la modal 
     open(content) {
         this.modalService.open(content).result.then((result) => {
@@ -54,8 +51,6 @@ constructor(  private route: ActivatedRoute,
     }
 
    @Input() agentModal:Agent; 
-
-    
 
     ngOnInit() {
 
@@ -101,7 +96,7 @@ constructor(  private route: ActivatedRoute,
           
     }
 
-    //this.agentForm.reset();
+   this.agentForm.reset();
    this.router.navigate(['/admin/gestionAgents']);
   }
 

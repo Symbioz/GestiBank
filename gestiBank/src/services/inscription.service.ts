@@ -33,7 +33,7 @@ export class InscriptionService {
   
    // Recupérer le nomre d'inscription à affecter et en cours ? (2 fonction ?, pour le dashboard (pas demandé))
   
-     getNbInscriptionsEncours(){
+     getNbInscriptionsNonAffecte(){
     
       for(let i of this.inscriptions){
           if(i.client.idAgent == null){

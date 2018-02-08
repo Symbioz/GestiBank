@@ -2,10 +2,12 @@ import { Component, OnInit,Input } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { Agent} from '../../../../../models/agent';
+import { Client} from '../../../../../models/client';
 
 
 
 import { AgentService} from '../../../../../services/agent.service';
+import { ClientService} from '../../../../../services/client.service';
 
 @Component({
   selector: 'app-bouton-suppression-agents',
@@ -16,9 +18,14 @@ export class BoutonSuppressionAgentsComponent implements OnInit {
 
     closeResult: string;
     constructor(private modalService: NgbModal,
-                private agentService: AgentService) { }
+                private agentService: AgentService,
+                private clientService: ClientService) { }
     
     @Input() agentModal:Agent;
+    @Input() ListeClients:Client[];
+     
+  
+
 
 
     open(content) {
@@ -44,7 +51,10 @@ export class BoutonSuppressionAgentsComponent implements OnInit {
 
   deleteAgentById(id){
        let agent: Agent = this.agentService.getAgent(id);
-       this.agentService.deleteAgentById(id,agent);
+       console.log(agent.matricule);
+       this.agentService.deleteAgentById(agent);
   }
+
+ 
 
 }

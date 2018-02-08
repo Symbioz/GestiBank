@@ -68,7 +68,7 @@
     "Oui":"Oui",
     "Non": "Non",
     "EditerAgent": "Editer l'agent",
-    "QuestionSuppression":"Etes vous sur de vouloir supprimer cette agent ?",
+    "QuestionSuppression":"Etes vous sur de vouloir supprimer l'agent au matricule n°:",
     "Valider":"Valider",
     "Reaffecter":"Reaffecter"
     }

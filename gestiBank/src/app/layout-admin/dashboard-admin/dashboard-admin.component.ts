@@ -16,7 +16,6 @@ import { InscriptionService} from '../../../services/inscription.service';
 })
 export class DashboardAdminComponent implements OnInit {
 
-   demande:any[];
    nbDemande = 0;
 
    constructor( private InscriptionService: InscriptionService) {
@@ -24,7 +23,8 @@ export class DashboardAdminComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.nbDemande = this.InscriptionService.getNbInscriptionsEncours();
+    // On recupère le nombre demande à affecté (non demandé)
+    this.nbDemande = this.InscriptionService.getNbInscriptionsNonAffecte();
     
   }
 

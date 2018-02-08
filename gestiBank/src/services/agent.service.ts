@@ -60,11 +60,16 @@ export class AgentService {
       console.log(this.agents);
    }
 
-   deleteAgentById(agent: Agent,id){
-      console.log("delete" + id);
+   deleteAgentById(agent: Agent){
+      console.log("delete" );
       // A modifier trouver l id de l agent
-      this.agents.splice(1,1);
+      //this.agents.splice(1,1);
+      this.agents.splice(this.agents.indexOf(agent), 1);
    }
+
+   
+
+ 
 
   
 }
