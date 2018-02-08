@@ -13,6 +13,7 @@ import { HttpModule } from '@angular/http';
 
 import { GestionAgentsModule} from './page/gestion-agents/gestion-agents.module'
 import { GestionAgentsComponent}  from './page/gestion-agents/gestion-agents.component';
+import { DashboardAdminComponent}  from './dashboard-admin/dashboard-admin.component';
 
 //import { TableauAgentsComponent}  from './page/components/tableau-agents/tableau-agents.component';
 //import { BoutonCreationAgentsComponent} from './page/components/bouton-creation-agents/bouton-creation-agents.component';
@@ -22,6 +23,6 @@ import { GestionAgentsComponent}  from './page/gestion-agents/gestion-agents.com
 
 @NgModule({
   	imports: [CommonModule, LayoutAdminRoutingModule, TranslateModule,NgbDropdownModule.forRoot(),ReactiveFormsModule,FormsModule,GestionAgentsModule],
-  	declarations: [LayoutAdminComponent, HeaderComponent, SidebarComponent]
+  	declarations: [LayoutAdminComponent, HeaderComponent, SidebarComponent,DashboardAdminComponent]
 })
 export class LayoutAdminModule { }

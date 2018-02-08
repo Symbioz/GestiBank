@@ -10,24 +10,19 @@ import { ClientService} from '../../../../Services/client.service';
   selector: 'app-info-agents',
   templateUrl: './info-agents.component.html',
   styleUrls: ['./info-agents.component.scss'],
-  //providers: [AgentService,ClientService],
+ // providers: [AgentService,ClientService],
 })
 
 export class InfoAgentsComponent implements OnInit {
   client:any[];
   agents: any[];
 
-  /*constructor(private agentService: AgentService, private clientService: ClientService) {
+  //constructor(private agentService: AgentService, private clientService: ClientService) {
       
-   }*/
-
-   constructor(){}
    
-
-
   ngOnInit() {
-     //this.agents = this.agentService.getAgents();
-     //this.client = this.clientService.getClients();
+    // this.agents = this.agentService.getAgents();
+    // this.client = this.clientService.getClients();
   }
  
 }
