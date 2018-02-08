@@ -17,6 +17,7 @@ import { HttpModule } from '@angular/http';
 export class GestionAgentsComponent implements OnInit {
 	
    private agents : Agent[];
+   
 
    constructor(
      private agentService: AgentService

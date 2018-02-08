@@ -9,7 +9,7 @@ import { GestionNouveauClientsRoutingModule } from './gestion-nouveau-clients-ro
 import { GestionNouveauClientsComponent } from './gestion-nouveau-clients.component';
 import { TableauDemandeCompteComponent}  from '../components/tableau-demande-compte/tableau-demande-compte.component';
 import { BoutonValidationAffectationComponent } from '../components/bouton-validation-affectation/bouton-validation-affectation.component';
-import { OngletTableauComponent } from './onglet-tableau/onglet-tableau.component';
+
 
 @NgModule({
   imports: [
@@ -20,6 +20,6 @@ import { OngletTableauComponent } from './onglet-tableau/onglet-tableau.componen
     ReactiveFormsModule,
     NgbModule.forRoot()
   ],
-  declarations: [GestionNouveauClientsComponent, TableauDemandeCompteComponent,BoutonValidationAffectationComponent, OngletTableauComponent]
+  declarations: [GestionNouveauClientsComponent, TableauDemandeCompteComponent,BoutonValidationAffectationComponent]
 })
 export class GestionNouveauClientsModule { }

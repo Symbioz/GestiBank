@@ -2,10 +2,6 @@
     <div class="row">
        
  
-
-
- 
-
 <h4>{{ 'ListeOuvertureCompte' | translate }}</h4>
 
 <div class="card mb-3">
@@ -16,7 +12,7 @@
                 <ng-template ngbTabTitle>{{ 'Tout' | translate }}</ng-template>
                 <ng-template ngbTabContent>
                 	
-	            <app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" [ListeInscription] ="inscription" ></app-tableau-demande-compte>
+	            <app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" [ListeInscription] ="inscription" [title] = "title"></app-tableau-demande-compte>
 	            	
                 </ng-template>
             </ngb-tab>
@@ -43,7 +39,7 @@
                 <ng-template ngbTabTitle>{{ 'A Affecté' | translate }}</ng-template>
                 <ng-template ngbTabContent>
                 	
-	            <app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" [ListeInscription] ="inscription" ></app-tableau-demande-compte>
+	           <app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" [ListeInscription] ="inscription" ></app-tableau-demande-compte>
 	            	
                 </ng-template>
             </ngb-tab>
