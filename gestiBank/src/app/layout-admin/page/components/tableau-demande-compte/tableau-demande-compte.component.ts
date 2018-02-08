@@ -13,10 +13,14 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./tableau-demande-compte.component.scss']
 })
 export class TableauDemandeCompteComponent implements OnInit {
+
+  
   
 @Input() ListeDemande:Demande[];
 @Input() ListeInscription: Inscription[]
 @Input() ListeAgents:Agent[];
+
+
 
 agents : Agent;
 

@@ -21,7 +21,7 @@
                 <ng-template ngbTabTitle>{{ 'En cours' | translate }}</ng-template>
                 <ng-template ngbTabContent>
                 	
-	            <app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" [ListeInscription] ="inscription" ></app-tableau-demande-compte>
+	            <app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" [ListeInscription] ="inscriptionEnCours" ></app-tableau-demande-compte>
 	            	
                 </ng-template>
             </ngb-tab>
@@ -30,7 +30,7 @@
                 <ng-template ngbTabTitle>{{ 'Termine' | translate }}</ng-template>
                 <ng-template ngbTabContent>
                 	
-	            <app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" [ListeInscription] ="inscription" ></app-tableau-demande-compte>
+	            <app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" [ListeInscription] ="inscriptionTermine" ></app-tableau-demande-compte>
 	            	
                 </ng-template>
             </ngb-tab>
@@ -39,7 +39,7 @@
                 <ng-template ngbTabTitle>{{ 'A Affecté' | translate }}</ng-template>
                 <ng-template ngbTabContent>
                 	
-	           <app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" [ListeInscription] ="inscription" ></app-tableau-demande-compte>
+	           <app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" [ListeInscription] ="inscriptionNonAffecte" ></app-tableau-demande-compte>
 	            	
                 </ng-template>
             </ngb-tab>
@@ -48,7 +48,7 @@
                 <ng-template ngbTabTitle>{{ 'Affecte' | translate }}</ng-template>
                 <ng-template ngbTabContent>
                 	
-	            <app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" [ListeInscription] ="inscription" ></app-tableau-demande-compte>
+	            <app-tableau-demande-compte [ListeAgents] = "agents" [ListeDemande] = "demande" [ListeInscription] ="inscriptionAffecte" ></app-tableau-demande-compte>
 	            	
                 </ng-template>
             </ngb-tab>
