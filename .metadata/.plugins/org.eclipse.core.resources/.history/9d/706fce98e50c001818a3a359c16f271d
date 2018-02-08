@@ -1,0 +1,5 @@
+package com.gestibank.model;
+
+public class Compte {
+
+}
