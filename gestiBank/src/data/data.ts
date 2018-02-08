@@ -31,7 +31,7 @@ export class Adresse { // dans java on a ajouté le numéro : inutile, je pense 
     rue : string;
     ville : string;
     cp : number;   // à changer dans java
-    constructor(rue:String,cp:number,ville:string){
+    constructor(rue:string,cp:number,ville:string){
       this.rue=rue;
       this.ville=ville;
       this.cp=cp;
@@ -169,7 +169,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     nomUtilisateur: 'Perceval', 
     password: '',
     couriel: 'Kaamelott@gmail',
-    adresse: {rue: '1 rue CestpasFaux',  ville: 'Sloubi334', cp: '59000'},
+    new adresse('1 rue CestpasFaux', 59000, 'Sloubi334'),
     numTel: '0683657416',
     nbEnfants: 0,
     situation: 'célibataire',

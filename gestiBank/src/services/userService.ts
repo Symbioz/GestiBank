@@ -3,6 +3,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+
 
 import { Demande, DemandeInscription, demandesInscription, clients,Client } from '../data/data';
 
@@ -10,6 +14,10 @@ import { Demande, DemandeInscription, demandesInscription, clients,Client } from
 export class UserService {
 
 	delayMs = 500;
+	private apiUrl = 'http://localhost:8080/GestiBankBackEnd/users/';
+
+
+	constructor(private http: Http) { }
 
   	// Fake server get; assume nothing can go wrong
   	getDemandes(): Observable<Demande[]> {
@@ -20,6 +28,10 @@ export class UserService {
   		return of(clients).delay(this.delayMs);
   	}
 
+  	saveClient(client: Client): Observable<Client> {
+  		clients.push(client);
+  		return client;
+  	}
   	// Fake server update; assume nothing can go wrong
   	updateDemande(demande: Demande): Observable<Demande>  {
 	    const oldDemande = demandesInscription.find(d => d.id === demande.id);
@@ -28,11 +40,51 @@ export class UserService {
 	}
 
 
-	modifierClient(client: Client): Observable<Client>  {
+	updateClient(client: Client): Observable<Client>  {
 	    const oldClient = clients.find(c => c.id === client.id);
 	    const newClient = Object.assign(oldClient, client); // Demo: mutate cached hero
 	    return of(newClient).delay(this.delayMs); // simulate latency with delay
 	}
+
+
+
+
+
+
+
+
+
+	findAll(): Observable<Client[]> {
+		return this.http.get(this.apiUrl)
+			.map((res:Response) => res.json())
+			.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+	}
+
+	findById(id: number): Observable<Client> { 
+		return this.http.get(this.apiUrl + id)
+			.map((res:Response) => res.json())
+			.catch((error:any) => Observable.throw(error.json().error || 'Error'));
+	}
+
+	saveUser(client: Client): Observable<Client> { 
+		return this.http.post(this.apiUrl, client)
+			.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+	}
+
+	deleteUserById(id: number): Observable<boolean> { 
+		return this.http.delete(this.apiUrl + id) 
+			.map((res:Response) => res.json())
+			.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+	}
+
+	updateUser(client: Client): Observable<Client> {
+		return this.http.put(this.apiUrl + user.id, user)
+			.map((res:Response) => res.json())
+			.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+	}
+
+
+
 	filtrerClient(filtre: string){
       	//On parcours la table en decroissance pour eviter l auto modification des index
 		var temp = [];
