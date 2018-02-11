@@ -9,18 +9,16 @@ import com.rj.gestibank.model.Compte;
 
 public class CompteDAOImpl implements ICompteDAO {
 	
-	static HashMap<Long, Compte> comptesMap = new HashMap<Long, Compte>();
+	static HashMap<String, Compte> comptesMap = new HashMap<String, Compte>();
 	/*
-	static HashMap<String, User> usersMap = createMap();
+	static HashMap<String, User> comptesMap = createMap();
 
     static HashMap<String, User> createMap()
     {
-    	HashMap<String,User> usersMap = new HashMap<String,User>();
-    	User user1 = new User(1, "wajih", "Paris 75000", "wajih@gk.com");
-		User user2 = new User(2, "aline", "Rueil 92500", "aline@gk.com");
-		usersMap.put("1", user1);
-		usersMap.put("2", user2);
-        return usersMap;
+    	HashMap<String,Compte> comptesMap = new HashMap<String,Compte>();
+    	Compte compte1 = new Compte(1, "wajih", "Paris 75000", "wajih@gk.com");
+		comptesMap.put("1", compte1);
+		return comptesMap;
     }
 	 */
 	
@@ -30,6 +28,12 @@ public class CompteDAOImpl implements ICompteDAO {
 		return comptes;
 	}
 
+	@Override
+	public Compte getCompteByIBAN(String IBAN) {
+		Compte compte = comptesMap.get(IBAN);
+		return compte;
+	}
+	
 	@Override
 	public Compte ajoutCompte(Compte compte) {
 		// TODO Auto-generated method stub
@@ -42,10 +46,5 @@ public class CompteDAOImpl implements ICompteDAO {
 		return null;
 	}
 
-	@Override
-	public Compte getCompteByIBAN(String IBAN) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 }
