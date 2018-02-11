@@ -1,4 +1,4 @@
-package com.rk.gestibank.service;
+package com.rj.gestibank.service;
 
 import java.util.List;
 
