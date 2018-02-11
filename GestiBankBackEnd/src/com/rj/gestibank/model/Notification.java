@@ -6,14 +6,14 @@ public class Notification {
 	
 	private Long id;
 	private String message;
-	private Date date;
+	private String date;
 	
 	//Constructeurs
 	public Notification() {
 		super();
 	}
 
-	public Notification(Long id, String message, Date date) {
+	public Notification(Long id, String message, String date) {
 		super();
 		this.id = id;
 		this.message = message;
@@ -35,10 +35,10 @@ public class Notification {
 		this.message = message;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
