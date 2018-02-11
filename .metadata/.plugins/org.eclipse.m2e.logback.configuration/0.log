@@ -2808,3 +2808,7 @@ java.io.InvalidClassException: org.eclipse.m2e.core.internal.project.registry.Ba
 2018-02-11 14:16:52,999 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jordan\Documents\GitHub\GestiBank\GestiBankBackEnd\src\main\resources
 2018-02-11 14:16:53,004 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2018-02-11 14:16:53,016 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jordan\Documents\GitHub\GestiBank\GestiBankBackEnd\src\test\resources
+2018-02-11 14:27:23,153 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-11 14:27:23,258 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jordan\Documents\GitHub\GestiBank\GestiBankBackEnd\src\main\resources
+2018-02-11 14:27:23,259 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-11 14:27:23,306 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Jordan\Documents\GitHub\GestiBank\GestiBankBackEnd\src\test\resources

@@ -4007,3 +4007,9 @@ Java Model Exception: Java Model Status [C:\Program Files\Java\jre-9.0.1\lib\jrt
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2018-02-11 14:16:53.009
 !MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-02-11 14:27:23.154
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-02-11 14:27:23.296
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!

@@ -1,7 +1,5 @@
 package com.rj.gestibank.model;
 
-import java.util.Date;
-
 public class Notification {
 	
 	private Long id;
