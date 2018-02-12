@@ -6,7 +6,7 @@ import { AgentService} from '../../../../services/agent.service';
 import { Router} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; 
 import { HttpModule } from '@angular/http';
-import { FilterPipe} from './../../../../filter.pipe';
+//import { FilterPipe} from './../../../../filter.pipe';
 
 @Component({
   selector: 'app-gestion-agents',
