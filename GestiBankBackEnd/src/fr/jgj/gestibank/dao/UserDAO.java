@@ -6,6 +6,7 @@ import java.util.List;
 
 import fr.jgj.gestibank.model.User;
 
+
 public class UserDAO {
 	
 	//static HashMap<String, User> usersMap = new HashMap<String, User>();

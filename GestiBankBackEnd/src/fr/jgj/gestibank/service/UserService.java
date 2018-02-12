@@ -2,6 +2,8 @@ package fr.jgj.gestibank.service;
 
 import java.util.List;
 
+//import org.springframework.beans.factory.annotation.Autowired;
+
 import fr.jgj.gestibank.dao.UserDAO;
 import fr.jgj.gestibank.model.User;
 
@@ -12,7 +14,7 @@ public class UserService {
 	
 	//utilisation de Spring
 	//@Autowired
-	//UserDao userDao;
+	//UserDAO userDao;
 	
 	//l'utilisation de Spring ne modifier aucune méthode ci-dessous
 	public List<User> getAllUsers() {
