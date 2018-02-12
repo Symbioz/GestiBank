@@ -6,6 +6,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FilterPipe} from './filter.pipe';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,7 +49,7 @@ export function createTranslateLoader(http: HttpClient) {
         LayoutAdminModule
 
     ],
-    declarations: [AppComponent],
+    declarations: [AppComponent,FilterPipe ],
     providers: [AuthGuard,AgentService,DemandeService,ClientService,InscriptionService],
     bootstrap: [AppComponent]
 })

@@ -22,7 +22,7 @@
                         </thead>
 
                         <tbody>
-                        <tr *ngFor="let agent of ListeAgents">
+                        <tr *ngFor="let agent of ListeAgents | filter : searchText" >
                             <td>{{agent.matricule}}</td>
                             <td>{{agent.nom}}</td>
                             <td>{{agent.prenom}}</td>
