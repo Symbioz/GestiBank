@@ -3,6 +3,7 @@ package fr.jgj.gestibank.dao.impl;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Date;
 
 import fr.jgj.gestibank.dao.INotificationDAO;
 import fr.jgj.gestibank.model.Notification;
