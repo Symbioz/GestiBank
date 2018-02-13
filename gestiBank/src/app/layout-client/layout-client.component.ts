@@ -11,10 +11,11 @@ enum TypeOp { debit, credit }
 export class LayoutClientComponent implements OnInit {
 
 	//Tests : création d'une liste de notification pour un client donné
-	notifications = [	new Notification(6501, "important", "virement refusé"),
-					 	new Notification(6502, "information", "chequier arrivé en agence"),
-					 	new Notification(6503, "succes", "mot de passe changé avec succès"),
-					 	new Notification(6504, "information", "un nouveau conseiller vous a été attribué")];
+	/*notifications = [	new Notification(6501, "danger", "Virement refusé", new Date('2018-02-01')),
+          				new Notification(6502, "info", "Chequier arrivé en agence", new Date('2018-02-02')),
+          				new Notification(6503, "success", "Mot de passe changé avec succès",new Date('2018-02-03')),
+                      	new Notification(6504, "warning", "Une autorisation de prélévement à été ajouté", new Date('2018-02-04')),
+          				new Notification(6505, "info", "Un nouveau conseiller vous a été attribué", new Date('2018-02-05'))];*/
 
 	//Tests : création de listes d'opération
 	operationsCpt1 = [	new Operation(8011, "02/01/2018", "facture edf", 76.56, TypeOp.debit),,
