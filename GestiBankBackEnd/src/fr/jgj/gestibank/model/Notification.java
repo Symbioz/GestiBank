@@ -1,17 +1,19 @@
 package fr.jgj.gestibank.model;
 
+import java.util.Date;
+
 public class Notification {
 	
 	private Long id;
 	private String message;
-	private String date;
+	private Date date;
 	
 	//Constructeurs
 	public Notification() {
 		super();
 	}
 
-	public Notification(Long id, String message, String date) {
+	public Notification(Long id, String message, Date date) {
 		super();
 		this.id = id;
 		this.message = message;
@@ -33,10 +35,10 @@ public class Notification {
 		this.message = message;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
