@@ -1,16 +1,17 @@
 import {Utilisateur} from './utilisateur';
-import {Adresse} from './adresse';
+
 
 export class Agent extends Utilisateur {
 
-	matricule: number;
-	dateDebutContrat: String;
-	
+	 matricule: number;
+	 dateDebutContrat: Date;
+	 dateFinContrat: Date
    
-     constructor(matricule: number,dateDebutContrat:String ,nom:String, prenom: String, email:String, numTel: String, motDePasse : String, adresse : Adresse){
-          super(nom, prenom, email, numTel, motDePasse ,  adresse);
+     constructor(id: number, nom:String, prenom: String, identifiant:String, mdp:String, email:String, adresse : String, matricule: number,dateDebutContrat:Date , dateFinContrat:Date){
+          super(id, nom, prenom, identifiant, mdp,email,  adresse);
           this.matricule = matricule;
           this.dateDebutContrat = dateDebutContrat;
+          this.dateFinContrat = dateFinContrat;
      }
 
 

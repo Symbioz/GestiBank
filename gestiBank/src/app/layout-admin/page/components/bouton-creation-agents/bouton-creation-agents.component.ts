@@ -25,6 +25,9 @@ export class BoutonCreationAgentsComponent implements OnInit  {
     agent: Agent;
     agentForm: FormGroup;
     closeResult: string;
+    id:number;
+    dateFinContrat :Date;
+    mdp :String;
 
 constructor(  private route: ActivatedRoute,
               private router: Router,
@@ -60,10 +63,7 @@ constructor(  private route: ActivatedRoute,
           nom: new FormControl ('', Validators.required),
           prenom: new FormControl ('', Validators.required),
           email : new FormControl ('', Validators.required),
-          voie: new FormControl ('', Validators.required),
-          codePostal: new FormControl ('', Validators.required),
-          ville: new FormControl ('', Validators.required),
-          telephone: new FormControl ('', Validators.required),
+          adresse: new FormControl ('', Validators.required),
           motDePasse: new FormControl ('', Validators.required),
           dateDebutContrat: new FormControl ('', Validators.required)
 
@@ -79,17 +79,18 @@ constructor(  private route: ActivatedRoute,
         
       let agent: Agent = new Agent(
           
+          this.id =1,
+          this.mdp ="mdp",
           this.agentForm.controls['matricule'].value,
           this.agentForm.controls['nom'].value,
           this.agentForm.controls['prenom'].value,
           this.agentForm.controls['email'].value,
-          this.agentForm.controls['telephone'].value,
+          this.agentForm.controls['adresse'].value,
           this.agentForm.controls['motDePasse'].value,
           this.agentForm.controls['dateDebutContrat'].value,
-          new Adresse(
-            this.agentForm.controls['voie'].value,
-            this.agentForm.controls['codePostal'].value,
-            this.agentForm.controls['ville'].value,)
+          this.dateFinContrat = new Date(),
+          
+          
           );
       console.log(addAgentForm.value);
           this.agentService.saveAgent(agent);

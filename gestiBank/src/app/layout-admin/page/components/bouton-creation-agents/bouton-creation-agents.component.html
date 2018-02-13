@@ -30,21 +30,9 @@
                             <input id="email" class="form-control" placeholder="email" type="text" required ngControl="email" 
                             formControlName="email">
 
-                            <label for="voie">{{ 'Voie' | translate }}</label>
-                            <input id="voie" class="form-control" placeholder="numero + rue " type="text" required ngControl="voie" 
-                            formControlName="voie" >
-
-                            <label for="codePostal">{{ 'CodePostal' | translate }}</label>
-                            <input id="codePostal" class="form-control" placeholder="Code postal " type="number" required ngControl="codePostal"
-                            formControlName="codePostal"  >
-
-                            <label for="ville">{{ 'Ville' | translate }}</label>
-                            <input id="ville" class="form-control" placeholder="ville " type="text" required ngControl="ville"
-                            formControlName="ville"  >
-
-                            <label for="telephone">{{ 'Telephone' | translate }}</label>
-                            <input id="telephone" class="form-control" placeholder="telephone" type="text" required ngControl="telephone"
-                            formControlName="telephone"  >
+                            <label for="voie">{{ 'Adresse' | translate }}</label>
+                            <input id="voie" class="form-control" placeholder="numero + rue +ville" type="text" required ngControl="adresse" 
+                            formControlName="adresse" >
 
                             <label for="motDePasse">{{ 'MotDePasse' | translate }}</label>
                             <input id="motDePasse" class="form-control" placeholder="Mot de passe" type="password" required ngControl="motDePasse"

@@ -1,22 +1,24 @@
-import {Adresse} from './adresse';
 
 export class Utilisateur {
-     nom :      String;
-     prenom:    String;
-     email:     String;
-     numTel:    String;
-     motDePasse:String;
-     adresse:   Adresse;
-
+     id  :       number;
+     nom :       String;
+     prenom:     String;
+     identifiant:String;
+     mdp:        String;
+     email:      String;
+     adresse:    String;
      
-     constructor(nom:String, prenom: String, email:String, numTel: String, motDePasse : String , adresse : Adresse ){
-     	this.nom =  nom;
+     constructor(id:number, nom:String, prenom: String, identifiant:String, mdp:String, email:String,  adresse : String ){
+     	this.id  = id;
+          this.nom =  nom;
      	this.prenom= prenom;
+          this.identifiant= identifiant;
+          this.mdp = mdp;
           this.email= email;
-     	this.numTel= numTel;
-          this.motDePasse = motDePasse;
           this.adresse = adresse;
      }
      
       
 }
+
+
