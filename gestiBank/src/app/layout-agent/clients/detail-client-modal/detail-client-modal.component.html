@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 	<div class="row">
 		<div class="col">
 			<section>
@@ -28,3 +28,82 @@
 </div>
 
 
+<button type="button" class="btn btn-success" (click)="editUserPage(user)">Editer</button>
+ -->	
+
+<button class="btn btn-success" (click)="open(content)">Editer</button>
+    <ng-template #content let-c="close" let-d="dismiss">
+        <form f=ngForm role="form">
+	        <div class="modal-header">
+                <h4 class="modal-title">{{'Info'| translate}}</h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+	                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+                <div class="modal-body"  [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      
+                    <table class="table  table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{'Identifiant'|translate}}</td>
+                               
+                                <td>    
+                                                                   
+                                            <input  type = "text" 
+                                                    class="form-control" 
+                                                    formControlName="username">  </td>
+                              <!--   <td> 
+                                             <button type="button" class="btn btn-secondary" (click)="modifierClient()">Sauvegarder</button>
+                                     
+                                    
+                                </td> -->
+                                
+                            </tr>
+                            <tr>
+                                <td>{{'adresse'|translate}}</td>
+                                <td>    
+                                                               
+                                            <input  type = "text" 
+                                                    class="form-control" 
+                                                    formControlName="address">                   
+                                   
+                                </td>
+                            </tr>
+								<tr>
+                                <td>{{'couriel'|translate}}</td>
+                                <td>    
+	
+										<input type="email" class="form-control" formControlName="email">                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{''|translate}}</td>
+                                <td>    
+                                                               
+                                            <input  type = "text" 
+                                                    class="form-control" 
+                                                    formControlName="address">                   
+                                   
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    </div>
+                    <div class="modal-footer" >
+                         
+                        <button  type="button" class="btn btn-secondary" (click)="modif=false">Info</button>
+
+                        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+                    </div>
+                           </form>
+                </ng-template>

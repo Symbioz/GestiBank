@@ -64,7 +64,7 @@ export class UserDetailComponent implements OnInit, OnDestroy {
 	  			this.userForm.controls['username'].value,
 	  			this.userForm.controls['address'].value,
 	  			this.userForm.controls['email'].value);
-	  			this.userService.saveUser(user).subscribe(
+	  			this.userService.updateUser(user).subscribe(
 					user => {
 						this.user = user;
 						console.log("SAVE USER OK");
