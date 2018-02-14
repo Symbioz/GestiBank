@@ -19,7 +19,7 @@ public class NotificationDAOImpl implements INotificationDAO {
     	HashMap<Long, Notification> notificationsMap = new HashMap<Long, Notification>();
     	Notification notification1 = new Notification(1L, "danger", "notification 1", new Date("01/02/2018"));
     	Notification notification2 = new Notification(2L, "info", "notification 2", new Date("02/02/2018"));
-    	Notification notification3 = new Notification(3L, "succes", "notification 3", new Date("03/02/2018"));
+    	Notification notification3 = new Notification(3L, "success", "notification 3", new Date("03/02/2018"));
     	Notification notification4 = new Notification(4L, "warning", "notification 4", new Date("04/02/2018"));
     	notificationsMap.put(1L, notification1);
     	notificationsMap.put(2L, notification2);
