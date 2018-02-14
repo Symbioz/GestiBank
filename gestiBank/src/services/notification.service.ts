@@ -18,7 +18,7 @@ export class NotificationService {
 	}
 
 	deleteNotificationById(id: number): Observable<boolean> { 
-		return this.http.delete(this.apiUrl + id) 
+		return this.http.delete(this.apiUrl + '/' + id) 
 			.map((res:Response) => res.json())
 			.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 	}

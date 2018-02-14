@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { NotificationService } from "../../../../services";
 import { Notification } from "../../../../models";
 import { Router } from  '@angular/router';
+import { routerTransition } from '../../../router.animations';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-notifs-list',
   templateUrl: './notifs-list.component.html',
   styleUrls: ['./notifs-list.component.scss'],
-  providers: [NotificationService]
+  providers: [NotificationService],
+  animations: [routerTransition()]
 })
 export class NotifsListComponent implements OnInit {
 
@@ -34,15 +37,10 @@ export class NotifsListComponent implements OnInit {
   		this.notificationService.deleteNotificationById(notification.id).subscribe(
 			res => {
 				this.getAllNotifications();
-				this.router.navigate(['/notifications']);
 				console.log('notification supprimée')
 			}
 		);
   	}
 
-  	public closeAlert(alert: any) {
-        const index: number = this.notifications.indexOf(alert);
-        this.notifications.splice(index, 1);
-    }
 
 }

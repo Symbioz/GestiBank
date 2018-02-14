@@ -10,6 +10,7 @@ const routes: Routes = [
             { path: '', redirectTo: 'dashboard' },
             { path: 'dashboard', loadChildren: './dashboard-client/dashboard-client.module#DashboardClientModule' },
             { path: 'notifications', loadChildren: './notifs/notifs.module#NotifsModule' },
+            //{ path: 'notifications', loadChildren: './notifications/notifications.module#NotificationsModule' },
             { path: 'consultations', loadChildren: './consultations/consultations.module#ConsultationsModule' },
             { path: 'releves', loadChildren: './releves/releves.module#RelevesModule' },
             { path: 'virements', loadChildren: './virements/virements.module#VirementsModule' },
