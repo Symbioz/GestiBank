@@ -10,6 +10,7 @@ public class Utilisateur {
 	private String mdp;
 	private String email;
 	private String adresse;
+	private String numTel;
 	
 	
 	//Constructeurs
@@ -17,7 +18,7 @@ public class Utilisateur {
 		super();
 	}
 	public Utilisateur(Long id, String nom, String prenom, String identifiant,
-			String mdp, String email, String adresse) {
+			String mdp, String email, String adresse, String numTel) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -26,6 +27,7 @@ public class Utilisateur {
 		this.mdp = mdp;
 		this.email = email;
 		this.adresse = adresse;
+		this.numTel = numTel;
 	}
 	
 	//Getters-Setters
@@ -77,6 +79,14 @@ public class Utilisateur {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
+	public String getNumTel() {
+		return numTel;
+	}
+	public void setNumTel(String numTel) {
+		this.numTel = numTel;
+	}
+	
+	
 	
 	
 }

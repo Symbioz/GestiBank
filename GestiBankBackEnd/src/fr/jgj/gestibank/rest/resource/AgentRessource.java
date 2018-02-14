@@ -52,7 +52,7 @@ public class AgentRessource {
 	@DELETE
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Agent supprimerAgent(@PathParam("id") String id) {
+	public Agent supprimerAgent(@PathParam("id") Long id) {
 		Agent agentResponse = agentService.supprimerAgent(id);
 		return agentResponse;
 	}
