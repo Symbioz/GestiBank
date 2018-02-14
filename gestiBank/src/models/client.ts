@@ -7,8 +7,8 @@ export class Client extends Utilisateur {
 		idAgent: number;
 
 
-	constructor(nom:String, prenom: String, email:String, numTel: String, motDePasse : String , adresse : String, id:number,nbEnfants:number,situation:String, idAgent:number) {
-	        super(id,nom, prenom, email, numTel, motDePasse ,  adresse);
+	constructor(nom:String, prenom: String, email:String,  motDePasse : String , adresse : String, numTel:String,id:number,nbEnfants:number,situation:String, idAgent:number) {
+	        super(id,nom, prenom, email, numTel, motDePasse ,  adresse,numTel);
 			this.id = id;
 			this.nbEnfants=nbEnfants;
 			this.situation=situation;

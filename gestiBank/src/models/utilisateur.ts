@@ -7,8 +7,9 @@ export class Utilisateur {
      mdp:        String;
      email:      String;
      adresse:    String;
+     numTel:     String;
      
-     constructor(id:number, nom:String, prenom: String, identifiant:String, mdp:String, email:String,  adresse : String ){
+     constructor(id:number, nom:String, prenom: String, identifiant:String, mdp:String, email:String,  adresse : String, numTel:String ){
      	this.id  = id;
           this.nom =  nom;
      	this.prenom= prenom;
@@ -16,6 +17,7 @@ export class Utilisateur {
           this.mdp = mdp;
           this.email= email;
           this.adresse = adresse;
+          this.numTel= numTel;
      }
      
       

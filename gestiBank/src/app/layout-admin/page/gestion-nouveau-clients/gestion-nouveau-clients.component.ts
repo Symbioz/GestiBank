@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
+
 import {Client} from '../../../../models/client';
 import {Demande} from '../../../../models/demande';
 import {Agent} from '../../../../models/agent';
-import {Adresse} from '../../../../models/adresse';
 import {Inscription} from '../../../../models/inscription';
 
 import { InscriptionService} from '../../../../services/inscription.service';
@@ -20,34 +20,43 @@ import { HttpModule } from '@angular/http';
 })
 export class GestionNouveauClientsComponent implements OnInit {
     
-    inscription:any[];
-    inscriptionEnCours : any[ ] ;
-    inscriptionTermine : any[ ] ;
-    inscriptionAffecte : any[ ] ;
-    inscriptionNonAffecte : any[ ] ;
+    inscription:Inscription[];
+    inscriptionEnCours : Inscription[ ] ;
+    inscriptionTermine : Inscription[ ] ;
+    inscriptionAffecte : Inscription[ ] ;
+    inscriptionNonAffecte : Inscription[ ] ;
    
-    
-
-    
-   // condition = "*ngIf='inscription.status==1'";
-
     model: any = 1;
     public radioGroupForm: FormGroup;
-   
+    
+     private inscriptions : Inscription[];
+
     constructor(private formBuilder: FormBuilder,  private inscriptionService : InscriptionService) {}
 
     ngOnInit() {
         this.radioGroupForm = this.formBuilder.group({
             model: 'middle'
         });
-       
+
         this.inscription = this.inscriptionService.getInscriptions();
         this.inscriptionEnCours = this.inscriptionService.getInscriptionEnCours();
         this.inscriptionTermine = this.inscriptionService.getInscriptionTermine();
         this.inscriptionAffecte = this.inscriptionService.getInscriptionAffecte();
         this.inscriptionNonAffecte = this.inscriptionService.getInscriptionNonAffecte();
-    
+        this.inscriptions=this.getAllInscriptions();
     }
+
+    getAllInscriptions(){
+      this.inscriptionService.findAll().subscribe(
+         Inscriptions => {
+           this.inscriptions = inscriptions;
+         },
+         err => {
+           console.log(err);
+         }
+
+      );
+  }
 
  
 }

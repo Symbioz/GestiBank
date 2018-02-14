@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+import {Observable} from 'rxjs/observable'
+
 import { Demande} from '../models/demande';
 import { Client}  from '../models/client';
-import { Adresse} from '../models/adresse';
 import { Inscription} from '../models/inscription';
 
 
@@ -10,20 +15,33 @@ export class InscriptionService {
 
   nbInscription= 0;	
   
-
   // Tableau d'inscription en dur
   inscriptions = [ new Inscription (1, "10/12/2015", true ,new Client("2","nom","prenom","login","mdp","email", 222, 11, "s", 11), "21/10/2020" ),
    				   new Inscription (3, "10:01/2017", false, new Client("2","nom","prenom","login","mdp","email", 222, 11, "s", 11), "22/11/2015"),
               
    				   ];
   
-
   inscriptionEnCours : any[ ] = [ ];
   inscriptionTermine : any[ ] = [ ];
   inscriptionAffecte : any[ ] = [ ];
   inscriptionNonAffecte : any[ ] = [ ];
   
-  constructor() { }
+  
+  private apiUrl ='http://localhost:8080/GestiBankBackEnd/inscriptions';
+
+  constructor(private http: Http) {
+   
+   }
+
+ 
+  findAll(): Observable<Inscription[]>{
+    return this.http.get(this.apiUrl)
+        .map((res:Response) => res.json())
+        .catch((error:any) => Observable.throw (error.json || 'server error'));
+  }
+
+
+
    
    //recupérer la liste de toute les Inscritions
    getInscriptions(){

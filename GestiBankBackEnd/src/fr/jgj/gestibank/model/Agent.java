@@ -17,8 +17,8 @@ public class Agent extends Utilisateur {
 	}
 
 	public Agent(Long id, String nom, String prenom, String identifiant,
-			String mdp, String email, String adresse) {
-		super(id, nom, prenom, identifiant, mdp, email, adresse);
+			String mdp, String email, String adresse, String numtel) {
+		super(id, nom, prenom, identifiant, mdp, email, adresse,numtel);
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -26,23 +26,14 @@ public class Agent extends Utilisateur {
 	
 	
 	public Agent(Long id, String nom, String prenom, String identifiant,
-			String mdp, String email, String adresse, int matricule,
+			String mdp, String email, String adresse,String numtel, int matricule,
 			Date dateDebutContrat, Date dateFinContrat) {
-		super(id, nom, prenom, identifiant, mdp, email, adresse);
+		super(id, nom, prenom, identifiant, mdp, email, adresse,numtel);
 		this.matricule = matricule;
 		this.dateDebutContrat = dateDebutContrat;
 		this.dateFinContrat = dateFinContrat;
 	}
-    /*
-	public Agent(int matricule, Date dateDebutContrat, Date dateFinContrat) {
-		super();
-		this.matricule = matricule;
-		this.dateDebutContrat = dateDebutContrat;
-		this.dateFinContrat = dateFinContrat;
-	}*/
-
-	
-
+   
 	//Getters-Setters
 	public int getMatricule() {
 		return matricule;

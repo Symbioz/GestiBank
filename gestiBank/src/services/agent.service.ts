@@ -6,24 +6,50 @@ import 'rxjs/add/observable/throw';
 import {Observable} from 'rxjs/observable'
 import { Agent} from '../models/agent';
 
-import { Client}  from '../models/client';
 
 @Injectable()
 export class AgentService {
-  
-  agents = [new Agent( 3,"nom","prenom", "identifiant","mdp","email","adresse", 888, new Date(),new Date()), 
-            new Agent( 1,"Vincent","jennifer", "login","222", "vincentjenni@gmail.com", "rue de lille 59200 lille", 1337,new Date(),new Date()),
-            new Agent( 2,"Vinc", "jess","login2", "111", "jes@fre.fr", "rue de lille 59200 ", 573, new Date(),new Date())
-     ];
-
-
+   
   private apiUrl ='http://localhost:8080/GestiBankBackEnd/agents';
 
   constructor(private http: Http) {
    
    }
 
-  // Fonction de recupération des agents
+ 
+  findAll(): Observable<Agent[]>{
+    return this.http.get(this.apiUrl)
+        .map((res:Response) => res.json())
+        .catch((error:any) => Observable.throw (error.json || 'server error'));
+  }
+
+  supprimerAgent(id:number): Observable<boolean>{
+     return this.http.delete(this.apiUrl + '/' + id)
+     .map((res:Response) => res.json())
+     .catch((error:any) => Observable.throw (error.json || 'server error'));
+  }
+      
+ 
+  creerAgent(agent : Agent): Observable<Agent> {
+      console.log("service");
+      return this.http.post(this.apiUrl, agent)
+      .catch((error:any) => Observable.throw(error.json().error || 'server error'));
+      
+
+  }
+
+  modifierAgent(){
+
+  }
+
+  
+
+  
+
+
+  // A supprimer quand les fonctions d "interface" avec le webservice seront finalisé
+
+   // Fonction de recupération des agents
   getAgents(){
      return this.agents;
   }
@@ -40,20 +66,6 @@ export class AgentService {
     }
   } 
 
-  findAll(): Observable<Agent[]>{
-    return this.http.get(this.apiUrl)
-        .map((res:Response) => res.json())
-        .catch((error:any) => Observable.throw (error.json || 'server error'));
-  }
-
-  /*saveAgent(agent : Agent): Observable<Agent> {
-      console.log("service");
-      return this.http.post(this.apiUrl, agent)
-      .catch((error:any) => Observable.throw(error.json().error || 'server error'));
-      
-
-  }*/
-
    saveAgent(agent: Agent){
       this.agents.push(agent);
       console.log(('service save'));
@@ -66,7 +78,12 @@ export class AgentService {
       //this.agents.splice(1,1);
       this.agents.splice(this.agents.indexOf(agent), 1);
    }
+   
 
+    agents = [new Agent( 3,"nom","prenom", "identifiant","mdp","email","adresse", 888, new Date(),new Date()), 
+            new Agent( 1,"Vincent","jennifer", "login","222", "vincentjenni@gmail.com", "rue de lille 59200 lille", 1337,new Date(),new Date()),
+            new Agent( 2,"Vinc", "jess","login2", "111", "jes@fre.fr", "rue de lille 59200 ", 573, new Date(),new Date())
+     ];
    
 
  

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+
 import { Client} from  '../../../../models/client';
 import { Agent} from   '../../../../models/agent';
-import { Adresse} from '../../../../models/adresse';
+
 import { AgentService} from '../../../../Services/agent.service';
 import { ClientService} from '../../../../Services/client.service';
 
