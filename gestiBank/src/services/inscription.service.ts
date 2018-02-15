@@ -39,10 +39,8 @@ export class InscriptionService {
         .map((res:Response) => res.json())
         .catch((error:any) => Observable.throw (error.json || 'server error'));
   }
-
-
-
    
+    
    //recupérer la liste de toute les Inscritions
    getInscriptions(){
      return this.inscriptions;

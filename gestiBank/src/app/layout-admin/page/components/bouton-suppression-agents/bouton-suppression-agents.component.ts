@@ -57,14 +57,17 @@ export class BoutonSuppressionAgentsComponent implements OnInit {
         res => {
            this.gestionAgentComponent.getAllAgents();
            this.router.navigate(['/agent']);
+           console.log('agent supprimé');
         })
     }
   }
 
+  
+
    ngOnInit() { 
       this.sub = this.route.params.subscribe(params => {
-        this.id = params['id'];
-      });
+        this.id = params['id']});
+      };
 
    
 

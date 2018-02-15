@@ -1,13 +1,12 @@
 import {Demande} from './demande';
-import {Client} from './client';
 
 export class Inscription extends Demande {
 
-	 dateAffectation: String;
+	 dateAffectation: Date;
 	 
    
-     constructor(idDemande:number,dateDemande:String, status:Boolean, client:Client, dateAffectation : String ){
-          super(idDemande,dateDemande, status, client);
+     constructor(idDemande:number,dateDemande:Date, status:Boolean,  idclient:number, dateAffectation : Date ){
+          super(idDemande,dateDemande, status, idclient);
           this.dateAffectation = dateAffectation;
         
      }

@@ -20,16 +20,16 @@ import { HttpModule } from '@angular/http';
 })
 export class GestionNouveauClientsComponent implements OnInit {
     
-    inscription:Inscription[];
-    inscriptionEnCours : Inscription[ ] ;
-    inscriptionTermine : Inscription[ ] ;
-    inscriptionAffecte : Inscription[ ] ;
-    inscriptionNonAffecte : Inscription[ ] ;
+   // inscription:Inscription[];
+   // inscriptionEnCours : Inscription[ ] ;
+   // inscriptionTermine : Inscription[ ] ;
+   // inscriptionAffecte : Inscription[ ] ;
+   //inscriptionNonAffecte : Inscription[ ] ;
    
     model: any = 1;
     public radioGroupForm: FormGroup;
     
-     private inscriptions : Inscription[];
+    private inscription : Inscription[];
 
     constructor(private formBuilder: FormBuilder,  private inscriptionService : InscriptionService) {}
 
@@ -38,18 +38,18 @@ export class GestionNouveauClientsComponent implements OnInit {
             model: 'middle'
         });
 
-        this.inscription = this.inscriptionService.getInscriptions();
-        this.inscriptionEnCours = this.inscriptionService.getInscriptionEnCours();
-        this.inscriptionTermine = this.inscriptionService.getInscriptionTermine();
-        this.inscriptionAffecte = this.inscriptionService.getInscriptionAffecte();
-        this.inscriptionNonAffecte = this.inscriptionService.getInscriptionNonAffecte();
-        this.inscriptions=this.getAllInscriptions();
+        //this.inscription = this.inscriptionService.getInscriptions();
+        //this.inscriptionEnCours = this.inscriptionService.getInscriptionEnCours();
+        //this.inscriptionTermine = this.inscriptionService.getInscriptionTermine();
+        //this.inscriptionAffecte = this.inscriptionService.getInscriptionAffecte();
+        //this.inscriptionNonAffecte = this.inscriptionService.getInscriptionNonAffecte();
+        this.inscription =this.getAllInscriptions();
     }
 
     getAllInscriptions(){
       this.inscriptionService.findAll().subscribe(
-         Inscriptions => {
-           this.inscriptions = inscriptions;
+         inscriptions => {
+           this.inscription = inscriptions;
          },
          err => {
            console.log(err);

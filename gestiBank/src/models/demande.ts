@@ -1,16 +1,15 @@
-import {Client} from './client';
 
 export class Demande {
 	idDemande: number;
-     dateDemande :  String;
+     dateDemande :  Date;
      status:    Boolean;
-     client:    Client;
+     idclient:    number;
      
-     constructor(idDemande:number,dateDemande:String, status:Boolean, client:Client ){
+     constructor(idDemande:number,dateDemande:Date, status:Boolean, idclient:number ){
      	this.idDemande = idDemande;
           this.dateDemande = dateDemande;
           this.status = status;
-          this.client = client;
+          this.idclient = idclient;
      	
      }
 

@@ -19,8 +19,8 @@
     <tbody>
       <tr *ngFor="let inscription of ListeInscription"> 
               <td >{{inscription.dateDemande}}</td>
-              <td > {{inscription.client.nom}}</td>
-              <td >{{inscription.client.prenom}}</td>
+              <!--<td > {{inscription.client.nom}}</td>
+              <td >{{inscription.client.prenom}}</td>-->
               <!-- Affichage de en cours et terminé suivant boolean -->
               <td *ngIf='inscription.status == true' >
                   {{ 'termine' | translate}}
@@ -30,20 +30,20 @@
               </td>
 
               <!-- condition pour afficher oui ou non si affecté suivant l'id de l agent existant -->
-              <td *ngIf='inscription.client.idAgent !== null' >
+             <!-- <td *ngIf='inscription.client.idAgent !== null' >
                   {{ 'Oui' | translate}}
               </td>
               <td *ngIf='inscription.client.idAgent == null' >
                   {{ 'Non' | translate}}
-              </td>
+              </td> -->
 
               <!-- Gerer affichage vide du numero de l'agent -->
-              <td *ngIf='inscription.client.idAgent !== null' >
+             <!-- <td *ngIf='inscription.client.idAgent !== null' >
                   {{inscription.client.idAgent}}
               </td>
               <td *ngIf='inscription.client.idAgent == null' >
                     -------
-              </td>
+              </td> -->
                
               <td>{{inscription.idDemande}}</td>
               
