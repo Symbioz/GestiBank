@@ -9,7 +9,7 @@ public class Demande {
 	private String identifiant;
 	private Client client;
 	private Date date;
-	private String status;
+	private Boolean status;
 	
 	
 }
