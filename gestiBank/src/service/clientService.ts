@@ -1,41 +1,41 @@
 import { Injectable } from '@angular/core';
-import { User } from "../models/user";
+import { Client } from "../models";
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {Observable } from "rxjs/Observable";
 
 @Injectable()
-export class UserService {
-	private apiUrl = 'http://localhost:8080/GestiBankBackEnd/users/';
+export class ClientService {
+	private apiUrl = 'http://localhost:8080/GestiBankBackEnd/clients/';
 
 	constructor(private http: Http) { }
 
-	findAll(): Observable<User[]> {
+	getAllClient(): Observable<Client[]> {
 		return this.http.get(this.apiUrl)
 			.map((res:Response) => res.json())
 			.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 	}
 
-	findById(id: number): Observable<User> { 
+	getClientById(id: number): Observable<Client> { 
 		return this.http.get(this.apiUrl + id)
 			.map((res:Response) => res.json())
 			.catch((error:any) => Observable.throw(error.json().error || 'Error'));
 	}
 
-	saveUser(user: User): Observable<User> { 
-		return this.http.post(this.apiUrl, user)
+	saveClient(client: Client): Observable<Client> { 
+		return this.http.post(this.apiUrl, client)
 			.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 	}
 
-	deleteUserById(id: number): Observable<boolean> { 
+	deleteClientById(id: number): Observable<boolean> { 
 		return this.http.delete(this.apiUrl + id) 
 			.map((res:Response) => res.json())
 			.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 	}
 
-	updateUser(user: User): Observable<User> {
-		return this.http.put(this.apiUrl + user.id, user)
+	modifierClient(client: Client): Observable<Client> {
+		return this.http.put(this.apiUrl, client)
 			.map((res:Response) => res.json())
 			.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 	}

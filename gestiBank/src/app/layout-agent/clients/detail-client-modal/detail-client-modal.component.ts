@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { User } from '../../../../models';
-import { UserService } from '../../../../service/userService';
+import { Client } from '../../../../models';
+import { ClientService } from '../../../../service/clientService';
 import { ActivatedRoute, Router } from  '@angular/router';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
@@ -10,31 +10,30 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
   selector: 'app-detail-client-modal',
   templateUrl: './detail-client-modal.component.html',
   styleUrls: ['./detail-client-modal.component.scss'],
-  providers: [UserService]
+  providers: [ClientService]
 })
 export class DetailClientModalComponent implements OnInit, OnDestroy {
 
 	id: number;
-	user: User;
-	userForm: FormGroup;
+ 	matriculeAgent: number;
+	client: Client;
+	clientForm: FormGroup;
 	private sub: any;
-  closeResult: string;
-  @Input() clientModal:User;
+  	closeResult: string;
+  	@Input() clientModal:Client;
 
 
   constructor(private route: ActivatedRoute,
 		private router: Router,
-		private userService: UserService,
+		private clientService: ClientService,
     private modalService: NgbModal) { }
 
 	ngOnInit() { 
-		this.sub = this.route.params.subscribe(params => {
-			this.id = params['id'];
-		});
+		  	this.id=this.clientModal.id;
 
-		this.userForm = new FormGroup({
-			username: new FormControl('', Validators.required),
-			address: new FormControl('', Validators.required),
+		this.clientForm = new FormGroup({
+			identifiant: new FormControl('', Validators.required),
+			adresse: new FormControl('', Validators.required),
 			email: new FormControl('', [
 				Validators.required, 
 				Validators.pattern("[^ @]*@[^ @]*")
@@ -42,15 +41,21 @@ export class DetailClientModalComponent implements OnInit, OnDestroy {
 
 		});
 
-		//si le param id est renseigné il faut cherche le User
+		//si le param id est renseigné il faut chercher le Utilisateur
 		if (this.id) { //edit form
-			this.userService.findById(this.id).subscribe(
-				user => {
-					this.id = user.id;
-					this.userForm.patchValue({
-						username: user.username,
-						address: user.address,
-						email: user.email,
+			this.clientService.getClientById(this.id).subscribe(
+				client => {
+					this.id = client.id;
+					this.clientForm.patchValue({
+						nom : client.nom,
+						prenom:client.prenom,
+						identifiant: client.identifiant,
+						adresse: client.adresse,
+						email: client.email,
+						numTel: client.numTel,
+						situation: client.situation,
+						mdp: client.mdp
+
 					});
 				},
 				error => {
@@ -64,17 +69,30 @@ export class DetailClientModalComponent implements OnInit, OnDestroy {
 		this.sub.unsubscribe();
 	}
 
+
 	onSubmit() {
-		if (this.userForm.valid) {
+		console.log("test"+this.clientForm.valid);
+		if (this.clientForm.valid) {
 			if (this.id) {
-				let user: User = new User(this.id, 
-  			this.userForm.controls['username'].value,
-  			this.userForm.controls['address'].value,
-  			this.userForm.controls['email'].value);
-  			this.userService.updateUser(user).subscribe(
-				user => {
-					this.user = user;
-					console.log("SAVE USER OK");
+				let client: Client = new Client(
+        this.id, 
+        this.clientForm.controls['nom'].value,
+        this.clientForm.controls['prenom'].value,
+        this.clientForm.controls['mdp'].value,
+        this.clientForm.controls['email'].value,
+        this.clientForm.controls['adresse'].value,
+		this.clientForm.controls['identifiant'].value,
+        this.clientForm.controls['numTel'].value,
+        this.clientForm.controls['nbEnfants'].value,
+		this.clientForm.controls['situation'].value,
+        null,
+        null,
+        null,
+        this.matriculeAgent);
+  			this.clientService.modifierClient(client).subscribe(
+				client => {
+					this.client = client;
+					console.log(client);
 					this.refresh();
 
 				},
@@ -82,36 +100,20 @@ export class DetailClientModalComponent implements OnInit, OnDestroy {
 					console.log(err);
 				}
   			);
-			} else {
-				let user: User = new User(0, 
-  			this.userForm.controls['username'].value,
-  			this.userForm.controls['address'].value,
-  			this.userForm.controls['email'].value);
-  			this.userService.saveUser(user).subscribe(
-				user => {
-					this.user = user;
-					console.log("ADD USER OK");
-					this.refresh();
-
-				},
-				err => {
-					console.log(err);
-				}
-  			);
-			}
+			} 
 		}
-		this.userForm.reset();
-		//this.router.navigate(['/user'])
+		this.clientForm.reset();
+		//this.router.navigate(['/utilisateur'])
 	}
 
-	redirectUserPage() {
-		this.router.navigate(['/user']);
+	redirectUtilisateurPage() {
+		this.router.navigate(['/clients']);
 	}
 	refresh() {
-		this.userService.findAll().subscribe(
-				users => {
+		this.clientService.getAllClient().subscribe(
+				clients => {
 					console.log ("GET ALL USER OK ");
-					this.redirectUserPage();
+					this.redirectUtilisateurPage();
 				}
 			);
 	}

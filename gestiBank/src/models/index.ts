@@ -1,4 +1,5 @@
 export * from './notification';
 export * from './compte';
 export * from './operation';
-export * from './user';
+export * from './utilisateur';
+export * from './client';

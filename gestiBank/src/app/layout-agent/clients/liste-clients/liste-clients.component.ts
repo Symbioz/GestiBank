@@ -1,28 +1,28 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { User } from '../../../../models';
-import { UserService } from '../../../../service/userService';
+import { Client } from '../../../../models';
+import { ClientService } from '../../../../service/clientService';
 import { Router } from  '@angular/router';
 
 @Component({
-  selector: 'app-user-list',
+  selector: 'app-client-list',
   templateUrl: './liste-clients.component.html',
   styleUrls: ['./liste-clients.component.scss'],
-  providers: [UserService]
+  providers: [ClientService]
 })
 export class ListeClientsComponent implements OnInit {
 
-	private users: User[];
+	private clients: Client[];
 
-  	constructor(private router: Router, private userService: UserService) { }
+  	constructor(private router: Router, private clientService: ClientService) { }
 
-  	ngOnInit() { //when component loading get all users and set the users[]
-  		this.getAllUsers();
+  	ngOnInit() { //when component loading get all clients and set the clients[]
+  		this.getAllClients();
   	}
 
-	getAllUsers() {
-		this.userService.findAll().subscribe(
-			users => {
-				this.users = users;
+	getAllClients() {
+		this.clientService.getAllClient().subscribe(
+			clients => {
+				this.clients = clients;
 			},
 			err => {
 				console.log(err);
@@ -30,22 +30,22 @@ export class ListeClientsComponent implements OnInit {
 		);
 	}
 	
-    redirectNewUserPage() {
-		this.router.navigate(['/user/create']);
+    redirectNewClientPage() {
+		this.router.navigate(['/client/create']);
 	}
 
-	editUserPage(user: User) {
-		if (user) {
-			this.router.navigate(['/user/edit', user.id]);
+	editClientPage(client: Client) {
+		if (client) {
+			this.router.navigate(['/client/edit', client.id]);
 		}
 	}
 
-	deleteUser(user: User) {
-		this.userService.deleteUserById(user.id).subscribe(
+	deleteClient(client: Client) {
+		this.clientService.deleteClientById(client.id).subscribe(
 			res => {
-				this.getAllUsers();
-				this.router.navigate(['/user']);
-				console.log('utilisateur supprimé')
+				this.getAllClients();
+				this.router.navigate(['/client']);
+				console.log('client supprimé')
 			}
 		);
 	}

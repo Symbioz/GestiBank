@@ -31,10 +31,6 @@ import { NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   		LayoutAgentComponent,
   	 	HeaderComponent,
   	  SidebarComponent,
-  	  DetailClientModalComponent,
-  	  DashboardAgentComponent,
-      ListeClientsComponent,
-
       DashboardAgentComponent]
 })
 export class LayoutAgentModule { }

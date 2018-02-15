@@ -6,11 +6,12 @@ import { DetailClientModalComponent } from './clients/detail-client-modal/detail
 import { ListeClientsComponent } from './clients/liste-clients/liste-clients.component';
 
 const routes: Routes = [
-	 		{	path: '', component: LayoutAgentComponent},
-        
-            { path: '', redirectTo: 'client' },
-  //          { path: 'dashboard', component: DashboardAgentComponent },
-            { path: 'clients', component: ListeClientsComponent }
+	 		{ path: '', component: LayoutAgentComponent, 	
+	 			children: [
+	 			//	{ path: 'dashboard', component: DashboardAgentComponent },
+	            { path: 'clients',   loadChildren: './clients/clients.module#ClientsModule' }
+           		]
+           	}
             
      
 ];
