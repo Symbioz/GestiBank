@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Operation {
 	
-	private Long id;
+	private long id;
 	private float montant;
 	private Date date;
 	private String type;
@@ -16,8 +16,9 @@ public class Operation {
 		super();
 	}
 
-	public Operation(float montant, Date date, String type, String libelle) {
+	public Operation(long id, float montant, Date date, String type, String libelle) {
 		super();
+		this.id = id;
 		this.montant = montant;
 		this.date = date;
 		this.type = type;
@@ -25,10 +26,10 @@ public class Operation {
 	}
 	
 	//Getters-Setters
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
