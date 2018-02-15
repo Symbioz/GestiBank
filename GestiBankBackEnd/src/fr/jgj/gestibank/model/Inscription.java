@@ -7,12 +7,15 @@ public class Inscription extends Demande {
 	private Date dateAffectation;
      
 	// Constructeur
-	
+
 	public Inscription(Long identifiant, Client client, Date date,
 			boolean status, Date dateAffectation) {
 		super(identifiant, client, date, status);
 		this.dateAffectation = dateAffectation;
 	}
+
+	
+	
 
 
 	//Getter et setter
@@ -21,6 +24,8 @@ public class Inscription extends Demande {
 	}
 
 	
+
+
 
 	public void setDateAffectation(Date dateAffectation) {
 		this.dateAffectation = dateAffectation;

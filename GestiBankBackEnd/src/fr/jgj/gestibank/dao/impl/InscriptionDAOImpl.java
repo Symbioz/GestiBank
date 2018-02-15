@@ -17,10 +17,10 @@ public class InscriptionDAOImpl implements IInscriptionDAO {
 	    static HashMap<String, Inscription> createMap()
 	    {
 	    	HashMap<String,Inscription> inscriptionsMap = new HashMap<String,Inscription>();
-	    	Inscription inscription1 = new Inscription((long) 1,new Client(), new Date(), true, new Date());
-	    	Inscription inscription2 = new Inscription((long) 2,new Client(), new Date(), false, new Date());
-	    	Inscription inscription3 = new Inscription((long) 3,new Client(), new Date(), true, null);
-	    	Inscription inscription4 = new Inscription((long) 4,new Client(), new Date(), true, new Date());
+	    	Inscription inscription1 = new Inscription((long) 1,new Client(1,"test"), new Date(), true, new Date());
+	    	Inscription inscription2 = new Inscription((long) 2,new Client(2,"test"), new Date(), false, new Date());
+	    	Inscription inscription3 = new Inscription((long) 3,new Client(2,"test"), new Date(), true, null);
+	    	Inscription inscription4 = new Inscription((long) 4,new Client(2,"test"), new Date(), true, new Date());
 	    	
 			inscriptionsMap.put("1", inscription1);
 			inscriptionsMap.put("2", inscription2);
@@ -29,23 +29,18 @@ public class InscriptionDAOImpl implements IInscriptionDAO {
 	        return inscriptionsMap;
 	    }
 	    
-	
-	
-	
-	
 
 	@Override
 	public List<Inscription> getAllInscriptions() {
-		List<Inscription> inscriptions = new ArrayList<Inscription>(inscriptionsMap.values());
-		return inscriptions;
+		List<Inscription> inscriptionsList = new ArrayList<Inscription>(inscriptionsMap.values());
+		return inscriptionsList;
 		
 	}
-
-	@Override
-	public List<Inscription> getAllInscriptions(String status,
+	
+	/*public List<Inscription> getAllInscriptions(String status,
 			Date dateAffectation) {
 		// A implement (if, voir si on fait avec date ou agent)
 		return null;
-	}
+	}*/
 
 }

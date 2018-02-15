@@ -49,10 +49,6 @@ export class AgentService {
 
   // A supprimer quand les fonctions d "interface" avec le webservice seront finalisé
 
-   // Fonction de recupération des agents
-  getAgents(){
-     return this.agents;
-  }
 
   //Fonction qui recupère un agent avec son id (pour le moment avec son matricule car oublier de mettre un
   //id pour l'uilitsateur)

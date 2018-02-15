@@ -23,6 +23,10 @@ public class Demande {
 	// Getter/Setter
 	
 	
+	public Demande(Long identifiant2, Date date2, boolean status2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Long getIdentifiant() {
 		return identifiant;
 	}

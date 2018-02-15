@@ -16,8 +16,7 @@ import javax.ws.rs.core.MediaType;
 import fr.jgj.gestibank.model.Agent;
 import fr.jgj.gestibank.service.impl.AgentServiceImpl;
 
-
-@Path("agents")
+@Path("/agents")
 public class AgentRessource {
 	
 	AgentServiceImpl agentService = new AgentServiceImpl();
