@@ -10,6 +10,7 @@ const routes: Routes = [
 	 			children: [
 	 			//	{ path: 'dashboard', component: DashboardAgentComponent },
 	            { path: 'clients',   loadChildren: './clients/clients.module#ClientsModule' }
+	            { path: 'demandesAgent',   loadChildren: './demandes/demandes-agent.module#DemandesAgentModule' }
            		]
            	}
             

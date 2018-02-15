@@ -2,11 +2,13 @@ import { Component, OnInit,Input } from '@angular/core';
 import { Client } from '../../../../models';
 import { ClientService } from '../../../../service/clientService';
 import { Router } from  '@angular/router';
+import { routerTransition } from '../../../router.animations';
 
 @Component({
   selector: 'app-client-list',
   templateUrl: './liste-clients.component.html',
   styleUrls: ['./liste-clients.component.scss'],
+  animations: [routerTransition()],
   providers: [ClientService]
 })
 export class ListeClientsComponent implements OnInit {
@@ -44,7 +46,7 @@ export class ListeClientsComponent implements OnInit {
 		this.clientService.deleteClientById(client.id).subscribe(
 			res => {
 				this.getAllClients();
-				this.router.navigate(['/client']);
+				this.router.navigate(['/agent/clients']);
 				console.log('client supprimé')
 			}
 		);

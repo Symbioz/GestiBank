@@ -18,7 +18,6 @@ export class DetailClientModalComponent implements OnInit {
  	matriculeAgent: number;
 	client: Client;
 	clientForm: FormGroup;
-	private sub: any;
   	closeResult: string;
   	@Input() clientModal:Client;
 
