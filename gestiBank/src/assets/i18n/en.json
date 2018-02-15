@@ -40,6 +40,7 @@
     "Mes services" : "My services",
     "Mes contrats" : "My contracts",
 
+    "Language" : "Language",
     "works" : "works",
     "Clients": "Customers",
     "Nom": "Name",
@@ -57,7 +58,7 @@
     "Supprimer":"Delete",
     "Demande":"Requests",
     "Inscription":"Inscription requests",
-
+    "mdp": "Password",
 
 
     "GestionDesAgents" : "Agent Management",

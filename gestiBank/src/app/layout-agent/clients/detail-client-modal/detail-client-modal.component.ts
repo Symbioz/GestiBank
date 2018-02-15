@@ -23,6 +23,7 @@ export class DetailClientModalComponent implements OnInit, OnDestroy {
   	@Input() clientModal:Client;
 
 
+
   constructor(private route: ActivatedRoute,
 		private router: Router,
 		private clientService: ClientService,
@@ -32,12 +33,19 @@ export class DetailClientModalComponent implements OnInit, OnDestroy {
 		  	this.id=this.clientModal.id;
 
 		this.clientForm = new FormGroup({
+			nom : new FormControl('', Validators.required),
+			prenom : new FormControl('', Validators.required),
 			identifiant: new FormControl('', Validators.required),
 			adresse: new FormControl('', Validators.required),
 			email: new FormControl('', [
 				Validators.required, 
 				Validators.pattern("[^ @]*@[^ @]*")
-			])
+			]),
+			numTel : new FormControl('', Validators.required),
+			nbEnfants :new FormControl('', Validators.required),
+			situation : new FormControl('', Validators.required),
+			mdp :new FormControl('', Validators.required)
+
 
 		});
 
@@ -53,6 +61,7 @@ export class DetailClientModalComponent implements OnInit, OnDestroy {
 						adresse: client.adresse,
 						email: client.email,
 						numTel: client.numTel,
+						nbEnfants : client.nbEnfants,
 						situation: client.situation,
 						mdp: client.mdp
 
@@ -66,7 +75,8 @@ export class DetailClientModalComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy(): void { //suppression de l'écouteur lors du déchargement du composant
-		this.sub.unsubscribe();
+	//	this.sub.unsubscribe();
+	console.log("destroy");
 	}
 
 
@@ -93,7 +103,7 @@ export class DetailClientModalComponent implements OnInit, OnDestroy {
 				client => {
 					this.client = client;
 					console.log(client);
-					this.refresh();
+				//	this.refresh();
 
 				},
 				err => {
@@ -102,26 +112,34 @@ export class DetailClientModalComponent implements OnInit, OnDestroy {
   			);
 			} 
 		}
-		this.clientForm.reset();
-		//this.router.navigate(['/utilisateur'])
+		//this.clientForm.reset();
+		//this.router.navigate(['/agent/clients'])
 	}
 
-	redirectUtilisateurPage() {
-		this.router.navigate(['/clients']);
-	}
+/*	redirectClientPage() {
+		this.router.navigate(['/agent']);
+		this.router.navigate(['/agent/clients']);
+	}*/
+	
 	refresh() {
-		this.clientService.getAllClient().subscribe(
+		/*this.clientService.getAllClient().subscribe(
 				clients => {
 					console.log ("GET ALL USER OK ");
-					this.redirectUtilisateurPage();
+					this.redirectClientPage();
 				}
-			);
+			);*/
+    window.location.reload();
 	}
+
   open(content) {
         this.modalService.open(content).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
+            this.refresh();
+            console.log("refresh1");
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+            this.refresh();
+            console.log("refresh2");
         });
     }
 

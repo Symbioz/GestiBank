@@ -40,6 +40,7 @@
     "Mes services" : "Mes services",
     "Mes contrats" : "Mes contrats",
 
+    "Language" : "Langue",
     "works" : "fonctionne",
     "Clients": "Clients",
     "Nom": "Nom",
@@ -57,7 +58,7 @@
     "Supprimer":"Supprimer",
     "Demande":"Demande en cours",
     "Inscription":"Demande d'inscription",
-
+    "mdp": "Mot de passe",
     "GestionDesAgents" :"Gestion des agents",
     "GestionDesComptes":"Gestion des comptes",
     

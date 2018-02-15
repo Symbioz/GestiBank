@@ -1,14 +1,13 @@
 <button class="btn btn-success" (click)="open(content)">Editer</button>
     <ng-template #content let-c="close" let-d="dismiss">
-     <form>
+     <form [formGroup]="clientForm" (ngSubmit)="onSubmit()" >
         <div class="modal-header">
             <h4 class="modal-title">{{'Info'| translate}}</h4>
             <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <div class="modal-body" [formGroup]="clientForm" 
-        >
+        <div class="modal-body" >
             <table class="table  table-striped">
                 <thead>
                     <tr>
@@ -21,19 +20,44 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td>{{'Nom'|translate}}</td>
+                        <td>    
+                                                       
+                                    <input  type = "text" 
+                                            class="form-control" 
+                                            formControlName="nom">                   
+                           
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>{{'Prénom'|translate}}</td>
+                        <td>    
+                                                       
+                                    <input  type = "text" 
+                                            class="form-control" 
+                                            formControlName="prenom">                   
+                           
+                        </td>
+                    </tr>
+                    <tr>
                         <td>{{'Identifiant'|translate}}</td>
                        
                         <td>    
                                                            
+                            <input  type = "text" 
+                                class="form-control" 
+                                formControlName="identifiant">  
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{'mdp'|translate}}</td>
+                        <td>    
+                                                       
                                     <input  type = "text" 
                                             class="form-control" 
-                                            formControlName="identifiant">  </td>
-                      <!--   <td> 
-                                     <button type="button" class="btn btn-secondary" (click)="modifierClient()">Sauvegarder</button>
-                             
-                            
-                        </td> -->
-                        
+                                            formControlName="mdp">                   
+                           
+                        </td>
                     </tr>
                     <tr>
                         <td>{{'adresse'|translate}}</td>
@@ -45,35 +69,16 @@
                            
                         </td>
                     </tr>
-    					<tr>
-                        <td>{{'couriel'|translate}}</td>
+    				<tr>
+                        <td>{{'Couriel'|translate}}</td>
                         <td>    
 
     							<input type="email" class="form-control" formControlName="email">                
                         </td>
                     </tr>
-                    <tr>
-                        <td>{{''|translate}}</td>
-                        <td>    
-                                                       
-                                    <input  type = "text" 
-                                            class="form-control" 
-                                            formControlName="nom">                   
-                           
-                        </td>
-                    </tr>
+                    
                      <tr>
-                        <td>{{''|translate}}</td>
-                        <td>    
-                                                       
-                                    <input  type = "text" 
-                                            class="form-control" 
-                                            formControlName="prenom">                   
-                           
-                        </td>
-                    </tr>
-                     <tr>
-                        <td>{{''|translate}}</td>
+                        <td>{{'Situation'|translate}}</td>
                         <td>    
                                                        
                                     <input  type = "text" 
@@ -82,18 +87,8 @@
                            
                         </td>
                     </tr>
-                                         <tr>
-                        <td>{{''|translate}}</td>
-                        <td>    
-                                                       
-                                    <input  type = "text" 
-                                            class="form-control" 
-                                            formControlName="mdp">                   
-                           
-                        </td>
-                    </tr>
-                                         <tr>
-                        <td>{{''|translate}}</td>
+                      <tr>
+                        <td>{{'Numéro de téléphone'|translate}}</td>
                         <td>    
                                                        
                                     <input  type = "text" 
@@ -102,8 +97,8 @@
                            
                         </td>
                     </tr>
-                                         <tr>
-                        <td>{{''|translate}}</td>
+                    <tr>
+                        <td>{{'NombrEnfants'|translate}}</td>
                         <td>    
                                                        
                                     <input  type = "text" 
@@ -117,7 +112,7 @@
         </div>
         <div class="modal-footer" >
              
-            <button  type="submit" class="btn btn-secondary" (click)="onSubmit()">Sauvegarder</button>
+            <button  type="submit" class="btn btn-secondary" >Sauvegarder</button>
 
             <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
         </div>   
