@@ -14,7 +14,7 @@ public class NotificationServiceImpl implements INotificationService {
 	//méthode (non modifié par Spring)
 	@Override
 	public List<Notification> getAllNotifications() {
-		List<Notification> notificationList = notificationDAOImpl.getAllNotification();
+		List<Notification> notificationList = notificationDAOImpl.getAllNotifications();
 		return notificationList;
 	}
 

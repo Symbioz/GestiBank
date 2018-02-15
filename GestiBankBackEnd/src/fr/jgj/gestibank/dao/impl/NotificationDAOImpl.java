@@ -29,7 +29,7 @@ public class NotificationDAOImpl implements INotificationDAO {
     }
 	
 	@Override
-	public List<Notification> getAllNotification() {
+	public List<Notification> getAllNotifications() {
 		List<Notification> notifications = new ArrayList<Notification>(notificationsMap.values());
 		return notifications;
 	}

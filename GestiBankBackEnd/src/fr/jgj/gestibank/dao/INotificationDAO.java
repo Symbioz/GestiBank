@@ -6,7 +6,7 @@ import fr.jgj.gestibank.model.Notification;
 
 public interface INotificationDAO {
 	
-	public List<Notification> getAllNotification();
+	public List<Notification> getAllNotifications();
 	
 	public Notification ajouterNotification(Notification notification);
 	
