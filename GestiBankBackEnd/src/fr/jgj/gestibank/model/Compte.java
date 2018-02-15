@@ -15,6 +15,14 @@ public class Compte {
 		
 	}
 	
+	public Compte(long iBAN, float solde, Date dateCreation, ArrayList<Operation> operations) {
+		super();
+		IBAN = iBAN;
+		this.solde = solde;
+		this.dateCreation = dateCreation;
+		this.operations = operations;
+	}
+
 
 	//Getters-Setters
 	public long getIBAN() {

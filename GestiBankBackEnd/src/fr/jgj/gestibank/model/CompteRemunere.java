@@ -1,5 +1,8 @@
 package fr.jgj.gestibank.model;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public class CompteRemunere extends Compte {
 	
 	static private float taux = 2f; //taux d'intérêts fixé à 2%
@@ -10,7 +13,9 @@ public class CompteRemunere extends Compte {
 	public CompteRemunere() {
 		super();
 	}
-
+	public CompteRemunere(long iBAN, float solde, Date dateCreation, ArrayList<Operation> operations) {
+		super( iBAN,  solde,  dateCreation, operations);
+	}
 
 	//getters-setters
 	public static float getTaux() {
