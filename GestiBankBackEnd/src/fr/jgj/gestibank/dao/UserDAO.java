@@ -28,10 +28,6 @@ public class UserDAO {
     	
     		
 	public UserDAO() {
-//		User user1 = new User(1, "wajih", "Paris 75000", "wajih@gk.com");
-//		User user2 = new User(2, "aline", "Rueil 92500", "aline@gk.com");
-//		usersMap.put("1", user1);
-//		usersMap.put("2", user2);
 	}
 	
 	public List<User> getAllUsers() {
