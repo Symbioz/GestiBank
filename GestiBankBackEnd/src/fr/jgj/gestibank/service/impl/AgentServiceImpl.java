@@ -32,5 +32,10 @@ public class AgentServiceImpl implements IAgentService {
 		return agentResponse;
 	}
 	
+	public Agent getAgentById(Long id) {
+		Agent agent = agentDaoImpl.getAgentById(id);
+		return agent;
+     }
+	
 }
 
