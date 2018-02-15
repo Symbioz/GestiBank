@@ -15,7 +15,6 @@ import javax.ws.rs.core.MediaType;
 import com.wha.model.Client;
 import com.wha.service.ClientService;
 
-
 @Path("/clients")
 public class ClientResource {
 
@@ -28,15 +27,25 @@ public class ClientResource {
 		List<Client> clientList = clientService.getAllClients();
 		return clientList;
 	}
+
 	// CRUD -- UPDATE operation
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Client updateClient(Client client) {
-		Client clientResponse = clientService
-				.updateClient(client);
+		Client clientResponse = clientService.updateClient(client);
 		return clientResponse;
 	}
+
+	// CRUD -- CREATE operation
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Client createClient(Client client) {
+		Client clientResponse = clientService.createClient(client);
+		return clientResponse;
+	}
+
 	// CRUD -- READ operation
 	@GET
 	@Path("/{id}")
@@ -46,25 +55,12 @@ public class ClientResource {
 		return client;
 	}
 
-	// CRUD -- CREATE operation
-	@POST
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Client createClient(Client client) {
-		Client clientResponse = clientService
-				.createClient(client);
-		return clientResponse;
-	}
-
-
-
 	// CRUD -- DELETE operation
 	@DELETE
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Client deleteClient(@PathParam("id") String id) {
-		Client clientResponse = clientService
-				.deleteClient(id);
+		Client clientResponse = clientService.deleteClient(id);
 		return clientResponse;
 	}
 

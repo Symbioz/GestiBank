@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Client } from '../../../../models';
 import { ClientService } from '../../../../service/clientService';
 import { ActivatedRoute, Router } from  '@angular/router';
@@ -12,7 +12,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
   styleUrls: ['./detail-client-modal.component.scss'],
   providers: [ClientService]
 })
-export class DetailClientModalComponent implements OnInit, OnDestroy {
+export class DetailClientModalComponent implements OnInit {
 
 	id: number;
  	matriculeAgent: number;
@@ -73,12 +73,6 @@ export class DetailClientModalComponent implements OnInit, OnDestroy {
 			);
 		}
 	}
-
-	ngOnDestroy(): void { //suppression de l'écouteur lors du déchargement du composant
-	//	this.sub.unsubscribe();
-	console.log("destroy");
-	}
-
 
 	onSubmit() {
 		console.log("test"+this.clientForm.valid);
