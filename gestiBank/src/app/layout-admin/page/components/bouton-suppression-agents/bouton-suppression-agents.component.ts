@@ -51,9 +51,10 @@ export class BoutonSuppressionAgentsComponent implements OnInit {
         }
     }
 
-    supprimerAgent(agent: Agent){
-    if (agent) {
-      this.agentService.supprimerAgent(agent.id).subscribe(
+    supprimerAgent(agentModal: Agent){
+      console.log(agentModal);
+    if (agentModal) {
+      this.agentService.supprimerAgent(agentModal.id).subscribe(
         res => {
            this.gestionAgentComponent.getAllAgents();
            this.router.navigate(['/agent']);
@@ -62,22 +63,11 @@ export class BoutonSuppressionAgentsComponent implements OnInit {
     }
   }
 
-  
 
    ngOnInit() { 
       this.sub = this.route.params.subscribe(params => {
         this.id = params['id']});
       };
 
-   
-
-  // A supprimer
-  /*deleteAgentById(this.id){
-       let agent: Agent = this.agentService.getAgent(id);
-       console.log(agent.matricule);
-       this.agentService.deleteAgentById(agent);
-  }*/
-
-  
 
 }

@@ -56,6 +56,15 @@ public class AgentRessource {
 		return agentResponse;
 	}
 	
+	// CRUD -- READ operation
+		@GET
+		@Path("/{id}")
+		@Produces(MediaType.APPLICATION_JSON)
+		public Agent getAgentByID(@PathParam("id") Long id) {
+			Agent agent = agentService.getAgentById(id);
+			return agent;
+	}
+	
 	
 
 }

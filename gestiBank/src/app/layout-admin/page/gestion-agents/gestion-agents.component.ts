@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Agent} from '../../../../models/agent';
-import { Adresse}from '../../../../models/adresse';
 import { AgentService} from '../../../../services/agent.service';
 import { Router} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; 
@@ -31,7 +30,7 @@ export class GestionAgentsComponent implements OnInit {
   }
 
   getAllAgents(){
-      this.agentService.findAll().subscribe(
+      this.agentService.getAllAgents().subscribe(
          agents => {
            this.agents = agents;
          },

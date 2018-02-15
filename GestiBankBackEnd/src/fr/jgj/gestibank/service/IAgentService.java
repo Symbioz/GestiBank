@@ -14,6 +14,8 @@ public interface IAgentService {
 	
 	public Agent supprimerAgent(Long id) ;
 	
+	public Agent getAgentById(Long id);
+	
 	
 }
 

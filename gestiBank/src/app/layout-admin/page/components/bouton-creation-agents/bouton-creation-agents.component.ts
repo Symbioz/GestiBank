@@ -22,9 +22,11 @@ export class BoutonCreationAgentsComponent implements OnInit  {
 
       
     agent: Agent;
+    id:number;
     agentForm: FormGroup;
     closeResult: string;
-    id:number;
+    
+    private sub: any;
     
 constructor(  private route: ActivatedRoute,
               private router: Router,
@@ -60,7 +62,10 @@ constructor(  private route: ActivatedRoute,
           identifiant: new FormControl('', Validators.required),
           nom: new FormControl ('', Validators.required),
           prenom: new FormControl ('', Validators.required),
-          email : new FormControl ('', Validators.required),
+          email: new FormControl('', [
+                            Validators.required, 
+                            Validators.pattern("[^ @]*@[^ @]*")
+          ]),
           numTel : new FormControl ('', Validators.required),
           adresse: new FormControl ('', Validators.required),
           motDePasse: new FormControl ('', Validators.required),
@@ -69,32 +74,50 @@ constructor(  private route: ActivatedRoute,
       } );
   }
 
-  ngOnDestroy(): void{
-  }
+  //ngOnDestroy(): void{
+  //}
 
   onSubmit(addAgentForm: NgForm){
+    console.log(this.agentForm.valid);
     if (this.agentForm.valid){
-        
-
       let agent: Agent = new Agent(
-          this.id =1,
-          this.agentForm.controls['matricule'].value,
-          this.agentForm.controls['idenfifiant'].value,
+          0,
           this.agentForm.controls['nom'].value,
           this.agentForm.controls['prenom'].value,
+          this.agentForm.controls['motDePasse'].value,
           this.agentForm.controls['email'].value,
           this.agentForm.controls['adresse'].value,
+          this.agentForm.controls['identifiant'].value,
           this.agentForm.controls['numTel'].value,
-          this.agentForm.controls['motDePasse'].value,
+          this.agentForm.controls['matricule'].value,
           this.agentForm.controls['dateDebutContrat'].value,
           );
-      console.log(addAgentForm.value);
-          this.agentService.saveAgent(agent);
-          
+           console.log(addAgentForm.value);
+           console.log(agent);
+          this.agentService.creerAgent(agent).subscribe(
+               agent => {
+                this.agent = agent;
+                  console.log(agent);
+                  //  this.refresh();
+                         },
+                err => {
+                  console.log(err);
+              }
+           );
     }
 
-   this.agentForm.reset();
-   this.router.navigate(['/admin/gestionAgents']);
+   //this.agentForm.reset();
+   //this.router.navigate(['/admin/gestionAgents']);
   }
+
+  refresh() {
+    /*this.clientService.getAllClient().subscribe(
+        clients => {
+          console.log ("GET ALL USER OK ");
+          this.redirectClientPage();
+        }
+      );*/
+    window.location.reload();
+}
 
 }

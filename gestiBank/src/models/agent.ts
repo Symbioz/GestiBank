@@ -5,13 +5,36 @@ export class Agent extends Utilisateur {
 	 matricule: number;
 	 dateDebutContrat: Date;
 	
-   
-     constructor(id: number, nom:String, prenom: String, identifiant:String, mdp:String, email:String, adresse : String, numTel:String, matricule: number,dateDebutContrat:Date ){
-          super(id, nom, prenom, identifiant, mdp,email,  adresse, numTel);
-          this.matricule = matricule;
-          this.dateDebutContrat = dateDebutContrat;
-         
-     }
+     constructor(
+		id: number, 
+		nom: string, 
+		prenom: string,
+		mdp: string,  
+		email: string, 
+		adresse: string, 
+		identifiant : string,
+		numTel: string,
+		matricule: number,
+		dateDebutContrat:Date
+		) {
+
+		super(
+			id, 
+			nom, 
+			prenom, 
+			mdp,  
+			email, 
+			adresse, 
+			identifiant,
+			numTel);
+
+		
+		this.matricule = matricule;
+		this.dateDebutContrat = dateDebutContrat;
+	}
+}
+
+
  
 }
 

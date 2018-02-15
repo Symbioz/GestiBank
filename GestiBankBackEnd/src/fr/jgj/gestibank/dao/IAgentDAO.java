@@ -15,6 +15,8 @@ public interface IAgentDAO {
 	public Agent modifierAgent (Agent agent) ;
 	
 	public Agent supprimerAgent(Long id) ;
+	
+	public Agent getAgentById(Long id);
 
 }
 

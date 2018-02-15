@@ -15,9 +15,9 @@ public class AgentDAOImpl implements IAgentDAO{
     static HashMap<String, Agent> createMap()
     {
     	HashMap<String,Agent> agentsMap = new HashMap<String,Agent>();
-    	Agent agent3 = new Agent( 3L,"NOM","prenom", "identifiant","mdp","couriel","adresse", "0564595515", 888, new Date(),new Date());
-    	Agent agent1 = new Agent( 1L,"Vincent","jennifer", "login","222", "vincentjenni@gmail.com", "rue de lille 59200 lille", "0564595515",1337,new Date(),new Date());
-		Agent agent2 = new Agent( 2L,"Vinc", "jess","login2", "111", "jes@fre.fr", "rue de lille 59200 ","0564595515", 573, new Date(),new Date());
+    	Agent agent3 = new Agent( 3L,"NOM","prenom", "identifiant","mdp","couriel","adresse", "0564595515", 888, new Date());
+    	Agent agent1 = new Agent( 1L,"Vincent","jennifer", "login","222", "vincentjenni@gmail.com", "rue de lille 59200 lille", "0564595515",1337,new Date());
+		Agent agent2 = new Agent( 2L,"Vinc", "jess","login2", "111", "jes@fre.fr", "rue de lille 59200 ","0564595515", 573, new Date());
 		agentsMap.put("1", agent1);
 		agentsMap.put("2", agent2);
 		agentsMap.put("3", agent3);
@@ -39,7 +39,14 @@ public class AgentDAOImpl implements IAgentDAO{
 	// A MODIFIER
 	public Agent modifierAgent (Agent agent) {
 		if (agentsMap.get(agent.getId()) != null) {
+			agentsMap.get(agent.getId()).setMatricule(agent.getMatricule());
+			agentsMap.get(agent.getId()).setIdentifiant(agent.getIdentifiant());
+			agentsMap.get(agent.getId()).setNom(agent.getNom());
+			agentsMap.get(agent.getId()).setPrenom(agent.getPrenom());
 			agentsMap.get(agent.getId()).setEmail(agent.getEmail());
+			agentsMap.get(agent.getId()).setNumTel(agent.getNumTel());
+			agentsMap.get(agent.getId()).setAdresse(agent.getAdresse());
+			agentsMap.get(agent.getId()).setDateDebutContrat(agent.getDateDebutContrat());
 		} else {
 			agentsMap.put(agent.getId() + "", agent);
 		}
@@ -51,5 +58,15 @@ public class AgentDAOImpl implements IAgentDAO{
 		Agent agentResponse = agentsMap.remove(id);
 		return agentResponse;
 	}
+
+
+	@Override
+	public Agent getAgentById(Long id) {
+		Agent agentResponse = agentsMap.get(id);
+		System.out.println( agentResponse);
+		return agentResponse;
+	}
+	
+	
 
 }
