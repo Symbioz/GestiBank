@@ -55,5 +55,7 @@ public class AgentRessource {
 		Agent agentResponse = agentService.supprimerAgent(id);
 		return agentResponse;
 	}
+	
+	
 
 }

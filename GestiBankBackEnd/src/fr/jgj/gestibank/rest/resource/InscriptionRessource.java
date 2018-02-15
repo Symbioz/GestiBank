@@ -1,5 +1,6 @@
 package fr.jgj.gestibank.rest.resource;
 
+
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -13,16 +14,15 @@ import fr.jgj.gestibank.service.impl.InscriptionServiceImpl;
 
 @Path("/inscriptions")
 public class InscriptionRessource {
-	
-    InscriptionServiceImpl inscriptionService = new InscriptionServiceImpl();
-	
-    // CRUD -- READ operation
+
+	InscriptionServiceImpl inscriptionService = new InscriptionServiceImpl();
+
+	// CRUD -- READ operation
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Inscription> listAllInscriptions() {
 		List<Inscription> inscriptionList = inscriptionService.getAllInscriptions();
 		return inscriptionList;
 	}
-	 
 
 }

@@ -7,15 +7,21 @@ public class Demande {
 	
 	//@Id
 	private Long identifiant;
-	private Client client;
+	private Long idClient;
 	private Date date;
 	private boolean status;
     
 	//Consstructeur
-	public Demande(Long identifiant, Client client, Date date, boolean status) {
+	
+	public Demande() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Demande(Long identifiant, Long idClient, Date date, boolean status) {
 		super();
 		this.identifiant = identifiant;
-		this.client = client;
+		this.idClient = idClient;
 		this.date = date;
 		this.status = status;
 	}
@@ -23,8 +29,14 @@ public class Demande {
 	// Getter/Setter
 	
 	
-	public Demande(Long identifiant2, Date date2, boolean status2) {
-		// TODO Auto-generated constructor stub
+	
+
+	public Long getIdClient() {
+		return idClient;
+	}
+
+	public void setIdClient(Long idClient) {
+		this.idClient = idClient;
 	}
 
 	public Long getIdentifiant() {
@@ -33,12 +45,7 @@ public class Demande {
 	public void setIdentifiant(Long identifiant) {
 		this.identifiant = identifiant;
 	}
-	public Client getClient() {
-		return client;
-	}
-	public void setClient(Client client) {
-		this.client = client;
-	}
+	
 	public Date getDate() {
 		return date;
 	}
@@ -51,9 +58,6 @@ public class Demande {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
-	
-	
-	
+
 	
 }
