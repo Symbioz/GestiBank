@@ -13,7 +13,7 @@ export class ListDemandesComponent implements OnInit {
 	private demandesAgent : Demandes[];
 
 
-	constructor(private router: Router, private clientService: ClientService) { }
+	constructor(private router: Router, private demandeService: DemandeService) { }
 
   	ngOnInit() { //when component loading get all clients and set the clients[]
   		this.getAllDemandes();
