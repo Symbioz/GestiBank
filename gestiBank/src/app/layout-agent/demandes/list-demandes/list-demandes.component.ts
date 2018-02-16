@@ -14,6 +14,7 @@ import { Router } from  '@angular/router';
 export class ListDemandesComponent implements OnInit {
 
 	private demandesAgent : Demande[];
+	private demandes: Demande[];
 
 
 	constructor(private router: Router, private demandeService: DemandeService) { }
@@ -25,13 +26,16 @@ export class ListDemandesComponent implements OnInit {
 	getAllDemandes() {
 		this.demandeService.getAllDemandes().subscribe(
 			demandes => {
-				this.demandesAgent = demandes;
+				this.demandes = demandes;
 			},
 			err => {
 				console.log(err);
 			}
 		);
+		let demande: Demande;
+		for (demande of this.demandes) 
+			if (demande.status===true){
+				this.demandesAgent.push(demande) 
+			}
 	}
- 
-
 }

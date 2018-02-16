@@ -3,7 +3,6 @@ import { Demande } from '../../../../models';
 
 import { DemandeService } from '../../../../service/demandeService';
 import { ActivatedRoute, Router } from  '@angular/router';
-import { FormControl, FormGroup} from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
@@ -19,7 +18,7 @@ export class DemandeModalComponent implements OnInit {
 	demande: Demande;
   closeResult: string;
 	@Input() demandeEnCours : Demande;
-  public radioGroupForm: FormGroup;
+
 
 
 
@@ -32,9 +31,7 @@ export class DemandeModalComponent implements OnInit {
 	ngOnInit() { 
 	  	this.id=this.demandeEnCours.idDemande;
       console.log("onInit" + this.demandeEnCours)
-	  	this.radioGroupForm = new FormGroup({
-            status: new FormControl('')
-        });
+	  
 
 
 		//si le param id est renseigné il faut chercher le Utilisateur
@@ -80,13 +77,10 @@ export class DemandeModalComponent implements OnInit {
       }
   }
 
-  onSubmit() {
-    console.log("submit clique");
- 
-      if (this.id) {
-        let demande: Demande = this.demandeEnCours;
-        demande.status=this.radioGroupForm.controls['status'].value;
-        this.demandeService.modifierDemande(demande).subscribe(
+  validerDemande(){
+     let demande: Demande = this.demandeEnCours;
+     demande.status= false;
+     this.demandeService.modifierDemande(demande).subscribe(
           demande => {
             this.demande = demande;
             console.log(demande);
@@ -96,6 +90,6 @@ export class DemandeModalComponent implements OnInit {
           console.log(err);
           }
         );
-      }  
   }
+  
 }
