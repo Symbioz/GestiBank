@@ -18,9 +18,9 @@
                     </thead>
     <tbody>
       <tr *ngFor="let inscription of ListeInscription"> 
-              <td >{{inscription.dateDemande}}</td>
-              <!--<td > {{inscription.client.nom}}</td>
-              <td >{{inscription.client.prenom}}</td>-->
+              <td >{{inscription.date}}</td>
+              <td > </td>
+              <td > </td>
               <!-- Affichage de en cours et terminé suivant boolean -->
               <td *ngIf='inscription.status == true' >
                   {{ 'termine' | translate}}
@@ -30,30 +30,29 @@
               </td>
 
               <!-- condition pour afficher oui ou non si affecté suivant l'id de l agent existant -->
-             <!-- <td *ngIf='inscription.client.idAgent !== null' >
+             <!--<td *ngIf='inscription.client.idAgent !== null' >
                   {{ 'Oui' | translate}}
               </td>
               <td *ngIf='inscription.client.idAgent == null' >
                   {{ 'Non' | translate}}
               </td> -->
-
+              <td><td>
               <!-- Gerer affichage vide du numero de l'agent -->
-             <!-- <td *ngIf='inscription.client.idAgent !== null' >
-                  {{inscription.client.idAgent}}
+              <!--<td *ngIf='inscription.client.idAgent !== null' >
+                  
               </td>
               <td *ngIf='inscription.client.idAgent == null' >
                     -------
               </td> -->
                
-              <td>{{inscription.idDemande}}</td>
+              <td>{{inscription.identifiant}}</td>
               
-
-               
               <td >
     
-                  <select class="form-control" [ngModel]="agents" (ngModelChange)="selectAgent($event)">
+                  <!--<select class="form-control" [ngModel]="agents" (ngModelChange)="selectAgent($event)"> -->
+                  <select class="form-control">
                      <!-- Affichage d'un message (ngvalue doit reprendre le ngmodel) -->
-                    <option [ngValue]="agents" selected hidden>agent </option>
+                    <!--<option [ngValue]="agents" selected hidden>agent </option> -->
                     <!-- Affichage de la liste d agnt (ngvalue prend un élement de la liste) -->
                     <option *ngFor=" let agent of ListeAgents ">{{ agent.matricule }}</option>
                   </select>

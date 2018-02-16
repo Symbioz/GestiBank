@@ -34,10 +34,21 @@ public class InscriptionDAOImpl implements IInscriptionDAO {
 
 	}
 
-	/*
-	 * public List<Inscription> getAllInscriptions(String status, Date
-	 * dateAffectation) { // A implement (if, voir si on fait avec date ou
-	 * agent) return null; }
-	 */
+	
+	  public List<Inscription> getAllInscriptions(String status, Date
+	  dateAffectation) { 
+		  List<Inscription> inscriptionsList = new ArrayList<Inscription>(
+					inscriptionsMap.values());
+			return inscriptionsList;
+		  
+		  for(Integer i=0; i < inscriptionsMap.size(); i++){
+		      if(inscriptionsMap.status == false){
+		         this.inscriptionEnCours.push(i);
+		         console.log(i);         
+		      }
+		  
+	  }*/
+	  }
+	 
 
 }

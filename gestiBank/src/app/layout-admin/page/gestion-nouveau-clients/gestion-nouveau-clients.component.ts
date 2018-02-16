@@ -8,6 +8,7 @@ import {Agent} from '../../../../models/agent';
 import {Inscription} from '../../../../models/inscription';
 
 import { InscriptionService} from '../../../../services/inscription.service';
+import { AgentService} from '../../../../services/agent.service';
 
 import { HttpClientModule } from '@angular/common/http'; 
 import { HttpModule } from '@angular/http';
@@ -16,7 +17,7 @@ import { HttpModule } from '@angular/http';
   selector: 'app-gestion-nouveau-clients',
   templateUrl: './gestion-nouveau-clients.component.html',
   styleUrls: ['./gestion-nouveau-clients.component.scss'],
-  providers: [ InscriptionService]
+  providers: [ InscriptionService, AgentService]
 })
 export class GestionNouveauClientsComponent implements OnInit {
     
@@ -30,8 +31,9 @@ export class GestionNouveauClientsComponent implements OnInit {
     public radioGroupForm: FormGroup;
     
     private inscription : Inscription[];
+    private agents: Agent[];
 
-    constructor(private formBuilder: FormBuilder,  private inscriptionService : InscriptionService) {}
+    constructor(private formBuilder: FormBuilder,  private inscriptionService : InscriptionService, private agentService : AgentService) {}
 
     ngOnInit() {
         this.radioGroupForm = this.formBuilder.group({
@@ -43,20 +45,45 @@ export class GestionNouveauClientsComponent implements OnInit {
         //this.inscriptionTermine = this.inscriptionService.getInscriptionTermine();
         //this.inscriptionAffecte = this.inscriptionService.getInscriptionAffecte();
         //this.inscriptionNonAffecte = this.inscriptionService.getInscriptionNonAffecte();
-        this.inscription =this.getAllInscriptions();
+        this.getAllInscriptions();
+        this.getAllAgents();
+
+
+
+
     }
 
     getAllInscriptions(){
       this.inscriptionService.findAll().subscribe(
          inscriptions => {
            this.inscription = inscriptions;
+           console.log(inscriptions[1].date);
+           
          },
          err => {
            console.log(err);
          }
 
       );
-  }
+   }
+
+    getAllAgents(){
+      this.agentService.getAllAgents().subscribe(
+         agents => {
+           this.agents = agents;
+           console.log(agents);
+           
+         },
+         err => {
+           console.log(err);
+         }
+
+      );
+   }
+
+
+
+
 
  
 }

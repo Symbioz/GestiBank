@@ -15,11 +15,8 @@ export class InscriptionService {
 
   nbInscription= 0;	
   
-  // Tableau d'inscription en dur
-  inscriptions = [ new Inscription (1, "10/12/2015", true ,new Client("2","nom","prenom","login","mdp","email", 222, 11, "s", 11), "21/10/2020" ),
-   				   new Inscription (3, "10:01/2017", false, new Client("2","nom","prenom","login","mdp","email", 222, 11, "s", 11), "22/11/2015"),
-              
-   				   ];
+  
+  inscriptions = [];
   
   inscriptionEnCours : any[ ] = [ ];
   inscriptionTermine : any[ ] = [ ];
@@ -29,9 +26,7 @@ export class InscriptionService {
   
   private apiUrl ='http://localhost:8080/GestiBankBackEnd/inscriptions';
 
-  constructor(private http: Http) {
-   
-   }
+  constructor(private http: Http) {}
 
  
   findAll(): Observable<Inscription[]>{
@@ -40,11 +35,7 @@ export class InscriptionService {
         .catch((error:any) => Observable.throw (error.json || 'server error'));
   }
    
-    
-   //recupérer la liste de toute les Inscritions
-   getInscriptions(){
-     return this.inscriptions;
-   }
+   
   
    // Recupérer le nomre d'inscription à affecter et en cours ? (2 fonction ?, pour le dashboard (pas demandé))
   
