@@ -1,4 +1,5 @@
 import { Operation } from './operation';
+import { Compte } from './compte';
 
 export class Compte {
 	IBAN: number;
