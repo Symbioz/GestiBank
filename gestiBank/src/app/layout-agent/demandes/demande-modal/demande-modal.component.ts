@@ -1,7 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Demande } from '../../../../models';
 
-//import { ClientService } from '../../../../service/clientService';
+import { DemandeService } from '../../../../service/demandeService';
 import { ActivatedRoute, Router } from  '@angular/router';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
@@ -23,14 +23,33 @@ export class DemandeModalComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
 		private router: Router,
-		private clientService: ClientService,
+		private demandeService: DemandeService,
     private modalService: NgbModal) { }
 
 
-  ngOnInit() {
-  }
+	ngOnInit() { 
+		  	this.id=this.demandeEnCours.idDemande;
 
-  open(content) {
+		//si le param id est renseigné il faut chercher le Utilisateur
+		if (this.id) { //edit form
+			this.demandeService.getDemandeById(this.id).subscribe(
+				demande => {
+					this.id = demande.idDemande;
+					
+				},
+				error => {
+					console.log(error);
+				}
+			);
+		}
+	}
+	
+
+	refresh() {
+    window.location.reload();
+	}
+
+  	open(content) {
         this.modalService.open(content).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
             this.refresh();

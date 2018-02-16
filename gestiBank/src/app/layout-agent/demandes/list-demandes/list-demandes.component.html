@@ -9,12 +9,12 @@
 				</div>
 				<div class="col-md-2">
 			
-					<app-nouveau-client-modal ></app-nouveau-client-modal>
+<!-- 					<app-nouveau-client-modal ></app-nouveau-client-modal> -->
 				</div>
 			</div>
 		</header>
 			<div *ngFor="let demande of demandesAgent">
-				<!-- <app-demande-modal [demandeEnCours]="demande"></app-demande-modal> -->
+				<app-demande-modal [demandeEnCours]="demande"></app-demande-modal>
 			</div>
 	</div>
 </div>

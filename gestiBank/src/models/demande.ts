@@ -8,7 +8,7 @@ export class Demande {
      	this.idDemande = idDemande;
           this.dateDemande = dateDemande;
           this.status = status;
-          this.FKClient = FKClient;
+          this.idClient = idClient;
      	
      }
 

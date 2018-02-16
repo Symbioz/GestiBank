@@ -11,7 +11,7 @@ export class DemandeService {
 
 	constructor(private http: Http) { }
 
-	getAllDemande(): Observable<Demande[]> {
+	getAllDemandes(): Observable<Demande[]> {
 		return this.http.get(this.apiUrl)
 			.map((res:Response) => res.json())
 			.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
