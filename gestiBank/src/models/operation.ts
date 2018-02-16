@@ -4,17 +4,17 @@ export enum TypeOp { debit, credit }
 
 
 export class Operation {
-	ref: number;
-	date: String;
-	libelle: String;
+	id: number;
 	montant: number;
+	date: String;
 	typeOp: TypeOp;
+	libelle: String;
 	
-	constructor(ref: number, date:String, libelle: String, montant: number, typeOp: TypeOp){
-		this.ref = ref;
+	constructor(id: number, montant: number, date:String, libelle: String, typeOp: TypeOp){
+		this.id = id;
+		this.montant = montant;
 		this.date = date;
 		this.libelle = libelle;
-		this.montant = montant;
 		this.typeOp = typeOp;
 	}
 }

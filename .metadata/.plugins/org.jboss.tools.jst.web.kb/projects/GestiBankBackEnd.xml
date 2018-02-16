@@ -3,86 +3,207 @@
  <depends-on-projects/>
  <used-by-projects/>
  <paths>
-  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-util/8.0.23/tomcat-util-8.0.23.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet-core/2.24/jersey-container-servlet-core-2.24.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/glassfish/jersey/core/jersey-common/2.25/jersey-common-2.25.jar"/>
-  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-i18n-es.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/jboss/jandex/1.1.0.Final/jandex-1.1.0.Final.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/hibernate/hibernate-core/4.3.11.Final/hibernate-core-4.3.11.Final.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-catalina-ha/8.0.23/tomcat-catalina-ha-8.0.23.jar"/>
-  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/ecj-4.4.2.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-jsp-api/8.0.23/tomcat-jsp-api-8.0.23.jar"/>
-  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/catalina-ha.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/glassfish/hk2/hk2-locator/2.5.0-b30/hk2-locator-2.5.0-b30.jar"/>
-  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-i18n-ja.jar"/>
   <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-websocket.jar"/>
-  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-jdbc.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-i18n-ja/8.0.23/tomcat-i18n-ja-8.0.23.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0-b30/aopalliance-repackaged-2.5.0-b30.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-api/8.0.23/tomcat-api-8.0.23.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/glassfish/jersey/core/jersey-client/2.24/jersey-client-2.24.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.jar"/>
+  <path value="C:/Users/gk/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/glassfish/jersey/bundles/repackaged/jersey-guava/2.25/jersey-guava-2.25.jar"/>
+  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/jasper.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/springframework/spring-jdbc/4.2.1.RELEASE/spring-jdbc-4.2.1.RELEASE.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-catalina/8.0.23/tomcat-catalina-8.0.23.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-dbcp/8.0.23/tomcat-dbcp-8.0.23.jar"/>
+  <path value="C:/Users/gk/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar"/>
+  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/catalina-storeconfig.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/springframework/spring-orm/4.2.1.RELEASE/spring-orm-4.2.1.RELEASE.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-servlet-api/8.0.23/tomcat-servlet-api-8.0.23.jar"/>
+  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/servlet-api.jar"/>
+  <path value="C:/Users/gk/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.5.0/jackson-core-2.5.0.jar"/>
+  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-util.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-annotations-api/8.0.23/tomcat-annotations-api-8.0.23.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/springframework/spring-aop/4.2.1.RELEASE/spring-aop-4.2.1.RELEASE.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/springframework/spring-web/4.2.1.RELEASE/spring-web-4.2.1.RELEASE.jar"/>
+  <path value="C:/Users/gk/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.5.0/jackson-databind-2.5.0.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.5.Final/hibernate-commons-annotations-4.0.5.Final.jar"/>
+  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-dbcp.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-jdbc/8.0.23/tomcat-jdbc-8.0.23.jar"/>
+  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-i18n-fr.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/springframework/spring-expression/4.2.1.RELEASE/spring-expression-4.2.1.RELEASE.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/glassfish/hk2/external/javax.inject/2.5.0-b30/javax.inject-2.5.0-b30.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet/2.24/jersey-container-servlet-2.24.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/glassfish/hk2/hk2-utils/2.5.0-b30/hk2-utils-2.5.0-b30.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.asm/2.6.0/org.eclipse.persistence.asm-2.6.0.jar"/>
+  <path value="C:/Users/gk/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar"/>
+  <path value="C:/Users/gk/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-storeconfig/8.0.23/tomcat-storeconfig-8.0.23.jar"/>
+  <path value="C:/Users/gk/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.core/2.6.0/org.eclipse.persistence.core-2.6.0.jar"/>
+  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-coyote.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/springframework/spring-core/4.2.1.RELEASE/spring-core-4.2.1.RELEASE.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-util/8.0.23/tomcat-util-8.0.23.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet-core/2.24/jersey-container-servlet-core-2.24.jar"/>
+  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-i18n-es.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/glassfish/jersey/core/jersey-common/2.25/jersey-common-2.25.jar"/>
+  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/ecj-4.4.2.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/springframework/spring-context/4.2.1.RELEASE/spring-context-4.2.1.RELEASE.jar"/>
+  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/catalina-ha.jar"/>
+  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-i18n-ja.jar"/>
+  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-jdbc.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-i18n-ja/8.0.23/tomcat-i18n-ja-8.0.23.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/springframework/spring-webmvc/4.2.1.RELEASE/spring-webmvc-4.2.1.RELEASE.jar">
+   <libraries>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-spring-webmvc-4.2.1.RELEASE.jar/meta-inf/spring-form.tld" project="GestiBankBackEnd"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-spring-webmvc-4.2.1.RELEASE.jar/meta-inf/spring.tld" project="GestiBankBackEnd"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="C:/Users/gk/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0-b30/aopalliance-repackaged-2.5.0-b30.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/springframework/spring-tx/4.2.1.RELEASE/spring-tx-4.2.1.RELEASE.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-i18n-fr/8.0.23/tomcat-i18n-fr-8.0.23.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-coyote/8.0.23/tomcat-coyote-8.0.23.jar"/>
   <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/jsp-api.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-coyote/8.0.23/tomcat-coyote-8.0.23.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-jni/8.0.23/tomcat-jni-8.0.23.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-websocket-api/8.0.23/tomcat-websocket-api-8.0.23.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-jasper-el/8.0.23/tomcat-jasper-el-8.0.23.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/glassfish/hk2/hk2-api/2.5.0-b30/hk2-api-2.5.0-b30.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/glassfish/jersey/bundles/repackaged/jersey-guava/2.25/jersey-guava-2.25.jar"/>
-  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/jasper.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-catalina/8.0.23/tomcat-catalina-8.0.23.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-dbcp/8.0.23/tomcat-dbcp-8.0.23.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-i18n-es/8.0.23/tomcat-i18n-es-8.0.23.jar"/>
-  <path value="C:/Users/gk/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar"/>
   <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-jni.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-tribes/8.0.23/tomcat-tribes-8.0.23.jar"/>
+  <path value="C:/Users/gk/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar"/>
   <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/annotations-api.jar"/>
-  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/catalina-storeconfig.jar"/>
   <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/catalina-ant.jar"/>
   <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/jasper-el.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-servlet-api/8.0.23/tomcat-servlet-api-8.0.23.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/eclipse/jdt/core/compiler/ecj/4.4.2/ecj-4.4.2.jar"/>
-  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/servlet-api.jar"/>
-  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-util.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-annotations-api/8.0.23/tomcat-annotations-api-8.0.23.jar"/>
+  <path value="C:/Users/gk/.m2/repository/mysql/mysql-connector-java/5.1.36/mysql-connector-java-5.1.36.jar"/>
+  <path value="C:/Users/gk/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"/>
   <path value="C:/Users/gk/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-websocket/8.0.23/tomcat-websocket-8.0.23.jar"/>
-  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-dbcp.jar"/>
   <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-util-scan.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-jdbc/8.0.23/tomcat-jdbc-8.0.23.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-el-api/8.0.23/tomcat-el-api-8.0.23.jar"/>
-  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-i18n-fr.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/glassfish/jersey/media/jersey-media-moxy/2.25/jersey-media-moxy-2.25.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/glassfish/hk2/external/javax.inject/2.5.0-b30/javax.inject-2.5.0-b30.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.moxy/2.6.0/org.eclipse.persistence.moxy-2.6.0.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet/2.24/jersey-container-servlet-2.24.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/glassfish/hk2/hk2-utils/2.5.0-b30/hk2-utils-2.5.0-b30.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-juli/8.0.23/tomcat-juli-8.0.23.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/springframework/spring-beans/4.2.1.RELEASE/spring-beans-4.2.1.RELEASE.jar"/>
   <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/catalina-tribes.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-juli/8.0.23/tomcat-juli-8.0.23.jar"/>
   <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/catalina.jar"/>
   <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/el-api.jar"/>
   <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/websocket-api.jar"/>
   <path value="C:/Users/gk/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-catalina-ant/8.0.23/tomcat-catalina-ant-8.0.23.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/glassfish/jersey/media/jersey-media-jaxb/2.24/jersey-media-jaxb-2.24.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.asm/2.6.0/org.eclipse.persistence.asm-2.6.0.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-util-scan/8.0.23/tomcat-util-scan-8.0.23.jar"/>
-  <path value="C:/Users/gk/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-storeconfig/8.0.23/tomcat-storeconfig-8.0.23.jar"/>
+  <path value="C:/Users/gk/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.5.0/jackson-annotations-2.5.0.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/apache/tomcat/tomcat-jasper/8.0.23/tomcat-jasper-8.0.23.jar"/>
   <path value="C:/Users/gk/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.25/jersey-entity-filtering-2.25.jar"/>
-  <path value="C:/Users/gk/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.core/2.6.0/org.eclipse.persistence.core-2.6.0.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar"/>
   <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-api.jar"/>
-  <path value="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23/lib/tomcat-coyote.jar"/>
+  <path value="C:/Users/gk/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
  </paths>
  <validation>
   <core validator-id="jsf-verification"/>
   <core validator-id="jboss.cdi.core"/>
-  <el/>
+  <el>
+   <linked-el length="12136" name="%0" offset="40016" path="%1"/>
+   <linked-el length="12136" name="%0" offset="40016" path="%2"/>
+   <linked-el length="12136" name="%3" offset="40016" path="%1"/>
+   <linked-el length="12136" name="%3" offset="40016" path="%2"/>
+   <linked-el length="12136" name="%4" offset="40016" path="%1"/>
+   <linked-el length="12136" name="%4" offset="40016" path="%2"/>
+   <linked-el length="18" name="%5" offset="5957" path="%6"/>
+   <linked-el length="20" name="%7" offset="6469" path="%6"/>
+   <linked-el length="12136" name="%8" offset="40016" path="%1"/>
+   <linked-el length="12136" name="%8" offset="40016" path="%2"/>
+   <linked-el length="12136" name="%9" offset="40016" path="%1"/>
+   <linked-el length="12136" name="%9" offset="40016" path="%2"/>
+   <linked-el length="12136" name="%10" offset="40016" path="%1"/>
+   <linked-el length="12136" name="%10" offset="40016" path="%2"/>
+   <linked-el length="17" name="%11" offset="5406" path="%6"/>
+   <linked-el length="17" name="%11" offset="6267" path="%6"/>
+   <linked-el length="17" name="%11" offset="5590" path="%6"/>
+   <linked-el length="17" name="%11" offset="6114" path="%6"/>
+   <linked-el length="17" name="%11" offset="5777" path="%6"/>
+   <linked-el length="18" name="%12" offset="5957" path="%6"/>
+   <linked-el length="16" name="%13" offset="6678" path="%6"/>
+   <linked-el length="12136" name="%14" offset="40016" path="%1"/>
+   <linked-el length="12136" name="%14" offset="40016" path="%2"/>
+   <linked-el length="32" name="%15" offset="529" path="%16"/>
+   <linked-el length="27" name="%15" offset="673" path="%16"/>
+   <linked-el length="12136" name="%17" offset="40016" path="%1"/>
+   <linked-el length="12136" name="%17" offset="40016" path="%2"/>
+   <linked-el length="12136" name="%18" offset="40016" path="%1"/>
+   <linked-el length="12136" name="%18" offset="40016" path="%2"/>
+   <linked-el length="12136" name="%19" offset="40016" path="%1"/>
+   <linked-el length="12136" name="%19" offset="40016" path="%2"/>
+   <linked-el length="20" name="%20" offset="6469" path="%6"/>
+   <linked-el length="12136" name="%21" offset="40016" path="%1"/>
+   <linked-el length="12136" name="%21" offset="40016" path="%2"/>
+   <linked-el length="32" name="%22" offset="529" path="%16"/>
+   <linked-el length="27" name="%22" offset="673" path="%16"/>
+   <linked-el length="32" name="%23" offset="529" path="%16"/>
+   <linked-el length="27" name="%23" offset="673" path="%16"/>
+   <linked-el length="17" name="%24" offset="5406" path="%6"/>
+   <linked-el length="17" name="%24" offset="6267" path="%6"/>
+   <linked-el length="17" name="%24" offset="5590" path="%6"/>
+   <linked-el length="17" name="%24" offset="6114" path="%6"/>
+   <linked-el length="17" name="%24" offset="5777" path="%6"/>
+   <linked-el length="12136" name="%25" offset="40016" path="%1"/>
+   <linked-el length="12136" name="%25" offset="40016" path="%2"/>
+   <linked-el length="32" name="%26" offset="529" path="%16"/>
+   <linked-el length="27" name="%26" offset="673" path="%16"/>
+   <linked-el length="32" name="%27" offset="529" path="%16"/>
+   <linked-el length="27" name="%27" offset="673" path="%16"/>
+   <linked-el length="16" name="%28" offset="6678" path="%6"/>
+  </el>
  </validation>
- <aliases/>
+ <aliases>
+  <alias path="CPU_LIMIT" value="%0"/>
+  <alias path="APP_NAME" value="%3"/>
+  <alias path="CPU_REQUEST" value="%4"/>
+  <alias path="jackson.version" value="%5"/>
+  <alias path="hibernate" value="%7"/>
+  <alias
+   path="/GestiBankBackEnd/.metadata/.plugins/org.eclipse.m2e.logback.configuration/logback.1.5.1.20150109-1820.xml" value="%16"/>
+  <alias path="APP_VERSION" value="%8"/>
+  <alias path="BUILD_SECRET" value="%9"/>
+  <alias path="GIT_REPO" value="%10"/>
+  <alias path="spring" value="%11"/>
+  <alias
+   path="/GestiBankBackEnd/.metadata/.plugins/org.jboss.tools.central/valid_jboss_buzz.xml" value="%1"/>
+  <alias path="jackson" value="%12"/>
+  <alias path="mysql" value="%13"/>
+  <alias path="MAVEN_ARGS_APPEND" value="%14"/>
+  <alias path="org.eclipse.m2e.log" value="%15"/>
+  <alias path="GIT_REF" value="%17"/>
+  <alias path="SERVICE_NAME" value="%18"/>
+  <alias path="ARTIFACT_DIR" value="%19"/>
+  <alias path="hibernate.version" value="%20"/>
+  <alias path="BUILDER_VERSION" value="%21"/>
+  <alias path="org.eclipse.m2e.log.dir" value="%22"/>
+  <alias path="org" value="%23"/>
+  <alias path="spring.version" value="%24"/>
+  <alias path="MAVEN_ARGS" value="%25"/>
+  <alias
+   path="/GestiBankBackEnd/.metadata/.plugins/org.jboss.tools.central/jboss_buzz.xml" value="%2"/>
+  <alias path="org.eclipse.m2e" value="%26"/>
+  <alias path="/GestiBankBackEnd/pom.xml" value="%6"/>
+  <alias path="org.eclipse" value="%27"/>
+  <alias path="mysql.version" value="%28"/>
+ </aliases>
  <includes/>
  <uris/>
 </kb-project>

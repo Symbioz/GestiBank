@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { routerTransition } from '../../router.animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Compte} from '../../../../models';
+import { Compte } from '../../../models';
 
 @Component({
   	selector: 'app-dashboard-client',

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <typeInfoHistroy>
     <typeInfo handle="=GestiBankBackEnd/src&lt;com.rj.gestibank.dao{ICompteDAO.java[ICompteDAO" modifiers="513" timestamp="1518189958183"/>
     <typeInfo handle="=GestiBankBackEnd/src&lt;com.rj.gestibank.dao{IOperationDAO.java[IOperationDAO" modifiers="513" timestamp="1518190518074"/>
     <typeInfo handle="=GestiBankBackEnd/src&lt;com.rj.gestibank.dao{INotificationDAO.java[INotificationDAO" modifiers="513" timestamp="1518351760188"/>
     <typeInfo handle="=GestiBankBackEnd/src&lt;com.rj.gestibank.service{INotificationService.java[INotificationService" modifiers="513" timestamp="1518352626910"/>
 </typeInfoHistroy>
+=======
+<typeInfoHistroy/>
+>>>>>>> feaf210252950ba23fe6c7c9ef22ef504f04d55e
