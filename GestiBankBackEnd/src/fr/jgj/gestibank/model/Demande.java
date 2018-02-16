@@ -6,9 +6,9 @@ import java.util.Date;
 public class Demande {
 	
 	//@Id
-	private Long identifiant;
+	private Long idDemande;
 	private Long idClient;
-	private Date date;
+	private Date dateDemande;
 	private boolean status;
     
 	//Consstructeur
@@ -18,11 +18,11 @@ public class Demande {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Demande(Long identifiant, Long idClient, Date date, boolean status) {
+	public Demande(Long idDemande, Long idClient, Date dateDemande, boolean status) {
 		super();
-		this.identifiant = identifiant;
+		this.idDemande = idDemande;
 		this.idClient = idClient;
-		this.date = date;
+		this.dateDemande = dateDemande;
 		this.status = status;
 	}
 	
@@ -39,18 +39,18 @@ public class Demande {
 		this.idClient = idClient;
 	}
 
-	public Long getIdentifiant() {
-		return identifiant;
+	public Long getIdDemande() {
+		return idDemande;
 	}
-	public void setIdentifiant(Long identifiant) {
-		this.identifiant = identifiant;
+	public void setIdDemande(Long idDemande) {
+		this.idDemande = idDemande;
 	}
 	
-	public Date getDate() {
-		return date;
+	public Date getDateDemande() {
+		return dateDemande;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDateDemande(Date date) {
+		this.dateDemande = date;
 	}
 	public boolean getStatus() {
 		return status;

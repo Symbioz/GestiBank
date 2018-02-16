@@ -48,9 +48,9 @@ public class DemandeDAO {
 	
 	public Demande updateDemande(Demande demande) {
 		if (demandesMap.get(demande.getIdClient()) != null) {
-			demandesMap.get(demande.getIdClient()).setIdentifiant(demande.getIdentifiant());
+			demandesMap.get(demande.getIdClient()).setIdDemande(demande.getIdDemande());
 			demandesMap.get(demande.getIdClient()).setStatus(demande.getStatus());
-			demandesMap.get(demande.getIdClient()).setDate(demande.getDate());
+			demandesMap.get(demande.getIdClient()).setDateDemande(demande.getDateDemande());
 		} else {
 			demandesMap.put(demande.getIdClient() + "", demande);
 		}

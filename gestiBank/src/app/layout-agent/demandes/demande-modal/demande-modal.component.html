@@ -1,3 +1,46 @@
-<p>
-  demande-modal works!
-</p>
+<button class="btn btn-success" (click)="open(content)">Editer</button>
+    <ng-template #content let-c="close" let-d="dismiss">
+     <form [formGroup]="radioGroupForm" (ngSubmit)="onSubmit()" >
+        <div class="modal-header">
+            <h4 class="modal-title">{{'Info'| translate}}</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" >
+          	<tr>
+                <td>{{'idDemande'|translate}}</td>
+                <td>{{demandeEnCours.idDemande}}</td>
+        	</tr>
+
+        	<tr>
+                <td>{{'dateDemande'|translate}}</td>
+                <td>{{demandeEnCours.dateDemande | date:'dd MM yy'}}</td>
+        	</tr>
+
+            <tr>
+                <td>{{'idClient'|translate}}</td>
+                <td>{{demandeEnCours.idClient}}</td>
+            </tr>
+
+            <label class="radio-inline">
+                <input type="radio" formControlName="status" id="optionsRadiosInline1" value="false" >non validée
+            </label>
+            <label class="radio-inline">
+                <input type="radio" formControlName="status" id="optionsRadiosInline2" value="true">validée
+            </label>
+        </div>
+        <div class="modal-footer" >
+             
+            <button  type="submit" class="btn btn-secondary" >Valider</button>
+
+            <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+        </div> 
+        </form>          
+    </ng-template>
+
+
+
+           
+                
+  

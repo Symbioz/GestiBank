@@ -1,16 +1,16 @@
 export class Demande {
 	idDemande: number;
-     dateDemande :  String;
+     dateDemande :  Date;
      status:    Boolean;
      idClient: number;
      
-     constructor(idDemande:number,dateDemande:String, status:Boolean, FKClient:number ){
+     constructor(idDemande:number,dateDemande:Date, status:Boolean, idClient:number ){
      	this.idDemande = idDemande;
           this.dateDemande = dateDemande;
           this.status = status;
           this.idClient = idClient;
      	
      }
-
+     
 
 }

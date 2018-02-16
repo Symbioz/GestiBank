@@ -78,31 +78,31 @@ export class DetailClientModalComponent implements OnInit {
 		if (this.clientForm.valid) {
 			if (this.id) {
 				let client: Client = new Client(
-        this.id, 
-        this.clientForm.controls['nom'].value,
-        this.clientForm.controls['prenom'].value,
-        this.clientForm.controls['mdp'].value,
-        this.clientForm.controls['email'].value,
-        this.clientForm.controls['adresse'].value,
-		this.clientForm.controls['identifiant'].value,
-        this.clientForm.controls['numTel'].value,
-        this.clientForm.controls['nbEnfants'].value,
-		this.clientForm.controls['situation'].value,
-        null,
-        null,
-        null,
-        this.matriculeAgent);
-  			this.clientService.modifierClient(client).subscribe(
-				client => {
-					this.client = client;
-					console.log(client);
-				//	this.refresh();
+			        this.id, 
+			        this.clientForm.controls['nom'].value,
+			        this.clientForm.controls['prenom'].value,
+			        this.clientForm.controls['mdp'].value,
+			        this.clientForm.controls['email'].value,
+			        this.clientForm.controls['adresse'].value,
+					this.clientForm.controls['identifiant'].value,
+			        this.clientForm.controls['numTel'].value,
+			        this.clientForm.controls['nbEnfants'].value,
+					this.clientForm.controls['situation'].value,
+			        null,
+			        null,
+			        null,
+			        this.matriculeAgent);
+  				this.clientService.modifierClient(client).subscribe(
+					client => {
+						this.client = client;
+						console.log(client);
+					//	this.refresh();
 
-				},
-				err => {
-					console.log(err);
-				}
-  			);
+					},
+					err => {
+						console.log(err);
+					}
+  				);
 			} 
 		}
 		//this.clientForm.reset();

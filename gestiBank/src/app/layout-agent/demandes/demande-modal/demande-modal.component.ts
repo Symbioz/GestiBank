@@ -3,7 +3,7 @@ import { Demande } from '../../../../models';
 
 import { DemandeService } from '../../../../service/demandeService';
 import { ActivatedRoute, Router } from  '@angular/router';
-import { FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormControl, FormGroup} from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
@@ -17,9 +17,11 @@ export class DemandeModalComponent implements OnInit {
 	id: number;
  	matriculeAgent: number;
 	demande: Demande;
-	clientForm: FormGroup;
-  	closeResult: string;
+  closeResult: string;
 	@Input() demandeEnCours : Demande;
+  public radioGroupForm: FormGroup;
+
+
 
   constructor(private route: ActivatedRoute,
 		private router: Router,
@@ -28,13 +30,19 @@ export class DemandeModalComponent implements OnInit {
 
 
 	ngOnInit() { 
-		  	this.id=this.demandeEnCours.idDemande;
+	  	this.id=this.demandeEnCours.idDemande;
+      console.log("onInit" + this.demandeEnCours)
+	  	this.radioGroupForm = new FormGroup({
+            status: new FormControl('')
+        });
+
 
 		//si le param id est renseigné il faut chercher le Utilisateur
 		if (this.id) { //edit form
 			this.demandeService.getDemandeById(this.id).subscribe(
 				demande => {
-					this.id = demande.idDemande;
+          console.log (demande);
+					this.demande = demande;
 					
 				},
 				error => {
@@ -50,6 +58,7 @@ export class DemandeModalComponent implements OnInit {
 	}
 
   	open(content) {
+        console.log("open :" + this.demandeEnCours.dateDemande)
         this.modalService.open(content).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
             this.refresh();
@@ -69,5 +78,24 @@ export class DemandeModalComponent implements OnInit {
       } else {
           return  `with: ${reason}`;
       }
+  }
+
+  onSubmit() {
+    console.log("submit clique");
+ 
+      if (this.id) {
+        let demande: Demande = this.demandeEnCours;
+        demande.status=this.radioGroupForm.controls['status'].value;
+        this.demandeService.modifierDemande(demande).subscribe(
+          demande => {
+            this.demande = demande;
+            console.log(demande);
+          //  this.refresh();
+          },
+          err => {
+          console.log(err);
+          }
+        );
+      }  
   }
 }
