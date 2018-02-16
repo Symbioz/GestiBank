@@ -21,11 +21,10 @@ import { HttpModule } from '@angular/http';
 })
 export class GestionNouveauClientsComponent implements OnInit {
     
-   // inscription:Inscription[];
-   // inscriptionEnCours : Inscription[ ] ;
-   // inscriptionTermine : Inscription[ ] ;
-   // inscriptionAffecte : Inscription[ ] ;
-   //inscriptionNonAffecte : Inscription[ ] ;
+    inscriptionEnCours : Inscription[ ] ;
+    inscriptionTermine : Inscription[ ] ;
+    inscriptionAffecte : Inscription[ ] ;
+    inscriptionNonAffecte : Inscription[ ] ;
    
     model: any = 1;
     public radioGroupForm: FormGroup;
@@ -39,40 +38,44 @@ export class GestionNouveauClientsComponent implements OnInit {
         this.radioGroupForm = this.formBuilder.group({
             model: 'middle'
         });
-
-        //this.inscription = this.inscriptionService.getInscriptions();
-        //this.inscriptionEnCours = this.inscriptionService.getInscriptionEnCours();
-        //this.inscriptionTermine = this.inscriptionService.getInscriptionTermine();
-        //this.inscriptionAffecte = this.inscriptionService.getInscriptionAffecte();
-        //this.inscriptionNonAffecte = this.inscriptionService.getInscriptionNonAffecte();
+        this.inscriptionEnCours = this.inscriptionService.getInscriptionEnCours();
+        this.inscriptionTermine = this.inscriptionService.getInscriptionTermine();
+        this.inscriptionAffecte = this.inscriptionService.getInscriptionAffecte();
+        this.inscriptionNonAffecte = this.inscriptionService.getInscriptionNonAffecte();
         this.getAllInscriptions();
         this.getAllAgents();
-
-
-
-
     }
-
-    getAllInscriptions(){
+    
+     getAllInscriptions(){
       this.inscriptionService.findAll().subscribe(
          inscriptions => {
-           this.inscription = inscriptions;
-           console.log(inscriptions[1].date);
-           
+          
+     for(let i of inscriptions){
+      if(i.status == true){
+         this.inscriptionEnCours.push(i); 
+               
+      } if(i.status == false) {
+        this.inscriptionTermine.push(i);
+      }if(i.dateAffectation){
+        this.inscriptionNonAffecte.push(i);
+      }if(!i.dateAffectation){
+        this.inscriptionAffecte.push(i);
+      }
+    }
+     this.inscription = inscriptions;
+
          },
          err => {
            console.log(err);
          }
-
       );
-   }
+    }
 
+ 
     getAllAgents(){
       this.agentService.getAllAgents().subscribe(
          agents => {
            this.agents = agents;
-           console.log(agents);
-           
          },
          err => {
            console.log(err);
@@ -81,9 +84,4 @@ export class GestionNouveauClientsComponent implements OnInit {
       );
    }
 
-
-
-
-
- 
 }

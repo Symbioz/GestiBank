@@ -34,14 +34,12 @@ export class InscriptionService {
         .map((res:Response) => res.json())
         .catch((error:any) => Observable.throw (error.json || 'server error'));
   }
-   
-   
-  
+
    // Recupérer le nomre d'inscription à affecter et en cours ? (2 fonction ?, pour le dashboard (pas demandé))
   
      getNbInscriptionsNonAffecte(){
     
-      for(let i of this.inscriptions){
+      for(let i of this.getAllInscriptions()){
           if(i.client.idAgent == null){
              this.nbInscription= this.nbInscription+1;
                     }
@@ -53,12 +51,7 @@ export class InscriptionService {
 
    // Recupère la liste des inscrition en cours (A factoriser ??)
      getInscriptionEnCours() {
-    for(let i of this.inscriptions){
-      if(i.status == false){
-         this.inscriptionEnCours.push(i);
-         console.log(i);         
-      }
-    }
+    
      return this.inscriptionEnCours;
 
    }
@@ -66,7 +59,7 @@ export class InscriptionService {
    // Recupère la liste des inscrition Terminé
      getInscriptionTermine() {
     for(let i of this.inscriptions){
-      if(i.status == true){
+      if(i.status !== true){
          this.inscriptionTermine.push(i);
          console.log(i);         
       }
@@ -78,7 +71,7 @@ export class InscriptionService {
    // Recupère la liste des inscrition Affecté
      getInscriptionAffecte() {
     for(let i of this.inscriptions){
-      if(i.client.idAgent !== null){
+      if(i.dateAffectation !== null){
          this.inscriptionAffecte.push(i);
          console.log(i);         
       }
@@ -90,7 +83,7 @@ export class InscriptionService {
    // Recupère la liste des inscrition en cours (A factoriser ??)
      getInscriptionNonAffecte() {
     for(let i of this.inscriptions){
-      if(i.client.idAgent == null){
+      if(i.dateAffectation == null){
          this.inscriptionNonAffecte.push(i);
          console.log(i);         
       }
