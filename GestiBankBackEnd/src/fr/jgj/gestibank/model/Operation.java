@@ -4,11 +4,12 @@ import java.util.Date;
 
 public class Operation {
 	
-	private long id;
+	private long id; // correspond à la clé primaire 
 	private float montant;
 	private Date date;
 	private String type;
 	private String libelle;
+	private String iBAN; // clé étrangère
 	
 	
 	//Constructeurs
@@ -16,13 +17,14 @@ public class Operation {
 		super();
 	}
 
-	public Operation(long id, float montant, Date date, String type, String libelle) {
+	public Operation(long id, float montant, Date date, String type, String libelle, String iBAN) {
 		super();
 		this.id = id;
 		this.montant = montant;
 		this.date = date;
 		this.type = type;
 		this.libelle = libelle;
+		this.iBAN = iBAN;
 	}
 	
 	//Getters-Setters
@@ -60,6 +62,14 @@ public class Operation {
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
+
+	public String getiBAN() {
+		return iBAN;
+	}
+	public void setiBAN(String iBAN) {
+		this.iBAN = iBAN;
+	}
+	
 	
 	
 }

@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Compte {
 	
-	private long IBAN; 
+	private String IBAN; 
 	private float solde;
 	private Date dateCreation;
 	private ArrayList<Operation> operations;
@@ -15,7 +15,7 @@ public class Compte {
 		
 	}
 	
-	public Compte(long iBAN, float solde, Date dateCreation, ArrayList<Operation> operations) {
+	public Compte(String iBAN, float solde, Date dateCreation, ArrayList<Operation> operations) {
 		super();
 		IBAN = iBAN;
 		this.solde = solde;
@@ -25,10 +25,10 @@ public class Compte {
 
 
 	//Getters-Setters
-	public long getIBAN() {
+	public String getIBAN() {
 		return IBAN;
 	}
-	public void setIBAN(long iBAN) {
+	public void setIBAN(String iBAN) {
 		IBAN = iBAN;
 	}
 

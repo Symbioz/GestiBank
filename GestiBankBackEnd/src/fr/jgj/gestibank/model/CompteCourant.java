@@ -16,7 +16,7 @@ public class CompteCourant extends Compte {
 		super();
 	}
 	
-	public CompteCourant(long iBAN, float solde, Date dateCreation, ArrayList<Operation> operations, float decouvertAutorise) {
+	public CompteCourant(String iBAN, float solde, Date dateCreation, ArrayList<Operation> operations, float decouvertAutorise) {
 		super( iBAN,  solde,  dateCreation, operations);
 		this.decouvertAutorise = decouvertAutorise;
 	}

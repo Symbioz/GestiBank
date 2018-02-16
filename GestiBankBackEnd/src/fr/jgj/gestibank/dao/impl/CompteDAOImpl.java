@@ -22,10 +22,10 @@ public class CompteDAOImpl implements ICompteDAO {
     	HashMap<String, Compte> comptesMap = new HashMap<String, Compte>();
 //    	CompteCourant compte1 = (CompteCourant) new Compte(1000100000000001L, 1000f, new Date("01/01/2001"), null);
 //    	compte1.setDecouvertAutorise(150f);
-    	CompteCourant compte1 = new CompteCourant(1000100000000001L, 1000f, new Date("01/01/2001"), null, 100f);
-    	CompteRemunere compte2 = new CompteRemunere(1000100000000002L, 2000f, new Date("02/02/2002"), null);
-		comptesMap.put("1000100000000001", compte1);
-		comptesMap.put("1000100000000002", compte2);
+    	CompteCourant compte1 = new CompteCourant("10010001", 1000f, new Date("01/01/2001"), new ArrayList<Operation>(), 100f);
+    	CompteRemunere compte2 = new CompteRemunere("10010002", 2000f, new Date("02/02/2002"), new ArrayList<Operation>());
+		comptesMap.put("10010001", compte1);
+		comptesMap.put("10010002", compte2);
 		return comptesMap;
     }
 	
