@@ -7,9 +7,7 @@
 	    <br/>
 	        <!-- ligne de titres -->
 	        <tr>
-	            <th>Type de compte</th>
 	            <th>Numero de compte</th>
-	            <th>Libellé</th> 
 	            <th>Solde</th>
 	            <th>Relevé</th>
 	        </tr>
@@ -18,9 +16,7 @@
 	    	<!-- recupération de la liste des comptes -->
 	        <tr *ngFor="let compte of comptes">
 	        	<!-- scope : permet de mettre en 'surbrillance' la ligne consultée -->
-	            <td scope="row">{{ compte.type }}</td>
-	            <td>{{ compte.rib }}</td>
-	            <td></td>
+	            <td>{{ compte.iban }}</td>
 	            <td>{{ compte.solde }}</td>
 	            <td></td>
 	        </tr>
