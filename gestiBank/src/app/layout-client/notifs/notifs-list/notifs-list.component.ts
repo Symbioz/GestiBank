@@ -19,7 +19,7 @@ export class NotifsListComponent implements OnInit {
   	constructor(private router: Router, private notificationService: NotificationService) { }
 
   	ngOnInit() {
-  		this.getAllNotifications();
+      this.getAllNotifications();
   	}
 
   	getAllNotifications() {
