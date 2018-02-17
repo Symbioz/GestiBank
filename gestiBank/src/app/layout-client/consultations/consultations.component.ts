@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { routerTransition } from '../../router.animations';
 
-import { Operation, Compte } from '../../../models';
+import { Operation, Compte, CompteCourant, CompteRemunere } from '../../../models';
 import { TabsetComptesComponent } from './tabset-comptes/tabset-comptes.component';
 
 enum TypeOp { debit, credit }
@@ -29,8 +29,8 @@ export class ConsultationsComponent implements OnInit {
 						new Operation(8011, 2500, "12/01/2018", "virement", TypeOp.credit)];						
 
 	//Tests : création d'une liste de compte
-	comptes = [	new Compte("Compte Bancaire", 1234567890000, 1000, "01/01/1900", 0, 300, this.operationsCpt1),
-				new Compte("Compte Remunéré", 1234567890100, 10000, "12/07/1998", 0, 0, this.operationsCpt2)];
+	comptes = [	new CompteCourant("1234567890000", 1, 1000, new Date(), this.operationsCpt1, 0, 300),
+				new CompteRemunere("1234567890100", 1, 10000, new Date(), this.operationsCpt2, 0)];
 
   	constructor() {}
 
