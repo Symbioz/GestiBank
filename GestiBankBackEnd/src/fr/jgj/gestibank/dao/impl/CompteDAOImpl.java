@@ -22,10 +22,16 @@ public class CompteDAOImpl implements ICompteDAO {
     	HashMap<String, Compte> comptesMap = new HashMap<String, Compte>();
 //    	CompteCourant compte1 = (CompteCourant) new Compte(1000100000000001L, 1000f, new Date("01/01/2001"), null);
 //    	compte1.setDecouvertAutorise(150f);
-    	CompteCourant compte1 = new CompteCourant("10010001", 1000f, new Date("01/01/2001"), new ArrayList<Operation>(), 100f);
-    	CompteRemunere compte2 = new CompteRemunere("10010002", 2000f, new Date("02/02/2002"), new ArrayList<Operation>());
+    	CompteCourant  compte1 = new CompteCourant ("10010001", 1L, 1000f, new Date("01/01/2001"), new ArrayList<Operation>(), 100f);
+    	CompteRemunere compte2 = new CompteRemunere("10010002", 1L, 2000f, new Date("02/02/2002"), new ArrayList<Operation>());
+    	CompteCourant  compte3 = new CompteCourant ("10010003", 2L, 3000f, new Date("03/03/2003"), new ArrayList<Operation>(), 100f);
+    	CompteRemunere compte4 = new CompteRemunere("10010004", 2L, 4000f, new Date("04/04/2004"), new ArrayList<Operation>());
+    	CompteRemunere compte5 = new CompteRemunere("10010005", 2L, 5000f, new Date("05/05/2005"), new ArrayList<Operation>());
 		comptesMap.put("10010001", compte1);
 		comptesMap.put("10010002", compte2);
+		comptesMap.put("10010003", compte3);
+		comptesMap.put("10010004", compte4);
+		comptesMap.put("10010005", compte5);
 		return comptesMap;
     }
 	
@@ -34,13 +40,27 @@ public class CompteDAOImpl implements ICompteDAO {
 		List<Compte> comptes = new ArrayList<Compte>(comptesMap.values());
 		return comptes;
 	}
-
+	
 	@Override
 	public Compte getCompteByIBAN(String IBAN) {
 		Compte compte = comptesMap.get(IBAN);
 		return compte;
 	}
 	
+	@Override
+	public List<Compte> getCompteByClient(long idClient) {
+		//création de la liste filtrée
+		List<Compte> comptesByClient = new ArrayList<Compte>();
+		//pour l'ensemble des opérations en mémoires
+		for (Compte compte : comptesMap.values()) {
+			//suivant l'identifiant du compte
+			if (compte.getIdClient().equals(idClient)) {
+				comptesByClient.add(compte);
+			}
+		}		
+		return comptesByClient;
+	}
+
 	@Override
 	public Compte ajoutCompte(Compte compte) {
 		// TODO Auto-generated method stub

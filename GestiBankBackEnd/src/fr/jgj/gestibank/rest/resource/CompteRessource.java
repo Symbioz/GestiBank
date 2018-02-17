@@ -20,19 +20,28 @@ import fr.jgj.gestibank.model.Operation;
 import fr.jgj.gestibank.service.impl.CompteServiceImpl;
 import fr.jgj.gestibank.service.impl.OperationServiceImpl;
 
-@Path("/comptes")
+//@Path("/comptes")
+@Path("/client/{idClient}/comptes")
 public class CompteRessource {
 	
 	CompteServiceImpl compteServiceImpl = new CompteServiceImpl();
 	OperationServiceImpl operationServiceImpl = new OperationServiceImpl();
 	
 	// CRUD -- READ operation
+//	@GET
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public List<Compte> listAllComptes() {
+//		List<Compte> compteList = compteServiceImpl.getAllComptes();
+//		return compteList;
+//	}
+	
+	// CRUD -- READ operation
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Compte> listAllComptes() {
-		List<Compte> compteList = compteServiceImpl.getAllComptes();
+	public List<Compte> listClientComptes(@PathParam("idClient") long idClient) {
+		List<Compte> compteList = compteServiceImpl.getCompteByClient(idClient);
 		return compteList;
-	}
+	} // >> http://localhost:8080/GestiBankBackEnd/client/1/comptes
 		
 	// CRUD -- READ operation
 	@GET
@@ -41,7 +50,7 @@ public class CompteRessource {
 	public Compte getCompteByIBAN(@PathParam("IBAN") String IBAN) {
 		Compte compte = compteServiceImpl.getCompteByIBAN(IBAN);
 		return compte;
-	}	
+	} // >> http://localhost:8080/GestiBankBackEnd/client/1/comptes/10010001	
 	
 	// CRUD -- READ operation
 	@GET
@@ -50,7 +59,7 @@ public class CompteRessource {
 	public List<Operation> getAllOperationsByIBAN(@PathParam("iBAN") String iBAN) {
 		List<Operation> operationList = operationServiceImpl.getAllOperationsByIBAN(iBAN);
 		return operationList;
-	}
+	} // >> http://localhost:8080/GestiBankBackEnd/client/1/comptes/10010001/operations
 	
 	@GET
 	@Path("/testRecupString")

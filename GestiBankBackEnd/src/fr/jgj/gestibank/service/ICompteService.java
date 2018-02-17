@@ -8,6 +8,8 @@ public interface ICompteService {
 	
 	public List<Compte> getAllComptes();
 	
+	public List<Compte> getCompteByClient(long idClient);
+	
 	public Compte getCompteByIBAN(String IBAN);
 	
 	public Compte ajoutCompte(Compte compte);
