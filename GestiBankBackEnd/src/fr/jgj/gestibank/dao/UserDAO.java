@@ -7,8 +7,6 @@ import java.util.List;
 import fr.jgj.gestibank.model.User;
 
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
-
 
 @Component
 public class UserDAO {
