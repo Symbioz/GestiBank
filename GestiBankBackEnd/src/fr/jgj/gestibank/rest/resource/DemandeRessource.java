@@ -20,42 +20,76 @@ public class DemandeRessource {
 	
 	DemandeServiceImpl demandeService = new DemandeServiceImpl();
 	
-	// CRUD -- READ operation
+	
+	/**
+	 * CRUD -- READ operation
+	 * Récupération d'une demande via son identifiant unique
+	 * @param id
+	 * @return
+	 */
 	@GET
+	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Demande> listAllDemandes() {
-		List<Demande> demandeList = demandeService.getAllDemandes();
-		return demandeList;
-	}
+	public Demande getDemandesByID(@PathParam("id") String id) {
+		Demande demande = demandeService.getDemandeById(id);
+		return demande;
+	} // >> http://localhost:8080/GestiBankBackEnd/demandes/1
 
-	// CRUD -- UPDATE operation
+
+	/**
+	 * CRUD -- UPDATE operation
+	 * Mise à jour d'une demande : permet notamment de passer le status de la demande en 'traité'
+	 * @param : consomme une demande au format JSON  
+	 * @return : retourne la demande modifiée au format JSON
+	 */
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Demande updateDemande(Demande demande) {
 		Demande demandeResponse = demandeService.modifierDemande(demande);
 		return demandeResponse;
-	}
+	} // >> http://localhost:8080/GestiBankBackEnd/demandes + JSON 
 
+	/*
+	 * TODO
+	 * CRUD -- READ operation
+	 * Récupération des demandes d'un client donné
+	 * getDemandesByClient(idClient)
+	 * 
+	 * dans DemandeRessource ou ClientRessource ???
+	 */
+	
+	
+	
+	
 	// CRUD -- CREATE operation
+	// Création d'une nouvelle demande --> la création de demandes doit être gérée dans 'ClientRessource' 
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Demande createDemande(Demande demande) {
 		Demande demandeResponse = demandeService.creerDemande(demande);
 		return demandeResponse;
-	}
+	} // >> http://localhost:8080/GestiBankBackEnd/demandes + JSON
 
+	
+	
+	
+	
+	//SURSPECIFICATION (pour les tests SOAPUI)
+	
 	// CRUD -- READ operation
+	// Récupération de toutes les demandes existantes (nécessaire ?????)
 	@GET
-	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Demande getDemande(@PathParam("id") String id) {
-		Demande demande = demandeService.getDemandeById(id);
-		return demande;
-	}
+	public List<Demande> listAllDemandes() {
+		List<Demande> demandeList = demandeService.getAllDemandes();
+		return demandeList;
+	} // >> http://localhost:8080/GestiBankBackEnd/demandes
 
+	
 	// CRUD -- DELETE operation
+	// Suppression d'une demande via son identifiant unique (ou préfère-t-on garder une trace de toutes les demandes traitées ?)
 	@DELETE
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)

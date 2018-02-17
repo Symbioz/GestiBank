@@ -10,6 +10,7 @@ import fr.jgj.gestibank.model.Demande;
 
 public class DemandeDAOImpl implements IDemandeDAO {
 	
+	//Création d'un bouchon liste de demandes
 	static HashMap<String, Demande> demandesMap = createMap();
 
     static HashMap<String, Demande> createMap()
@@ -22,13 +23,7 @@ public class DemandeDAOImpl implements IDemandeDAO {
         return demandesMap;
     }
 	
-	
-	@Override
-	public List<Demande> getAllDemandes() {
-		List<Demande> demandeList = new ArrayList<Demande>(demandesMap.values());
-		return demandeList;
-	}
-
+    //Méthodes permettant de manipuler des demandes
 	@Override
 	public Demande getDemandeById(String id) {
 		Demande demande = demandesMap.get(id);
@@ -57,6 +52,18 @@ public class DemandeDAOImpl implements IDemandeDAO {
 			demandesMap.put(demande.getIdClient() + "", demande);
 		}
 		return demandesMap.get(demande.getIdClient());
+	}
+	
+	
+	
+	
+	
+	//SURSPECIFICATION (pour les tests SOAPUI)
+	
+	@Override
+	public List<Demande> getAllDemandes() {
+		List<Demande> demandeList = new ArrayList<Demande>(demandesMap.values());
+		return demandeList;
 	}
 	
 	@Override

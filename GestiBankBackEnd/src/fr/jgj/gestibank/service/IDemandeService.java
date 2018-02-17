@@ -6,8 +6,6 @@ import fr.jgj.gestibank.model.Demande;
 
 public interface IDemandeService {
 	
-	public List<Demande> getAllDemandes();
-	
 	public Demande getDemandeById(String id);
 	
 	public List<Demande> getDemandeByClient(String idClient);
@@ -16,6 +14,12 @@ public interface IDemandeService {
 	
 	public Demande modifierDemande(Demande demande);
 	
+	
+	
+	//SURSPECIFICATION (pour les tests SOAPUI)
+	
+	public List<Demande> getAllDemandes();
+
 	public Demande supprimerDemande(String id);
 	
 	//public void deleteAllDemandes();

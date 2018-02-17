@@ -6,7 +6,6 @@ import fr.jgj.gestibank.model.Demande;
 
 public interface IDemandeDAO {
 	
-	public List<Demande> getAllDemandes();
 	
 	public Demande getDemandeById(String id);
 	
@@ -15,6 +14,11 @@ public interface IDemandeDAO {
 	public Demande creerDemande(Demande demande);
 	
 	public Demande modifierDemande(Demande demande);
+	
+	
+	//SURSPECIFICATION
+	
+	public List<Demande> getAllDemandes();
 	
 	public Demande supprimerDemande(String id);
 	
