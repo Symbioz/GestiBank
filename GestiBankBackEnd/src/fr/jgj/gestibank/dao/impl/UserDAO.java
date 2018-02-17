@@ -1,4 +1,4 @@
-package fr.jgj.gestibank.dao;
+package fr.jgj.gestibank.dao.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
