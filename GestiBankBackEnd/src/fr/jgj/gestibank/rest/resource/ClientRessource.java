@@ -21,14 +21,27 @@ import fr.jgj.gestibank.service.impl.UtilisateurServiceImpl;
 @Path("/client/{idClient}")
 public class ClientRessource {
 	
-	//
+	////////////////////////////
+	//   SERVICES
+	////////////////////////////
+	
 	UtilisateurServiceImpl utilisateurServiceImpl = new UtilisateurServiceImpl();
 	CompteServiceImpl compteServiceImpl = new CompteServiceImpl();
 	OperationServiceImpl operationServiceImpl = new OperationServiceImpl();
-	DemandeServiceImpl demandeServiceImpl = new DemandeServiceImpl();
+	DemandeServiceImpl demandeService = new DemandeServiceImpl();
 	
-	// CRUD -- READ operation
-	// Récupération de la liste des comptes pour un client donné
+	
+	
+	////////////////////////////
+	//   GESTION DES COMPTES
+	////////////////////////////
+
+	/**
+	 * CRUD -- READ operation
+	 * Récupération de la liste des comptes pour un client donné
+	 * @param idClient : permet de filtrer l'ensemble des comptes et de ne récupérer que les comptes associés au client souhaité
+	 * @return : retourne une liste de comptes au format JSON
+	 */
 	@GET
 	@Path("/comptes")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -37,8 +50,12 @@ public class ClientRessource {
 		return compteList;
 	} // >> http://localhost:8080/GestiBankBackEnd/client/1/comptes
 	
-	// CRUD -- READ operation
-	// Récupération d'un compte via son iban (parmis les comptes d'un client donné)
+	/**
+	 * CRUD -- READ operation
+	 * Récupération d'un compte via son iban (à partir de la liste des comptes d'un client donné)
+	 * @param IBAN : représente l'identifiant unique d'un compte
+	 * @return : retourne un compte au format JSON
+	 */
 	@GET
 	@Path("/comptes/{IBAN}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -47,8 +64,12 @@ public class ClientRessource {
 		return compte;
 	} // >> http://localhost:8080/GestiBankBackEnd/client/1/comptes/10010001	
 		
-	// CRUD -- READ operation
-	// Récupération des operations liées à un compte donné d'un client donné
+	/**
+	 * CRUD -- READ operation
+	 * Récupération des operations liées à un compte donné
+	 * @param iBAN : représente l'identifiant unique d'un compte
+	 * @return : retourne une liste de comptes au format JSON
+	 */
 	@GET
 	@Path("/comptes/{iBAN}/operations")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -56,34 +77,55 @@ public class ClientRessource {
 		List<Operation> operationList = operationServiceImpl.getAllOperationsByIBAN(iBAN);
 		return operationList;
 	} // >> http://localhost:8080/GestiBankBackEnd/client/1/comptes/10010001/operations
-		
-	// CRUD -- CREATE operation
+	
+	
+	
+	/////////////////////////////////////////////////
+	//   GESTION DES DEMANDES CREES PAR LE CLIENT
+	/////////////////////////////////////////////////
+	
+	/**
+	 * CRUD -- CREATE operation
+	 * Création d'une demande de chequier pour un compte donné
+	 * @param demande : requiert une demande au format JSON 
+	 * @return : retourne une demande au format JSON
+	 */
 	@POST
 	@Path("/comptes/{IBAN}/demandeChequier")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Demande envoiDemandeChequier(Demande demande) {
-		Demande demandeResponse = demandeServiceImpl.creerDemande(demande);
+		Demande demandeResponse = demandeService.creerDemande(demande);
 		return demandeResponse;
 	}
 	
-	// CRUD -- CREATE operation
+	/**
+	 * CRUD -- CREATE operation
+	 * Création d'une demande de nouveau compte
+	 * @param demande : requiert une demande au format JSON 
+	 * @return : retourne une demande au format JSON
+	 */
 	@POST
 	@Path("/demandeNouveauCompte")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Demande envoiDemandeNouveauCompte(Demande demande) {
-		Demande demandeResponse = demandeServiceImpl.creerDemande(demande);
+		Demande demandeResponse = demandeService.creerDemande(demande);
 		return demandeResponse;
 	}
 	
-	// CRUD -- CREATE operation
+	/**
+	 * CRUD -- CREATE operation
+	 * Création d'une demande de changement de mot de passe
+	 * @param demande : requiert une demande au format JSON 
+	 * @return : retourne une demande au format JSON
+	 */
 	@POST
 	@Path("/demandeChangementMdp")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Demande envoiDemandeChgtMdp(Demande demande) {
-		Demande demandeResponse = demandeServiceImpl.creerDemande(demande);
+		Demande demandeResponse = demandeService.creerDemande(demande);
 		return demandeResponse;
 	}
 		
