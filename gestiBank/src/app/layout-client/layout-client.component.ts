@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Notification, Compte, Operation } from '../../models/';
+import { Notification, Compte, Operation, CompteCourant, CompteRemunere } from '../../models/';
 enum TypeOp { debit, credit }
 
 
@@ -31,8 +31,8 @@ export class LayoutClientComponent implements OnInit {
 						new Operation(8011, 2500, "12/01/2018", "virement", TypeOp.credit)];						
 
 	//Tests : création d'une liste de compte
-	comptes = [	new Compte("Compte Bancaire", 1234567890000, 1000, "18/07/1986", 0, 0, this.operationsCpt1),
-				new Compte("Compte Remunéré", 1234567890000, 10000, "12/07/1998", 0, 0, this.operationsCpt2)];
+	comptes = [	new CompteCourant("1234567890000", 1, 1000, new Date(), this.operationsCpt1, 0, 300),
+				new CompteRemunere("1234567890100", 1, 10000, new Date(), this.operationsCpt2, 0)];
 
   	constructor() { }
 
