@@ -1,10 +1,5 @@
 package fr.jgj.gestibank.rest.resource;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -12,14 +7,9 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import fr.jgj.gestibank.model.Compte;
-import fr.jgj.gestibank.model.Demande;
 import fr.jgj.gestibank.model.Operation;
 import fr.jgj.gestibank.service.impl.CompteServiceImpl;
 import fr.jgj.gestibank.service.impl.OperationServiceImpl;
