@@ -35,12 +35,7 @@ public class OperationDAOImpl implements IOperationDAO {
     	operationsMap.put(8L, operation8);
         return operationsMap;
     }
-	
-//	@Override
-//	public List<Operation> getAllOperation() {
-//		List<Operation> operations = new ArrayList<Operation>(operationsMap.values());
-//		return operations;
-//	}
+
 	
 	@Override
 	public List<Operation> getAllOperationsByIBAN(String iBAN) {
