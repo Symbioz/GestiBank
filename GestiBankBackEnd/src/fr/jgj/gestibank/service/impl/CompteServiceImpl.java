@@ -20,8 +20,8 @@ public class CompteServiceImpl implements ICompteService {
 
 	//Récupération de l'ensemble des comptes d'un client
 	@Override
-	public List<Compte> getCompteByClient(long idClient) {
-		List<Compte> comptes = compteDAOImpl.getCompteByClient(idClient);
+	public List<Compte> getComptesByClient(long idClient) {
+		List<Compte> comptes = compteDAOImpl.getComptesByClient(idClient);
 		return comptes;
 	}
 	
@@ -35,15 +35,15 @@ public class CompteServiceImpl implements ICompteService {
 	//Ajout d'un compte
 	@Override
 	public Compte ajoutCompte(Compte compte) {
-		// TODO Auto-generated method stub
-		return null;
+		Compte compteResponse = compteDAOImpl.ajoutCompte(compte);
+		return compteResponse;
 	}
 	
 	//Modification d'un compte
 	@Override
 	public Compte modifierCompte(Compte compte) {
-		// TODO Auto-generated method stub
-		return null;
+		Compte compteResponse = compteDAOImpl.modifierCompte(compte);
+		return compteResponse;
 	}
 
 	

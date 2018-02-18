@@ -8,7 +8,7 @@ public interface ICompteService {
 	
 	public List<Compte> getAllComptes();
 	
-	public List<Compte> getCompteByClient(long idClient);
+	public List<Compte> getComptesByClient(long idClient);
 	
 	public Compte getCompteByIBAN(String IBAN);
 	

@@ -48,7 +48,7 @@ public class CompteDAOImpl implements ICompteDAO {
 	}
 	
 	@Override
-	public List<Compte> getCompteByClient(long idClient) {
+	public List<Compte> getComptesByClient(long idClient) {
 		//création de la liste filtrée
 		List<Compte> comptesByClient = new ArrayList<Compte>();
 		//pour l'ensemble des opérations en mémoires
@@ -63,14 +63,21 @@ public class CompteDAOImpl implements ICompteDAO {
 
 	@Override
 	public Compte ajoutCompte(Compte compte) {
-		// TODO Auto-generated method stub
-		return null;
+		comptesMap.put(compte.getIBAN() + "",  compte);
+		return comptesMap.get(compte.getIBAN());
 	}
 
 	@Override
 	public Compte modifierCompte(Compte compte) {
-		// TODO Auto-generated method stub
-		return null;
+		if (comptesMap.get(compte.getIBAN()) != null) {
+			comptesMap.get(compte.getIBAN()).setIdClient(compte.getIdClient());
+			comptesMap.get(compte.getIBAN()).setSolde(compte.getSolde());
+			comptesMap.get(compte.getIBAN()).setDateCreation(compte.getDateCreation());
+			comptesMap.get(compte.getIBAN()).setOperations(compte.getOperations());
+		} else {
+			comptesMap.put(compte.getIBAN() + "", compte);
+		}
+		return comptesMap.get(compte.getIBAN());
 	}
 
 	
