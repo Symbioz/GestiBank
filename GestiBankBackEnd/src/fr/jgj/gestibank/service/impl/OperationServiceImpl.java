@@ -20,8 +20,8 @@ public class OperationServiceImpl implements IOperationService {
 
 	@Override
 	public Operation ajoutOperation(Operation operation) {
-		// TODO Auto-generated method stub
-		return null;
+		Operation operationResponse = operationDAOImpl.ajoutOperation(operation);
+		return operationResponse;
 	}
 
 }
