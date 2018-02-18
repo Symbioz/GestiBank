@@ -5,7 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -16,18 +19,18 @@ import javax.ws.rs.core.Response;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import fr.jgj.gestibank.model.Compte;
+import fr.jgj.gestibank.model.Demande;
 import fr.jgj.gestibank.model.Operation;
 import fr.jgj.gestibank.service.impl.CompteServiceImpl;
 import fr.jgj.gestibank.service.impl.OperationServiceImpl;
 
-//@Path("/comptes")
-@Path("/client/{idClient}/comptes")
+@Path("/comptes")
 public class CompteRessource {
 	
-	CompteServiceImpl compteServiceImpl = new CompteServiceImpl();
-	OperationServiceImpl operationServiceImpl = new OperationServiceImpl();
+	CompteServiceImpl compteService = new CompteServiceImpl();
+	OperationServiceImpl operationService = new OperationServiceImpl();
 	
-	// CRUD -- READ operation
+//	// CRUD -- READ operation --> nécessaire ???
 //	@GET
 //	@Produces(MediaType.APPLICATION_JSON)
 //	public List<Compte> listAllComptes() {
@@ -37,71 +40,40 @@ public class CompteRessource {
 	
 	// CRUD -- READ operation
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Compte> listClientComptes(@PathParam("idClient") long idClient) {
-		List<Compte> compteList = compteServiceImpl.getCompteByClient(idClient);
-		return compteList;
-	} // >> http://localhost:8080/GestiBankBackEnd/client/1/comptes
-		
-	// CRUD -- READ operation
-	@GET
 	@Path("/{IBAN}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Compte getCompteByIBAN(@PathParam("IBAN") String IBAN) {
-		Compte compte = compteServiceImpl.getCompteByIBAN(IBAN);
+		Compte compte = compteService.getCompteByIBAN(IBAN);
 		return compte;
-	} // >> http://localhost:8080/GestiBankBackEnd/client/1/comptes/10010001	
+	} // SOAPUI >> http://localhost:8080/GestiBankBackEnd/comptes/10010001	
 	
-	// CRUD -- READ operation
-	@GET
-	@Path("/{iBAN}/operations")
+	/**
+	 * CRUD -- UPDATE operation
+	 * Modification d'un compte via son IBAN
+	 * @param compte : requiert un compte au format JSON
+	 * @return le compte modifié au format JSON
+	 */
+	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Operation> getAllOperationsByIBAN(@PathParam("iBAN") String iBAN) {
-		List<Operation> operationList = operationServiceImpl.getAllOperationsByIBAN(iBAN);
-		return operationList;
-	} // >> http://localhost:8080/GestiBankBackEnd/client/1/comptes/10010001/operations
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Compte modifierCompteByIBAN(Compte compte) {
+		Compte compteResponse = compteService.modifierCompte(compte);
+		return compteResponse;
+	} // SOAPUI >> http://localhost:8080/GestiBankBackEnd/comptes
 	
-	@GET
-	@Path("/testRecupString")
-	@Produces("text/html")
-    public Response getResultByPassingString(@QueryParam("message") String message) {
-        String output = "Message : "+ message;
-        System.out.println(output);
-        return Response.status(200).entity(output).build();
-    } // >> http://localhost:8080/GestiBankBackEnd/comptes/testRecupString?message=Hello
-	
-	@GET
-	@Path("/testRecupDate2")
-	@Produces("text/html")
-    public Response getResultByPassingDate2(
-    		@QueryParam("date") String date) {  
-		System.out.println("-- testRecupDate2 --");
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-	    Date dateObj = null;
-		try {
-			dateObj = sdf.parse(date);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		String output = "Date de debut : " + dateObj;
-        System.out.println(output);
-        return Response.status(200).entity(output).build();
-    } 
-	// >> http://localhost:8080/GestiBankBackEnd/comptes/testRecupDate2?date=2018-02-17
-
-	
-//	// CRUD -- READ operation
-//	@Path("/{iBAN}/operations")
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public String getOperationsByIbanWithParam(
-//		@PathParam("iBAN") String iBAN,
-//		@QueryParam("dateDeb") String dateDeb
-//		) {
-//		List<Operation> operationList = operationServiceImpl.getAllOperationsByIBAN(iBAN);
-//		//System.out.println("Parametres date de debut : " + dateDeb);
-//		return dateDeb;
-//	}
-	
+	/**
+	 * CRUD -- CREATE operation
+	 * Modification d'un compte via son IBAN
+	 * @param compte : requiert un compte au format JSON
+	 * @return le compte modifié au format JSON
+	 */
+	@POST
+	@Path("/{IBAN}/operations")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Operation ajouterOperation(Operation operation) {
+		Operation operationResponse = operationService.ajoutOperation(operation);
+		return operationResponse;
+	}
 	
 }
