@@ -29,7 +29,8 @@ export class ApercuComptesComponent implements OnInit {
     //Init
   	ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
-          this.id = params['id'];
+          //this.id = params['id'];
+          this.id = 1;
         })
 
         this.getClientComptes();
