@@ -59,7 +59,14 @@ public class DemandeRessource {
 	 * dans DemandeRessource ou ClientRessource ???
 	 */
 	
-	
+	/*
+	 * TODO
+	 * CRUD -- READ operation
+	 * Récupération des demandes d'un client donné
+	 * getDemandesByAgent(idAgent)
+	 * 
+	 * dans DemandeRessource ou ClientRessource ???
+	 */
 	
 	
 	// CRUD -- CREATE operation

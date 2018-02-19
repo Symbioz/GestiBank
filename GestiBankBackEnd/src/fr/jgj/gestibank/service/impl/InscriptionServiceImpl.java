@@ -15,11 +15,7 @@ public class InscriptionServiceImpl implements IInscriptionService {
     	List<Inscription> inscriptionList = inscriptionDaoImpl.getAllInscriptions();
     	return inscriptionList;
     }
-	
-	/*public List<Inscription> getAllInscriptions(String status, Date dateAffectation) {
-		List<Inscription> inscriptionList = inscriptionDaoImpl.getAllInscriptions();
-    	return inscriptionList;
-	}*/
+
 
 }
 

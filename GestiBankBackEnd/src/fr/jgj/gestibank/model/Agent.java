@@ -13,7 +13,6 @@ public class Agent extends Utilisateur {
 	
 	public Agent() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	

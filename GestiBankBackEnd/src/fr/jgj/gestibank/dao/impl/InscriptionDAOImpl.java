@@ -17,7 +17,7 @@ public class InscriptionDAOImpl implements IInscriptionDAO {
 		Inscription inscription1 = new Inscription(1L, 1L, new Date(), true, new Date());
 		Inscription inscription2 = new Inscription(2L, 2L, new Date(), false, new Date());
 		Inscription inscription3 = new Inscription(3L, 3L, new Date(), true, null);
-		Inscription inscription4 = new Inscription(4L, null, new Date(), false, new Date());
+		Inscription inscription4 = new Inscription(4L, 0, new Date(), false, new Date());
 
 		inscriptionsMap.put("1", inscription1);
 		inscriptionsMap.put("2", inscription2);
@@ -33,14 +33,5 @@ public class InscriptionDAOImpl implements IInscriptionDAO {
 		return inscriptionsList;
 
 	}
-
-	
-	  public List<Inscription> getAllInscriptions(String status, Date
-	  dateAffectation) { 
-		  List<Inscription> inscriptionsList = new ArrayList<Inscription>(
-					inscriptionsMap.values());
-			return inscriptionsList;
-
-	  }
 
 }

@@ -8,8 +8,6 @@ import fr.jgj.gestibank.model.Inscription;
 public interface IInscriptionService {
 	
 	public List<Inscription> getAllInscriptions() ;
-	
-	//public List<Inscription> getAllInscriptions(String status, Date dateAffectation) ;
 		
 }
 
