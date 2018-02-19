@@ -41,13 +41,10 @@
     "Mes services" : "My services",
     "Mes contrats" : "My contracts",
 
-<<<<<<< HEAD
+
     "Language" : "Language",
     "works" : "works",
-=======
-    "works" : "works",
 
->>>>>>> master
     "Clients": "Customers",
     "Nom": "Name",
     "Identifiant" : "Username",
@@ -64,11 +61,9 @@
     "Supprimer":"Delete",
     "Demande":"Requests",
     "Inscription":"Inscription requests",
-<<<<<<< HEAD
-    "mdp": "Password",
-=======
 
->>>>>>> master
+    "mdp": "Password",
+
 
 
     "GestionDesAgents" : "Agent Management",

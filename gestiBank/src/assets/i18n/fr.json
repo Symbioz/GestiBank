@@ -41,15 +41,10 @@
     "Mes services" : "Mes services",
     "Mes contrats" : "Mes contrats",
 
-<<<<<<< HEAD
+
     "Language" : "Langue",
     "works" : "fonctionne",
-=======
-    "works" : "fonctionne",
 
-
-
->>>>>>> master
     "Clients": "Clients",
     "Nom": "Nom",
     "Identifiant":"Identifiant",
@@ -66,11 +61,9 @@
     "Supprimer":"Supprimer",
     "Demande":"Demande en cours",
     "Inscription":"Demande d'inscription",
-<<<<<<< HEAD
-    "mdp": "Mot de passe",
-=======
 
->>>>>>> master
+    "mdp": "Mot de passe",
+
     "GestionDesAgents" :"Gestion des agents",
     "GestionDesComptes":"Gestion des comptes",
     
@@ -97,11 +90,9 @@
     "Oui":"Oui",
     "Non": "Non",
     "EditerAgent": "Editer l'agent",
-<<<<<<< HEAD
-    "QuestionSuppression":"Etes vous sur de vouloir supprimer cette agent ?",
-=======
+
+
     "QuestionSuppression":"Etes vous sur de vouloir supprimer l'agent au matricule n°:",
->>>>>>> master
     "Valider":"Valider",
     "Reaffecter":"Reaffecter"
 }

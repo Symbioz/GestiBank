@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../../router.animations';
 import { Demande } from '../../../../models';
-import { DemandeService } from '../../../../service/demandeService';
+import { DemandeService } from '../../../../services';
 import { Router } from  '@angular/router';
 
 @Component({
@@ -32,10 +32,10 @@ export class ListDemandesComponent implements OnInit {
 				console.log(err);
 			}
 		);
-		let demande: Demande;
+		/*let demande: Demande;
 		for (demande of this.demandes) 
 			if (demande.status===true){
 				this.demandesAgent.push(demande) 
-			}
+			}*/
 	}
 }

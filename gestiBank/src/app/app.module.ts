@@ -11,9 +11,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
-<<<<<<< HEAD
-import { HttpModule } from '@angular/http';
-=======
+
 
 import { LayoutAdminModule } from './layout-admin/layout-admin.module';
 
@@ -22,7 +20,7 @@ import { DemandeService} from '../services/demande.service';
 import { ClientService} from  '../services/client.service';
 import { InscriptionService} from '../services/inscription.service';
 
->>>>>>> master
+
 
 
 // AoT requires an exported function for factories
@@ -47,13 +45,10 @@ export function createTranslateLoader(http: HttpClient) {
             }
         }),
         AppRoutingModule,
-<<<<<<< HEAD
-        HttpModule
-=======
+
         FormsModule,
         ReactiveFormsModule,
         LayoutAdminModule
->>>>>>> master
     ],
     declarations: [AppComponent],
     providers: [AuthGuard,AgentService,DemandeService,ClientService,InscriptionService],
