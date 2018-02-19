@@ -54,14 +54,14 @@ public class AgentDAOImpl implements IAgentDAO{
 	}
 	
 	
-	public Agent supprimerAgent(Long id) {
+	public Agent supprimerAgent(String id) {
 		Agent agentResponse = agentsMap.remove(id);
 		return agentResponse;
 	}
 
 
 	@Override
-	public Agent getAgentById(Long id) {
+	public Agent getAgentById(String id) {
 		Agent agentResponse = agentsMap.get(id);
 		System.out.println( agentResponse);
 		return agentResponse;

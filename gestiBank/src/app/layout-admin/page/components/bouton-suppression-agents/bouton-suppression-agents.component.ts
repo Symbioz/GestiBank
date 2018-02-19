@@ -36,8 +36,10 @@ export class BoutonSuppressionAgentsComponent implements OnInit {
     open(content) {
         this.modalService.open(content).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
+            this.refresh();
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+            this.refresh();
         });
     }
 
@@ -57,8 +59,10 @@ export class BoutonSuppressionAgentsComponent implements OnInit {
       this.agentService.supprimerAgent(agentModal.id).subscribe(
         res => {
            this.gestionAgentComponent.getAllAgents();
-           this.router.navigate(['/agent']);
+           this.closeResult;
+           this.router.navigate(['/admin/gestionAgents']);
            console.log('agent supprimé');
+           
         })
     }
   }
@@ -68,6 +72,11 @@ export class BoutonSuppressionAgentsComponent implements OnInit {
       this.sub = this.route.params.subscribe(params => {
         this.id = params['id']});
       };
+
+   refresh() {
+    
+    window.location.reload();
+   }
 
 
 }

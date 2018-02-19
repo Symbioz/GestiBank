@@ -1,36 +1,45 @@
 import { Injectable } from '@angular/core';
-import { Demande} from '../models/demande';
-import { Client}  from '../models/client';
-
+import { Demande } from "../models/demande";
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import {Observable } from "rxjs/Observable";
 
 @Injectable()
 export class DemandeService {
+  private apiUrl = 'http://localhost:8080/GestiBankBackEnd/demandes/';
 
-  demande = [ new Demande(1, "10/12/2015", true ,new Client("2","nom","prenom","login","mdp","email", 222, 11, "s", 11)), 
-              
+  constructor(private http: Http) { }
 
-              new Demande(3, "10:01/2017", false, new Client("2","nom","prenom","login","mdp","email", 222, 11, "s", 11)),
+  getAllDemandes(): Observable<Demande[]> {
+    return this.http.get(this.apiUrl)
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
 
-               new Demande(3, "10:01/2017", false,new Client("2","nom","prenom","login","mdp","email", 222, 11, "s", 11) )
-     ];
-  
-  nbDemande= 0;
+  getDemandeById(id: number): Observable<Demande> { 
+    return this.http.get(this.apiUrl + id)
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Error'));
+  }
 
-  constructor() { }
+  saveDemande(demande: Demande): Observable<Demande> { 
+    return this.http.post(this.apiUrl, demande)
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
 
-   getDemandes(){
-     return this.demande;
-    }
+  deleteDemandeById(id: number): Observable<boolean> { 
+    return this.http.delete(this.apiUrl + id) 
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
 
-    getDemandesEncours(){
-
-    	for (var i = 0; i < this.demande.length; i++) {
-	             this.nbDemande= this.demande.length;
-            }
-        
-         return this.nbDemande;
-    	
-
-    }
-
+  modifierDemande(demande: Demande): Observable<Demande> {
+    return this.http.put(this.apiUrl, demande)
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
 }
+
+
+

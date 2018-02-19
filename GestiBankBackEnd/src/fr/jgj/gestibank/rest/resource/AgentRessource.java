@@ -42,7 +42,7 @@ public class AgentRessource {
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Agent modifierAegnt(Agent agent){
+	public Agent modifierAgent(Agent agent){
 		Agent agentResponse = agentService.modifierAgent(agent);
 		return agentResponse;
 	}
@@ -51,7 +51,7 @@ public class AgentRessource {
 	@DELETE
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Agent supprimerAgent(@PathParam("id") Long id) {
+	public Agent supprimerAgent(@PathParam("id") String id) {
 		Agent agentResponse = agentService.supprimerAgent(id);
 		return agentResponse;
 	}
@@ -60,7 +60,7 @@ public class AgentRessource {
 		@GET
 		@Path("/{id}")
 		@Produces(MediaType.APPLICATION_JSON)
-		public Agent getAgentByID(@PathParam("id") Long id) {
+		public Agent getAgentByID(@PathParam("id") String id) {
 			Agent agent = agentService.getAgentById(id);
 			return agent;
 	}

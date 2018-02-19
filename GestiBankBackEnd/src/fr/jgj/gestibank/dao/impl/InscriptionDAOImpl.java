@@ -40,15 +40,7 @@ public class InscriptionDAOImpl implements IInscriptionDAO {
 		  List<Inscription> inscriptionsList = new ArrayList<Inscription>(
 					inscriptionsMap.values());
 			return inscriptionsList;
-		  
-		  for(Integer i=0; i < inscriptionsMap.size(); i++){
-		      if(inscriptionsMap.status == false){
-		         this.inscriptionEnCours.push(i);
-		         console.log(i);         
-		      }
-		  
-	  }*/
+
 	  }
-	 
 
 }

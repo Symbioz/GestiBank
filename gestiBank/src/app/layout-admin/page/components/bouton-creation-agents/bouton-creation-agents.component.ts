@@ -37,8 +37,10 @@ constructor(  private route: ActivatedRoute,
     open(content) {
         this.modalService.open(content).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
+            this.refresh();
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+            this.refresh();
         });
     }
 
@@ -98,7 +100,7 @@ constructor(  private route: ActivatedRoute,
                agent => {
                 this.agent = agent;
                   console.log(agent);
-                  //  this.refresh();
+                  this.closeResult;
                          },
                 err => {
                   console.log(err);
@@ -107,17 +109,12 @@ constructor(  private route: ActivatedRoute,
     }
 
    //this.agentForm.reset();
-   //this.router.navigate(['/admin/gestionAgents']);
+   this.router.navigate(['/admin/gestionAgents']);
   }
 
   refresh() {
-    /*this.clientService.getAllClient().subscribe(
-        clients => {
-          console.log ("GET ALL USER OK ");
-          this.redirectClientPage();
-        }
-      );*/
+    
     window.location.reload();
-}
+  }
 
 }

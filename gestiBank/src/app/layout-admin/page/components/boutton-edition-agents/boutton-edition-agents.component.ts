@@ -36,8 +36,10 @@ export class BouttonEditionAgentsComponent implements OnInit {
     open(content) {
         this.modalService.open(content).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
+            this.refresh();
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+            this.refresh();
         });
     }
 
@@ -77,9 +79,9 @@ export class BouttonEditionAgentsComponent implements OnInit {
       this.agentService.getAgentById(this.id).subscribe(
         agent => {
           console.log(agent);
-          this.id=1;
+          this.id;
           this.agentForm.patchValue({
-          //matricule: agent.matricule,
+          matricule: agent.matricule,
           identifiant: agent.identifiant,
           nom: agent.nom,
           prenom: agent.prenom,
@@ -131,7 +133,12 @@ export class BouttonEditionAgentsComponent implements OnInit {
     }
 
    //this.agentForm.reset();
-   //this.router.navigate(['/admin/gestionAgents']);
+   this.router.navigate(['/admin/gestionAgents']);
+  }
+
+  refresh() {
+    
+    window.location.reload();
   }
 
 

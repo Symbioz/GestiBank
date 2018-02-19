@@ -22,7 +22,7 @@ export class AgentService {
   }
 
   supprimerAgent(id:number): Observable<boolean>{
-     return this.http.delete(this.apiUrl + '/' + id)
+     return this.http.delete(this.apiUrl + id)
      .map((res:Response) => res.json())
      .catch((error:any) => Observable.throw (error.json || 'server error'));
   }
@@ -44,7 +44,7 @@ export class AgentService {
     return this.http.get(this.apiUrl + id)
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Error'));
-,    }
+   }
 
  
 }

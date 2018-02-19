@@ -39,11 +39,11 @@ export class InscriptionService {
   
      getNbInscriptionsNonAffecte(){
     
-      for(let i of this.getAllInscriptions()){
+      /*for(let i of this.getAllInscriptions()){
           if(i.client.idAgent == null){
              this.nbInscription= this.nbInscription+1;
                     }
-                                  }
+                                  }*/
     return this.nbInscription;
 
      }
