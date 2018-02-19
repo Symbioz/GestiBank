@@ -1,15 +1,17 @@
 
 export class Demande {
-	identifiant: number;
-     date :  Date;
-     status:    Boolean;
+	idDemande: number;
      idClient:    number;
+     dateDemande :  Date;
+     status:    Boolean;
+    
      
-     constructor(idDemande:number,date:Date, status:Boolean, idclient:number ){
-     	this.identifiant = idDemande;
-          this.date = date;
-          this.status = status;
+     constructor(idDemande:number,idclient:number ,dateDemande:Date, status:Boolean, ){
+     	this.idDemande = idDemande;
           this.idClient = idclient;
+          this.dateDemande = dateDemande;
+          this.status = status;
+ 
      	
      }
 

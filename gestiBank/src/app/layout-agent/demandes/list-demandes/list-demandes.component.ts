@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../../router.animations';
 import { Demande } from '../../../../models';
-import { DemandeService } from '../../../../service/demandeService';
+import { DemandeService } from '../../../../services';
 import { Router } from  '@angular/router';
 
 @Component({
