@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Client } from '../../../../models';
-import { ClientService } from '../../../../service/clientService';
+import { ClientService } from '../../../../services';
 import { Router } from  '@angular/router';
 import { routerTransition } from '../../../router.animations';
 

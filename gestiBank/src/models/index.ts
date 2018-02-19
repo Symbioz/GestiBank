@@ -3,3 +3,8 @@ export * from './compte';
 export * from './compteCourant';
 export * from './compteRemunere';
 export * from './operation';
+export * from './client';
+export * from './agent';
+export * from './demande';
+export * from './utilisateur';
+export * from './inscription';

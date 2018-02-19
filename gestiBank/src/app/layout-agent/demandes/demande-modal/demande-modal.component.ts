@@ -1,7 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Demande } from '../../../../models';
 
-import { DemandeService } from '../../../../service/demandeService';
+import { DemandeService } from '../../../../services';
 import { ActivatedRoute, Router } from  '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
 

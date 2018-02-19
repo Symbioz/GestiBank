@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Client } from '../../../../models';
-import { ClientService } from '../../../../service/clientService';
+import { ClientService } from '../../../../services';
 import { ActivatedRoute, Router } from  '@angular/router';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'

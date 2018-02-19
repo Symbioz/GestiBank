@@ -5,8 +5,8 @@ export class Inscription extends Demande {
 	 dateAffectation: Date;
 	 
    
-     constructor(identifiant:number,date:Date, status:Boolean,  idClient:number, dateAffectation : Date ){
-          super(identifiant,date, status, idClient);
+     constructor(idDemande:number,  idClient:number,date:Date, status:Boolean, dateAffectation : Date ){
+          super(idDemande,idClient,date, status);
           this.dateAffectation = dateAffectation;
         
      }
