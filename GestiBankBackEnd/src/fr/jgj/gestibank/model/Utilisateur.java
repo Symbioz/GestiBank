@@ -3,7 +3,8 @@ package fr.jgj.gestibank.model;
 public class Utilisateur {
 	
 	static long nextId = 3;
-	
+    
+
 	//@Id
 	private long id = 0;
 	private String nom;
@@ -30,9 +31,13 @@ public class Utilisateur {
 		this.identifiant = identifiant;
 		this.numTel = numTel;
 	}
+
 	
 	//Getters-Setters
 	public long getId() {
+		if (id == 0){
+			id = nextId++;
+		}
 		return id;
 	}
 	public void setId(long id) {
@@ -80,4 +85,5 @@ public class Utilisateur {
 	public void setNumTel(String numTel) {
 		this.numTel = numTel;
 	}
+
 }

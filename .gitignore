@@ -1,1 +1,30 @@
+<<<<<<< HEAD
 /.metadata/
+=======
+
+.metadata/.plugins/org.eclipse.rse.core/.log
+.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log
+.metadata/.plugins/org.eclipse.rse.ui/.log
+.metadata/.lock
+RemoteSystemsTempFiles/.project
+.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml
+.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties
+.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser
+.metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/write.lock
+.metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/segments_2
+.metadata/.plugins/org.eclipse.m2e.core/nexus/8016f1b6be9f8789d068d0fc17a98678/segments_2
+.metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/_0.cfs
+.metadata/.plugins/org.eclipse.m2e.core/nexus/8016f1b6be9f8789d068d0fc17a98678/write.lock
+.metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/segments.gen
+.metadata/.plugins/org.eclipse.rse.core/initializerMarks/org.eclipse.rse.internal.core.RSELocalConnectionInitializer.mark
+.metadata/.plugins/org.jboss.tools.central/proxyWizards/1518512828982/org.jboss.tools.central.discovery_4.2.3.Final_v20150409_0637_B528.jar_964554807537450574.jar
+.metadata/version.ini
+.metadata/.plugins/org.jboss.tools.project.examples/jbosstools/examples/project-examples-maven-4.2.GA.xml
+.metadata/.plugins/org.eclipse.jdt.core/355369697.index
+.metadata/.plugins/org.eclipse.jdt.core/3656756579.index
+.metadata/.plugins/org.eclipse.jdt.core/4187470955.index
+.metadata/.plugins/org.eclipse.jdt.core/605290374.index
+.metadata/.plugins/org.eclipse.jdt.core/assumedExternalFilesCache
+*.prefs
+*.index
+>>>>>>> origin/jennifer
