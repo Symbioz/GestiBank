@@ -1,0 +1,9 @@
+<div [@routerTransition]>
+	<app-page-header [heading]="'Notifications'" [icon]="'fa-bar-chart-o'"></app-page-header>
+	<div class="col-lg-8">
+		
+		<ngb-alert [type]="notif.status" (close)="deleteNotification(notif)" *ngFor="let notif of notifications">
+	        {{ notif.date | date : "dd/MM/yyyy" }} -- {{ notif.message }}
+	    </ngb-alert>
+	</div>
+</div>

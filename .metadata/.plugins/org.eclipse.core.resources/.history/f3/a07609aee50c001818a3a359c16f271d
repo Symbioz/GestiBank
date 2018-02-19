@@ -1,0 +1,7 @@
+package com.gestibank.model;
+
+public class Compte {
+	
+	private long RIB;
+	private long solde;
+}

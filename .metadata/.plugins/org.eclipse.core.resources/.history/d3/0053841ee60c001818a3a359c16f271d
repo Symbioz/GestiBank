@@ -1,0 +1,14 @@
+package com.gestibank.model;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Compte {
+	
+	private long RIB;
+	private float solde;
+	private float decouvertAutorise;
+	private float agios;
+	private Date dateCreation;
+	private ArrayList<Operation> operations;
+}
