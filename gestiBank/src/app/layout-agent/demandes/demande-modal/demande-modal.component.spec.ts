@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableauClientsComponent } from './tableau-clients.component';
+import { DemandeModalComponent } from './demande-modal.component';
 
-describe('TableauClientsComponent', () => {
-  let component: TableauClientsComponent;
-  let fixture: ComponentFixture<TableauClientsComponent>;
+describe('DemandeModalComponent', () => {
+  let component: DemandeModalComponent;
+  let fixture: ComponentFixture<DemandeModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableauClientsComponent ]
+      declarations: [ DemandeModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TableauClientsComponent);
+    fixture = TestBed.createComponent(DemandeModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
