@@ -1,0 +1,43 @@
+  <div class="row">
+   
+    <div class="card mb-3 tableauAgents">
+                <div class="card-body table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th>{{ 'Matricule' | translate }}</th>
+                            <th>{{ 'Nom' | translate }}</th>
+                            <th>{{ 'Prenom' | translate }}</th>
+                            <th>{{ 'Email' | translate }}</th>
+                            <th>{{ 'adresse' | translate }}</th>
+                            <th>{{ 'numTel' | translate }}</th>
+                            <th>{{ 'date debut contrat' | translate }}</th>
+                            <th>{{ 'Editer' | translate }}</th>
+                            <th>{{ 'Supprimer' | translate }}</th>
+                            <th>{{ 'Information' |translate}}</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr *ngFor="let agent of ListeAgents " >
+                            <td>{{agent.matricule}}</td>
+                            <td>{{agent.nom}}</td>
+                            <td>{{agent.prenom}}</td>
+                            <td>{{agent.email}}</td>
+                            <td>{{agent.adresse}} </td>
+                            <td>{{agent.numTel}} </td>
+                            <td>{{agent.dateDebutContrat}} </td>
+
+                            <td><p><app-boutton-edition-agents [agentModal]='agent'></app-boutton-edition-agents></p></td>
+
+                            <td><p> <app-bouton-suppression-agents [agentModal]='agent' [ListeClients]='client'></app-bouton-suppression-agents></p></td>
+
+                            <!-- <td><button class="btn btn-info btn-xs fa fa-eye"   [routerLink]="['infoAgents/(agent.matricule)']" [routerLinkActive]="['router-link-active']" ></button></td> -->
+
+                            <td><button class="btn btn-info btn-xs fa fa-eye" (click)="voirInfo(agent.matricule)"></button></td>
+                        </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+</div> 
