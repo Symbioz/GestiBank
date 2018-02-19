@@ -15,7 +15,7 @@ public class AgentDAOImpl implements IAgentDAO{
     static HashMap<String, Agent> createMap()
     {
     	HashMap<String,Agent> agentsMap = new HashMap<String,Agent>();
-    	Agent agent3 = new Agent( 3L,"NOM","prenom", "identifiant","mdp","couriel","adresse", "0564595515", "888", new Date());
+    	Agent agent3 = new Agent( 3L,"NOM","prenom", "identifiant","mdp","couriel","adresse", "0564595515", "A001", new Date());
     	Agent agent1 = new Agent( 1L,"Vincent","jennifer", "login","222", "vincentjenni@gmail.com", "rue de lille 59200 lille", "0564595515","1337",new Date());
 		Agent agent2 = new Agent( 2L,"Vinc", "jess","login2", "111", "jes@fre.fr", "rue de lille 59200 ","0564595515", "573", new Date());
 		agentsMap.put("1", agent1);

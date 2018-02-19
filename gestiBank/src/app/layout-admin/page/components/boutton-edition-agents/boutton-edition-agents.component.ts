@@ -19,7 +19,7 @@ export class BouttonEditionAgentsComponent implements OnInit {
 
     agent: Agent;
     id: number;
-    agentForm: FormGroup;
+    agentFormUpdate: FormGroup;
     closeResult: string;
     
     private sub: any;
@@ -30,9 +30,6 @@ export class BouttonEditionAgentsComponent implements OnInit {
               private agentService: AgentService,
               private modalService: NgbModal) { }
 
-
-    
-    
     open(content) {
         this.modalService.open(content).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
@@ -56,9 +53,9 @@ export class BouttonEditionAgentsComponent implements OnInit {
   ngOnInit() {
      // on initialise l'id de l agent
      this.id=this.agentModal.id;
-    
+     console.log(this.id);
      // validation des champs
-      this.agentForm = new FormGroup({
+      this.agentFormUpdate = new FormGroup({
           matricule: new FormControl ('', Validators.required),
           identifiant: new FormControl('', Validators.required),
           nom: new FormControl ('', Validators.required),
@@ -78,9 +75,8 @@ export class BouttonEditionAgentsComponent implements OnInit {
     if (this.id) { //edit form
       this.agentService.getAgentById(this.id).subscribe(
         agent => {
-          console.log(agent);
           this.id;
-          this.agentForm.patchValue({
+          this.agentFormUpdate.patchValue({
           matricule: agent.matricule,
           identifiant: agent.identifiant,
           nom: agent.nom,
@@ -101,22 +97,19 @@ export class BouttonEditionAgentsComponent implements OnInit {
 }
  
   
-
-
   onSubmit(updateagentForm: NgForm){
-    console.log(this.agentForm.valid);
-    if (this.agentForm.valid){
+ 
       let agent: Agent = new Agent(
-          0,
-          this.agentForm.controls['nom'].value,
-          this.agentForm.controls['prenom'].value,
-          this.agentForm.controls['motDePasse'].value,
-          this.agentForm.controls['email'].value,
-          this.agentForm.controls['adresse'].value,
-          this.agentForm.controls['identifiant'].value,
-          this.agentForm.controls['numTel'].value,
-          this.agentForm.controls['matricule'].value,
-          this.agentForm.controls['dateDebutContrat'].value,
+          this.id,
+          this.agentFormUpdate.controls['nom'].value,
+          this.agentFormUpdate.controls['prenom'].value,
+          this.agentFormUpdate.controls['motDePasse'].value,
+          this.agentFormUpdate.controls['email'].value,
+          this.agentFormUpdate.controls['adresse'].value,
+          this.agentFormUpdate.controls['identifiant'].value,
+          this.agentFormUpdate.controls['numTel'].value,
+          this.agentFormUpdate.controls['matricule'].value,
+          this.agentFormUpdate.controls['dateDebutContrat'].value,
           );
            console.log(updateagentForm.value);
            console.log(agent);
@@ -130,7 +123,7 @@ export class BouttonEditionAgentsComponent implements OnInit {
                   console.log(err);
               }
            );
-    }
+    
 
    //this.agentForm.reset();
    this.router.navigate(['/admin/gestionAgents']);

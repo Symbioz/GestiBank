@@ -14,10 +14,12 @@ import javax.ws.rs.core.MediaType;
 import fr.jgj.gestibank.model.Compte;
 import fr.jgj.gestibank.model.Demande;
 import fr.jgj.gestibank.model.Operation;
+import fr.jgj.gestibank.model.Client;
 import fr.jgj.gestibank.service.impl.CompteServiceImpl;
 import fr.jgj.gestibank.service.impl.DemandeServiceImpl;
 import fr.jgj.gestibank.service.impl.OperationServiceImpl;
 import fr.jgj.gestibank.service.impl.UtilisateurServiceImpl;
+import fr.jgj.gestibank.service.impl.ClientServiceImpl;
 
 @Path("/client")
 public class ClientRessource {
@@ -30,7 +32,7 @@ public class ClientRessource {
 	CompteServiceImpl compteServiceImpl = new CompteServiceImpl();
 	OperationServiceImpl operationService = new OperationServiceImpl();
 	DemandeServiceImpl demandeService = new DemandeServiceImpl();
-	
+	ClientServiceImpl clientService = new ClientServiceImpl();
 	
 	
 	////////////////////////////
@@ -197,6 +199,17 @@ public class ClientRessource {
 		Demande demandeResponse = demandeService.creerDemande(demande);
 		return demandeResponse;
 	}
-		
+	
+	//////////////////////////////////////////////////
+	//   GESTION DES  CLIENTS
+	//////////////////////////////////////////////////
+	
+	// CRUD -- READ operation
+		@GET
+		@Produces(MediaType.APPLICATION_JSON)
+		public List<Client> listAllClients() {
+			List<Client> clientList = clientService.getAllClients();
+			return clientList;
+		}
 		
 }

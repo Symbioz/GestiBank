@@ -22,10 +22,10 @@ import { HttpModule } from '@angular/http';
 })
 export class GestionNouveauClientsComponent implements OnInit {
     
-    inscriptionEnCours : Inscription[ ] ;
-    inscriptionTermine : Inscription[ ] ;
-    inscriptionAffecte : Inscription[ ] ;
-    inscriptionNonAffecte : Inscription[ ] ;
+    inscriptionEnCours : Inscription[ ]   =[] ;
+    inscriptionTermine : Inscription[ ]   =[] ;
+    inscriptionAffecte : Inscription[ ]   =[] ;
+    inscriptionNonAffecte : Inscription[ ]=[] ;
    
     model: any = 1;
     public radioGroupForm: FormGroup;
@@ -44,10 +44,6 @@ export class GestionNouveauClientsComponent implements OnInit {
             model: 'middle'
         });
         this.clients;
-        this.inscriptionEnCours    = this.inscriptionService.getInscriptionEnCours();
-        this.inscriptionTermine    = this.inscriptionService.getInscriptionTermine();
-        this.inscriptionAffecte    = this.inscriptionService.getInscriptionAffecte();
-        this.inscriptionNonAffecte = this.inscriptionService.getInscriptionNonAffecte();
         this.getAllInscriptions();
         this.getAllAgents();
     }
@@ -69,7 +65,6 @@ export class GestionNouveauClientsComponent implements OnInit {
       }
     }
      this.inscription = inscriptions;
-  
          },
          err => {
            console.log(err);
@@ -77,7 +72,6 @@ export class GestionNouveauClientsComponent implements OnInit {
       );
     }
 
- 
     getAllAgents(){
       this.agentService.getAllAgents().subscribe(
          agents => {

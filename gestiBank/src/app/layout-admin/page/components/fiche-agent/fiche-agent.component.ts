@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import {Agent} from '../../../../../models/agent';
 
 @Component({
   selector: 'app-fiche-agent',
@@ -12,6 +13,6 @@ export class FicheAgentComponent implements OnInit {
   ngOnInit() {
   }
 
-  //@Input() ListeAgents:Agent[];
+  @Input() ListeAgents:Agent[];
 
 }

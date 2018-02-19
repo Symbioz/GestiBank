@@ -55,6 +55,7 @@ constructor(  private route: ActivatedRoute,
     }
 
    @Input() agentModal:Agent; 
+   
 
     ngOnInit() {
 
@@ -93,14 +94,16 @@ constructor(  private route: ActivatedRoute,
           this.agentForm.controls['numTel'].value,
           this.agentForm.controls['matricule'].value,
           this.agentForm.controls['dateDebutContrat'].value,
+
           );
+           console.log(this.agentForm.controls['dateDebutContrat'].value);
            console.log(addAgentForm.value);
            console.log(agent);
           this.agentService.creerAgent(agent).subscribe(
                agent => {
                 this.agent = agent;
                   console.log(agent);
-                  this.closeResult;
+                  
                          },
                 err => {
                   console.log(err);
