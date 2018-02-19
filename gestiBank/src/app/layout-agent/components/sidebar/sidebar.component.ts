@@ -29,10 +29,13 @@ export class SidebarComponent {
         });
     }
 
+<<<<<<< HEAD
     changeLang(language: string) {
         this.translate.use(language);
     }
 
+=======
+>>>>>>> master
     eventCalled() {
         this.isActive = !this.isActive;
     }
@@ -60,9 +63,19 @@ export class SidebarComponent {
         dom.classList.toggle('rtl');
     }
 
+<<<<<<< HEAD
     
+=======
+    changeLang(language: string) {
+        this.translate.use(language);
+    }
+>>>>>>> master
 
     onLoggedout() {
         localStorage.removeItem('isLoggedin');
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master

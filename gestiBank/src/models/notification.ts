@@ -1,12 +1,15 @@
 export class Notification {
-	id: number;
-	type: String;
-	message: String;
 
-	constructor(id: number, type: String, message: String){
+	public id: number;
+	status: string;
+	message: string;
+	date: Date;
+
+	constructor(id: number, status: string, message: string, date: Date){
 		this.id = id;
-		this.type = type;
+		this.status = status;
 		this.message = message;
+		this.date = date;
 	}
 
 

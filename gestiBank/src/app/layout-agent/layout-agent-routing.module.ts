@@ -6,6 +6,7 @@ import { DetailClientModalComponent } from './clients/detail-client-modal/detail
 import { ListeClientsComponent } from './clients/liste-clients/liste-clients.component';
 
 const routes: Routes = [
+<<<<<<< HEAD
 	 		{ path: '', component: LayoutAgentComponent, 	
 	 			children: [
 	 			//	{ path: 'dashboard', component: DashboardAgentComponent },
@@ -15,6 +16,18 @@ const routes: Routes = [
            	}
             
      
+=======
+     {
+            path: '',
+        component: LayoutAgentComponent,
+        children: [
+            { path: '', redirectTo: 'dashboard' },
+            { path: 'dashboard', loadChildren: './dashboard-agent/dashboard-agent.module#DashboardAgentModule' },
+            { path: 'clients', loadChildren: './clients/clients.module#ClientsModule' },
+            { path: 'demande-en-cours', loadChildren: './demande-en-cours/demande-en-cours.module#DemandeEnCoursModule' }
+        ]
+    }
+>>>>>>> master
 ];
 
 @NgModule({

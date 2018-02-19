@@ -3,13 +3,26 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
+<<<<<<< HEAD
 import { HttpModule } from '@angular/http';
+=======
+
+import { LayoutAdminModule } from './layout-admin/layout-admin.module';
+
+import { AgentService} from '../services/agent.service';
+import { DemandeService} from '../services/demande.service';
+import { ClientService} from  '../services/client.service';
+import { InscriptionService} from '../services/inscription.service';
+
+>>>>>>> master
 
 
 // AoT requires an exported function for factories
@@ -25,6 +38,7 @@ export function createTranslateLoader(http: HttpClient) {
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        HttpModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -33,10 +47,16 @@ export function createTranslateLoader(http: HttpClient) {
             }
         }),
         AppRoutingModule,
+<<<<<<< HEAD
         HttpModule
+=======
+        FormsModule,
+        ReactiveFormsModule,
+        LayoutAdminModule
+>>>>>>> master
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard],
+    providers: [AuthGuard,AgentService,DemandeService,ClientService,InscriptionService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
