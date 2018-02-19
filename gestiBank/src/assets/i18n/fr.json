@@ -12,6 +12,7 @@
     "More Theme": "Plus Thèmes",
     "Download Now": "Télécharger",
     "Langue": "Langue",
+    "Language": "Langue",
     "English": "Anglais",
     "French": "Français",
     "Search" : "Chercher",
@@ -40,5 +41,55 @@
     "Mes services" : "Mes services",
     "Mes contrats" : "Mes contrats",
 
-    "works" : "fonctionne"
+    "works" : "fonctionne",
+
+
+
+    "Clients": "Clients",
+    "Nom": "Nom",
+    "Identifiant":"Identifiant",
+    "Prénom": "Prénom",
+    "Couriel":"Couriel",
+    "Adresse":"Adresse",
+    "Numéro de téléphone":"Numéro de téléphone" ,
+    "NombrEnfants": "Nombre d'enfants",
+    "Situation":"Situation",
+    "ListCli":"Liste des clients",
+    "Info": "Info/modifier",
+    "Comptes": "Comptes",
+    "Editer":"Editer",
+    "Supprimer":"Supprimer",
+    "Demande":"Demande en cours",
+    "Inscription":"Demande d'inscription",
+
+    "GestionDesAgents" :"Gestion des agents",
+    "GestionDesComptes":"Gestion des comptes",
+    
+    "Bienvenue":"Bienvenue sur l'espace d'administration ",
+
+    "Matricule":"Matricule",
+  
+    "Prenom": "Prenom",
+    "Telephone":"Telephone",
+    "MotDePasse":"Mot de passe",
+    "DateDebutContrat":"Date de debut de contrat",
+
+    "ListAgents": "Liste des agents",
+    "ListClients": "Liste des clients",
+    "ListeOuvertureCompte":"Liste des demandes d ouverture de compte",
+    "EnCours": "En cours",
+    "Traitee": "Traitee",
+    "AjouterAgents":"Ajouter un agent",
+    "IdDemande":"ID de la demande",
+    "DateDemande":"Date de la demande",
+    "Statut":"Statut",
+    "Affectation":"Affectation",
+    "DateAffectation":"Date d'Affectation",
+    "Oui":"Oui",
+    "Non": "Non",
+    "EditerAgent": "Editer l'agent",
+    "QuestionSuppression":"Etes vous sur de vouloir supprimer l'agent au matricule n°:",
+    "Valider":"Valider",
+    "Reaffecter":"Reaffecter"
 }
+
