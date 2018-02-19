@@ -27,10 +27,15 @@ public class AgentServiceImpl implements IAgentService {
 		return agentResponse;
 	}
 	
-	public Agent supprimerAgent(Long id) {
+	public Agent supprimerAgent(String id) {
 		Agent agentResponse = agentDaoImpl.supprimerAgent(id);
 		return agentResponse;
 	}
+	
+	public Agent getAgentById(String id) {
+		Agent agent = agentDaoImpl.getAgentById(id);
+		return agent;
+     }
 	
 }
 

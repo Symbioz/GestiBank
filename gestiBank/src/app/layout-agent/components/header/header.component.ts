@@ -52,4 +52,3 @@ export class HeaderComponent implements OnInit {
         this.translate.use(language);
     }
 }
-

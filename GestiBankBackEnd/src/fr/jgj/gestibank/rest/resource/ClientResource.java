@@ -15,12 +15,12 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import fr.jgj.gestibank.model.Client;
-import fr.jgj.gestibank.service.ClientService;
+import fr.jgj.gestibank.service.impl.ClientServiceImpl;;
 
 @Path("/clients")
 public class ClientResource {
 
-	ClientService clientService = new ClientService();
+	ClientServiceImpl clientService = new ClientServiceImpl();
 
 	// CRUD -- READ operation
 	@GET

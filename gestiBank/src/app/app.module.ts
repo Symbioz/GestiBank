@@ -12,14 +12,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 
-
 import { LayoutAdminModule } from './layout-admin/layout-admin.module';
 
 import { AgentService} from '../services/agent.service';
 import { DemandeService} from '../services/demande.service';
 import { ClientService} from  '../services/client.service';
 import { InscriptionService} from '../services/inscription.service';
-
 
 
 
@@ -45,7 +43,6 @@ export function createTranslateLoader(http: HttpClient) {
             }
         }),
         AppRoutingModule,
-
         FormsModule,
         ReactiveFormsModule,
         LayoutAdminModule

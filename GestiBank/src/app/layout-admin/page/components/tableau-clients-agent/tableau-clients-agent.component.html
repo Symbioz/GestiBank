@@ -1,0 +1,34 @@
+<div class="card mb-3">
+      
+                <div class="card-body table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th>{{'IDClient' | translate}}</th>
+                            <th>{{'Nom' | translate}}</th> 
+                            <th>{{'Prenom' | translate}}</th> 
+                            <th>{{'Reaffecter' | translate}}</th> 
+                            <th>{{'Valider' | translate}}</th> 
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let agent of ListeAgents">
+                            <td>{{agent.client.id}}</td>
+                            <td>{{agent.client.nom}}</td>
+                            <td>{{agent.client.prenom}}</td>
+                            <td>
+                                <select>
+                                   <option *ngFor=" let agent of ListeAgents">{{ agent.matricule }}</option>
+                                </select> 
+                            </td>
+                            <!--<td><app-bouton-validation-affectation></app-bouton-validation-affectation></td> -->
+                        </tr>
+ 
+                        </tbody>
+                    </table>
+                </div>
+
+                
+</div>
+
+   

@@ -5,7 +5,8 @@ import java.util.Date;
 
 public class Compte {
 	
-	private long IBAN; 
+	private String IBAN; 
+	private long idClient;
 	private float solde;
 	private Date dateCreation;
 	private ArrayList<Operation> operations;
@@ -15,12 +16,21 @@ public class Compte {
 		
 	}
 	
+	public Compte(String iBAN, long idClient, float solde, Date dateCreation, ArrayList<Operation> operations) {
+		super();
+		IBAN = iBAN;
+		this.solde = solde;
+		this.dateCreation = dateCreation;
+		this.operations = operations;
+		this.idClient = idClient;
+	}
+
 
 	//Getters-Setters
-	public long getIBAN() {
+	public String getIBAN() {
 		return IBAN;
 	}
-	public void setIBAN(long iBAN) {
+	public void setIBAN(String iBAN) {
 		IBAN = iBAN;
 	}
 
@@ -43,6 +53,13 @@ public class Compte {
 	}
 	public void setOperations(ArrayList<Operation> operations) {
 		this.operations = operations;
+	}
+
+	public Long getIdClient() {
+		return idClient;
+	}
+	public void setIdClient(Long idClient) {
+		this.idClient = idClient;
 	}
 	
 }

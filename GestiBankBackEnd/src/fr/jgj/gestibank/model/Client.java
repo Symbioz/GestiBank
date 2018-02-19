@@ -1,4 +1,3 @@
-
 package fr.jgj.gestibank.model;
 
 import java.io.File;
@@ -11,7 +10,7 @@ public class Client extends Utilisateur{
 	private ArrayList<Compte> comptes=new ArrayList<Compte>();
 	private ArrayList<File> documents = new ArrayList<File>();
 	private ArrayList<Notification> notifications = new ArrayList<Notification>();
-	private int matriculeAgent;
+	private String matriculeAgent;
 	
 	public Client() {
 	
@@ -27,10 +26,11 @@ public class Client extends Utilisateur{
 			String numTel,
 			int nbEnfants, 
 			String situation,
-			ArrayList<Compte> comptes
-			,ArrayList<File> documents,
+			ArrayList<Compte> comptes,
+			ArrayList<File> documents,
 			ArrayList<Notification> notifications,
-			int matriculeAgent) {
+			String matriculeAgent) {
+		
 		super(id, nom, prenom, mdp, email, adresse, identifiant,numTel);
 		this.nbEnfants = nbEnfants;
 		this.situation = situation;
@@ -70,13 +70,11 @@ public class Client extends Utilisateur{
 	public void setNotifications(ArrayList<Notification> notifications) {
 		this.notifications = notifications;
 	}
-	public int getMatriculeAgent() {
+	public String getMatriculeAgent() {
 		return matriculeAgent;
 	}
-	public void setMatriculeAgent(int matriculeAgent) {
+	public void setMatriculeAgent(String matriculeAgent) {
 		this.matriculeAgent = matriculeAgent;
 	}
 
 }
-
-

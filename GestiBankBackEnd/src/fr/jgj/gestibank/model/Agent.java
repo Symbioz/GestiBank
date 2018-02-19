@@ -6,7 +6,7 @@ public class Agent extends Utilisateur {
     
 	private int matricule;
 	private Date dateDebutContrat;
-	private Date dateFinContrat;
+
 	
 	//Constructeurs
     
@@ -30,11 +30,11 @@ public class Agent extends Utilisateur {
 	
 	public Agent(Long id, String nom, String prenom, String identifiant,
 			String mdp, String email, String adresse,String numtel, int matricule,
-			Date dateDebutContrat, Date dateFinContrat) {
+			Date dateDebutContrat) {
 		super(id, nom, prenom, identifiant, mdp, email, adresse,numtel);
 		this.matricule = matricule;
 		this.dateDebutContrat = dateDebutContrat;
-		this.dateFinContrat = dateFinContrat;
+		
 	}
 	
 
@@ -52,12 +52,7 @@ public class Agent extends Utilisateur {
 	public void setDateDebutContrat(Date dateDebutContrat) {
 		this.dateDebutContrat = dateDebutContrat;
 	}
-	public Date getDateFinContrat() {
-		return dateFinContrat;
-	}
-	public void setDateFinContrat(Date dateFinContrat) {
-		this.dateFinContrat = dateFinContrat;
-	}
+	
 	
 	
 	

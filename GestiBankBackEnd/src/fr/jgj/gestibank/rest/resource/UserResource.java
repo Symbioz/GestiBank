@@ -13,7 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import fr.jgj.gestibank.model.User;
-import fr.jgj.gestibank.service.UserService;
+import fr.jgj.gestibank.service.impl.UserService;
 
 @Path("/users")
 public class UserResource {

@@ -25,7 +25,7 @@ public class NotificationRessource {
 	public List<Notification> listAllNotifications() {
 		List<Notification> notificationList = notificationServiceImpl.getAllNotifications();
 		return notificationList;
-	}
+	} // >> http://localhost:8080/GestiBankBackEnd/notifications
 	
 	// CRUD -- CREATE operation
 	@POST
