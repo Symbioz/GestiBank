@@ -13,30 +13,29 @@ import { Router } from  '@angular/router';
 })
 export class ListDemandesComponent implements OnInit {
 
-	private demandesAgent : Demande[];
-	private demandes: Demande[];
+	private demandesAgent : Demande[]=[];
+	private demandes: Demande[]=[];
 
 
 	constructor(private router: Router, private demandeService: DemandeService) { }
 
   	ngOnInit() { //when component loading get all clients and set the clients[]
   		this.getAllDemandes();
-  		let demande: Demande;
-		for (demande of this.demandes) 
-			if (demande.status===true){
-				this.demandesAgent.push(demande) 
-			}
   	}
 
 	getAllDemandes() {
 		this.demandeService.getAllDemandes().subscribe(
 			demandes => {
 				this.demandes = demandes;
+				for (let d of demandes) 
+				if (d.status==true){
+				this.demandesAgent.push(d) 
+				}
 			},
 			err => {
 				console.log(err);
 			}
 		);
-		
 	}
 }
+ 

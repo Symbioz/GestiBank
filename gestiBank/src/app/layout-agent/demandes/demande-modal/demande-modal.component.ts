@@ -19,6 +19,10 @@ export class DemandeModalComponent implements OnInit {
   closeResult: string;
 	@Input() demandeEnCours : Demande;
 
+  bgClass :string;
+  icon:string;
+  date:Date;
+  label:string;
 
 
 
@@ -31,8 +35,6 @@ export class DemandeModalComponent implements OnInit {
 	ngOnInit() { 
 	  	this.id=this.demandeEnCours.idDemande;
       console.log("onInit" + this.demandeEnCours)
-	  
-
 
 		//si le param id est renseigné il faut chercher le Utilisateur
 		if (this.id) { //edit form
@@ -40,7 +42,13 @@ export class DemandeModalComponent implements OnInit {
 				demande => {
           console.log (demande);
 					this.demande = demande;
-					
+					if (true){
+            this.bgClass='primary';
+            this.icon='fa-comments';
+            this.date=this.demande.dateDemande;
+            this.label= "demande de : " + String(this.demande.idClient)
+
+          }
 				},
 				error => {
 					console.log(error);

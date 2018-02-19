@@ -18,8 +18,12 @@ public class DemandeDAOImpl implements IDemandeDAO {
     	HashMap<String,Demande> demandesMap = new HashMap<String,Demande>();
     	Demande demande1 = new Demande(1L,1L,new Date(),true);
     	Demande demande2 = new Demande(2L,2L, new Date(),false);
+    	Demande demande3 = new Demande(3L,3L, new Date(),true);
+    	Demande demande4 = new Demande(4L,4L, new Date(),true);
 		demandesMap.put("1", demande1);
 		demandesMap.put("2", demande2);
+		demandesMap.put("3", demande3);
+		demandesMap.put("4", demande4);
         return demandesMap;
     }
 	
