@@ -7,12 +7,13 @@ import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class CompteService {
-	private apiUrl = 'http://localhost:8080/GestiBankBackEnd/client/:id/comptes';
+
+	private apiUrl = 'http://localhost:8080/GestiBankBackEnd/client/';
 
 	constructor(private http: Http) { }
 
-	findClientComptes(id: number): Observable<Compte[]> {
-		return this.http.get(this.apiUrl)
+	findClientComptes(idClient: number): Observable<Compte[]> {
+		return this.http.get(this.apiUrl + idClient + '/comptes')
 			.map((res:Response) => res.json())
 			//.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 	}

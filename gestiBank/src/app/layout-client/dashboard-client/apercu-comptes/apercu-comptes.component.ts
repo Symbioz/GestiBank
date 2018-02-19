@@ -18,7 +18,7 @@ export class ApercuComptesComponent implements OnInit {
     //Liste des comptes
   	comptes: Compte[];
 
-    id: number = 1;
+    idClient: number;
     private sub: any;
 
     //Constructeur
@@ -30,14 +30,14 @@ export class ApercuComptesComponent implements OnInit {
   	ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
           //this.id = params['id'];
-          this.id = 1;
+          this.idClient = 1;
         })
 
         this.getClientComptes();
   	}
 
     getClientComptes() {
-        this.compteService.findClientComptes(this.id).subscribe(
+        this.compteService.findClientComptes(this.idClient).subscribe(
         comptes => {
           this.comptes = comptes
         },
