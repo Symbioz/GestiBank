@@ -74,10 +74,8 @@ public class CompteDAOImpl implements ICompteDAO {
 		//pour l'ensemble des opérations en mémoires
 		for (Compte compte : comptes) {
 			//suivant l'identifiant du compte
-			System.out.println(compte.getIdClient());
 			if (compte.getIdClient() == idClient) {
 				comptesByClient.add(compte);
-				System.out.println(compte.getIdClient());
 			}
 		}		
 		return comptesByClient;
