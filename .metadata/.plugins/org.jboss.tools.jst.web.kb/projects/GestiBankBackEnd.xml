@@ -118,91 +118,35 @@
   <core validator-id="jsf-verification"/>
   <core validator-id="jboss.cdi.core"/>
   <el>
-   <linked-el length="12136" name="%0" offset="40016" path="%1"/>
-   <linked-el length="12136" name="%0" offset="40016" path="%2"/>
-   <linked-el length="12136" name="%3" offset="40016" path="%1"/>
-   <linked-el length="12136" name="%3" offset="40016" path="%2"/>
-   <linked-el length="12136" name="%4" offset="40016" path="%1"/>
-   <linked-el length="12136" name="%4" offset="40016" path="%2"/>
-   <linked-el length="18" name="%5" offset="5957" path="%6"/>
-   <linked-el length="20" name="%7" offset="6469" path="%6"/>
-   <linked-el length="12136" name="%8" offset="40016" path="%1"/>
-   <linked-el length="12136" name="%8" offset="40016" path="%2"/>
-   <linked-el length="12136" name="%9" offset="40016" path="%1"/>
-   <linked-el length="12136" name="%9" offset="40016" path="%2"/>
-   <linked-el length="12136" name="%10" offset="40016" path="%1"/>
-   <linked-el length="12136" name="%10" offset="40016" path="%2"/>
-   <linked-el length="17" name="%11" offset="5406" path="%6"/>
-   <linked-el length="17" name="%11" offset="6267" path="%6"/>
-   <linked-el length="17" name="%11" offset="5590" path="%6"/>
-   <linked-el length="17" name="%11" offset="6114" path="%6"/>
-   <linked-el length="17" name="%11" offset="5777" path="%6"/>
-   <linked-el length="18" name="%12" offset="5957" path="%6"/>
-   <linked-el length="16" name="%13" offset="6678" path="%6"/>
-   <linked-el length="12136" name="%14" offset="40016" path="%1"/>
-   <linked-el length="12136" name="%14" offset="40016" path="%2"/>
-   <linked-el length="32" name="%15" offset="529" path="%16"/>
-   <linked-el length="27" name="%15" offset="673" path="%16"/>
-   <linked-el length="12136" name="%17" offset="40016" path="%1"/>
-   <linked-el length="12136" name="%17" offset="40016" path="%2"/>
-   <linked-el length="12136" name="%18" offset="40016" path="%1"/>
-   <linked-el length="12136" name="%18" offset="40016" path="%2"/>
-   <linked-el length="12136" name="%19" offset="40016" path="%1"/>
-   <linked-el length="12136" name="%19" offset="40016" path="%2"/>
-   <linked-el length="20" name="%20" offset="6469" path="%6"/>
-   <linked-el length="12136" name="%21" offset="40016" path="%1"/>
-   <linked-el length="12136" name="%21" offset="40016" path="%2"/>
-   <linked-el length="32" name="%22" offset="529" path="%16"/>
-   <linked-el length="27" name="%22" offset="673" path="%16"/>
-   <linked-el length="32" name="%23" offset="529" path="%16"/>
-   <linked-el length="27" name="%23" offset="673" path="%16"/>
-   <linked-el length="17" name="%24" offset="5406" path="%6"/>
-   <linked-el length="17" name="%24" offset="6267" path="%6"/>
-   <linked-el length="17" name="%24" offset="5590" path="%6"/>
-   <linked-el length="17" name="%24" offset="6114" path="%6"/>
-   <linked-el length="17" name="%24" offset="5777" path="%6"/>
-   <linked-el length="12136" name="%25" offset="40016" path="%1"/>
-   <linked-el length="12136" name="%25" offset="40016" path="%2"/>
-   <linked-el length="32" name="%26" offset="529" path="%16"/>
-   <linked-el length="27" name="%26" offset="673" path="%16"/>
-   <linked-el length="32" name="%27" offset="529" path="%16"/>
-   <linked-el length="27" name="%27" offset="673" path="%16"/>
-   <linked-el length="16" name="%28" offset="6678" path="%6"/>
+   <linked-el length="17" name="%0" offset="6114" path="%1"/>
+   <linked-el length="17" name="%0" offset="5777" path="%1"/>
+   <linked-el length="17" name="%0" offset="5590" path="%1"/>
+   <linked-el length="17" name="%0" offset="5406" path="%1"/>
+   <linked-el length="17" name="%0" offset="6267" path="%1"/>
+   <linked-el length="20" name="%2" offset="6469" path="%1"/>
+   <linked-el length="18" name="%3" offset="5957" path="%1"/>
+   <linked-el length="17" name="%4" offset="6114" path="%1"/>
+   <linked-el length="17" name="%4" offset="5777" path="%1"/>
+   <linked-el length="17" name="%4" offset="5590" path="%1"/>
+   <linked-el length="17" name="%4" offset="5406" path="%1"/>
+   <linked-el length="17" name="%4" offset="6267" path="%1"/>
+   <linked-el length="16" name="%5" offset="6678" path="%1"/>
+   <linked-el length="18" name="%6" offset="5957" path="%1"/>
+   <linked-el length="20" name="%7" offset="6469" path="%1"/>
+   <linked-el length="16" name="%8" offset="6678" path="%1"/>
   </el>
  </validation>
  <aliases>
-  <alias path="CPU_LIMIT" value="%0"/>
-  <alias path="APP_NAME" value="%3"/>
-  <alias path="CPU_REQUEST" value="%4"/>
-  <alias path="jackson.version" value="%5"/>
+  <alias path="spring" value="%0"/>
+  <alias
+   path="/GestiBankBackEnd/target/m2e-wtp/web-resources/META-INF/maven/GestiBankBackEnd/GestiBankBackEnd/pom.xml" value="%1"/>
+  <alias path="hibernate.version" value="%2"/>
+  <alias path="jackson" value="%3"/>
+  <alias path="spring.version" value="%4"/>
+  <alias path="mysql" value="%5"/>
+  <alias path="jackson.version" value="%6"/>
   <alias path="hibernate" value="%7"/>
-  <alias
-   path="/GestiBankBackEnd/.metadata/.plugins/org.eclipse.m2e.logback.configuration/logback.1.5.1.20150109-1820.xml" value="%16"/>
-  <alias path="APP_VERSION" value="%8"/>
-  <alias path="BUILD_SECRET" value="%9"/>
-  <alias path="GIT_REPO" value="%10"/>
-  <alias path="spring" value="%11"/>
-  <alias
-   path="/GestiBankBackEnd/.metadata/.plugins/org.jboss.tools.central/valid_jboss_buzz.xml" value="%1"/>
-  <alias path="jackson" value="%12"/>
-  <alias path="mysql" value="%13"/>
-  <alias path="MAVEN_ARGS_APPEND" value="%14"/>
-  <alias path="org.eclipse.m2e.log" value="%15"/>
-  <alias path="GIT_REF" value="%17"/>
-  <alias path="SERVICE_NAME" value="%18"/>
-  <alias path="ARTIFACT_DIR" value="%19"/>
-  <alias path="hibernate.version" value="%20"/>
-  <alias path="BUILDER_VERSION" value="%21"/>
-  <alias path="org.eclipse.m2e.log.dir" value="%22"/>
-  <alias path="org" value="%23"/>
-  <alias path="spring.version" value="%24"/>
-  <alias path="MAVEN_ARGS" value="%25"/>
-  <alias
-   path="/GestiBankBackEnd/.metadata/.plugins/org.jboss.tools.central/jboss_buzz.xml" value="%2"/>
-  <alias path="org.eclipse.m2e" value="%26"/>
-  <alias path="/GestiBankBackEnd/pom.xml" value="%6"/>
-  <alias path="org.eclipse" value="%27"/>
-  <alias path="mysql.version" value="%28"/>
+  <alias path="mysql.version" value="%8"/>
  </aliases>
  <includes/>
  <uris/>
