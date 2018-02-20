@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NotificationService } from "../../../../services";
 import { Notification } from "../../../../models";
-import { Router } from  '@angular/router';
+import { ActivatedRoute, Router } from  '@angular/router';
 import { routerTransition } from '../../../router.animations';
 import { DatePipe } from '@angular/common';
 
@@ -16,14 +16,23 @@ export class NotifsListComponent implements OnInit {
 
   	private notifications: Notification[];
 
-  	constructor(private router: Router, private notificationService: NotificationService) { }
+    idClient: number;
+    private sub: any;
 
-  	ngOnInit() {
-      this.getAllNotifications();
-  	}
+  	constructor(private route: ActivatedRoute, private router: Router, private notificationService: NotificationService) { }
+
+  	//Init
+    ngOnInit() {
+        this.sub = this.route.params.subscribe(params => {
+          //this.id = params['id'];
+          this.idClient = 1;
+        })
+
+        this.getAllNotifications();
+    }
 
   	getAllNotifications() {
-  		this.notificationService.findAll().subscribe(
+  		this.notificationService.findClientNotifications(this.idClient).subscribe(
   			notifs => {
   				this.notifications = notifs
   			},
@@ -41,6 +50,10 @@ export class NotifsListComponent implements OnInit {
 			}
 		);
   	}
+
+    ngOnDestroy(): void { //suppression de l'écouteur lors du déchargement du composant
+      this.sub.unsubscribe();
+    }
 
 
 }
