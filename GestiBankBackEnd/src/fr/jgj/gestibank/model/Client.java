@@ -2,21 +2,22 @@ package fr.jgj.gestibank.model;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Client extends Utilisateur{
 
 	private int nbEnfants;
 	private String situation;
-	private ArrayList<Compte> comptes=new ArrayList<Compte>();
-	private ArrayList<File> documents = new ArrayList<File>();
-	private ArrayList<Notification> notifications = new ArrayList<Notification>();
+	private List<Compte> comptes=new ArrayList<Compte>();
+	private List<File> documents = new ArrayList<File>();
+	private List<Notification> notifications = new ArrayList<Notification>();
 	private String matriculeAgent;
 	
 	public Client() {
 	
 	}
 	public Client(
-			long id,
+			int id,
 			String nom,
 			String prenom, 
 			String mdp, 
@@ -52,22 +53,22 @@ public class Client extends Utilisateur{
 	public void setSituation(String situation) {
 		this.situation = situation;
 	}
-	public ArrayList<Compte> getComptes() {
+	public List<Compte> getComptes() {
 		return comptes;
 	}
-	public void setComptes(ArrayList<Compte> comptes) {
+	public void setComptes(List<Compte> comptes) {
 		this.comptes = comptes;
 	}
-	public ArrayList<File> getDocuments() {
+	public List<File> getDocuments() {
 		return documents;
 	}
-	public void setDocuments(ArrayList<File> documents) {
+	public void setDocuments(List<File> documents) {
 		this.documents = documents;
 	}
-	public ArrayList<Notification> getNotifications() {
+	public List<Notification> getNotifications() {
 		return notifications;
 	}
-	public void setNotifications(ArrayList<Notification> notifications) {
+	public void setNotifications(List<Notification> notifications) {
 		this.notifications = notifications;
 	}
 	public String getMatriculeAgent() {

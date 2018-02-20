@@ -20,7 +20,7 @@ public class CompteServiceImpl implements ICompteService {
 
 	//Récupération de l'ensemble des comptes d'un client
 	@Override
-	public List<Compte> getComptesByClient(long idClient) {
+	public List<Compte> getComptesByClient(int idClient) {
 		List<Compte> comptes = compteDAOImpl.getComptesByClient(idClient);
 		return comptes;
 	}

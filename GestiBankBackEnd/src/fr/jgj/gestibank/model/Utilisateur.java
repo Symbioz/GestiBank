@@ -2,11 +2,11 @@ package fr.jgj.gestibank.model;
 
 public class Utilisateur {
 	
-	static long nextId = 3;
+	static int nextId = 3;
     
 
 	//@Id
-	private long id = 0;
+	private int id = 0;
 	private String nom;
 	private String prenom;
 	private String mdp;
@@ -19,7 +19,7 @@ public class Utilisateur {
 	public Utilisateur() {
 		super();
 	}
-	public Utilisateur(long id, String nom, String prenom, String mdp, String email,
+	public Utilisateur(int id, String nom, String prenom, String mdp, String email,
 			String adresse, String identifiant, String numTel) {
 		super();
 		this.id = id;
@@ -34,13 +34,13 @@ public class Utilisateur {
 
 	
 	//Getters-Setters
-	public long getId() {
+	public int getId() {
 		if (id == 0){
 			id = nextId++;
 		}
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getNom() {

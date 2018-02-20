@@ -16,7 +16,7 @@ public class ClientServiceImpl {
 		return clientList;
 	}
 
-	public Client getClientById(String id) {
+	public Client getClientById(int id) {
 		Client client = clientDao.getClientById(id);
 		return client;
 	}
@@ -31,7 +31,7 @@ public class ClientServiceImpl {
 		return clientResponse;
 	}
 
-	public Client deleteClient(String id) {
+	public Client deleteClient(int id) {
 		Client clientResponse = clientDao.deleteClient(id);
 		return clientResponse;
 	}

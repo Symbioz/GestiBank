@@ -4,7 +4,8 @@ import java.util.Date;
 
 public class Notification {
 	
-	private Long id;
+	private long id;
+	private long idClient;
 	private String status;
 	private String message;
 	private Date date;
@@ -14,20 +15,28 @@ public class Notification {
 		super();
 	}
 
-	public Notification(Long id, String status, String message, Date date) {
+	public Notification(long id, long idClient, String status, String message, Date date) {
 		super();
 		this.id = id;
+		this.idClient = idClient;
 		this.status = status;
 		this.message = message;
 		this.date = date;
 	}
 
 	//getters-setters
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
+	}
+
+	public long getIdClient() {
+		return idClient;
+	}
+	public void setIdClient(long idClient) {
+		this.idClient = idClient;
 	}
 
 	public String getStatus() {

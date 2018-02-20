@@ -19,12 +19,18 @@ public class NotificationServiceImpl implements INotificationService {
 	}
 
 	@Override
+	public List<Notification> getClientNotifications(long idClient) {
+		List<Notification> notificationList = notificationDAOImpl.getClientNotifications(idClient);
+		return notificationList;
+	}
+
+	@Override
 	public Notification ajouterNotification(Notification notification) {
 		Notification notificationResponse = notificationDAOImpl.ajouterNotification(notification);
 		return notificationResponse;
 	}
 	@Override
-	public Notification supprimerNotification(Long id) {
+	public Notification supprimerNotification(long id) {
 		Notification notificationResponse = notificationDAOImpl.supprimerNotification(id);
 		return notificationResponse;
 	}

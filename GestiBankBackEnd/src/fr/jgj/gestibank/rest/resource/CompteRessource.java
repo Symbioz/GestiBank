@@ -1,5 +1,7 @@
 package fr.jgj.gestibank.rest.resource;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -50,6 +52,22 @@ public class CompteRessource {
 		Compte compteResponse = compteService.modifierCompte(compte);
 		return compteResponse;
 	} // SOAPUI >> http://localhost:8080/GestiBankBackEnd/comptes
+	
+	
+	
+	/**
+	 * CRUD -- READ operation
+	 * Récupération des operations liées à un compte donné
+	 * @param iBAN : représente l'identifiant unique d'un compte
+	 * @return : retourne une liste de comptes au format JSON
+	 */
+	@GET
+	@Path("/{iBAN}/operations")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Operation> getAllOperationsByIBAN(@PathParam("iBAN") String iBAN) {
+		List<Operation> operationList = operationService.getAllOperationsByIBAN(iBAN);
+		return operationList;
+	} // SOAPUI >> http://localhost:8080/GestiBankBackEnd/comptes/10010001/operations
 	
 	/**
 	 * CRUD -- CREATE operation

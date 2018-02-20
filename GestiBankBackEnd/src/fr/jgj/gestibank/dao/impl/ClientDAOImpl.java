@@ -3,32 +3,27 @@ package fr.jgj.gestibank.dao.impl;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import fr.jgj.gestibank.model.Client;
 import fr.jgj.gestibank.model.Compte;
 import fr.jgj.gestibank.model.Notification;
+import fr.jgj.utils.LoadingUtils;
 
 public class ClientDAOImpl {
 
 	//static HashMap<String, Client> clientsMap = new HashMap<String, Client>();
-	static HashMap<String, Client> clientsMap = createMap();
+	static List<Client> clients = createMap();
 
-    static HashMap<String, Client> createMap()
+    @SuppressWarnings("unchecked")
+	static List<Client> createMap()
     {
-    	HashMap<String,Client> clientsMap = new HashMap<String,Client>();
-    	Client client1 = new Client(1L, "moi","encore moi ", "0000",  "moa@gk.com", "blabla 59000", "symbioz", "truc", 0, "machin", null, null, null, "A001");
-
-    	Client client2 = new Client(2L, "toi","toujours moi ", "1234",  "toa@gk.com", "blabla 59000", "XD", null, 0,"chose", null, null, null, "A001");
-    	
-    	Client client3 = new Client(3L, "Raes", "Jordan", "0000", "jordan.raes@email", "59250 Halluin", "jraes", "0600000000", 
-				0, "Ca ne nous regarde pas", new ArrayList<Compte>(), new ArrayList<File>(), new ArrayList<Notification>(), "A001");
-    	
-    	client2.setNom("toi");
-		clientsMap.put("1", client1);
-		clientsMap.put("2", client2);
-		clientsMap.put("3", client3);
-        return clientsMap;
+    		//if (LoadingUtils.dbMap.isEmpty())
+    		if (LoadingUtils.dbMap.size() == 0){
+    			LoadingUtils.createMap();
+    		}
+    		return (List<Client>)LoadingUtils.dbMap.get("clientsMock");
     }
     	
     		
@@ -37,38 +32,66 @@ public class ClientDAOImpl {
 	}
 	
 	public List<Client> getAllClients() {
-		List<Client> clientList = new ArrayList<Client>(clientsMap.values());
-		return clientList;
+		//List<Client> clientList = new ArrayList<Client>(clientsMap.values());
+		return clients;
 	}
 	
-	public Client getClientById(String id) {
-		Client client = clientsMap.get(id);
+	public Client getClientById(int id) {
+		Client client = null;
+		for (Client c : clients) {
+			if (c.getId() == id) {
+				client = c;
+			}
+		}
 		return client;
 	}
 	
 	public Client createClient(Client client) {
-		clientsMap.put(client.getId() + "",  client);
-		return clientsMap.get(client.getId());
+		clients.add(client);
+		LoadingUtils.dbMap.put("clientsMock", clients);
+		return client;
 	}
 	
 	public Client updateClient(Client client) {
-		if (clientsMap.get(client.getId()) != null) {
-			clientsMap.get(client.getId()).setIdentifiant(client.getIdentifiant());
-			clientsMap.get(client.getId()).setAdresse(client.getAdresse());
-			clientsMap.get(client.getId()).setEmail(client.getEmail());
+		if (clients.get(client.getId()) != null) {
+			clients.get(client.getId()).setNom(client.getNom());
+			clients.get(client.getId()).setPrenom(client.getPrenom());
+			clients.get(client.getId()).setMdp(client.getMdp());
+			clients.get(client.getId()).setEmail(client.getEmail());
+			clients.get(client.getId()).setAdresse(client.getAdresse());
+			clients.get(client.getId()).setIdentifiant(client.getIdentifiant());
+			clients.get(client.getId()).setNumTel(client.getNumTel());
+			clients.get(client.getId()).setNbEnfants(client.getNbEnfants());
+			clients.get(client.getId()).setSituation(client.getSituation());
+			clients.get(client.getId()).setNbEnfants(client.getNbEnfants());
+			clients.get(client.getId()).setComptes(client.getComptes());
+			clients.get(client.getId()).setDocuments(client.getDocuments());
+			clients.get(client.getId()).setNotifications(client.getNotifications());
+			clients.get(client.getId()).setMatriculeAgent(client.getMatriculeAgent());
 		} else {
-			clientsMap.put(client.getId() + "", client);
+			clients.add(client);
 		}
-		return clientsMap.get(client.getId());
+		LoadingUtils.dbMap.put("clientsMock", clients);
+		return clients.get(client.getId());
 	}
 	
-	public Client deleteClient(String id) {
-		Client clientResponse = clientsMap.remove(id);
-		return clientResponse;
+	public Client deleteClient(long id) {
+		//Client clientResponse = clients.remove(id);
+		//return clientResponse;
+		Client client = null;
+		for (Client c : clients) {
+			if (c.getId() == id) {
+				client = c;
+			break;
+			}
+		}
+		clients.remove(client);
+		return client;
 	}
 	
 	public void deleteAllClients() {
-		clientsMap.clear();
+		clients.clear();
+		LoadingUtils.dbMap.put("clientsMock", clients);
 	}
 	
 }

@@ -13,7 +13,7 @@ public class CompteRemunere extends Compte {
 	public CompteRemunere() {
 		super();
 	}
-	public CompteRemunere(String iBAN, long idClient, float solde, Date dateCreation, ArrayList<Operation> operations) {
+	public CompteRemunere(String iBAN, int idClient, float solde, Date dateCreation, ArrayList<Operation> operations) {
 		super( iBAN, idClient,  solde,  dateCreation, operations);
 	}
 

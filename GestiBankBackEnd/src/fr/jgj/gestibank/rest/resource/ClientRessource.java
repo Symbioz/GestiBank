@@ -11,15 +11,19 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import fr.jgj.gestibank.model.Client;
 import fr.jgj.gestibank.model.Compte;
 import fr.jgj.gestibank.model.Demande;
+import fr.jgj.gestibank.model.Notification;
 import fr.jgj.gestibank.model.Operation;
+import fr.jgj.gestibank.service.impl.ClientServiceImpl;
 import fr.jgj.gestibank.service.impl.CompteServiceImpl;
 import fr.jgj.gestibank.service.impl.DemandeServiceImpl;
+import fr.jgj.gestibank.service.impl.NotificationServiceImpl;
 import fr.jgj.gestibank.service.impl.OperationServiceImpl;
 import fr.jgj.gestibank.service.impl.UtilisateurServiceImpl;
 
-@Path("/client")
+@Path("/clients")
 public class ClientRessource {
 	
 	////////////////////////////
@@ -27,9 +31,31 @@ public class ClientRessource {
 	////////////////////////////
 	
 	UtilisateurServiceImpl utilisateurServiceImpl = new UtilisateurServiceImpl();
+	ClientServiceImpl clientService = new ClientServiceImpl();
 	CompteServiceImpl compteServiceImpl = new CompteServiceImpl();
 	OperationServiceImpl operationService = new OperationServiceImpl();
+	NotificationServiceImpl notificationService = new NotificationServiceImpl();
 	DemandeServiceImpl demandeService = new DemandeServiceImpl();
+	
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Client> getAllClient() {
+		List<Client> clients = clientService.getAllClients();
+		System.out.println("test");
+		return clients;
+	} // SOAPUI >> http://localhost:8080/GestiBankBackEnd/client/1
+	
+	
+	
+	@GET
+	@Path("/{idClient}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Client getClientById(@PathParam("idClient") int idClient) {
+		Client client = clientService.getClientById(idClient);
+		return client;
+	} // SOAPUI >> http://localhost:8080/GestiBankBackEnd/client/1
+	
 	
 	
 	
@@ -47,7 +73,7 @@ public class ClientRessource {
 	@GET
 	@Path("/{idClient}/comptes")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Compte> listClientComptes(@PathParam("idClient") long idClient) {
+	public List<Compte> listClientComptes(@PathParam("idClient") int idClient) {
 		List<Compte> compteList = compteServiceImpl.getComptesByClient(idClient);
 		return compteList;
 	} // SOAPUI >> http://localhost:8080/GestiBankBackEnd/client/1/comptes
@@ -146,6 +172,22 @@ public class ClientRessource {
 	} // SOAPUI >> http://localhost:8080/GestiBankBackEnd/client/1/comptes/10010001/operations
 	
 	
+	
+	//////////////////////////////////////////////////
+	//   GESTION DES NOTIFICATIONS DU CLIENT
+	//////////////////////////////////////////////////
+
+	// CRUD -- READ operation
+	/**
+	 * @return
+	 */
+	@GET
+	@Path("/{idClient}/notifications")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Notification> listClientNotifications(@PathParam("idClient") long idClient) {
+		List<Notification> notificationList = notificationService.getClientNotifications(idClient);
+		return notificationList;
+	} // >> http://localhost:8080/GestiBankBackEnd/clients/1/notifications
 	
 	
 	
