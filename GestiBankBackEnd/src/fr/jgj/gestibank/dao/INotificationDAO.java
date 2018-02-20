@@ -10,6 +10,6 @@ public interface INotificationDAO {
 	
 	public Notification ajouterNotification(Notification notification);
 	
-	public Notification supprimerNotification(Long id);
+	public Notification supprimerNotification(int id);
 
 }

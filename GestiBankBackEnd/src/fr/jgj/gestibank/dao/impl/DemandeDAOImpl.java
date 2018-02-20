@@ -9,6 +9,7 @@ import fr.jgj.gestibank.dao.IDemandeDAO;
 import fr.jgj.gestibank.model.Demande;
 import fr.jgj.gestibank.model.DemandeChequier;
 import fr.jgj.gestibank.model.Inscription;
+import fr.jgj.gestibank.model.Notification;
 
 public class DemandeDAOImpl implements IDemandeDAO {
 
@@ -85,6 +86,8 @@ public class DemandeDAOImpl implements IDemandeDAO {
 					demande.getStatus());
 			demandesMap.get(demande.getIdClient()).setDateDemande(
 					demande.getDateDemande());
+			Notification notification = new Notification("danger", "notification 1", new Date("01/02/2018");
+			ajouterNotification(notification)
 		} else {
 			demandesMap.put(demande.getIdClient() + "", demande);
 		}
