@@ -7,6 +7,7 @@ import java.util.List;
 
 import fr.jgj.gestibank.dao.IAgentDAO;
 import fr.jgj.gestibank.model.Agent;
+import fr.jgj.gestibank.model.Client;
 
 public class AgentDAOImpl implements IAgentDAO{
 	
@@ -34,8 +35,7 @@ public class AgentDAOImpl implements IAgentDAO{
 		agentsMap.put(agent.getId() + "",  agent);
 		return agentsMap.get(agent.getId());
 	}
-	
-	
+		
 	// A MODIFIER
 	public Agent modifierAgent (Agent agent) {
 		if (agentsMap.get(agent.getId()) != null) {
@@ -53,20 +53,15 @@ public class AgentDAOImpl implements IAgentDAO{
 		return agentsMap.get(agent.getId());
 	}
 	
-	
 	public Agent supprimerAgent(String id) {
 		Agent agentResponse = agentsMap.remove(id);
 		return agentResponse;
 	}
 
-
 	@Override
 	public Agent getAgentById(String id) {
 		Agent agentResponse = agentsMap.get(id);
-		System.out.println( agentResponse);
 		return agentResponse;
 	}
 	
-	
-
 }

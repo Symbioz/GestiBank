@@ -12,16 +12,29 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr *ngFor="let agent of ListeAgents">
-                            <td>{{agent.client.id}}</td>
-                            <td>{{agent.client.nom}}</td>
-                            <td>{{agent.client.prenom}}</td>
+                        <tr *ngFor="let client of ListeClients">
+                            <td>{{client.id}}</td>
+                            <td>{{client.nom}}</td>
+                            <td>{{client.prenom}}</td>
                             <td>
-                                <select>
+                                <select class="form-control" [ngModel]="agents" (ngModelChange)="selectAgent($event)"> 
                                    <option *ngFor=" let agent of ListeAgents">{{ agent.matricule }}</option>
                                 </select> 
                             </td>
-                            <!--<td><app-bouton-validation-affectation></app-bouton-validation-affectation></td> -->
+
+                            <!-- Bouton validation -->
+                             <td><button class="btn btn-success btn-xs fa fa-check"  (click)="open(content)"></button>
+                             <ng-template #content let-c="close" let-d="dismiss">
+                          <div class="modal-body">
+                        <p>{{ 'QuestionValidation' | translate}}</p>
+                        <p></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success btn-xs" (click)="affecter(client.id)"  >{{ 'Oui' | translate }}</button>
+                        <button type="button" class="btn btn-danger btn-xs" (click)="c('Close click')">{{ 'Non' | translate }}</button>
+                    </div>
+                </ng-template>
+                </td>
                         </tr>
  
                         </tbody>

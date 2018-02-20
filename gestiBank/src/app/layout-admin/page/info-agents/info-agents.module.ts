@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfoAgentsRoutingModule } from './info-agents-routing.module';
-
+import { FormsModule } from '@angular/forms';
 import { InfoAgentsComponent } from './info-agents.component';
 import { TableauClientsAgentComponent}  from '../components/tableau-clients-agent/tableau-clients-agent.component';
 import { FicheAgentComponent}  from '../components/fiche-agent/fiche-agent.component';
@@ -16,6 +16,7 @@ import { FicheAgentComponent}  from '../components/fiche-agent/fiche-agent.compo
     CommonModule,
     InfoAgentsRoutingModule,
     TranslateModule,
+    FormsModule,
     NgbModule.forRoot(),
 
   ],

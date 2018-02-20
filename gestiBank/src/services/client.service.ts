@@ -7,7 +7,7 @@ import {Observable } from "rxjs/Observable";
 
 @Injectable()
 export class ClientService {
-  private apiUrl = 'http://localhost:8080/GestiBankBackEnd/clients/';
+  private apiUrl = 'http://localhost:8080/GestiBankBackEnd/client/';
 
   constructor(private http: Http) { }
 

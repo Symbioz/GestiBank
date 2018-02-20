@@ -11,6 +11,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import fr.jgj.gestibank.model.Agent;
 import fr.jgj.gestibank.model.Compte;
 import fr.jgj.gestibank.model.Demande;
 import fr.jgj.gestibank.model.Operation;
@@ -210,6 +211,24 @@ public class ClientRessource {
 		public List<Client> listAllClients() {
 			List<Client> clientList = clientService.getAllClients();
 			return clientList;
+		}
+		
+	// CRUD -- READ operation
+		@GET
+		@Path("/{id}")
+		@Produces(MediaType.APPLICATION_JSON)
+		public Client getClientByID(@PathParam("id") String id) {
+					Client client = clientService.getClientById(id);
+					return client;
+			}
+		
+		// CRUD -- UPDATE operation
+		@PUT
+		@Produces(MediaType.APPLICATION_JSON)
+		@Consumes(MediaType.APPLICATION_JSON)
+		public Client updateClient(Client client) {
+			Client clientResponse = clientService.updateClient(client);
+			return clientResponse;
 		}
 		
 }

@@ -22,7 +22,7 @@ public class ClientDAOImpl {
     	Client client2 = new Client(2L, "toi","toujours moi ", "1234",  "toa@gk.com", "blabla 59000", "XD", null, 0,"chose", null, null, null, "A001");
     	
     	Client client3 = new Client(3L, "Raes", "Jordan", "0000", "jordan.raes@email", "59250 Halluin", "jraes", "0600000000", 
-				0, "Ca ne nous regarde pas", new ArrayList<Compte>(), new ArrayList<File>(), new ArrayList<Notification>(), "A001");
+				0, "Ca ne nous regarde pas", new ArrayList<Compte>(), new ArrayList<File>(), new ArrayList<Notification>(), "A002");
     	
     	client2.setNom("toi");
 		clientsMap.put("1", client1);

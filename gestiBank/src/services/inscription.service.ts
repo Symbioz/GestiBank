@@ -48,48 +48,8 @@ export class InscriptionService {
 
      }
 
+     
 
-   // Recupère la liste des inscrition en cours (A factoriser ??)
-     getInscriptionEnCours() {
-    
-     return this.inscriptionEnCours;
 
-   }
-
-   // Recupère la liste des inscrition Terminé
-     getInscriptionTermine() {
-    for(let i of this.inscriptions){
-      if(i.status !== true){
-         this.inscriptionTermine.push(i);
-         console.log(i);         
-      }
-    }
-     return this.inscriptionTermine;
-
-   }
-
-   // Recupère la liste des inscrition Affecté
-     getInscriptionAffecte() {
-    for(let i of this.inscriptions){
-      if(i.dateAffectation !== null){
-         this.inscriptionAffecte.push(i);
-         console.log(i);         
-      }
-    }
-     return this.inscriptionAffecte;
-
-   }
-
-   // Recupère la liste des inscrition en cours (A factoriser ??)
-     getInscriptionNonAffecte() {
-    for(let i of this.inscriptions){
-      if(i.dateAffectation == null){
-         this.inscriptionNonAffecte.push(i);
-         console.log(i);         
-      }
-    }
-     return this.inscriptionNonAffecte;
-
-   }
 
 }

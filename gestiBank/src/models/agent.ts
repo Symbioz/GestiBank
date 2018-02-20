@@ -31,6 +31,11 @@ export class Agent extends Utilisateur {
 		this.matricule = matricule;
 		this.dateDebutContrat = dateDebutContrat;
 	}
+
+	constructor(){
+		super();
+
+	}
 }
 
 

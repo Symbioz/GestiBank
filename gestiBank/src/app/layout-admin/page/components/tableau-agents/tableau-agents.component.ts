@@ -16,7 +16,7 @@ export class TableauAgentsComponent implements OnInit {
   
   @Input() ListeAgents:Agent[];
 
-  agent : Agent[];
+  //agent : Agent[];
   
   ngOnInit() {
   }
