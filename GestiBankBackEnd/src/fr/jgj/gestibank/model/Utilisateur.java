@@ -1,6 +1,8 @@
 package fr.jgj.gestibank.model;
 
-public class Utilisateur {
+import java.io.Serializable;
+
+public class Utilisateur implements Serializable{
 	
 	static long nextId = 3;
     

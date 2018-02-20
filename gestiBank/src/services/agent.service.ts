@@ -10,8 +10,8 @@ import { Agent} from '../models/agent';
 @Injectable()
 export class AgentService {
    
-  private apiUrl ='http://localhost:8080/GestiBankBackEnd/agents/';
-
+  //private apiUrl ='http://localhost:8080/GestiBankBackEnd/agents/';
+  private apiUrl ='http://localhost:8080/SpringAngularStartProject/agents/';
   constructor(private http: Http) { }
 
  

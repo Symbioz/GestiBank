@@ -32,10 +32,7 @@ export class Agent extends Utilisateur {
 		this.dateDebutContrat = dateDebutContrat;
 	}
 
-	constructor(){
-		super();
-
-	}
+	
 }
 
 
