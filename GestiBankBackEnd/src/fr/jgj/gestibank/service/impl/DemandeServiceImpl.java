@@ -4,14 +4,15 @@ import java.util.List;
 
 import fr.jgj.gestibank.dao.impl.DemandeDAOImpl;
 import fr.jgj.gestibank.model.Demande;
+import fr.jgj.gestibank.model.DemandeChequier;
+import fr.jgj.gestibank.model.Inscription;
 import fr.jgj.gestibank.service.IDemandeService;
 
 public class DemandeServiceImpl implements IDemandeService {
 
 	//à modifier pour utiliser spring
 	DemandeDAOImpl demandeDAOImpl = new DemandeDAOImpl();
-		
-	
+
 	
 	
 	//Récupération d'une demande via son identifiant unique
@@ -23,15 +24,16 @@ public class DemandeServiceImpl implements IDemandeService {
 	
 	//Récupération des demandes liées à un client en particulier
 	@Override
-	public List<Demande> getDemandeByClient(String idClient) {
-		List<Demande> demandes = demandeDAOImpl.getDemandeByClient(idClient);
+	public List<DemandeChequier> getDemandeByClient(String idClient) {
+		List<DemandeChequier> demandes = demandeDAOImpl.getDemandeChequierByClient(idClient);
 		return demandes;
 	}
 
 	//Création d'une demande
 	@Override
-	public Demande creerDemande(Demande demande) {
-		return demandeDAOImpl.creerDemande(demande);
+	public DemandeChequier creerDemandeChequier(DemandeChequier demande) {
+		DemandeChequier demande1 = this.demandeDAOImpl.creerDemandeChequier(demande);
+		return demande1;
 	}
 
 	//Modification d'une demande 
@@ -41,7 +43,12 @@ public class DemandeServiceImpl implements IDemandeService {
 	}
 
 
+
 	
+    public List<Inscription> getAllInscriptions(){
+    	List<Inscription> inscriptionList = demandeDAOImpl.getAllInscriptions();
+    	return inscriptionList;
+    }
 	
 	
 	//SURSPECIFICATION (pour les tests SOAPUI)

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Agent extends Utilisateur {
     
-	private int matricule;
+	private String matricule;
 	private Date dateDebutContrat;
 
 	
@@ -13,7 +13,6 @@ public class Agent extends Utilisateur {
 	
 	public Agent() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	
@@ -29,7 +28,7 @@ public class Agent extends Utilisateur {
 	
 	
 	public Agent(Long id, String nom, String prenom, String identifiant,
-			String mdp, String email, String adresse,String numtel, int matricule,
+			String mdp, String email, String adresse,String numtel, String matricule,
 			Date dateDebutContrat) {
 		super(id, nom, prenom, identifiant, mdp, email, adresse,numtel);
 		this.matricule = matricule;
@@ -39,11 +38,11 @@ public class Agent extends Utilisateur {
 	
 
 	//Getters-Setters
-	public int getMatricule() {
+	public String getMatricule() {
 		return matricule;
 	}
 	
-	public void setMatricule(int matricule) {
+	public void setMatricule(String matricule) {
 		this.matricule = matricule;
 	}
 	public Date getDateDebutContrat() {

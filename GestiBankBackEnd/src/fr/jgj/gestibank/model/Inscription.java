@@ -11,7 +11,7 @@ public class Inscription extends Demande {
 		super();
 	}
 
-	public Inscription(Long identifiant, Long idClient, Date date,
+	public Inscription(long identifiant, long idClient, Date date,
 			boolean status, Date dateAffectation) {
 		super(identifiant, idClient, date, status);
 		this.dateAffectation = dateAffectation;

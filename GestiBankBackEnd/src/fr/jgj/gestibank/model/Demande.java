@@ -17,7 +17,7 @@ public class Demande {
 		super();
 	}
 	
-	public Demande(long idDemande, Long idClient, Date dateDemande, boolean status) {
+	public Demande(Long idDemande, Long idClient, Date dateDemande, boolean status) {
 		super();
 		this.idDemande = idDemande;
 		this.idClient = idClient;

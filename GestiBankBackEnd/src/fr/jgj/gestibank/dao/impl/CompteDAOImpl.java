@@ -27,6 +27,8 @@ public class CompteDAOImpl implements ICompteDAO {
     	CompteCourant  compte3 = new CompteCourant ("10010003", 2L, 3000f, new Date("03/03/2003"), new ArrayList<Operation>(), 100f);
     	CompteRemunere compte4 = new CompteRemunere("10010004", 2L, 4000f, new Date("04/04/2004"), new ArrayList<Operation>());
     	CompteRemunere compte5 = new CompteRemunere("10010005", 2L, 5000f, new Date("05/05/2005"), new ArrayList<Operation>());
+    	CompteCourant  compte6 = new CompteCourant ("10010006", 3L, 3000f, new Date("03/03/2003"), new ArrayList<Operation>(), 100f);
+    	CompteCourant  compte7 = new CompteCourant ("10010007", 4L, 3000f, new Date("03/03/2003"), new ArrayList<Operation>(), 100f);
 		comptesMap.put("10010001", compte1);
 		comptesMap.put("10010002", compte2);
 		comptesMap.put("10010003", compte3);

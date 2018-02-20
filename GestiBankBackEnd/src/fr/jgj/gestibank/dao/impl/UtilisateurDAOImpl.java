@@ -24,12 +24,12 @@ public class UtilisateurDAOImpl implements IUtilisateurDAO {
 		Utilisateur utilisateur2 = new Utilisateur(2, "lui","encore lui ", "0000",  "lui@gk.com", "blabla 59000", "LLLLUI", null);
 		Client client1 = new Client(3L, "Raes", "Jordan", "0000", "jordan.raes@email", "59250 Halluin", "jraes", "0600000000", 
 									0, "Ca ne nous regarde pas", new ArrayList<Compte>(), new ArrayList<File>(), new ArrayList<Notification>(), "A001");
-		Agent agent1 = new Agent(2L, "Longuet", "Guillaume", "0000", "jordan.raes@email", "59250 Halluin", "jraes", "0600000000",
-								 "A001", new Date(), new Date());
+
+		Agent agent2 = new Agent( 2L,"Vinc", "jess","login2", "111", "jes@fre.fr", "rue de lille 59200 ","0564595515", "573", new Date());
 		utilisateursMap.put("1", utilisateur1);
 		utilisateursMap.put("2", utilisateur2);
 		utilisateursMap.put("3", client1);
-		utilisateursMap.put("4", agent1);
+		utilisateursMap.put("4", agent2);
 		
 		
         return utilisateursMap;
