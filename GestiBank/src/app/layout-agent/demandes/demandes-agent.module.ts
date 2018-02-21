@@ -9,6 +9,7 @@ import { NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { DemandesAgentRoutingModule } from './demandes-agent-routing.module';
 import { DemandeModalComponent } from './demande-modal/demande-modal.component';
 import { ListDemandesComponent } from './list-demandes/list-demandes.component';
+import { ToastComponentComponent } from './toast-component/toast-component.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { ListDemandesComponent } from './list-demandes/list-demandes.component';
     NgbModule.forRoot(),
     DemandesAgentRoutingModule
   ],
-  declarations: [DemandeModalComponent, ListDemandesComponent]
+  declarations: [DemandeModalComponent, ListDemandesComponent, ToastComponentComponent]
 })
 export class DemandesAgentModule { }
 
