@@ -7,6 +7,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,40 +16,56 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.wha.springmvc.model.Notification;
 import com.wha.springmvc.model.User;
+import com.wha.springmvc.service.INotificationService;
 import com.wha.springmvc.service.NotificationServiceImpl;
 
 @RestController
 public class NotificationController {
 
 	@Autowired 
-	NotificationServiceImpl notificationService;
+	INotificationService notificationService;
 	
 	//-------------------Récupération de toutes les notifications--------------------------------------------------------
     
-    @RequestMapping(value = "/notifications", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Notification>> listAllNotifications() {
+    @RequestMapping(value = "/notifications", method = RequestMethod.GET)
+    public List<Notification> listAllNotifications() {
     	System.out.println("listAllNotifications");
         List<Notification> notifs = notificationService.getAllNotifications();
-        if(notifs.isEmpty()){
-            return new ResponseEntity<List<Notification>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
-        }
-        return new ResponseEntity<List<Notification>>(notifs, HttpStatus.OK);
+
+        return notifs;
     }
 	
     
+ 
+//-------------------Récupération des notifications d'un client--------------------------------------------------------
+    
+    @RequestMapping(value = "/clients/{id}/notifications", method = RequestMethod.GET)
+    public List<Notification> listClientNotifications(@PathVariable("id") long id) {
+    	System.out.println("listClientNotifications for client ");
+        List<Notification> notifs = notificationService.getClientNotifications(id);
+
+        return notifs;
+    }
+	
+    
+ 
     //-------------------Création d'une notification--------------------------------------------------------
     
     @RequestMapping(value = "/notifications", method = RequestMethod.POST)
-    public ResponseEntity<Void> createNotifications(@RequestBody Notification notif, UriComponentsBuilder ucBuilder) {
+    public void createNotifications(@RequestBody Notification notif) {
     	System.out.println("Creating notification : " + notif.getMessage());
    	 	
     	notificationService.ajouterNotification(notif);
-        
-    	HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/notifications/{id}").buildAndExpand(notif.getId()).toUri());
-        
-    	return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+
     }
 	
     
+    //-------------------Suppression d'une notification--------------------------------------------------------
+    
+    @RequestMapping(value = "/notifications/{id}", method = RequestMethod.DELETE)
+    public void deleteNotification(@PathVariable("id") long id) {
+        System.out.println("Fetching & Deleting Notif with id " + id);
+        
+        notificationService.supprimerNotification(id);
+    }
 }

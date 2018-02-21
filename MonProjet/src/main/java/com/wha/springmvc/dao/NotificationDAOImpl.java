@@ -4,15 +4,19 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
 
 import com.wha.springmvc.model.Notification;
 
+@Repository("notificationDAOImpl")
 public class NotificationDAOImpl extends AbstractDao<Long, Notification> implements INotificationDAO {
 	
 	@PersistenceContext
 	EntityManager em;
 	
-	@Override
+	@Transactional
 	@SuppressWarnings("unchecked")
 	public List<Notification> getAllNotifications() {
 		List<Notification> notifsList;
@@ -20,8 +24,14 @@ public class NotificationDAOImpl extends AbstractDao<Long, Notification> impleme
 					   .getResultList();
 		return notifsList;
 	}
-
-	@Override
+	
+	@Transactional
+	public Notification getNotificationById(long id) {
+		Notification notification = getByKey(id);
+		return notification;
+	}
+	
+	@Transactional
 	@SuppressWarnings("unchecked")
 	public List<Notification> getClientNotifications(long idClient) {
 		List<Notification> notifs;
@@ -31,12 +41,10 @@ public class NotificationDAOImpl extends AbstractDao<Long, Notification> impleme
 	}
 
 	
-	@Override
 	public void ajouterNotification(Notification notification) {
 		persist(notification);
 	}
 
-	@Override
 	public void supprimerNotification(long id) {		
 		Notification notification = getByKey(id);
 		delete(notification);

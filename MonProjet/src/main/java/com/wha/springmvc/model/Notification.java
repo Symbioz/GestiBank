@@ -1,5 +1,6 @@
 package com.wha.springmvc.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -12,23 +13,23 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="NOTIFICATION")
-public class Notification {
+public class Notification implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	@NotEmpty
+	private long idClient;
 	private String status;
 	private String message;
 	private Date date;
 	
 	//Constructeurs
 	public Notification() {
-		super();
+		
 	}
 
-	public Notification(String status, String message, Date date) {
-		super();
+	public Notification(long idClient, String status, String message, Date date) {
+		this.idClient = idClient;
 		this.status = status;
 		this.message = message;
 		this.date = date;
@@ -61,6 +62,14 @@ public class Notification {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public long getIdClient() {
+		return idClient;
+	}
+
+	public void setIdClient(long idClient) {
+		this.idClient = idClient;
 	}
 
 	
