@@ -123,9 +123,6 @@ export class BouttonEditionAgentsComponent implements OnInit {
                   console.log(err);
               }
            );
-    
-
-   //this.agentForm.reset();
    this.router.navigate(['/admin/gestionAgents']);
   }
 

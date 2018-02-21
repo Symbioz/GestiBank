@@ -33,9 +33,9 @@ export class AgentService {
       .catch((error:any) => Observable.throw(error.json().error || 'server error'));
   }
 
- 
-   modifierAgent(agent: Agent): Observable<Agent> {
-    return this.http.put(this.apiUrl, agent)
+
+   modifierAgent(agent : Agent): Observable<Agent> {
+    return this.http.put(this.apiUrl,agent)
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }

@@ -56,8 +56,6 @@ export class TableauClientsAgentComponent implements OnInit {
         client => {
           console.log(client);
           this.modifierClient(client,this.agent);
-          
-          
         },
         error => {
           console.log(error);
