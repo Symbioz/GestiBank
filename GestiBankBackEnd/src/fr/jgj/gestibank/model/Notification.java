@@ -3,7 +3,7 @@ package fr.jgj.gestibank.model;
 import java.util.Date;
 
 public class Notification {
-	
+	private static Long idImpl=1L;
 	private Long id;
 	private String status;
 	private String message;
@@ -11,17 +11,22 @@ public class Notification {
 	
 	//Constructeurs
 	public Notification() {
-		super();
+		this.idImpl++;
 	}
 
 	public Notification(Long id, String status, String message, Date date) {
-		super();
+		this.idImpl++;
 		this.id = id;
 		this.status = status;
 		this.message = message;
 		this.date = date;
 	}
-
+	public Notification( String status, String message, Date date) {
+		this.id=idImpl;
+		this.status = status;
+		this.message = message;
+		this.date = date;
+	}
 	//getters-setters
 	public Long getId() {
 		return id;
@@ -49,6 +54,14 @@ public class Notification {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public static Long getIdImpl() {
+		return idImpl;
+	}
+
+	public static void setIdImpl(Long idImpl) {
+		Notification.idImpl = idImpl;
 	}
 
 	

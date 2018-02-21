@@ -1,10 +1,13 @@
-package fr.jgj.gestibank.dao.impl;
+ package fr.jgj.gestibank.dao.impl;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import fr.jgj.gestibank.model.Client;
+import fr.jgj.gestibank.model.Compte;
+import fr.jgj.gestibank.model.Notification;
 
 public class ClientDAOImpl {
 
@@ -14,21 +17,23 @@ public class ClientDAOImpl {
     static HashMap<String, Client> createMap()
     {
     	HashMap<String,Client> clientsMap = new HashMap<String,Client>();
-    	Client client1 = new Client(1, "moi","encore moi ", "0000",  "moa@gk.com", "blabla 59000", "symbioz", "truc", 0, "machin", null, null, null, 0);
+    	Client client1 = new Client(1L, "moi","encore moi ", "0000",  "moa@gk.com", "blabla 59000", "symbioz", "truc", 0, "machin", null, null, null, "A001");
 
-    	Client client2 = new Client(2, "toi","toujours moi ", "1234",  "toa@gk.com", "blabla 59000", "XD", null, 0,"chose", null, null, null, 0);
+    	Client client2 = new Client(2L, "toi","toujours moi ", "1234",  "toa@gk.com", "blabla 59000", "XD", null, 0,"chose", null, null, null, "A001");
+    	
+    	Client client3 = new Client(3L, "Raes", "Jordan", "0000", "jordan.raes@email", "59250 Halluin", "jraes", "0600000000", 
+				0, "Ca ne nous regarde pas", new ArrayList<Compte>(), new ArrayList<File>(), new ArrayList<Notification>(), "A001");
+    	
     	client2.setNom("toi");
 		clientsMap.put("1", client1);
 		clientsMap.put("2", client2);
+		clientsMap.put("3", client3);
         return clientsMap;
     }
     	
     		
 	public ClientDAOImpl() {
-//		Client client1 = new Client(1, "wajih", "Paris 75000", "wajih@gk.com");
-//		Client client2 = new Client(2, "aline", "Rueil 92500", "aline@gk.com");
-//		clientsMap.put("1", client1);
-//		clientsMap.put("2", client2);
+
 	}
 	
 	public List<Client> getAllClients() {

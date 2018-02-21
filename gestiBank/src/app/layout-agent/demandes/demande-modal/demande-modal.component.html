@@ -1,4 +1,20 @@
-<button class="btn btn-success" (click)="open(content)">Editer</button>
+
+<div class="card text-white bg-{{bgClass}}" (click)="open(content)">
+    <div class="card-header">
+        <div class="row">
+            <div class="col col-xs-3">
+                <i class="fa {{icon}} fa-5x"></i>
+            </div>
+            <div class="col col-xs-9 text-right">
+                <div class="d-block">Demande {{typeD}}
+                <div class="d-block huge">{{date| date:'dd MM yy'}}</div>
+                <div class="d-block">{{label}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
     <ng-template #content let-c="close" let-d="dismiss">
     
         <div class="modal-header">
@@ -42,5 +58,4 @@
 
 
 
-           
     

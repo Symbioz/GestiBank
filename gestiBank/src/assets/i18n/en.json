@@ -66,8 +66,9 @@
     "GestionDesComptes" : "Account management",
 
     "Bienvenue":"Welcome on the admin console",
-
+    "BienvenueAgent":"Welcome on the agent console",
     "Matricule":"Register number",
+    "requetes":"requests need to be processed",
 
     "Prenom": "FirstName",
     "Telephone": "Phone number",

@@ -13,7 +13,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import fr.jgj.gestibank.model.Demande;
+import fr.jgj.gestibank.model.DemandeChequier;
+import fr.jgj.gestibank.model.Inscription;
 import fr.jgj.gestibank.service.impl.DemandeServiceImpl;
+
 
 @Path("/demandes")
 public class DemandeRessource {
@@ -35,7 +38,13 @@ public class DemandeRessource {
 		return demande;
 	} // >> http://localhost:8080/GestiBankBackEnd/demandes/1
 
-
+	@GET
+	@Path("/inscriptions")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Inscription> listAllInscriptions() {
+		List<Inscription> inscriptionList = demandeService.getAllInscriptions();
+		return inscriptionList;
+	}
 	/**
 	 * CRUD -- UPDATE operation
 	 * Mise à jour d'une demande : permet notamment de passer le status de la demande en 'traité'
@@ -59,7 +68,14 @@ public class DemandeRessource {
 	 * dans DemandeRessource ou ClientRessource ???
 	 */
 	
-	
+	/*
+	 * TODO
+	 * CRUD -- READ operation
+	 * Récupération des demandes d'un client donné
+	 * getDemandesByAgent(idAgent)
+	 * 
+	 * dans DemandeRessource ou ClientRessource ???
+	 */
 	
 	
 	// CRUD -- CREATE operation
@@ -67,9 +83,8 @@ public class DemandeRessource {
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Demande createDemande(Demande demande) {
-		Demande demandeResponse = demandeService.creerDemande(demande);
-		return demandeResponse;
+	public void createDemandeChequier(DemandeChequier demande) {
+		demandeService.creerDemandeChequier(demande);
 	} // >> http://localhost:8080/GestiBankBackEnd/demandes + JSON
 
 	

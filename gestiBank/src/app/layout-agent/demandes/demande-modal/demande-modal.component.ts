@@ -1,14 +1,16 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Demande } from '../../../../models';
-
+import { Client } from '../../../../models';
 import { DemandeService } from '../../../../services';
+import { ClientService } from '../../../../services';
 import { ActivatedRoute, Router } from  '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-demande-modal',
   templateUrl: './demande-modal.component.html',
-  styleUrls: ['./demande-modal.component.scss']
+  styleUrls: ['./demande-modal.component.scss'],
+  providers: [DemandeService,ClientService]
 
 })
 export class DemandeModalComponent implements OnInit {
@@ -20,27 +22,35 @@ export class DemandeModalComponent implements OnInit {
 	@Input() demandeEnCours : Demande;
 
 
-
+  bgClass :string;
+  icon:string;
+  date:Date;
+  label:string;
+  typeD:string;
 
   constructor(private route: ActivatedRoute,
 		private router: Router,
 		private demandeService: DemandeService,
+    private clientService:ClientService,
     private modalService: NgbModal) { }
 
 
 	ngOnInit() { 
 	  	this.id=this.demandeEnCours.idDemande;
       console.log("onInit" + this.demandeEnCours)
-	  
-
-
-		//si le param id est renseigné il faut chercher le Utilisateur
 		if (this.id) { //edit form
+
 			this.demandeService.getDemandeById(this.id).subscribe(
 				demande => {
-          console.log (demande);
 					this.demande = demande;
-					
+          console.log(demande)
+          this.idClientDemande(this.demande.idClient);
+					if (true){
+            this.bgClass='primary';
+            this.icon='fa-comments';
+            this.date=this.demande.dateDemande;
+
+          }
 				},
 				error => {
 					console.log(error);
@@ -48,7 +58,21 @@ export class DemandeModalComponent implements OnInit {
 			);
 		}
 	}
-	
+  
+	idClientDemande(id:number){
+    this.clientService.getClientById(this.demande.idClient).subscribe(
+      client=>{
+        console.log("test1 : "+client);
+        this.label= "demande de : " + String(client.identifiant)
+        console.log(this.label);
+        this.typeD= "de Chéquier";
+        console.log("test2 : "+ client);
+        },
+        error =>{
+        console.log(error);
+        }
+      );
+  }
 
 	refresh() {
     window.location.reload();
