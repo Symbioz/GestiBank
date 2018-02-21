@@ -1,8 +1,9 @@
 import { Component, OnInit,Input } from '@angular/core';
-import {Agent} from '../../../../../models/agent';
 import { HttpModule } from '@angular/http';
-
 import { ActivatedRoute, Router} from '@angular/router';
+
+
+import {Agent} from '../../../../../models/agent';
 
 @Component({
   selector: 'app-tableau-agents',
@@ -12,18 +13,22 @@ import { ActivatedRoute, Router} from '@angular/router';
 })
 export class TableauAgentsComponent implements OnInit {
   
-  constructor(private router: Router,) {}
+  constructor(private router: Router) {}
   
   @Input() ListeAgents:Agent[];
-
-  //agent : Agent[];
   
+ 
+ 
   ngOnInit() {
   }
 
   voirFicheAgent(id){
   	this.router.navigate(['/admin/gestionAgents/infoAgents', id]);
   }
+
+
+
+
 
    
 

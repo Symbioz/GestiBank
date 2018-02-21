@@ -54,7 +54,7 @@ export class BoutonSuppressionAgentsComponent implements OnInit {
     }
 
     supprimerAgent(agentModal: Agent){
-      console.log(agentModal);
+    
     if (agentModal) {
       this.agentService.supprimerAgent(agentModal.id).subscribe(
         res => {
@@ -67,14 +67,12 @@ export class BoutonSuppressionAgentsComponent implements OnInit {
     }
   }
 
-
    ngOnInit() { 
       this.sub = this.route.params.subscribe(params => {
         this.id = params['id']});
       };
 
    refresh() {
-    
     window.location.reload();
    }
 

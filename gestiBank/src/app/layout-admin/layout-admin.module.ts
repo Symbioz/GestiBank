@@ -10,7 +10,6 @@ import { FormsModule, FormGroup,FormControl, ReactiveFormsModule } from '@angula
 import { HttpClientModule } from '@angular/common/http'; 
 import { HttpModule } from '@angular/http';
 
-
 import { GestionAgentsModule} from './page/gestion-agents/gestion-agents.module'
 import { GestionAgentsComponent}  from './page/gestion-agents/gestion-agents.component';
 import { DashboardAdminComponent}  from './dashboard-admin/dashboard-admin.component';
