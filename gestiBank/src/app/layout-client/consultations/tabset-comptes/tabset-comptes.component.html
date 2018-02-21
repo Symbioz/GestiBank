@@ -25,8 +25,8 @@
 	                    	<!-- recupération de la liste des comptes -->
 		                    <tr *ngFor="let compte of comptes">
 		                    	<!-- scope : permet de mettre en 'surbrillance' la ligne consultée -->
-		                        <td scope="row">{{ compte.type }}</td>
-		                        <td>{{ compte.rib }}</td>
+		                        <td scope="row"><!-- {{ compte.type }} --></td>
+		                        <td>{{ compte.IBAN }}</td>
 		                        <!-- <td></td> -->
 		                        <td>{{ compte.solde }}</td>
 		                        <!-- <td></td> -->
@@ -48,7 +48,7 @@
 						    	<!-- Affichage d'un message (ngvalue doit reprendre le ngmodel) -->
 						    	<option [ngValue]="comptes" selected hidden>-- Selection du compte --</option>
 						    	<!-- Affichage de la liste de compte (ngvalue prend un élt de la liste) -->
-						    	<option *ngFor="let compte of comptes" [ngValue]="compte">{{ compte.type }}  | {{compte.rib}} </option>
+						    	<option *ngFor="let compte of comptes" [ngValue]="compte"><!-- {{ compte.type }}  |  -->{{compte.IBAN}} </option>
 						    </select>
 					    </div>
 					    <div class="col-xl-4 form-group">
@@ -60,11 +60,17 @@
 				    	<!-- séparateur de zone -->
 						<hr/>
 						<!-- Affichage des informations du compte sélectionné -->
-				    	<h2>Compte n°{{selectedCompte.rib}} </h2>
+				    	<h2>Compte n°{{selectedCompte.IBAN}} </h2>
 				    	<!-- <p>Type : {{selectedCompte.type}}</p> -->
 				    	<p align=right>Solde au {{ today | date : 'dd/MM'}} : {{selectedCompte.solde}} Euros</p>
 						<div>
 				            <!-- <div class="card-body"> -->
+				            	before
+				                <div *ngIf="(isCompteCourant)">
+				                	bouton
+				                    <button type="button" class="btn btn-primary" > Demande de chequier </button>
+				                </div>
+				                after
 				                <div>
 				                    <button type="button" class="btn btn-link" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
 				                        <p>Voir plus de détails</p>
@@ -76,7 +82,7 @@
 				                <div id="collapseExample" [ngbCollapse]="isCollapsed">
 				                    <!-- <div class="card-body"> -->
 			                            <p>Date d'ouverture du compte : {{selectedCompte.dateCreation}}</p>
-			                            <p>Découvert autorisé : {{selectedCompte.decouvert}}</p>
+			                            <p>Découvert autorisé : <!-- {{selectedCompte.decouvert}} --></p>
 										<br/>
 			                        <!-- </div> -->
 				                </div>
@@ -98,20 +104,13 @@
 			                    </tr>
 		                    </thead>
 		                    <tbody>
-		                    	<!-- ajout d'une ligne correspodnant aux agios dus à la prochaine échéance -->
-		                    	<tr *ngIf="agios!=0">
-		                    		<td>...</td>
-		                    		<td>agios</td>
-		                    		<td>-{{selectedCompte.agios}}</td>
-		                    		<td></td>
-		                    	</tr>
 		                    	<!-- recupération de la liste des comptes -->
-			                   	<tr *ngFor="let op of selectedCompte.historique">
+			                   	<tr *ngFor="let op of operations">
 			                   	<!-- scope : permet de mettre en 'surbrillance' la ligne consultée -->
-			                       <td scope="row">{{ op.date }}</td>
+			                       <td scope="row">{{ op.date | date : 'dd/MM/yyyy' }}</td>
 			                       <td>{{ op.libelle }}</td>
-			                       <td><span *ngIf="op.typeOp==0">-{{ op.montant }} €</span></td>
-			                       <td><span *ngIf="op.typeOp==1">+{{ op.montant }} €</span></td>
+			                       <td><span *ngIf="op.type=='debit'">-{{ op.montant }} €</span></td>
+			                       <td><span *ngIf="op.type=='credit'">+{{ op.montant }} €</span></td>
 			                    </tr>
 		                    </tbody>
 		                </table>

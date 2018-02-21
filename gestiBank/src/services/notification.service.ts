@@ -7,18 +7,18 @@ import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class NotificationService {
-	private apiUrl = 'http://localhost:8080/GestiBankBackEnd/notifications';
+	private apiUrl = 'http://localhost:8080/GestiBankBackEnd/';
 
 	constructor(private http: Http) { }
 
-	findAll(): Observable<Notification[]> {
-		return this.http.get(this.apiUrl)
+	findClientNotifications(idClient: number): Observable<Notification[]> {
+		return this.http.get(this.apiUrl + 'clients/'+ idClient + '/notifications')
 			.map((res:Response) => res.json())
 			//.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 	}
 
 	deleteNotificationById(id: number): Observable<boolean> { 
-		return this.http.delete(this.apiUrl + '/' + id) 
+		return this.http.delete(this.apiUrl + 'notifications/' + id) 
 			.map((res:Response) => res.json())
 			.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 	}
