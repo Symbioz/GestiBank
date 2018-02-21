@@ -12,16 +12,21 @@ import java.util.List;
 
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
 
+
 //import com.wha.springmvc.dao.AgentDAOImpl;
 import com.wha.springmvc.dao.IAgentDAO;
-import com.wha.springmvc.dao.UserDao;
+
+
 import com.wha.springmvc.model.Agent;
+
+
 import com.wha.springmvc.model.User;
 import com.wha.springmvc.service.IAgentService;
 
@@ -29,36 +34,55 @@ import com.wha.springmvc.service.IAgentService;
 @Transactional
 public class AgentServiceImpl implements IAgentService {
 	
-	//sera modifi� avec l'utilisation de Spring
-	//AgentDAOImpl agentDaoImpl = new AgentDAOImpl();
+
 	@Autowired
 	private IAgentDAO agentDaoImpl;
 	
-	//l'utilisation de Spring ne modifier aucune m�thode ci-dessous
+	
 	public List<Agent> getAllAgents() {
 		List<Agent> agentList = agentDaoImpl.getAllAgents();
 		return agentList;
 	}
 	
-	public Agent creerAgent(Agent agent) {
-		Agent 	agentResponse = agentDaoImpl.creerAgent(agent);
-		return agentResponse;
-	}
-	
-	public Agent modifierAgent(Agent agent) {
-		Agent agentResponse = agentDaoImpl.modifierAgent(agent);
-		return agentResponse;
-	}
-	
-	public Agent supprimerAgent(String id) {
-		Agent agentResponse = agentDaoImpl.supprimerAgent(id);
-		return agentResponse;
+	public void creerAgent(Agent agent) {
+		
+		agentDaoImpl.creerAgent(agent);
 	}
 	
 	public Agent getAgentById(long id) {
-		Agent agent = agentDaoImpl.getAgentById((int)id);
-		return agent;
-     }
+		
+		return agentDaoImpl.getAgentById((int)id);
+	}
+	
+	public void supprimerAgent(long id) {
+		agentDaoImpl.supprimerAgent(id);
+		
+	}
+	
+	public void modifierAgent(Agent agent) {
+		
+		Agent entity = agentDaoImpl.getAgentById(agent.getId());
+        if(entity!=null){
+        	entity.setNom(agent.getNom());
+        	entity.setPrenom(agent.getPrenom());
+        	entity.setIdentifiant(agent.getIdentifiant());
+        	entity.setMdp(agent.getMdp());
+        	entity.setEmail();
+           // entity.setUsername(user.getUsername());
+           // entity.setAddress(user.getAddress());
+           // entity.setEmail(user.getEmail());
+        }
+        agentDaoImpl.save(entity);
+	}
+	
+	
+	/*public Agent modifierAgent(Agent agent) {
+		Agent agentResponse = agentDaoImpl.modifierAgent(agent);
+		return agentResponse;
+	}*/
+	
+	
+	
 	
 	
 }

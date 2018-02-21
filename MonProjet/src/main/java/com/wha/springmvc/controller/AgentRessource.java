@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import com.wha.springmvc.model.Agent;
 import com.wha.springmvc.model.User;
@@ -41,8 +42,6 @@ public class AgentRessource {
 	//AgentServiceImpl agentService = new AgentServiceImpl();
 	
 	// CRUD -- READ operation
-	//@GET
-	//@Produces(MediaType.APPLICATION_JSON)
 	@RequestMapping(value = "/agents/", method = RequestMethod.GET)
 	public ResponseEntity<List<Agent>> listAllAgents() {
         List<Agent> agentList = agentService.getAllAgents();
@@ -51,6 +50,56 @@ public class AgentRessource {
         }
         return new ResponseEntity<List<Agent>>(agentList, HttpStatus.OK);
     }
+	
+	 // Creer un Agent
+	  @RequestMapping(value = "/agents/", method = RequestMethod.POST)
+	    public ResponseEntity<Void> createUser(@RequestBody Agent agent,    UriComponentsBuilder ucBuilder) {
+	        System.out.println("Creating User " + agent.getNom());
+	 
+	        /*if (agentService.isUserExist(agent)) {
+	            System.out.println("A User with name " + user.getUsername() + " already exist");
+	            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
+	        }*/
+	 
+	        agentService.creerAgent(agent);
+	 
+	        HttpHeaders headers = new HttpHeaders();
+	        headers.setLocation(ucBuilder.path("/agent/{id}").buildAndExpand(agent.getId()).toUri());
+	        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+	    }
+	  
+	  
+	   //Recuperer un agent Par son identifiant
+	     
+	    @RequestMapping(value = "/agents/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	    public ResponseEntity<Agent> getAgentById(@PathVariable("id") long id) {
+	        System.out.println("Fetching User with id " + id);
+	        Agent agent = agentService.getAgentById(id);
+	        if (agent == null) {
+	            System.out.println("User with id " + id + " not found");
+	            return new ResponseEntity<Agent>(HttpStatus.NOT_FOUND);
+	        }
+	        return new ResponseEntity<Agent>(agent, HttpStatus.OK);
+	    }
+	    
+	    //------------------- Delete a User --------------------------------------------------------
+	     
+	    @RequestMapping(value = "/agents/{id}", method = RequestMethod.DELETE)
+	    public ResponseEntity<Agent> supprimerAgent(@PathVariable("id") long id) {
+	        System.out.println("Fetching & Deleting User with id " + id);
+	 
+	        Agent agent = agentService.getAgentById(id);
+	        if (agent == null) {
+	            System.out.println("Unable to delete. User with id " + id + " not found");
+	            return new ResponseEntity<Agent>(HttpStatus.NOT_FOUND);
+	        }
+	 
+	        agentService.supprimerAgent(id);
+	        return new ResponseEntity<Agent>(HttpStatus.NO_CONTENT);
+	    }
+	 
+	     
+	 
 	
 	
 
@@ -82,7 +131,7 @@ public class AgentRessource {
 		return agentResponse;
 	}*/
 	
-	@RequestMapping(value = "/agents/{id}", method = RequestMethod.DELETE)
+	/*@RequestMapping(value = "/agents/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Agent> supprimerAgent(@PathVariable("id") long id) {
         System.out.println("Fetching & Deleting User with id " + id);
  
@@ -94,7 +143,7 @@ public class AgentRessource {
  
         userService.deleteUserById(id);
         return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
-    }
+    }*/
  
 	
 	

@@ -1,6 +1,6 @@
 package com.wha.springmvc.dao;
 
-import java.util.Collection;
+
 import java.util.List;
 
 import javax.persistence.NoResultException;

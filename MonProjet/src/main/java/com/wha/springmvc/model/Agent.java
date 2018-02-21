@@ -22,17 +22,12 @@ public class Agent extends Utilisateur {
 	}
 
 	
-	
-   
 	public Agent(Long id, String nom, String prenom, String identifiant,
 			String mdp, String email, String adresse, String numtel) {
 		super(id, nom, prenom, identifiant, mdp, email, adresse,numtel);
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
-	
+
 	public Agent(Long id, String nom, String prenom, String identifiant,
 			String mdp, String email, String adresse,String numtel, String matricule,
 			Date dateDebutContrat) {

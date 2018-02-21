@@ -2,6 +2,7 @@ package com.wha.springmvc.dao;
 
 import java.util.List;
 
+
 //import fr.jgj.gestibank.model.Agent;
 import com.wha.springmvc.model.Agent;
 
@@ -14,9 +15,9 @@ public interface IAgentDAO {
 	
 	public Agent modifierAgent (Agent agent) ;
 	
-	public Agent supprimerAgent(String id) ;
+	public void supprimerAgent(long id) ;
 	
-	public Agent getAgentById(int id);
+	public Agent getAgentById(long id);
 
 }
 

@@ -1,6 +1,6 @@
 package com.wha.springmvc.dao;
 
-import java.util.ArrayList;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -14,15 +14,16 @@ import java.util.List;
 
 
 
+
+
 import org.springframework.stereotype.Repository;
 
 import com.wha.springmvc.dao.IAgentDAO;
 import com.wha.springmvc.model.Agent;
-import com.wha.springmvc.model.User;
-import com.wha.springmvc.model.Utilisateur;
+
 
 @Repository("agentDaoImpl")
-public class AgentDAOImpl extends AbstractDao<Integer, Utilisateur> implements IAgentDAO{
+public class AgentDAOImpl extends AbstractDao<Long, Agent> implements IAgentDAO{
 	
     static HashMap<String, Agent> agentsMap = createMap();
 	
@@ -38,14 +39,7 @@ public class AgentDAOImpl extends AbstractDao<Integer, Utilisateur> implements I
         return agentsMap;
     }
     
-    /*
-	public List<Agent> getAllAgents() {
-		List<Agent> agentList = new ArrayList<Agent>(agentsMap.values());
-		return agentList;
-	}*/
-    
-  
-       
+ 
     @SuppressWarnings("unchecked")
 	public List<Agent> getAllAgents() {
 		List<Agent> agentList = getEntityManager()
@@ -54,14 +48,21 @@ public class AgentDAOImpl extends AbstractDao<Integer, Utilisateur> implements I
 		return agentList;
 	}
     
-	/*public Agent creerAgent(Agent agent) {
-		agentsMap.put(agent.getId() + "",  agent);
-		return agentsMap.get(agent.getId());
-	}*/
-	
 	public void creerAgent(Agent agent) {
 		persist(agent);
 	}
+	
+	
+	public Agent getAgentById(long id) {
+		Agent agent = getByKey(id);
+		return agent;
+	}
+    
+	public void supprimerAgent(long id) {
+		Agent agent = getByKey(id);
+		delete(agent);
+	}
+	
 		
 	// A MODIFIER
 	public Agent modifierAgent (Agent agent) {
@@ -80,22 +81,7 @@ public class AgentDAOImpl extends AbstractDao<Integer, Utilisateur> implements I
 		return agentsMap.get(agent.getId());
 	}
 	
-	/*public Agent supprimerAgent(String id) {
-		Agent agentResponse = agentsMap.remove(id);
-		return agentResponse;
-	}*/
+
 	
-	/*
-	public void supprimerAgent(int id) {
-		Agent agent = getByKey(id);
-		delete(agent);
-	}
-	*/
-	
-	@Override
-	public Agent getAgentById(String id) {
-		Agent agentResponse = agentsMap.get(id);
-		return agentResponse;
-	}
 	
 }
