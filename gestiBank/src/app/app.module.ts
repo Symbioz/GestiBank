@@ -3,13 +3,21 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
-import {UserService} from '../services/userService';
+
+import { LayoutAdminModule } from './layout-admin/layout-admin.module';
+
+import { AgentService} from '../services/agent.service';
+import { DemandeService} from '../services/demande.service';
+import { ClientService} from  '../services/client.service';
+import { InscriptionService} from '../services/inscription.service';
 
 
 
@@ -24,9 +32,9 @@ export function createTranslateLoader(http: HttpClient) {
     imports: [
         CommonModule,
         BrowserModule,
-        FormsModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        HttpModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -34,10 +42,13 @@ export function createTranslateLoader(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        LayoutAdminModule
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard,UserService],
+    providers: [AuthGuard,AgentService,DemandeService,ClientService,InscriptionService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

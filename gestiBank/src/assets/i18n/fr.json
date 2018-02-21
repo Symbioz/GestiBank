@@ -1,7 +1,7 @@
 {
     "Dashboard": "Tableau de bord",
     "Charts": "Hit-parade",
-    "Clients": "Clients",
+    "Tables": "Tableaux",
     "Forms": "Froms",
     "Bootstrap Element": "Bootstrap Élément",
     "Bootstrap Grid": "Bootstrap Grille",
@@ -11,6 +11,7 @@
     "Blank Page": "Blanc Page",
     "More Theme": "Plus Thèmes",
     "Download Now": "Télécharger",
+    "Langue": "Langue",
     "Language": "Langue",
     "English": "Anglais",
     "French": "Français",
@@ -23,6 +24,25 @@
     "In queue" : "Dans la queue",
     "Mail" : "Courrier",
     "View All" : "Voir tout",
+    "Notifications" : "Notifications", 
+    "Mes comptes" : "Mes comptes", 
+    "Consultations" : "Consultations",
+    "Releves" : "Relevés", 
+    "Télécharger" : "Télécharger",
+    "Imprimer RIB" : "Imprimer RIB",
+    "Virements" : "Virements",
+    "Passer un virement" : "Passer un virement",
+    "Suivre un virement" : "Suivre un virement",
+    "Gestion du budget" : "Gestion du budget",
+    "Ma situation" : "Ma situation",
+    "Depenses et revenus" : "Depenses et revenus",
+    "Services & Contrats" : "Services & Contrats",
+    "Mes demandes" : "Mes demandes",
+    "Mes services" : "Mes services",
+    "Mes contrats" : "Mes contrats",
+
+    "works" : "fonctionne",
+
 
 
     "Clients": "Clients",
@@ -46,7 +66,8 @@
     "GestionDesComptes":"Gestion des comptes",
     
     "Bienvenue":"Bienvenue sur l'espace d'administration ",
-
+    "BienvenueAgent" : "Bienvenue sur l'espace Agent",
+     "requetes": "demandes attendent d'être traitées",
     "Matricule":"Matricule",
   
     "Prenom": "Prenom",
@@ -68,8 +89,8 @@
     "Oui":"Oui",
     "Non": "Non",
     "EditerAgent": "Editer l'agent",
-    "QuestionSuppression":"Etes vous sur de vouloir supprimer cette agent ?",
+    "QuestionSuppression":"Etes vous sur de vouloir supprimer l'agent au matricule n°:",
     "Valider":"Valider",
     "Reaffecter":"Reaffecter"
-    }
+}
 

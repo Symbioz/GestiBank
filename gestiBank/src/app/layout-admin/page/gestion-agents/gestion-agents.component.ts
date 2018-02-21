@@ -1,24 +1,49 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Agents} from './agents';
-
+import { Agent} from '../../../../models/agent';
+import { AgentService} from '../../../../services/agent.service';
+import { Router} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'; 
+import { HttpModule } from '@angular/http';
+//import { FilterPipe} from './../../../../filter.pipe';
 
 @Component({
   selector: 'app-gestion-agents',
   templateUrl: './gestion-agents.component.html',
-  styleUrls: ['./gestion-agents.component.scss']
+  styleUrls: ['./gestion-agents.component.scss'],
+  providers: [AgentService],
 })
 
 export class GestionAgentsComponent implements OnInit {
-	agents = [new Agents(573,"jennifer","Vincent", "vincentjenni@gmail.com", "0265989855"),
-	          new Agents(1337, "jess", "vinc", "jess@fre.fr", "0154521545")
-	];
+	
+   private agents : Agent[];
+   
 
-   constructor() {
-       }
+   constructor(
+     private agentService: AgentService
+     ) {}
+
 
   ngOnInit() {
+      //this.agents = this.agentService.getAgents();
+      this.getAllAgents();
+      
   }
+
+  getAllAgents(){
+      this.agentService.getAllAgents().subscribe(
+         agents => {
+           this.agents = agents;
+         },
+         err => {
+           console.log(err);
+         }
+
+      );
+  }
+
+  
+
 
 }
 

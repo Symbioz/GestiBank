@@ -1,0 +1,131 @@
+<div class="card mb-3">
+    <div class="card-body">
+    	<!-- zone avec onglets -->
+        <ngb-tabset>
+        	<!-- premier onglet -->
+            <ngb-tab>
+                <ng-template ngbTabTitle>Liste des comptes</ng-template>
+                <ng-template ngbTabContent>
+                	<!-- Tableau contenant les comptes (Type / N° / Libellé / Solde / Relevé) -->
+            		<div class="card-body table-responsive">
+                	<!-- <table class="card-body table table-hover table-striped"> -->
+	                <table class="card-body table table-hover table-sm">
+	                    <thead>
+	                    <!-- <br/> -->
+		                    <!-- ligne de titres -->
+		                    <tr>
+		                        <th>Type de compte</th>
+		                        <th>Numero de compte</th>
+		                        <!-- <th>Libellé</th> -->
+		                        <th>Solde</th>
+		                        <!-- <th>Relevé</th> -->
+		                    </tr>
+	                    </thead>
+	                    <tbody>
+	                    	<!-- recupération de la liste des comptes -->
+		                    <tr *ngFor="let compte of comptes">
+		                    	<!-- scope : permet de mettre en 'surbrillance' la ligne consultée -->
+		                        <td scope="row"><!-- {{ compte.type }} --></td>
+		                        <td>{{ compte.IBAN }}</td>
+		                        <!-- <td></td> -->
+		                        <td>{{ compte.solde }}</td>
+		                        <!-- <td></td> -->
+		                    </tr>
+	                    </tbody>
+	                </table>
+	            	</div>
+                </ng-template>
+            </ngb-tab>
+            <!-- deuxième onglet -->
+            <ngb-tab>
+                <ng-template ngbTabTitle>Details des opérations</ng-template>
+                <ng-template ngbTabContent>
+                    <!--  -->
+					<div class="row">
+						<div class="col-xl-8 form-group">
+							<br/>
+							<select class="form-control" [ngModel]="comptes" (ngModelChange)="selectCompte($event)">
+						    	<!-- Affichage d'un message (ngvalue doit reprendre le ngmodel) -->
+						    	<option [ngValue]="comptes" selected hidden>-- Selection du compte --</option>
+						    	<!-- Affichage de la liste de compte (ngvalue prend un élt de la liste) -->
+						    	<option *ngFor="let compte of comptes" [ngValue]="compte"><!-- {{ compte.type }}  |  -->{{compte.IBAN}} </option>
+						    </select>
+					    </div>
+					    <div class="col-xl-4 form-group">
+
+						</div>
+					</div>
+				    <!-- Affichage des détails seulement si un compte a été sélectionné -->
+				    <div *ngIf="(selectedCompte)" class="col-xl-12 form-group">
+				    	<!-- séparateur de zone -->
+						<hr/>
+						<!-- Affichage des informations du compte sélectionné -->
+				    	<h2>Compte n°{{selectedCompte.IBAN}} </h2>
+				    	<!-- <p>Type : {{selectedCompte.type}}</p> -->
+				    	<p align=right>Solde au {{ today | date : 'dd/MM'}} : {{selectedCompte.solde}} Euros</p>
+						<div>
+				            <!-- <div class="card-body"> -->
+				            	before
+				                <div *ngIf="(isCompteCourant)">
+				                	bouton
+				                    <button type="button" class="btn btn-primary" > Demande de chequier </button>
+				                </div>
+				                after
+				                <div>
+				                    <button type="button" class="btn btn-link" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+				                        <p>Voir plus de détails</p>
+				                    </button>
+				                </div>
+				                <!-- <div>
+				               		<a data-toggle="collapse" href="./#collapseExample" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Voir plus de détails 2</a>
+				                </div> -->
+				                <div id="collapseExample" [ngbCollapse]="isCollapsed">
+				                    <!-- <div class="card-body"> -->
+			                            <p>Date d'ouverture du compte : {{selectedCompte.dateCreation}}</p>
+			                            <p>Découvert autorisé : <!-- {{selectedCompte.decouvert}} --></p>
+										<br/>
+			                        <!-- </div> -->
+				                </div>
+				            <!-- </div> -->
+						</div>
+						<h5>Détails des opérations</h5>
+				    	<!-- Tableau contenant les operations liés au compte sélectionné -->
+	            		<!-- <div class="card-body table-responsive"> -->
+	                	<!-- <table class="card-body table table-hover table-striped"> -->
+		                <table class="card-body table table-hover table-striped">
+		                    <thead>
+		                    <!-- <br/> -->
+			                    <!-- ligne de titres -->
+			                    <tr>
+			                        <th>Date</th>
+			                        <th>Libellé</th>
+			                        <th>Débit</th>
+			                        <th>Crédit</th>
+			                    </tr>
+		                    </thead>
+		                    <tbody>
+		                    	<!-- recupération de la liste des comptes -->
+			                   	<tr *ngFor="let op of operations">
+			                   	<!-- scope : permet de mettre en 'surbrillance' la ligne consultée -->
+			                       <td scope="row">{{ op.date | date : 'dd/MM/yyyy' }}</td>
+			                       <td>{{ op.libelle }}</td>
+			                       <td><span *ngIf="op.type=='debit'">-{{ op.montant }} €</span></td>
+			                       <td><span *ngIf="op.type=='credit'">+{{ op.montant }} €</span></td>
+			                    </tr>
+		                    </tbody>
+		                </table>
+		            	
+				    </div><!-- fin du ngIf -->
+					    
+                </ng-template>
+            </ngb-tab>
+            <!-- troisième onglet désactivé (future amélioration) -->
+            <ngb-tab title="..." [disabled]="true">
+                <ng-template ngbTabContent>
+                    
+				    
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+    </div>
+</div>

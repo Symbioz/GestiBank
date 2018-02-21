@@ -11,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class BoutonValidationAffectationComponent implements OnInit {
 
   closeResult: string;
+  
     constructor(private modalService: NgbModal) { }
     
     open(content) {
@@ -30,6 +31,8 @@ export class BoutonValidationAffectationComponent implements OnInit {
             return  `with: ${reason}`;
         }
     }
+
+   
 
   ngOnInit() {
   }

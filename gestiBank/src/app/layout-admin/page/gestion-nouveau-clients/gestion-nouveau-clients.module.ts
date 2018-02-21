@@ -8,7 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GestionNouveauClientsRoutingModule } from './gestion-nouveau-clients-routing.module';
 import { GestionNouveauClientsComponent } from './gestion-nouveau-clients.component';
 import { TableauDemandeCompteComponent}  from '../components/tableau-demande-compte/tableau-demande-compte.component';
-import { BoutonValidationAffectationComponent } from '../components/bouton-validation-affectation/bouton-validation-affectation.component';
+//import { BoutonValidationAffectationComponent } from '../components/bouton-validation-affectation/bouton-validation-affectation.component';
+
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { BoutonValidationAffectationComponent } from '../components/bouton-valid
     ReactiveFormsModule,
     NgbModule.forRoot()
   ],
-  declarations: [GestionNouveauClientsComponent, TableauDemandeCompteComponent,BoutonValidationAffectationComponent]
+  declarations: [GestionNouveauClientsComponent, TableauDemandeCompteComponent]
 })
 export class GestionNouveauClientsModule { }

@@ -1,45 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { routerTransition } from '../../router.animations';
+import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
+import { DemandeService } from '../../../services';
+import { Demande } from '../../../models';
+
 
 @Component({
-  	selector: 'app-dashboard-agent',
-  	templateUrl: './dashboard-agent.component.html',
-  	styleUrls: ['./dashboard-agent.component.scss'],
-    animations: [routerTransition()]
+  selector: 'app-dashboard-agent',
+  templateUrl: './dashboard-agent.component.html',
+
+  styleUrls: ['./dashboard-agent.component.scss'],
+  animations: [routerTransition()],
+  providers: [DemandeService]
 })
+export class DashboardAgentComponent implements OnInit {
+
+ 	nbDemande = 0;
+	private demandesAgent : Demande[]=[];
+	private demandes: Demande[]=[];
 
 
-export class DashboardAgentComponent implements OnInit{
-	 public sliders: Array<any> = [];
- 		
-	pushRightClass: string = 'push-right';
+	constructor(private demandeService: DemandeService) { }
 
-     ngOnInit() {
-    // ...
-      }
+  	ngOnInit() { //when component loading get all clients and set the clients[]
+  		this.getAllDemandes();
+  	}
 
-  	constructor(){
-          this.sliders.push(
-            {
-                imagePath: 'assets/images/slider1.jpg',
-                label: 'First slide label',
-                text:
-                    'Nulla vitae elit libero, a pharetra augue mollis interdum.'
-            },
-            {
-                imagePath: 'assets/images/slider2.jpg',
-                label: 'Second slide label',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-            },
-            {
-                imagePath: 'assets/images/slider3.jpg',
-                label: 'Third slide label',
-                text:
-                    'Praesent commodo cursus magna, vel scelerisque nisl consectetur.'
-            }
-        );
-    }
-
+	getAllDemandes() {
+		this.demandeService.getAllDemandes().subscribe(
+			demandes => {
+				this.demandes = demandes;
+				for (let d of demandes) 
+				if (d.status==true){
+				this.demandesAgent.push(d) 
+				}
+				this.nbDemande=this.demandesAgent.length;
+			},
+			err => {
+				console.log(err);
+			}
+		);
+	}
 }

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { routerTransition } from '../../router.animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Compte } from '../../../models';
 
 @Component({
   	selector: 'app-dashboard-client',
@@ -9,36 +10,12 @@ import { routerTransition } from '../../router.animations';
   	styleUrls: ['./dashboard-client.component.scss'],
     animations: [routerTransition()]
 })
-export class DashboardClientComponent {
+export class DashboardClientComponent implements OnInit {
 
-	pushRightClass: string = 'push-right';
+	//Gestion du select compte
+  	@Input() comptes: Compte[];
 
+	constructor() {}
 
-  	constructor(private translate: TranslateService, public router: Router) {
-        this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
-        this.translate.setDefaultLang('en');
-        const browserLang = this.translate.getBrowserLang();
-        this.translate.use(browserLang.match(/en|fr|ur|es|it|fa|de/) ? browserLang : 'en');
-
-        this.router.events.subscribe(val => {
-            if (
-                val instanceof NavigationEnd &&
-                window.innerWidth <= 992 &&
-                this.isToggled()
-            ) {
-                this.toggleSidebar();
-            }
-        });
-    }
-  	    
-    isToggled(): boolean {
-        const dom: Element = document.querySelector('body');
-        return dom.classList.contains(this.pushRightClass);
-    }
-
-    toggleSidebar() {
-        const dom: any = document.querySelector('body');
-        dom.classList.toggle(this.pushRightClass);
-    }
-
+  	ngOnInit() {}
 }
