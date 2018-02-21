@@ -2,8 +2,14 @@ package com.wha.springmvc.model;
 
 import java.io.File;
 import java.util.ArrayList;
+
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.criteria.Fetch;
 
 
 @Entity
@@ -12,8 +18,13 @@ public class Client extends Utilisateur{
 	
 	private int nbEnfants;
 	private String situation;
+	
+	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
+	@JoinColumn(name="idClient")
 	private ArrayList<Compte> comptes=new ArrayList<Compte>();
 	private ArrayList<File> documents = new ArrayList<File>();
+	
+	
 	private ArrayList<Notification> notifications = new ArrayList<Notification>();
 	private String matriculeAgent;
 	

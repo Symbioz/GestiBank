@@ -2,12 +2,15 @@ package com.wha.springmvc.model;
 
 import java.util.Date;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
+@Entity
+@DiscriminatorValue("CHEQUIER")
 public class DemandeChequier extends Demande {
-	@NotEmpty
 	private String matricAgent;
-	@NotEmpty
 	private String iban;
 	
 	public DemandeChequier(long idClient, Date dateDemande, boolean status,String matricAgent, String iban) {

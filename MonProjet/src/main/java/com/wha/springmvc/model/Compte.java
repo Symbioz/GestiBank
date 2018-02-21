@@ -3,13 +3,27 @@ package com.wha.springmvc.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="COMPTE")
 public class Compte {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
 	private String IBAN; 
+	
 	private long idClient;
+	
 	private float solde;
 	private Date dateCreation;
 	private ArrayList<Operation> operations;
+	
 	
 	//Constructeurs
 	public Compte() {

@@ -18,11 +18,8 @@ public class Demande {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long idDemande;
-	@NotEmpty
 	private long idClient;
-	@NotEmpty
 	private Date dateDemande;
-	@NotEmpty
 	private boolean status;
     
 	//Constructeur

@@ -13,9 +13,9 @@ public interface IDemandeDAO {
 	
 	public List<Demande> getDemandeByClient(long idClient);
 	
-	public Demande creerDemande(Demande demande);
+	public void creerDemande(Demande demande);
 	
-	public Demande modifierDemande(Demande demande);
+	public void modifierDemande(Demande demande);
 	
 	
 	//SURSPECIFICATION
