@@ -16,7 +16,6 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
 export class DemandeModalComponent implements OnInit {
 
 	id: number;
-  client: Client=null;
  	matriculeAgent: number;
 	demande: Demande;
   closeResult: string;
@@ -41,19 +40,18 @@ export class DemandeModalComponent implements OnInit {
 	  	this.id=this.demandeEnCours.idDemande;
       console.log("onInit" + this.demandeEnCours)
 
-		//si le param id est renseigné il faut chercher le Utilisateur
 		if (this.id) { //edit form
+
 			this.demandeService.getDemandeById(this.id).subscribe(
 				demande => {
-          console.log (demande);
 					this.demande = demande;
+          console.log(demande)
           this.idClientDemande(this.demande.idClient);
 					if (true){
             this.bgClass='primary';
             this.icon='fa-comments';
             this.date=this.demande.dateDemande;
-            this.label= "demande de : " + String(this.client.identifiant)
-            this.typeD= "de Chequier";
+
           }
 				},
 				error => {
@@ -62,10 +60,15 @@ export class DemandeModalComponent implements OnInit {
 			);
 		}
 	}
+  
 	idClientDemande(id:number){
-    this.clientService.getClientById(this.id).subscribe(
+    this.clientService.getClientById(this.demande.idClient).subscribe(
       client=>{
-        this.client=client;
+        console.log("test1 : "+client);
+        this.label= "demande de : " + String(client.identifiant)
+        console.log(this.label);
+        this.typeD= "de Chéquier";
+        console.log("test2 : "+ client);
         },
         error =>{
         console.log(error);

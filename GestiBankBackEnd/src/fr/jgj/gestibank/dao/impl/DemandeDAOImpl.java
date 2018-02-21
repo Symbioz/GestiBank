@@ -21,22 +21,22 @@ public class DemandeDAOImpl implements IDemandeDAO {
 
 		Inscription demande1 = new Inscription(1L, 1L, new Date(), true,
 				new Date());
-		Inscription demande2 = new Inscription(2L, 2L, new Date(), false,
+		Inscription demande2 = new Inscription(2L, 3L, new Date(), true,
 				new Date());
 		Inscription demande3 = new Inscription(3L, 3L, new Date(), true, null);
-		Inscription demande4 = new Inscription(4L, 0, new Date(), false,
+		Inscription demande4 = new Inscription(4L, 3L, new Date(), false,
 				new Date());
-		DemandeChequier demande5 = new DemandeChequier(5L, 1L, new Date(),
+		DemandeChequier demande5 = new DemandeChequier(5L, 2L, new Date(),
 				true, "888", "10010001");
 		DemandeChequier demande6 = new DemandeChequier(6L, 1L, new Date(),
 				false, "888", "10010001");
-		DemandeChequier demande7 = new DemandeChequier(7L, 3L, new Date(),
+		DemandeChequier demande7 = new DemandeChequier(7L, 2L, new Date(),
 				true, "888", "10010003");
-		DemandeChequier demande8 = new DemandeChequier(8L, 4L, new Date(),
+		DemandeChequier demande8 = new DemandeChequier(8L, 2L, new Date(),
 				true, "888", "10010004");
-		DemandeChequier demande9 = new DemandeChequier(9L, 5L, new Date(),
+		DemandeChequier demande9 = new DemandeChequier(9L, 2L, new Date(),
 				true, "888", "10010006");
-		DemandeChequier demande10 = new DemandeChequier(10L, 5L, new Date(),
+		DemandeChequier demande10 = new DemandeChequier(10L, 3L, new Date(),
 				true, "888", "10010007");
 
 		demandesMap.put("1", demande1);
