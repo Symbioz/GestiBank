@@ -15,7 +15,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
 export class DetailClientModalComponent implements OnInit {
 
 	id: number;
- 	matriculeAgent: number;
+ 	matriculeAgent: string;
 	client: Client;
 	clientForm: FormGroup;
   	closeResult: string;
