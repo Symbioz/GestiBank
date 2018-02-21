@@ -49,8 +49,8 @@
               
               <td >
     
-                  <!--<select class="form-control" [ngModel]="agents" (ngModelChange)="selectAgent($event)"> -->
-                  <select class="form-control">
+                  <select class="form-control" [ngModel]="agents" (ngModelChange)="selectAgent($event)"> 
+                  
                      <!-- Affichage d'un message (ngvalue doit reprendre le ngmodel) -->
                     <!--<option [ngValue]="agents" selected hidden>agent </option> -->
                     <!-- Affichage de la liste d agnt (ngvalue prend un élement de la liste) -->
@@ -58,8 +58,7 @@
                   </select>
               </td >
               <!--<td><app-bouton-validation-affectation  ></app-bouton-validation-affectation></td> -->
-              <!-- Pour simplifier l eventuelle binding j exporte en dure le bouton-->
-
+              
               <td><button class="btn btn-success btn-xs fa fa-check"  (click)="open(content)"></button>
                 <ng-template #content let-c="close" let-d="dismiss">
                     <div class="modal-body">

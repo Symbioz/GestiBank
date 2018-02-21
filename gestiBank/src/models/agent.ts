@@ -2,7 +2,7 @@ import {Utilisateur} from './utilisateur';
 
 export class Agent extends Utilisateur {
 
-	 matricule: number;
+	 matricule: string;
 	 dateDebutContrat: Date;
 	
      constructor(
@@ -14,7 +14,7 @@ export class Agent extends Utilisateur {
 		adresse: string, 
 		identifiant : string,
 		numTel: string,
-		matricule: number,
+		matricule: string,
 		dateDebutContrat:Date
 		) {
 
@@ -28,10 +28,11 @@ export class Agent extends Utilisateur {
 			identifiant,
 			numTel);
 
-		
 		this.matricule = matricule;
 		this.dateDebutContrat = dateDebutContrat;
 	}
+
+	
 }
 
 

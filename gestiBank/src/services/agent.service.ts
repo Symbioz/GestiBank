@@ -10,8 +10,8 @@ import { Agent} from '../models/agent';
 @Injectable()
 export class AgentService {
    
-  private apiUrl ='http://localhost:8080/GestiBankBackEnd/agents/';
-
+  //private apiUrl ='http://localhost:8080/GestiBankBackEnd/agents/';
+  private apiUrl ='http://localhost:8080/SpringAngularStartProject/agents/';
   constructor(private http: Http) { }
 
  
@@ -33,9 +33,9 @@ export class AgentService {
       .catch((error:any) => Observable.throw(error.json().error || 'server error'));
   }
 
- 
-   modifierAgent(agent: Agent): Observable<Agent> {
-    return this.http.put(this.apiUrl, agent)
+
+   modifierAgent(agent : Agent): Observable<Agent> {
+    return this.http.put(this.apiUrl,agent)
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }

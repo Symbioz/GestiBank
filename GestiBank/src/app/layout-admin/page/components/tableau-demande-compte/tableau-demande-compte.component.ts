@@ -20,12 +20,10 @@ export class TableauDemandeCompteComponent implements OnInit {
 @Input() ListeInscription: Inscription[]
 @Input() ListeAgents:Agent[];
 
-
-
 agents : Agent;
 
-//Inssertion Modale
-closeResult: string;
+   //Insertion Modale
+   closeResult: string;
   
     constructor(private modalService: NgbModal) { }
     
@@ -55,11 +53,6 @@ closeResult: string;
       this.agents = cpt;
       console.log(this.agents);
     }
-
-
-
-  
-
   ngOnInit() {
   }
 

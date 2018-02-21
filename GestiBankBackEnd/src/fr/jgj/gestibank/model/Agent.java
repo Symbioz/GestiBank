@@ -2,6 +2,7 @@ package fr.jgj.gestibank.model;
 
 import java.util.Date;
 
+
 public class Agent extends Utilisateur {
     
 	private String matricule;

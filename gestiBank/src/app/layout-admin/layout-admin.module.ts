@@ -14,9 +14,11 @@ import { HttpModule } from '@angular/http';
 import { GestionAgentsModule} from './page/gestion-agents/gestion-agents.module'
 import { GestionAgentsComponent}  from './page/gestion-agents/gestion-agents.component';
 import { DashboardAdminComponent}  from './dashboard-admin/dashboard-admin.component';
+import { BoutonValidationAffectationComponent } from './page/components/bouton-validation-affectation/bouton-validation-affectation.component';
+
 
 @NgModule({
   	imports: [CommonModule, LayoutAdminRoutingModule, TranslateModule,NgbDropdownModule.forRoot(),ReactiveFormsModule,FormsModule,GestionAgentsModule],
-  	declarations: [LayoutAdminComponent, HeaderComponent, SidebarComponent,DashboardAdminComponent]
+  	declarations: [LayoutAdminComponent, HeaderComponent, SidebarComponent,DashboardAdminComponent,BoutonValidationAffectationComponent]
 })
 export class LayoutAdminModule { }

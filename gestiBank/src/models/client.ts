@@ -10,7 +10,7 @@ export class Client extends Utilisateur {
 	comptes: Compte[];
 	documents : File[];
 	notifications: Notification[];
-	matriculeAgent: number;
+	matriculeAgent: string;
 
 	constructor(
 		id: number, 
@@ -26,7 +26,7 @@ export class Client extends Utilisateur {
 		comptes: Compte[],
 		documents : File[],
 		notifications : Notification[],
-		matriculeAgent:number) {
+		matriculeAgent:string) {
 
 		super(
 			id, 
