@@ -18,8 +18,6 @@ public class Compte {
 	private long id;
 	private String IBAN; 
 	
-	private long idClient;
-	
 	private float solde;
 	private Date dateCreation;
 	private ArrayList<Operation> operations;
@@ -30,13 +28,12 @@ public class Compte {
 		
 	}
 	
-	public Compte(String iBAN, long idClient, float solde, Date dateCreation, ArrayList<Operation> operations) {
+	public Compte(String iBAN, float solde, Date dateCreation, ArrayList<Operation> operations) {
 		super();
 		IBAN = iBAN;
 		this.solde = solde;
 		this.dateCreation = dateCreation;
 		this.operations = operations;
-		this.idClient = idClient;
 	}
 
 
@@ -69,11 +66,5 @@ public class Compte {
 		this.operations = operations;
 	}
 
-	public Long getIdClient() {
-		return idClient;
-	}
-	public void setIdClient(Long idClient) {
-		this.idClient = idClient;
-	}
 	
 }
