@@ -3,13 +3,14 @@ import { routerTransition } from '../../../router.animations';
 import { Demande } from '../../../../models';
 import { DemandeService } from '../../../../services';
 import { Router } from  '@angular/router';
+import { ClientService } from '../../../../services';
 
 @Component({
   selector: 'app-list-demandes',
   templateUrl: './list-demandes.component.html',
   styleUrls: ['./list-demandes.component.scss'],
   animations: [routerTransition()], 
-  providers: [DemandeService]
+  providers: [DemandeService,ClientService]
 })
 export class ListDemandesComponent implements OnInit {
 

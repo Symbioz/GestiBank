@@ -5,11 +5,13 @@ import { Router } from '@angular/router';
 import { DemandeService } from '../../../services';
 import { Demande } from '../../../models';
 
+
 @Component({
   selector: 'app-dashboard-agent',
   templateUrl: './dashboard-agent.component.html',
   styleUrls: ['./dashboard-agent.component.scss'],
-   providers: [DemandeService]
+  animations: [routerTransition()],
+  providers: [DemandeService]
 })
 export class DashboardAgentComponent implements OnInit {
 

@@ -8,6 +8,7 @@ import { DashboardAgentComponent} from './dashboard-agent/dashboard-agent.compon
 const routes: Routes = [
 	 		{ path: '', component: LayoutAgentComponent, 	
 	 			children: [
+	 			{ path: '', redirectTo: 'dashboard' },
 	 			{ path: 'dashboard', component: DashboardAgentComponent },
 	            { path: 'clients',   loadChildren: './clients/clients.module#ClientsModule' },
 	            { path: 'demandesAgent',   loadChildren: './demandes/demandes-agent.module#DemandesAgentModule' }

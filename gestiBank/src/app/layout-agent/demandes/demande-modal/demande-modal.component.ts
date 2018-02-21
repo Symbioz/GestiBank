@@ -1,34 +1,39 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Demande } from '../../../../models';
-
+import { Client } from '../../../../models';
 import { DemandeService } from '../../../../services';
+import { ClientService } from '../../../../services';
 import { ActivatedRoute, Router } from  '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-demande-modal',
   templateUrl: './demande-modal.component.html',
-  styleUrls: ['./demande-modal.component.scss']
+  styleUrls: ['./demande-modal.component.scss'],
+  providers: [DemandeService,ClientService]
 
 })
 export class DemandeModalComponent implements OnInit {
 
 	id: number;
+  client: Client=null;
  	matriculeAgent: number;
 	demande: Demande;
   closeResult: string;
 	@Input() demandeEnCours : Demande;
 
+
   bgClass :string;
   icon:string;
   date:Date;
   label:string;
-
+  typeD:string;
 
 
   constructor(private route: ActivatedRoute,
 		private router: Router,
 		private demandeService: DemandeService,
+    private clientService:ClientService,
     private modalService: NgbModal) { }
 
 
@@ -42,12 +47,13 @@ export class DemandeModalComponent implements OnInit {
 				demande => {
           console.log (demande);
 					this.demande = demande;
+          this.idClientDemande(this.demande.idClient);
 					if (true){
             this.bgClass='primary';
             this.icon='fa-comments';
             this.date=this.demande.dateDemande;
-            this.label= "demande de : " + String(this.demande.idClient)
-
+            this.label= "demande de : " + String(this.client.identifiant)
+            this.typeD= "de Chequier";
           }
 				},
 				error => {
@@ -56,7 +62,16 @@ export class DemandeModalComponent implements OnInit {
 			);
 		}
 	}
-	
+	idClientDemande(id:number){
+    this.clientService.getClientById(this.id).subscribe(
+      client=>{
+        this.client=client;
+        },
+        error =>{
+        console.log(error);
+        }
+      );
+  }
 
 	refresh() {
     window.location.reload();
