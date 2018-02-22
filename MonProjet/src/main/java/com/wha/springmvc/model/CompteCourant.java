@@ -26,7 +26,11 @@ public class CompteCourant extends Compte {
 		super(solde, dateCreation, operations);
 		this.decouvertAutorise = decouvertAutorise;
 	}
-
+	public CompteCourant(float solde, Date dateCreation, ArrayList<Operation> operations, float decouvertAutorise, float agios) {
+		super(solde, dateCreation, operations);
+		this.decouvertAutorise = decouvertAutorise;
+		this.agios = agios;
+	}
 	
 
 	//getters-setters

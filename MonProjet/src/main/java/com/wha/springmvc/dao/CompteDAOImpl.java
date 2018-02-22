@@ -41,7 +41,7 @@ public class CompteDAOImpl extends AbstractDao<Long, Compte> implements ICompteD
 	
 	@Transactional
 	@SuppressWarnings("unchecked")
-	public List<Compte> getComptesByClient(int idClient) {
+	public List<Compte> getComptesByClient(long idClient) {
 		List<Compte> comptesByClient;
 		comptesByClient = em.createQuery("SELECT c FROM Compte c WHERE c.idClient = " + idClient)
 				.getResultList();

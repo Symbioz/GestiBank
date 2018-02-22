@@ -18,8 +18,9 @@ public class CompteRemunere extends Compte {
 	public CompteRemunere() {
 	}
 	
-	public CompteRemunere(float solde, Date dateCreation, ArrayList<Operation> operations) {
+	public CompteRemunere(float solde, Date dateCreation, ArrayList<Operation> operations, float interets) {
 		super(solde, dateCreation, operations);
+		this.interets = interets;
 	}
 
 	//getters-setters

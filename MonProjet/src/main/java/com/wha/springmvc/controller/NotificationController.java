@@ -39,13 +39,13 @@ public class NotificationController {
  
     //-------------------Récupération des notifications d'un client--------------------------------------------------------
     
-    @RequestMapping(value = "/clients/{id}/notifications", method = RequestMethod.GET)
-    public List<Notification> listClientNotifications(@PathVariable("id") long id) {
-    	System.out.println("listClientNotifications for client ");
-        List<Notification> notifs = notificationService.getClientNotifications(id);
-
-        return notifs;
-    }
+//    @RequestMapping(value = "/clients/{id}/notifications", method = RequestMethod.GET)
+//    public List<Notification> listClientNotifications(@PathVariable("id") long id) {
+//    	System.out.println("listClientNotifications for client ");
+//        List<Notification> notifs = notificationService.getClientNotifications(id);
+//
+//        return notifs;
+//    }
 	
     
  

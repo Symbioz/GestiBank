@@ -25,7 +25,7 @@ public class CompteController {
 	IOperationService operationService;
 	
 	//-------------------Récupération d'un compte via son IBAN--------------------------------------------------------
-	@RequestMapping(value = "/compte/{IBAN}", method = RequestMethod.GET)
+	@RequestMapping(value = "/comptes/{IBAN}", method = RequestMethod.GET)
     public Compte getCompteByIBAN(@PathVariable("IBAN") String IBAN) {
     	System.out.println("listClientComptes for client ");
         Compte compte = compteService.getCompteByIBAN(IBAN);
@@ -39,7 +39,7 @@ public class CompteController {
 	
 	
 	//-------------------Récupération des operations liées à un compte--------------------------------------------------------
-	@RequestMapping(value = "/compte/{IBAN}/operations", method = RequestMethod.GET)
+	@RequestMapping(value = "/comptes/{IBAN}/operations", method = RequestMethod.GET)
     public List<Operation> getCompteOperations(@PathVariable("IBAN") String IBAN) {
     	System.out.println("listOperations for compte ");
         // TODO

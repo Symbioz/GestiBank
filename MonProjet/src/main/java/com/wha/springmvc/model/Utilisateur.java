@@ -36,10 +36,9 @@ public class Utilisateur implements Serializable {
 	public Utilisateur() {
 		super();
 	}
-	public Utilisateur(long id, String nom, String prenom, String mdp, String email,
+	public Utilisateur(String nom, String prenom, String mdp, String email,
 			String adresse, String identifiant, String numTel) {
 		super();
-		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.mdp = mdp;

@@ -12,7 +12,7 @@ public interface ICompteDAO {
 	
 	public Compte getCompteByIBAN(String IBAN);
 	
-	public List<Compte> getComptesByClient(int idClient);
+	public List<Compte> getComptesByClient(long idClient);
 	
 	public void ajoutCompte(Compte compte);
 	

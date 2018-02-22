@@ -44,7 +44,6 @@ public class Client extends Utilisateur implements Serializable {
 	
 	}
 	public Client(
-			long id,
 			String nom,
 			String prenom, 
 			String mdp, 
@@ -59,7 +58,7 @@ public class Client extends Utilisateur implements Serializable {
 			List<Notification> notifications,
 			String matriculeAgent) {
 		
-		super(id, nom, prenom, mdp, email, adresse, identifiant,numTel);
+		super(nom, prenom, mdp, email, adresse, identifiant,numTel);
 		this.nbEnfants = nbEnfants;
 		this.situation = situation;
 		this.comptes = comptes;
