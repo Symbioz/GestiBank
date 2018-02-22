@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ToastService} from '../../typescripts/pro/alerts' 
 @Component({
   selector: 'app-layout-agent',
   templateUrl: './layout-agent.component.html',
@@ -7,12 +6,10 @@ import {ToastService} from '../../typescripts/pro/alerts'
 })
 export class LayoutAgentComponent implements OnInit {
 
-  constructor(private toast: ToastService) { }
+  constructor() { }
 
   ngOnInit() {
-    setTimeout(
-    () => this.toast.info("It works!")
-    );
+    
   }
 
 }
