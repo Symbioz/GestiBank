@@ -1,5 +1,7 @@
 package com.wha.springmvc.model;
 
+import java.io.Serializable;
+
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -13,7 +15,7 @@ import javax.persistence.InheritanceType;
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="TYPE_ENTITE")
 @DiscriminatorValue("UTILISATEUR")
-public class Utilisateur {
+public class Utilisateur implements Serializable {
 	
 	static long nextId = 3;
     

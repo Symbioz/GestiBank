@@ -3,6 +3,11 @@ package com.wha.springmvc.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("COMPTE_REMUNERE")
 public class CompteRemunere extends Compte {
 	
 	static private float taux = 2f; //taux d'intérêts fixé à 2%
@@ -13,8 +18,8 @@ public class CompteRemunere extends Compte {
 	public CompteRemunere() {
 	}
 	
-	public CompteRemunere(String iBAN, float solde, Date dateCreation, ArrayList<Operation> operations) {
-		super( iBAN, solde,  dateCreation, operations);
+	public CompteRemunere(float solde, Date dateCreation, ArrayList<Operation> operations) {
+		super(solde, dateCreation, operations);
 	}
 
 	//getters-setters

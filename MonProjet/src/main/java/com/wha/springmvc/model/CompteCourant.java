@@ -3,6 +3,12 @@ package com.wha.springmvc.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+
+@Entity
+@DiscriminatorValue("COMPTE_COURANT")
 public class CompteCourant extends Compte {
 	
 	static private float tauxAgios;
@@ -16,8 +22,8 @@ public class CompteCourant extends Compte {
 		
 	}
 	
-	public CompteCourant(String iBAN, float solde, Date dateCreation, ArrayList<Operation> operations, float decouvertAutorise) {
-		super( iBAN, solde,  dateCreation, operations);
+	public CompteCourant(float solde, Date dateCreation, ArrayList<Operation> operations, float decouvertAutorise) {
+		super(solde, dateCreation, operations);
 		this.decouvertAutorise = decouvertAutorise;
 	}
 

@@ -1,7 +1,8 @@
 package com.wha.springmvc.model;
 
-import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
@@ -9,25 +10,36 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.criteria.Fetch;
 
 
 @Entity
 @DiscriminatorValue("CLIENT")
-public class Client extends Utilisateur{
+public class Client extends Utilisateur implements Serializable {
 	
+	//Déclaration des attributs spécifique à la classe client
 	private int nbEnfants;
 	private String situation;
+	private String matriculeAgent;
+	
+	//Définition des relations avec d'autres existantes de la base
+	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
+	@JoinColumn(name="idClient")
+	private List<Compte> comptes = new ArrayList<Compte>();
 	
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="idClient")
-	private ArrayList<Compte> comptes=new ArrayList<Compte>();
-	private ArrayList<File> documents = new ArrayList<File>();
+	private List<Notification> notifications = new ArrayList<Notification>();
 	
+	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
+	@JoinColumn(name="idClient")
+	private List<Demande> demandes = new ArrayList<Demande>();
 	
-	private ArrayList<Notification> notifications = new ArrayList<Notification>();
-	private String matriculeAgent;
+	//TODO
+	//private List<File> documents = new ArrayList<File>();
+		
+		
 	
+	//Constructeurs
 	public Client() {
 	
 	}
@@ -42,20 +54,21 @@ public class Client extends Utilisateur{
 			String numTel,
 			int nbEnfants, 
 			String situation,
-			ArrayList<Compte> comptes,
-			ArrayList<File> documents,
-			ArrayList<Notification> notifications,
+			List<Compte> comptes,
+			//List<File> documents,
+			List<Notification> notifications,
 			String matriculeAgent) {
 		
 		super(id, nom, prenom, mdp, email, adresse, identifiant,numTel);
 		this.nbEnfants = nbEnfants;
 		this.situation = situation;
 		this.comptes = comptes;
-		this.documents = documents;
+		///this.documents = documents;
 		this.notifications = notifications;
 		this.matriculeAgent = matriculeAgent;
 	}
 	
+	//Getters-setters
 	public int getNbEnfants() {
 		return nbEnfants;
 	}
@@ -68,19 +81,19 @@ public class Client extends Utilisateur{
 	public void setSituation(String situation) {
 		this.situation = situation;
 	}
-	public ArrayList<Compte> getComptes() {
+	public List<Compte> getComptes() {
 		return comptes;
 	}
 	public void setComptes(ArrayList<Compte> comptes) {
 		this.comptes = comptes;
 	}
-	public ArrayList<File> getDocuments() {
-		return documents;
-	}
-	public void setDocuments(ArrayList<File> documents) {
-		this.documents = documents;
-	}
-	public ArrayList<Notification> getNotifications() {
+//	public List<File> getDocuments() {
+//		return documents;
+//	}
+//	public void setDocuments(ArrayList<File> documents) {
+//		this.documents = documents;
+//	}
+	public List<Notification> getNotifications() {
 		return notifications;
 	}
 	public void setNotifications(ArrayList<Notification> notifications) {
@@ -92,5 +105,10 @@ public class Client extends Utilisateur{
 	public void setMatriculeAgent(String matriculeAgent) {
 		this.matriculeAgent = matriculeAgent;
 	}
-
+	public List<Demande> getDemandes() {
+		return demandes;
+	}
+	public void setDemandes(ArrayList<Demande> demandes) {
+		this.demandes = demandes;
+	}
 }

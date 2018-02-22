@@ -1,30 +1,39 @@
 package com.wha.springmvc.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Operation {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="OPERATION")
+public class Operation implements Serializable {
 	
-	private long id; // correspond � la cl� primaire 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id; // PK 
+	
 	private float montant;
 	private Date date;
 	private String type;
 	private String libelle;
-	private String iBAN; // cl� �trang�re
 	
 	
 	//Constructeurs
 	public Operation() {
 		super();
 	}
-
-	public Operation(long id, float montant, Date date, String type, String libelle, String iBAN) {
+	
+	public Operation(float montant, Date date, String type, String libelle) {
 		super();
-		this.id = id;
 		this.montant = montant;
 		this.date = date;
 		this.type = type;
 		this.libelle = libelle;
-		this.iBAN = iBAN;
 	}
 	
 	//Getters-Setters
@@ -62,14 +71,5 @@ public class Operation {
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
-
-	public String getiBAN() {
-		return iBAN;
-	}
-	public void setiBAN(String iBAN) {
-		this.iBAN = iBAN;
-	}
-	
-	
 	
 }

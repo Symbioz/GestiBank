@@ -18,7 +18,6 @@ public class Notification implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	private long idClient;
 	private String status;
 	private String message;
 	private Date date;
@@ -28,8 +27,7 @@ public class Notification implements Serializable {
 		
 	}
 
-	public Notification(long idClient, String status, String message, Date date) {
-		this.idClient = idClient;
+	public Notification(String status, String message, Date date) {
 		this.status = status;
 		this.message = message;
 		this.date = date;
@@ -64,14 +62,5 @@ public class Notification implements Serializable {
 		this.date = date;
 	}
 
-	public long getIdClient() {
-		return idClient;
-	}
-
-	public void setIdClient(long idClient) {
-		this.idClient = idClient;
-	}
-
-	
 	
 }
