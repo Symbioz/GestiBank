@@ -2,6 +2,13 @@ package com.wha.springmvc.model;
 
 import java.util.Date;
 
+<<<<<<< HEAD
+=======
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+@Entity
+@DiscriminatorValue("INSCRIPTION")
+>>>>>>> Guillaume
 public class Inscription extends Demande {
     
 	private Date dateAffectation;

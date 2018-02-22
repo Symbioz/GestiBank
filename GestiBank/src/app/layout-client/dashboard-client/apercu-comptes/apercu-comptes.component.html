@@ -1,0 +1,26 @@
+<div class="row">
+	<!-- Tableau contenant les comptes (Type / N° / Libellé / Solde / Relevé) -->
+	<div class="card-body table-responsive">
+	<!-- <table class="card-body table table-hover table-striped"> -->
+	<table class="card-body table table-hover table-sm">
+	    <thead>
+	    <br/>
+	        <!-- ligne de titres -->
+	        <tr>
+	            <th>Numero de compte</th>
+	            <th>Solde</th>
+	            <th>Relevé</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	    	<!-- recupération de la liste des comptes -->
+	        <tr *ngFor="let compte of comptes">
+	        	<!-- scope : permet de mettre en 'surbrillance' la ligne consultée -->
+	            <td>{{ compte.IBAN }}</td>
+	            <td>{{ compte.solde }}</td>
+	            <td></td>
+	        </tr>
+	    </tbody>
+	</table>
+	</div>
+</div>

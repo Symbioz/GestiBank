@@ -28,3 +28,6 @@ RemoteSystemsTempFiles/.project
 *.prefs
 *.index
 >>>>>>> origin/jennifer
+*.class
+*.class
+GestiBank/src/app/layout-admin/components/header/header.component.spec.ts
