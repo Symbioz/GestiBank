@@ -26,4 +26,3 @@ INSERT INTO `gestibank`.`demande` (`TYPE_DEMANDE`, `idDemande`, `dateDemande`, `
 INSERT INTO `gestibank`.`demande` (`TYPE_DEMANDE`, `idDemande`, `dateDemande`, `idClient`, `status`, `iban`) VALUES ('CHEQUIER', NULL, '2018-02-22 09:25:23', '3', b'0000', '12340001');
 INSERT INTO `gestibank`.`demande` (`TYPE_DEMANDE`, `idDemande`, `dateDemande`, `idClient`, `status`, `iban`) VALUES ('CHEQUIER', NULL, '2018-02-22 09:25:23', '4', b'0001', '12340003');
 INSERT INTO `gestibank`.`demande` (`TYPE_DEMANDE`, `idDemande`, `dateDemande`, `idClient`, `status`, `iban`) VALUES ('INSCRIPTION', NULL, '2018-02-22 09:25:23', '7', b'0001', NULL);
-INSERT INTO `gestibank`.`demande` (`TYPE_DEMANDE`, `idDemande`, `dateDemande`, `idClient`, `status`, `iban`) VALUES ('DEMANDE', NULL', '2018-02-22 09:25:23', '7', b'0001', NULL);
