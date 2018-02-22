@@ -1,0 +1,11 @@
+-- creation de tous les agents 
+INSERT INTO `gestibank`.`utilisateur` (`TYPE_ENTITE`, `id`, `adresse`, `email`, `identifiant`, `mdp`, `nom`, `numTel`, `prenom`, `dateDebutContrat`, `matricule`, `matriculeAgent`, `nbEnfants`, `situation`) VALUES ('AGENT', '1', 'adr1', 'agent1@email', 'agent1', 'agent', 'Durant', '0600000001', 'Jaqueline', NULL, 'M0001', NULL, '2', 'Marié');
+INSERT INTO `gestibank`.`utilisateur` (`TYPE_ENTITE`, `id`, `adresse`, `email`, `identifiant`, `mdp`, `nom`, `numTel`, `prenom`, `dateDebutContrat`, `matricule`, `matriculeAgent`, `nbEnfants`, `situation`) VALUES ('AGENT', '2', 'adr2', 'agent2@email', 'agent2', 'agent', 'Smith', '0600000002', 'Max', NULL, 'M0002', NULL, '0', 'Célibataire');
+
+-- creation de tous les clients
+INSERT INTO `gestibank`.`utilisateur` (`TYPE_ENTITE`, `id`, `adresse`, `email`, `identifiant`, `mdp`, `nom`, `numTel`, `prenom`, `dateDebutContrat`, `matricule`, `matriculeAgent`, `nbEnfants`, `situation`) VALUES ('CLIENT', '101', 'adr101', 'client101@email', 'client101', 'client', 'Dupont', '0600000101', 'Jean', NULL, NULL, 'M0001', NULL, NULL);
+INSERT INTO `gestibank`.`utilisateur` (`TYPE_ENTITE`, `id`, `adresse`, `email`, `identifiant`, `mdp`, `nom`, `numTel`, `prenom`, `dateDebutContrat`, `matricule`, `matriculeAgent`, `nbEnfants`, `situation`) VALUES ('CLIENT', '102', 'adr102', 'client102@email', 'client102', 'client', 'Martin', '0600000102', 'Marie', NULL, NULL, 'M0001', NULL, NULL);
+INSERT INTO `gestibank`.`utilisateur` (`TYPE_ENTITE`, `id`, `adresse`, `email`, `identifiant`, `mdp`, `nom`, `numTel`, `prenom`, `dateDebutContrat`, `matricule`, `matriculeAgent`, `nbEnfants`, `situation`) VALUES ('CLIENT', '103', 'adr103', 'client103@email', 'client103', 'client', 'Lorent', '0600000103', 'Catherine', NULL, NULL, 'M0002', NULL, NULL);
+INSERT INTO `gestibank`.`utilisateur` (`TYPE_ENTITE`, `id`, `adresse`, `email`, `identifiant`, `mdp`, `nom`, `numTel`, `prenom`, `dateDebutContrat`, `matricule`, `matriculeAgent`, `nbEnfants`, `situation`) VALUES ('CLIENT', '104', 'adr104', 'client104@email', 'client104', 'client', 'Hernandez', '0600000104', 'Antoine', NULL, NULL, 'M0002', NULL, NULL);
+
+-- creation des comptes
