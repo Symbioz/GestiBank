@@ -8,7 +8,7 @@ import { Observable } from "rxjs/Observable";
 @Injectable()
 export class OperationService {
 
-	private apiUrl = 'http://localhost:8080/GestiBankBackEnd/comptes/';
+	private apiUrl = 'http://localhost:8080/SpringAngularStartProject/comptes/';
 
 	constructor(private http: Http) { }
 

@@ -24,7 +24,7 @@ export class InscriptionService {
   inscriptionNonAffecte : any[ ] = [ ];
   
   
-  private apiUrl ='http://localhost:8080/GestiBankBackEnd/inscriptions';
+  private apiUrl ='http://localhost:8080/SpringAngularStartProject/inscriptions';
 
   constructor(private http: Http) {}
 
