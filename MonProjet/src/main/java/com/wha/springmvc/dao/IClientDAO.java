@@ -6,8 +6,6 @@ import com.wha.springmvc.model.Client;
 
 public interface IClientDAO {
 	
-	
-	
 	public List<Client> getAllClients();
 	
 	public Client getClientById(long id);

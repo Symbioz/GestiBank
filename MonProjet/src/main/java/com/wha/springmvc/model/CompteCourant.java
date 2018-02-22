@@ -2,6 +2,7 @@ package com.wha.springmvc.model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -22,11 +23,11 @@ public class CompteCourant extends Compte {
 		
 	}
 	
-	public CompteCourant(float solde, Date dateCreation, ArrayList<Operation> operations, float decouvertAutorise) {
+	public CompteCourant(float solde, Date dateCreation, HashSet<Operation> operations, float decouvertAutorise) {
 		super(solde, dateCreation, operations);
 		this.decouvertAutorise = decouvertAutorise;
 	}
-	public CompteCourant(float solde, Date dateCreation, ArrayList<Operation> operations, float decouvertAutorise, float agios) {
+	public CompteCourant(float solde, Date dateCreation, HashSet<Operation> operations, float decouvertAutorise, float agios) {
 		super(solde, dateCreation, operations);
 		this.decouvertAutorise = decouvertAutorise;
 		this.agios = agios;

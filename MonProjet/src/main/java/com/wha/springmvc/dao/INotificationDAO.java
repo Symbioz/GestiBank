@@ -11,7 +11,7 @@ public interface INotificationDAO {
 	
 	public Notification getNotificationById(long id);
 	
-	public List<Notification> getClientNotifications(long idClient);
+	public List<Notification> getClientNotifications(Long idClient);
 	
 	public void ajouterNotification(Notification notification);
 	

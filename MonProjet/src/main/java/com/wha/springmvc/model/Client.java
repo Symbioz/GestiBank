@@ -2,7 +2,9 @@ package com.wha.springmvc.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
@@ -16,7 +18,7 @@ import javax.persistence.OneToMany;
 @DiscriminatorValue("CLIENT")
 public class Client extends Utilisateur implements Serializable {
 	
-	//Déclaration des attributs spécifique à la classe client
+	//Déclaration des attributs spécifiques à la classe client
 	private int nbEnfants;
 	private String situation;
 	private String matriculeAgent;
@@ -24,15 +26,15 @@ public class Client extends Utilisateur implements Serializable {
 	//Définition des relations avec d'autres existantes de la base
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="idClient")
-	private List<Compte> comptes = new ArrayList<Compte>();
+	private Set<Compte> comptes = new HashSet<Compte>();
 	
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="idClient")
-	private List<Notification> notifications = new ArrayList<Notification>();
+	private Set<Notification> notifications = new HashSet<Notification>();
 	
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="idClient")
-	private List<Demande> demandes = new ArrayList<Demande>();
+	private Set<Demande> demandes = new HashSet<Demande>();
 	
 	//TODO
 	//private List<File> documents = new ArrayList<File>();
@@ -53,9 +55,9 @@ public class Client extends Utilisateur implements Serializable {
 			String numTel,
 			int nbEnfants, 
 			String situation,
-			List<Compte> comptes,
+			Set<Compte> comptes,
 			//List<File> documents,
-			List<Notification> notifications,
+			Set<Notification> notifications,
 			String matriculeAgent) {
 		
 		super(nom, prenom, mdp, email, adresse, identifiant,numTel);
@@ -80,10 +82,10 @@ public class Client extends Utilisateur implements Serializable {
 	public void setSituation(String situation) {
 		this.situation = situation;
 	}
-	public List<Compte> getComptes() {
+	public Set<Compte> getComptes() {
 		return comptes;
 	}
-	public void setComptes(ArrayList<Compte> comptes) {
+	public void setComptes(HashSet<Compte> comptes) {
 		this.comptes = comptes;
 	}
 //	public List<File> getDocuments() {
@@ -92,10 +94,10 @@ public class Client extends Utilisateur implements Serializable {
 //	public void setDocuments(ArrayList<File> documents) {
 //		this.documents = documents;
 //	}
-	public List<Notification> getNotifications() {
+	public Set<Notification> getNotifications() {
 		return notifications;
 	}
-	public void setNotifications(ArrayList<Notification> notifications) {
+	public void setNotifications(HashSet<Notification> notifications) {
 		this.notifications = notifications;
 	}
 	public String getMatriculeAgent() {
@@ -104,10 +106,10 @@ public class Client extends Utilisateur implements Serializable {
 	public void setMatriculeAgent(String matriculeAgent) {
 		this.matriculeAgent = matriculeAgent;
 	}
-	public List<Demande> getDemandes() {
+	public Set<Demande> getDemandes() {
 		return demandes;
 	}
-	public void setDemandes(ArrayList<Demande> demandes) {
+	public void setDemandes(HashSet<Demande> demandes) {
 		this.demandes = demandes;
 	}
 }

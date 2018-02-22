@@ -33,7 +33,7 @@ public class NotificationDAOImpl extends AbstractDao<Long, Notification> impleme
 	
 	@Transactional
 	@SuppressWarnings("unchecked")
-	public List<Notification> getClientNotifications(long idClient) {
+	public List<Notification> getClientNotifications(Long idClient) {
 		List<Notification> notifs;
 		notifs = em.createQuery("SELECT n FROM Notification n WHERE n.idClient = "+ idClient)
 					   .getResultList();

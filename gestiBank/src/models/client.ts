@@ -24,7 +24,7 @@ export class Client extends Utilisateur {
 		nbEnfants: number,
 		situation: string,
 		comptes: Compte[],
-		documents : File[],
+		//documents : File[],
 		notifications : Notification[],
 		matriculeAgent:number) {
 
@@ -42,7 +42,7 @@ export class Client extends Utilisateur {
 		this.nbEnfants = nbEnfants;
 		this.situation = situation;
 		this.comptes= comptes;
-		this.documents = documents;
+		//this.documents = documents;
 		this.notifications = notifications;
 		this.matriculeAgent=matriculeAgent;
 	}

@@ -2,6 +2,7 @@ package com.wha.springmvc.model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -18,7 +19,7 @@ public class CompteRemunere extends Compte {
 	public CompteRemunere() {
 	}
 	
-	public CompteRemunere(float solde, Date dateCreation, ArrayList<Operation> operations, float interets) {
+	public CompteRemunere(float solde, Date dateCreation, HashSet<Operation> operations, float interets) {
 		super(solde, dateCreation, operations);
 		this.interets = interets;
 	}

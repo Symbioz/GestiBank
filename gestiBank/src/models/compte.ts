@@ -7,8 +7,7 @@ export class Compte {
 	dateCreation: Date;
 	operations: Operation[];
 
-	constructor(IBAN: string, idClient: number, solde:number, dateCreation: Date, operations: Operation[]){
-		this.IBAN = IBAN;
+	constructor(idClient: number, solde:number, dateCreation: Date, operations: Operation[]){
 		this.idClient = idClient;
 		this.solde = solde;
 		this.dateCreation = dateCreation;

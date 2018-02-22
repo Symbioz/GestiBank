@@ -17,9 +17,6 @@ import javax.persistence.InheritanceType;
 @DiscriminatorValue("UTILISATEUR")
 public class Utilisateur implements Serializable {
 	
-	static long nextId = 3;
-    
-
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id = 0;
@@ -51,9 +48,6 @@ public class Utilisateur implements Serializable {
 	
 	//Getters-Setters
 	public long getId() {
-		if (id == 0){
-			id = nextId++;
-		}
 		return id;
 	}
 	public void setId(long id) {

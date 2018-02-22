@@ -25,7 +25,7 @@ export class NotifsListComponent implements OnInit {
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
           //this.id = params['id'];
-          this.idClient = 1;
+          this.idClient = 3;
         })
 
         this.getAllNotifications();

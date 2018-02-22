@@ -35,9 +35,7 @@ public class ClientDAOImpl extends AbstractDao<Long, Client> implements IClientD
 	}
 	
 	public Client modifierClient(Client client) {
-		
 		// TODO
-		
 		return client;
 	}
 

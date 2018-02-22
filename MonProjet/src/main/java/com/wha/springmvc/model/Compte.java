@@ -3,7 +3,9 @@ package com.wha.springmvc.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorColumn;
@@ -20,7 +22,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-//@Table(name="COMPTE")
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="TYPE_COMPTE")
 @DiscriminatorValue("COMPTE")
@@ -34,7 +35,7 @@ public class Compte implements Serializable {
 	
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="iBAN")
-	private List<Operation> operations;
+	private Set<Operation> operations = new HashSet<Operation>();
 	
 	
 	//Constructeurs
@@ -42,7 +43,7 @@ public class Compte implements Serializable {
 		
 	}
 	
-	public Compte(float solde, Date dateCreation, ArrayList<Operation> operations) {
+	public Compte(float solde, Date dateCreation, HashSet<Operation> operations) {
 		super();
 		this.solde = solde;
 		this.dateCreation = dateCreation;
@@ -65,10 +66,10 @@ public class Compte implements Serializable {
 		this.dateCreation = dateCreation;
 	}
 
-	public List<Operation> getOperations() {
+	public Set<Operation> getOperations() {
 		return operations;
 	}
-	public void setOperations(ArrayList<Operation> operations) {
+	public void setOperations(HashSet<Operation> operations) {
 		this.operations = operations;
 	}
 
