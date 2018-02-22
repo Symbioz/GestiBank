@@ -21,7 +21,7 @@ export class InfoAgentsComponent implements OnInit {
   clientsTest :Client[] = [];
   agents :     Agent [] = [];
   client: Client [];
-  
+ 
 
   id: number;
   private sub: any;
@@ -44,6 +44,7 @@ export class InfoAgentsComponent implements OnInit {
        this.id = +params['id'];
     });
     // Recuperation de l'agent avec l'id recupéré dans l url
+    //
     this.getAgentByID(this.id);
     
     this.getAllAgents();
@@ -57,6 +58,7 @@ export class InfoAgentsComponent implements OnInit {
               this.agent = agent;
               this.matriculeAgent = this.agent.matricule;
               this.getClientByAgent(this.matriculeAgent);
+              //this.getClientByAgentBis(this.matriculeAgent);
          },
          err => {
            console.log(err);
@@ -71,9 +73,23 @@ export class InfoAgentsComponent implements OnInit {
             for(let c of clients){
               if(c.matriculeAgent == matriculeAgent){
                 this.clients.push(c);
-                
+                console.log(clients);
               }
             }
+       },
+       err => {
+         console.log(err);
+       })
+   }
+
+     getClientByAgentBis(matriculeAgent){
+     this.clientService.getClientByMatriculeAgent(matriculeAgent).subscribe(
+       clientsTest =>{
+            for(let c1 of clientsTest){
+                this.clientsTest.push(c1);
+                console.log(this.clientsTest);
+              }
+            
        },
        err => {
          console.log(err);

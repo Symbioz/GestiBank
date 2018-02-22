@@ -16,29 +16,17 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.wha.springmvc.model.Agent;
-import com.wha.springmvc.model.User;
+import com.wha.springmvc.model.Client;
+import com.wha.springmvc.service.ClientServiceImpl;
 import com.wha.springmvc.service.IAgentService;
-
-//import javax.ws.rs.Consumes;
-//import javax.ws.rs.DELETE;
-//import javax.ws.rs.GET;
-//import javax.ws.rs.POST;
-//import javax.ws.rs.PUT;
-//import javax.ws.rs.Path;
-//import javax.ws.rs.PathParam;
-//import javax.ws.rs.Produces;
-//import javax.ws.rs.core.MediaType;
-
-//import fr.jgj.gestibank.model.Agent;
-//import fr.jgj.gestibank.service.impl.AgentServiceImpl;
-
-//@Path("/agents")
+import com.wha.springmvc.service.IClientService;
 
 @RestController
 public class AgentRessource {
 	
 	@Autowired
 	IAgentService agentService;
+	IClientService clientService;
 	//AgentServiceImpl agentService = new AgentServiceImpl();
 	
 	// CRUD -- READ operation
@@ -82,82 +70,63 @@ public class AgentRessource {
 	        return new ResponseEntity<Agent>(agent, HttpStatus.OK);
 	    }
 	    
-	    //------------------- Delete a User --------------------------------------------------------
+	    //------------------- Delete a Agent --------------------------------------------------------
 	     
 	    @RequestMapping(value = "/agents/{id}", method = RequestMethod.DELETE)
 	    public ResponseEntity<Agent> supprimerAgent(@PathVariable("id") long id) {
 	        System.out.println("Fetching & Deleting User with id " + id);
 	 
 	        Agent agent = agentService.getAgentById(id);
-	        if (agent == null) {
-	            System.out.println("Unable to delete. User with id " + id + " not found");
+            String matriculeAgent = agent.getMatricule();
+	        
+	        // Test verification client
+	        List<Client> client = clientService.getClientByMatriculeAgent(matriculeAgent);
+	        
+	       
+	        if (agent == null && client.isEmpty()) {
+	            //System.out.println("Unable to delete. User with id " + id + " not found");
 	            return new ResponseEntity<Agent>(HttpStatus.NOT_FOUND);
 	        }
 	 
 	        agentService.supprimerAgent(id);
 	        return new ResponseEntity<Agent>(HttpStatus.NO_CONTENT);
 	    }
-	 
+	    
+	    //------------------- Update a Agent --------------------------------------------------------
 	     
+	    @RequestMapping(value = "/agents", method = RequestMethod.PUT)
+	    public ResponseEntity<Agent> modifierAgent(@RequestBody Agent agent) {
+	        //System.out.println("Updating Agent " + id);
+	         
+	       //Agent currentAgent = agentService.getAgentById(agent.id);
+	        
+	    	Agent currentAgent = agent;
+	        if (currentAgent==null) {
+	          //  System.out.println("Agent with id " + id + " not found");
+	            return new ResponseEntity<Agent>(HttpStatus.NOT_FOUND);
+	        }
+	       
+	        currentAgent.setNom(agent.getNom());
+	        currentAgent.setPrenom(agent.getPrenom());
+	        currentAgent.setIdentifiant(agent.getIdentifiant());
+	        currentAgent.setMdp(agent.getMdp());
+	        currentAgent.setEmail(agent.getEmail());
+	        currentAgent.setAdresse(agent.getAdresse());
+	        currentAgent.setNumTel(agent.getNumTel());
+	        currentAgent.setMatricule(agent.getMatricule());
+	        currentAgent.setDateDebutContrat(agent.getDateDebutContrat());
+	         
+	        agentService.modifierAgent(currentAgent);
+	        return new ResponseEntity<Agent>(currentAgent, HttpStatus.OK);
+	    }
+	    
+	    
+	    
+	    
 	 
-	
-	
+	 
 
-	/*
-	// CRUD -- CREATE operation
-	@POST
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Agent creerAgent(Agent agent){
-		Agent agentResponse = agentService.creerAgent(agent);
-		return agentResponse;
-	}
-	
-	// CRUD -- UPDATE operation
-	@PUT
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Agent modifierAgent(Agent agent){
-		Agent agentResponse = agentService.modifierAgent(agent);
-		return agentResponse;
-	}
-	
-	// CRUD -- DELETE operation
-	@DELETE
-	@Path("/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Agent supprimerAgent(@PathParam("id") String id) {
-		Agent agentResponse = agentService.supprimerAgent(id);
-		return agentResponse;
-	}*/
-	
-	/*@RequestMapping(value = "/agents/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Agent> supprimerAgent(@PathVariable("id") long id) {
-        System.out.println("Fetching & Deleting User with id " + id);
- 
-        Agent agent = agentService.findById((int)id);
-        if (user == null) {
-            System.out.println("Unable to delete. User with id " + id + " not found");
-            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
-        }
- 
-        userService.deleteUserById(id);
-        return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
-    }*/
- 
 	
 	
-	/*
 	
-	// CRUD -- READ operation
-		@GET
-		@Path("/{id}")
-		@Produces(MediaType.APPLICATION_JSON)
-		public Agent getAgentByID(@PathParam("id") String id) {
-			Agent agent = agentService.getAgentById(id);
-			return agent;
-	}
-	*/
-	
-
 }

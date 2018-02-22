@@ -9,10 +9,6 @@ import java.util.List;
 
 
 
-
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,7 +23,7 @@ import com.wha.springmvc.dao.IAgentDAO;
 import com.wha.springmvc.model.Agent;
 
 
-import com.wha.springmvc.model.User;
+
 import com.wha.springmvc.service.IAgentService;
 
 @Service("agentService")
@@ -45,45 +41,32 @@ public class AgentServiceImpl implements IAgentService {
 	}
 	
 	public void creerAgent(Agent agent) {
-		
 		agentDaoImpl.creerAgent(agent);
 	}
 	
 	public Agent getAgentById(long id) {
-		
 		return agentDaoImpl.getAgentById((int)id);
 	}
 	
 	public void supprimerAgent(long id) {
 		agentDaoImpl.supprimerAgent(id);
-		
 	}
 	
 	public void modifierAgent(Agent agent) {
-		
-		Agent entity = agentDaoImpl.getAgentById(agent.getId());
+		Agent entity = agentDaoImpl.getAgentById((long)agent.getId());
         if(entity!=null){
         	entity.setNom(agent.getNom());
         	entity.setPrenom(agent.getPrenom());
         	entity.setIdentifiant(agent.getIdentifiant());
         	entity.setMdp(agent.getMdp());
-        	entity.setEmail();
-           // entity.setUsername(user.getUsername());
-           // entity.setAddress(user.getAddress());
-           // entity.setEmail(user.getEmail());
+        	entity.setEmail(agent.getEmail());
+        	entity.setAdresse(agent.getAdresse());
+        	entity.setNumTel(agent.getNumTel());
+        	entity.setMatricule(agent.getMatricule());
+        	entity.setDateDebutContrat(agent.getDateDebutContrat());
         }
-        agentDaoImpl.save(entity);
+        agentDaoImpl.creerAgent(entity);
 	}
-	
-	
-	/*public Agent modifierAgent(Agent agent) {
-		Agent agentResponse = agentDaoImpl.modifierAgent(agent);
-		return agentResponse;
-	}*/
-	
-	
-	
-	
 	
 }
 
