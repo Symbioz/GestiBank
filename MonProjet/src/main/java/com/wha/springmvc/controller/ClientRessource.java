@@ -76,14 +76,12 @@ public class ClientRessource {
 	        }
 	        
 	        // on ne mets que le matricule client à modifier
-	        currentClient.setMatriculeAgent(client.getMatriculeAgent());
-	        
-
+	        //currentClient.set(client.getMatriculeAgent());
+	       
 	        clientService.modifierClient(currentClient);
 	        return new ResponseEntity<Client>(currentClient, HttpStatus.OK);
 	    }
-	    
-	    
+	       
         //Recuperer  Clients Par son matriculeAgent
 		
 	    @RequestMapping(value = "/client/agent/{matriculeAgent}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)

@@ -20,6 +20,7 @@ export class BoutonSuppressionAgentsComponent implements OnInit {
     
     private sub:any;
     private id: number;
+    private nbclient: number;
     agent: Agent;
     closeResult: string;
     constructor(private modalService: NgbModal,
@@ -31,6 +32,8 @@ export class BoutonSuppressionAgentsComponent implements OnInit {
     
     @Input() agentModal:Agent;
     @Input() ListeClients:Client[];
+
+
      
   
     open(content) {
@@ -54,8 +57,10 @@ export class BoutonSuppressionAgentsComponent implements OnInit {
     }
 
     supprimerAgent(agentModal: Agent){
-    
-    if (agentModal) {
+     
+    //this.nbclient = agentModal.clients.length();
+   console.log(agentModal.clients.length);
+    if (agentModal && agentModal.clients.length == 0) {
       this.agentService.supprimerAgent(agentModal.id).subscribe(
         res => {
            this.gestionAgentComponent.getAllAgents();

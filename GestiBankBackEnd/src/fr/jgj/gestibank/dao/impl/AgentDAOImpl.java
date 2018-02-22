@@ -64,4 +64,13 @@ public class AgentDAOImpl implements IAgentDAO{
 		return agentResponse;
 	}
 	
+	public Agent getAgentByMatricule(String matricule) {
+		Agent agentResponse = agentsMap.get(matricule);
+		return agentResponse;
+	}
+	
+	
+	
+	
+	
 }

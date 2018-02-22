@@ -7,7 +7,6 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import com.wha.springmvc.model.Agent;
 import com.wha.springmvc.model.Client;
 
 
@@ -33,7 +32,7 @@ public class ClientDAOImpl extends AbstractDao<Long, Client> implements IClientD
 	@SuppressWarnings("unchecked")
 	public List<Client> getClientByMatriculeAgent(String matriculeAgent){
 		List<Client> clientListbyAgent = getEntityManager()
-				.createQuery("SELECT c FROM Client c where c.matriculeAgent = :matriculeAgent").setParameter("matriculeAgent", matriculeAgent)
+				.createQuery("SELECT c FROM Client c where c.id_agent = :matriculeAgent").setParameter("matriculeAgent", matriculeAgent)
 				.getResultList();
 			return clientListbyAgent;
 	}

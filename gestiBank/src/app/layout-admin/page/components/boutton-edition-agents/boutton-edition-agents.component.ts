@@ -9,6 +9,7 @@ import { HttpModule } from '@angular/http';
 import { Agent} from '../../../../../models/agent';
 import { AgentService} from '../../../../../services/agent.service';
 
+
 @Component({
   selector: 'app-boutton-edition-agents',
   templateUrl: './boutton-edition-agents.component.html',
@@ -19,6 +20,7 @@ export class BouttonEditionAgentsComponent implements OnInit {
 
     agent: Agent;
     id: number;
+    clients:Client;
     agentFormUpdate: FormGroup;
     closeResult: string;
     
@@ -85,8 +87,8 @@ export class BouttonEditionAgentsComponent implements OnInit {
           numTel : agent.numTel,
           adresse: agent.adresse,
           motDePasse: agent.mdp,
-          dateDebutContrat: agent.dateDebutContrat
-
+          dateDebutContrat: agent.dateDebutContrat,
+          
           });
         },
         error => {
@@ -110,6 +112,7 @@ export class BouttonEditionAgentsComponent implements OnInit {
           this.agentFormUpdate.controls['numTel'].value,
           this.agentFormUpdate.controls['matricule'].value,
           this.agentFormUpdate.controls['dateDebutContrat'].value,
+          this.clients
           );
            console.log(updateagentForm.value);
            console.log(agent);

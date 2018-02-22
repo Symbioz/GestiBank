@@ -1,22 +1,43 @@
 package com.wha.springmvc.model;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 
 @Entity
 @DiscriminatorValue("AGENT")
 public class Agent extends Utilisateur {
     
+	@Column(unique=true)
 	private String matricule;
 	private Date dateDebutContrat;
-
+	
+	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
+	@JoinColumn(name="id_agent")
+	private List<Client> clients;
+    
 	
 	//Constructeurs
     
 	
+	public List<Client> getClients() {
+		return clients;
+	}
+
+
+	public void setClients(List<Client> clients) {
+		this.clients = clients;
+	}
+
+
 	public Agent() {
 		super();
 	}

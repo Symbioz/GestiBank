@@ -41,7 +41,8 @@ public class ClientServiceImpl implements IClientService{
     	Client entity = clientDao.getClientById((long)client.getId());
         if(entity!=null){
         	// On ne modifie que le matricule de l'agent
-        	entity.setMatriculeAgent(client.getMatriculeAgent());
+        	//entity.setMatriculeAgent(client.getMatriculeAgent());
+        	
         }
         clientDao.creerClient(entity);
 	}

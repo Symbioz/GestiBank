@@ -5,12 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 import {ClientService} from './../../../../../services/client.service';
+import {AgentService} from './../../../../../services/agent.service';
 
 @Component({
   selector: 'app-tableau-clients-agent',
   templateUrl: './tableau-clients-agent.component.html',
   styleUrls: ['./tableau-clients-agent.component.scss'],
-  providers: [ClientService]
+  providers: [ClientService, AgentService]
 })
 export class TableauClientsAgentComponent implements OnInit {
 
@@ -21,12 +22,15 @@ export class TableauClientsAgentComponent implements OnInit {
   client: Client;
   agent : Agent;
   clientUpdate: Client;
+  agentUpddate: Agent;
   idclient: number;
+  clientAdd: Client[];
 
   closeResult: string;
   
     constructor(private modalService: NgbModal,
-                private clientService: ClientService) { }
+                private clientService: ClientService,
+                private agentSerice: AgentService) { }
     
     open(content) {
         this.modalService.open(content).result.then((result) => {
@@ -48,8 +52,9 @@ export class TableauClientsAgentComponent implements OnInit {
         }
     }
 
-     affecter(idClient){
+     /*affecter(idClient){
        console.log(this.agent);
+
        console.log(idClient);
 
        this.clientService.getClientById(idClient).subscribe(
@@ -62,14 +67,36 @@ export class TableauClientsAgentComponent implements OnInit {
         }
       );
 
+    }*/
+
+    affecter(agentid,client){
+        
+       this.agentSerice.getAgentById(agentid).subscribe(
+        agentRecup => {
+           console.log(client);
+             
+          //console.log(agentRecup);
+          //console.log(agentRecup.clients);
+          this.clientAdd = agentRecup.clients;
+          console.log(this.clientAdd);
+           this.clientAdd.push(client);
+           console.log(this.clientAdd);
+          this.modifierAgent(agentRecup,this.clientAdd)
+
+        },
+        error => {
+          console.log(error);
+        }
+      );
     }
 
    selectAgent(agent: Agent):void {
       this.agent = agent;
       console.log(agent);
+      
     }
 
-    modifierClient(client,agent){
+    /*modifierClient(client,agent){
           
       let clientUpdate : Client = new Client(
         client.id,
@@ -94,6 +121,36 @@ export class TableauClientsAgentComponent implements OnInit {
                 this.clientUpdate = clientUpdate;
                   console.log(clientUpdate);
                   
+                         },
+                err => {
+                  console.log(err);
+              }
+           );
+    }*/
+
+    modifierAgent(agent,clientAdd){
+          console.log(this.agent);
+          
+      let agentUpdate : Agent = new Agent(
+        agent.id,
+        agent.nom,
+        agent.prenom,
+        agent.mdp,
+        agent.email,
+        agent.adresse,
+        agent.identifiant,
+        agent.numTel,
+        agent.matricule,
+        agent.dateDebutContrat,
+        //null
+        this.clientAdd
+        //this.client
+        )
+       
+      this.agentSerice.modifierAgent(agentUpdate).subscribe(
+               agentUpdate => {
+                   this.agentUpddate =agentUpdate;
+                  console.log(agentUpdate);
                          },
                 err => {
                   console.log(err);

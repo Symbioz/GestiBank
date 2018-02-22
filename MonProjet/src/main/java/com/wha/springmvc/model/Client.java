@@ -15,7 +15,7 @@ public class Client extends Utilisateur{
 	private ArrayList<Compte> comptes=new ArrayList<Compte>();
 	private ArrayList<File> documents = new ArrayList<File>();
 	private ArrayList<Notification> notifications = new ArrayList<Notification>();
-	private String matriculeAgent;
+
 	
 	public Client() {
 	
@@ -33,8 +33,8 @@ public class Client extends Utilisateur{
 			String situation,
 			ArrayList<Compte> comptes,
 			ArrayList<File> documents,
-			ArrayList<Notification> notifications,
-			String matriculeAgent) {
+			ArrayList<Notification> notifications
+			) {
 		
 		super(id, nom, prenom, mdp, email, adresse, identifiant,numTel);
 		this.nbEnfants = nbEnfants;
@@ -42,7 +42,7 @@ public class Client extends Utilisateur{
 		this.comptes = comptes;
 		this.documents = documents;
 		this.notifications = notifications;
-		this.matriculeAgent = matriculeAgent;
+
 	}
 	
 	public int getNbEnfants() {
@@ -75,11 +75,6 @@ public class Client extends Utilisateur{
 	public void setNotifications(ArrayList<Notification> notifications) {
 		this.notifications = notifications;
 	}
-	public String getMatriculeAgent() {
-		return matriculeAgent;
-	}
-	public void setMatriculeAgent(String matriculeAgent) {
-		this.matriculeAgent = matriculeAgent;
-	}
+	
 
 }

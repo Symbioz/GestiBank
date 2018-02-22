@@ -77,6 +77,8 @@ public class AgentRessource {
 	        System.out.println("Fetching & Deleting User with id " + id);
 	 
 	        Agent agent = agentService.getAgentById(id);
+	       
+	       
        
 	        if (agent == null) {
 	            //System.out.println("Unable to delete. User with id " + id + " not found");
@@ -110,10 +112,26 @@ public class AgentRessource {
 	        currentAgent.setNumTel(agent.getNumTel());
 	        currentAgent.setMatricule(agent.getMatricule());
 	        currentAgent.setDateDebutContrat(agent.getDateDebutContrat());
+	        currentAgent.setClients(agent.getClients());
 	         
 	        agentService.modifierAgent(currentAgent);
 	        return new ResponseEntity<Agent>(currentAgent, HttpStatus.OK);
 	    }
+	    
+	    
+	    
+		   //Recuperer un agent Par son matricule
+		     
+		    @RequestMapping(value = "/agents/matricule/{matricule}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+		    public ResponseEntity<Agent> getAgentByMatricule(@PathVariable("matricule") String matricule) {
+		        System.out.println("Fetching User with id " + matricule);
+		        Agent agent = agentService.getAgentByMatricule(matricule);
+		        if (agent == null) {
+		            System.out.println("User with id " + matricule + " not found");
+		            return new ResponseEntity<Agent>(HttpStatus.NOT_FOUND);
+		        }
+		        return new ResponseEntity<Agent>(agent, HttpStatus.OK);
+		    }
 	    
 	    
 	    

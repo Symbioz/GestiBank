@@ -56,8 +56,8 @@ export class InfoAgentsComponent implements OnInit {
       this.agentService.getAgentById(id).subscribe(
          agent => {
               this.agent = agent;
-              this.matriculeAgent = this.agent.matricule;
-              this.getClientByAgent(this.matriculeAgent);
+              //this.getClientByAgent(id);
+              this.clients = this.agent.clients;
               //this.getClientByAgentBis(this.matriculeAgent);
          },
          err => {
@@ -67,11 +67,14 @@ export class InfoAgentsComponent implements OnInit {
       );
    }
 
-    getClientByAgent(matriculeAgent){
+    /*getClientByAgent(id){
      this.clientService.getAllClient().subscribe(
        clients =>{
             for(let c of clients){
-              if(c.matriculeAgent == matriculeAgent){
+               // console.log(c.id_agent);
+               // console.log(id);
+              if(c.id_agent == id){
+                
                 this.clients.push(c);
                 console.log(clients);
               }
@@ -80,9 +83,9 @@ export class InfoAgentsComponent implements OnInit {
        err => {
          console.log(err);
        })
-   }
+   }*/
 
-     getClientByAgentBis(matriculeAgent){
+     /*getClientByAgentBis(matriculeAgent){
      this.clientService.getClientByMatriculeAgent(matriculeAgent).subscribe(
        clientsTest =>{
             for(let c1 of clientsTest){
@@ -94,7 +97,7 @@ export class InfoAgentsComponent implements OnInit {
        err => {
          console.log(err);
        })
-   }
+   }*/
 
    
 
@@ -103,6 +106,7 @@ export class InfoAgentsComponent implements OnInit {
       this.agentService.getAllAgents().subscribe(
          agents => {
            this.agents = agents;
+          // console.log(agents);
          },
          err => {
            console.log(err);

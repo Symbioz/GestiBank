@@ -4,6 +4,8 @@ package com.wha.springmvc.dao;
 import java.util.List;
 
 
+
+import org.hibernate.engine.spi.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import com.wha.springmvc.dao.IAgentDAO;
@@ -27,6 +29,14 @@ public class AgentDAOImpl extends AbstractDao<Long, Agent> implements IAgentDAO{
 	
 	public Agent getAgentById(long id) {
 		Agent agent = getByKey(id);
+		return agent;
+	}
+	
+	public Agent getAgentByMatricule(String matricule) {
+		
+		Agent agent =(Agent) getEntityManager()
+				.createQuery("SELECT a FROM Agent a where a.matricule = :matricule").setParameter("matricule", matricule)
+				.getSingleResult();
 		return agent;
 	}
     

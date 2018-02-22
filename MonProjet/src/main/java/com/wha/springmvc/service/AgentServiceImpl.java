@@ -9,9 +9,13 @@ import java.util.List;
 
 
 
+
+import javax.persistence.PersistenceContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 
 
 
@@ -21,6 +25,7 @@ import com.wha.springmvc.dao.IAgentDAO;
 
 
 import com.wha.springmvc.model.Agent;
+import com.wha.springmvc.model.Client;
 
 
 
@@ -48,6 +53,12 @@ public class AgentServiceImpl implements IAgentService {
 		return agentDaoImpl.getAgentById((int)id);
 	}
 	
+	public Agent getAgentByMatricule(String matricule) {
+
+		return agentDaoImpl.getAgentByMatricule(matricule);	
+	}
+	
+	
 	public void supprimerAgent(long id) {
 		agentDaoImpl.supprimerAgent(id);
 	}
@@ -66,6 +77,10 @@ public class AgentServiceImpl implements IAgentService {
         	entity.setDateDebutContrat(agent.getDateDebutContrat());
         }
         agentDaoImpl.creerAgent(entity);
+	}
+	
+	public void affecterAgent(Client client, Agent agent){
+		
 	}
 	
 }
