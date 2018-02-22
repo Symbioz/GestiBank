@@ -77,13 +77,8 @@ public class AgentRessource {
 	        System.out.println("Fetching & Deleting User with id " + id);
 	 
 	        Agent agent = agentService.getAgentById(id);
-            String matriculeAgent = agent.getMatricule();
-	        
-	        // Test verification client
-	        List<Client> client = clientService.getClientByMatriculeAgent(matriculeAgent);
-	        
-	       
-	        if (agent == null && client.isEmpty()) {
+       
+	        if (agent == null) {
 	            //System.out.println("Unable to delete. User with id " + id + " not found");
 	            return new ResponseEntity<Agent>(HttpStatus.NOT_FOUND);
 	        }
