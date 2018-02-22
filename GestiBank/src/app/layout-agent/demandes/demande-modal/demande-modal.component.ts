@@ -38,6 +38,8 @@ export class DemandeModalComponent implements OnInit {
 	ngOnInit() { 
 	  	this.id=this.demandeEnCours.idDemande;
       console.log("onInit" + this.demandeEnCours)
+      this.bgClass='primary';
+            this.icon='fa-comments';
 		if (this.id) { //edit form
 
 			this.demandeService.getDemandeById(this.id).subscribe(
@@ -46,8 +48,7 @@ export class DemandeModalComponent implements OnInit {
           console.log(demande)
           this.idClientDemande(this.demande.idClient);
 					if (true){
-            this.bgClass='primary';
-            this.icon='fa-comments';
+            
             this.date=this.demande.dateDemande;
 
           }

@@ -2,27 +2,30 @@ package com.wha.springmvc.model;
 
 import java.util.Date;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
 
 @Entity
-@Table(name="DEMANDE")
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="TYPE_DEMANDE")
+@DiscriminatorValue("DEMANDE")
 public class Demande {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long idDemande;
-	@NotEmpty
 	private long idClient;
-	@NotEmpty
 	private Date dateDemande;
-	@NotEmpty
 	private boolean status;
     
 	//Constructeur

@@ -5,17 +5,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-//import fr.jgj.gestibank.dao.IAgentDAO;
-//import fr.jgj.gestibank.model.Agent;
-
-
-
-
-
-
-
-
-
 import org.springframework.stereotype.Repository;
 
 import com.wha.springmvc.dao.IAgentDAO;

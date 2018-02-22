@@ -1,9 +1,22 @@
 package com.wha.springmvc.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Notification {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+@Entity
+@Table(name="NOTIFICATION")
+public class Notification implements Serializable {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String status;
 	private String message;
@@ -11,12 +24,10 @@ public class Notification {
 	
 	//Constructeurs
 	public Notification() {
-		super();
+		
 	}
 
-	public Notification(Long id, String status, String message, Date date) {
-		super();
-		this.id = id;
+	public Notification(String status, String message, Date date) {
 		this.status = status;
 		this.message = message;
 		this.date = date;
@@ -51,6 +62,5 @@ public class Notification {
 		this.date = date;
 	}
 
-	
 	
 }

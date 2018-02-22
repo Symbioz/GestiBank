@@ -69,9 +69,7 @@ public class AgentRessource {
 	    }
 	  
 	  
-	   //Recuperer un agent Par son identifiant
-	     
-	    @RequestMapping(value = "/agents/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	  @RequestMapping(value = "/agents/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	    public ResponseEntity<Agent> getAgentById(@PathVariable("id") long id) {
 	        System.out.println("Fetching User with id " + id);
 	        Agent agent = agentService.getAgentById(id);
