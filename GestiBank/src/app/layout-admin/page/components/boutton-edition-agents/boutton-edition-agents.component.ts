@@ -5,9 +5,11 @@ import { NgForm, FormControl, FormGroup, Validators} from '@angular/forms';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router} from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { Client } from '../../../../../models'
 
 import { Agent} from '../../../../../models/agent';
 import { AgentService} from '../../../../../services/agent.service';
+
 
 @Component({
   selector: 'app-boutton-edition-agents',
@@ -19,6 +21,7 @@ export class BouttonEditionAgentsComponent implements OnInit {
 
     agent: Agent;
     id: number;
+    clients:Client[];
     agentFormUpdate: FormGroup;
     closeResult: string;
     
@@ -85,8 +88,8 @@ export class BouttonEditionAgentsComponent implements OnInit {
           numTel : agent.numTel,
           adresse: agent.adresse,
           motDePasse: agent.mdp,
-          dateDebutContrat: agent.dateDebutContrat
-
+          dateDebutContrat: agent.dateDebutContrat,
+          
           });
         },
         error => {
@@ -110,6 +113,7 @@ export class BouttonEditionAgentsComponent implements OnInit {
           this.agentFormUpdate.controls['numTel'].value,
           this.agentFormUpdate.controls['matricule'].value,
           this.agentFormUpdate.controls['dateDebutContrat'].value,
+          this.clients
           );
            console.log(updateagentForm.value);
            console.log(agent);

@@ -46,6 +46,12 @@ export class AgentService {
       .catch((error:any) => Observable.throw(error.json().error || 'Error'));
    }
 
+   getAgentByMatricule(matricule: string): Observable<Agent> { 
+    return this.http.get(this.apiUrl + "matricule/" + matricule)
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Error'));
+   }
+
  
 }
   

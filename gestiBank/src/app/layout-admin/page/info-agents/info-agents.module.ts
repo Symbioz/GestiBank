@@ -6,10 +6,6 @@ import { InfoAgentsRoutingModule } from './info-agents-routing.module';
 import { FormsModule } from '@angular/forms';
 import { InfoAgentsComponent } from './info-agents.component';
 import { TableauClientsAgentComponent}  from '../components/tableau-clients-agent/tableau-clients-agent.component';
-import { FicheAgentComponent}  from '../components/fiche-agent/fiche-agent.component';
-//import { BoutonValidationAffectationComponent } from '../components/bouton-validation-affectation/bouton-validation-affectation.component';
-
-
 
 @NgModule({
   imports: [
@@ -20,6 +16,6 @@ import { FicheAgentComponent}  from '../components/fiche-agent/fiche-agent.compo
     NgbModule.forRoot(),
 
   ],
-  declarations: [InfoAgentsComponent,TableauClientsAgentComponent,FicheAgentComponent]
+  declarations: [InfoAgentsComponent,TableauClientsAgentComponent]
 })
 export class InfoAgentsModule { }

@@ -10,7 +10,10 @@ import org.springframework.stereotype.Repository;
 import com.wha.springmvc.model.Client;
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> jennifer
 @Repository("clientDAOImpl")
 public class ClientDAOImpl extends AbstractDao<Long, Client> implements IClientDAO{
 
@@ -30,6 +33,7 @@ public class ClientDAOImpl extends AbstractDao<Long, Client> implements IClientD
 		return client;
 	}
 	
+<<<<<<< HEAD
 	public void creerClient(Client client) {
 		persist(client);
 	}
@@ -42,4 +46,19 @@ public class ClientDAOImpl extends AbstractDao<Long, Client> implements IClientD
 	}
 
 	
+=======
+	@SuppressWarnings("unchecked")
+	public List<Client> getClientByMatriculeAgent(String matriculeAgent){
+		List<Client> clientListbyAgent = getEntityManager()
+				.createQuery("SELECT c FROM Client c where c.id_agent = :matriculeAgent").setParameter("matriculeAgent", matriculeAgent)
+				.getResultList();
+			return clientListbyAgent;
+	}
+	
+	
+	public void creerClient(Client client) {
+		persist(client);
+	}
+		
+>>>>>>> jennifer
 }

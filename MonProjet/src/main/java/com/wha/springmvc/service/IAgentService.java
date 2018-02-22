@@ -2,10 +2,9 @@ package com.wha.springmvc.service;
 
 import java.util.List;
 
-
-//import fr.jgj.gestibank.model.Agent;
 import com.wha.springmvc.model.Agent;
-import com.wha.springmvc.model.User;
+import com.wha.springmvc.model.Client;
+
 
 public interface IAgentService {
 	
@@ -18,6 +17,12 @@ public interface IAgentService {
 	public void supprimerAgent(long id) ;
 	
 	public Agent getAgentById(long id);
+	
+	public Agent getAgentByMatricule(String matricule);
+	
+	public void AffecterAgent(Client client, Agent agent);
+	
+	
 	
 	
 }

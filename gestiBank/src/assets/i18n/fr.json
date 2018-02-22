@@ -91,6 +91,11 @@
     "EditerAgent": "Editer l'agent",
     "QuestionSuppression":"Etes vous sur de vouloir supprimer l'agent au matricule n°:",
     "Valider":"Valider",
-    "Reaffecter":"Reaffecter"
+    "Reaffecter":"Reaffecter",
+
+    "dateDebutContrat": "Date Debut Contrat",
+    "warningRecherche": "fonctionalité à venir",
+    "FicheInfoAgent": "Ficher Info Agent",
+
 }
 

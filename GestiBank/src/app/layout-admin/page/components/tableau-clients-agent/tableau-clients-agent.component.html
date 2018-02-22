@@ -18,7 +18,7 @@
                             <td>{{client.prenom}}</td>
                             <td>
                                 <select class="form-control" [ngModel]="agents" (ngModelChange)="selectAgent($event)"> 
-                                   <option *ngFor=" let agent of ListeAgents">{{ agent.matricule }}</option>
+                                   <option *ngFor=" let agent of ListeAgents" [ngValue]="agent.id">{{ agent.matricule }} -{{agent.nom}}-{{agent.prenom}}</option>
                                 </select> 
                             </td>
 
@@ -30,7 +30,7 @@
                         <p></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success btn-xs" (click)="affecter(client.id)"  >{{ 'Oui' | translate }}</button>
+                        <button type="button" class="btn btn-success btn-xs" (click)="affecter(agent,client)"  >{{ 'Oui' | translate }}</button>
                         <button type="button" class="btn btn-danger btn-xs" (click)="c('Close click')">{{ 'Non' | translate }}</button>
                     </div>
                 </ng-template>

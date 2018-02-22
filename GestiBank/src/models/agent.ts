@@ -1,9 +1,11 @@
 import {Utilisateur} from './utilisateur';
+import {Client} from './client';
 
 export class Agent extends Utilisateur {
 
 	 matricule: string;
 	 dateDebutContrat: Date;
+	 clients: Client[];
 	
      constructor(
 		id: number, 
@@ -15,7 +17,8 @@ export class Agent extends Utilisateur {
 		identifiant : string,
 		numTel: string,
 		matricule: string,
-		dateDebutContrat:Date
+		dateDebutContrat:Date,
+		clients: Client[]
 		) {
 
 		super(
@@ -30,6 +33,7 @@ export class Agent extends Utilisateur {
 
 		this.matricule = matricule;
 		this.dateDebutContrat = dateDebutContrat;
+		this.clients =clients;
 	}
 
 	

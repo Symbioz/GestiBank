@@ -13,13 +13,15 @@ public interface IAgentDAO {
 	
 	public void creerAgent(Agent agent) ;
 	
-	public Agent modifierAgent (Agent agent) ;
+	//public Agent modifierAgent (Agent agent) ;
 	
 	public void supprimerAgent(long id) ;
 	
 	public Agent getAgentById(long id);
+	
+	public Agent getAgentByMatricule(String matricule);
 
 }
-
+                
 
 

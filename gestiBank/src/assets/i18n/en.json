@@ -91,5 +91,9 @@
     "EditerAgent":" Edit Agent",
     "QuestionSuppression": "Are you sure you want to delete this agent ?",
     "Valider" : "validate",
-    "Reaffecter":"reallocated"
+    "Reaffecter":"reallocated",
+
+    "dateDebutContrat" :" Date contract early",
+    "warningRecherche" :"future functionality",
+    "FicheInfoAgent":"Agent information sheet"
 }

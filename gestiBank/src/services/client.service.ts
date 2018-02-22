@@ -41,6 +41,9 @@ export class ClientService {
   }
 
 
-
-  
+  getClientByMatriculeAgent(matriculeAgent: string): Observable<Client[]> { 
+    return this.http.get(this.apiUrl + 'agent/'+matriculeAgent)
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Error'));
+  }
 }

@@ -15,39 +15,39 @@
                
                         <fieldset class="form-group">
                             <label for="matricule">{{ 'Matricule' | translate }}</label>
-                            <input id="matricule" class="form-control" placeholder="Matricule" type="text" required ngControl="matricule"
+                            <input id="matricule" class="form-control" placeholder="{{ 'Matricule' | translate }}" type="text" required ngControl="matricule"
                             formControlName="matricule" > 
 
-                            <label for="identifiant">{{ 'identifiant' | translate }}</label>
-                            <input id="identifiant" class="form-control" placeholder="identifiant" type="text" required ngControl="identifiant"
+                            <label for="identifiant">{{ 'Identifiant' | translate }}</label>
+                            <input id="identifiant" class="form-control" placeholder="{{ 'Identifiant' | translate }}" type="text" required ngControl="identifiant"
                             formControlName="identifiant" > 
 
                             <label for="nom">{{ 'Nom' | translate }}</label>
-                            <input id="nom" class="form-control" placeholder="Nom" type="text" required ngControl="nom" 
+                            <input id="nom" class="form-control" placeholder="{{ 'Nom' | translate }}" type="text" required ngControl="nom" 
                             formControlName="nom" >
                             
                             <label for="prenom">{{ 'Prenom' | translate }}</label>
-                            <input id="prenom" class="form-control" placeholder="Prenom" type="text" required ngControl="prenom" 
+                            <input id="prenom" class="form-control" placeholder="{{ 'Prenom' | translate }}" type="text" required ngControl="prenom" 
                             formControlName="prenom">
 
                             <label for="email">{{ 'email' | translate }}</label>
-                            <input id="email" class="form-control" placeholder="email" type="text" required ngControl="email" 
+                            <input id="email" class="form-control" placeholder="{{ 'email' | translate }}" type="text" required ngControl="email" 
                             formControlName="email">
 
                             <label for="numTel">{{ 'phone' | translate }}</label>
-                            <input id="numTel" class="form-control" placeholder="numero de telephone" type="text" required ngControl="numTel" 
+                            <input id="numTel" class="form-control" placeholder="{{ 'phone' | translate }}" type="text" required ngControl="numTel"
                             formControlName="numTel">
 
                             <label for="adresse">{{ 'Adresse' | translate }}</label>
-                            <input id="adresse" class="form-control" placeholder="numero + rue +ville" type="text" required ngControl="adresse" 
+                            <input id="adresse" class="form-control" placeholder="{{ 'Adresse' | translate }}" type="text" required ngControl="adresse" 
                             formControlName="adresse" >
 
                             <label for="motDePasse">{{ 'MotDePasse' | translate }}</label>
-                            <input id="motDePasse" class="form-control" placeholder="Mot de passe" type="password" required ngControl="motDePasse"
+                            <input id="motDePasse" class="form-control" placeholder="{{ 'MotDePasse' | translate }}" type="password" required ngControl="motDePasse"
                             formControlName="motDePasse"  >
 
                             <label for="dateDebutContrat"> {{'DateDebutContrat'| translate}}</label>
-                            <input id="dateDebutContrat" class="form-control" placeholder="Mot de passe" type="date" required ngControl="dateDebutContrat"
+                            <input id="dateDebutContrat" class="form-control" placeholder="{'DateDebutContrat'| translate}}" type="date" required ngControl="dateDebutContrat"
                             formControlName="dateDebutContrat" >
                             
                         </fieldset>
