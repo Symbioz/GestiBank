@@ -79,9 +79,9 @@ public class AgentServiceImpl implements IAgentService {
         agentDaoImpl.creerAgent(entity);
 	}
 	
-	public void affecterAgent(Client client, Agent agent){
+	/*public void affecterAgent(Client client, Agent agent){
 		
-	}
+	}*/
 	
 }
 

@@ -7,6 +7,7 @@ import { ActivatedRoute, Router} from '@angular/router';
 import { HttpModule } from '@angular/http';
 
 import { Agent} from '../../../../../models/agent';
+import { Client} from '../../../../../models/client';
 import { AgentService} from '../../../../../services/agent.service';
 
 
@@ -20,7 +21,7 @@ export class BouttonEditionAgentsComponent implements OnInit {
 
     agent: Agent;
     id: number;
-    clients:Client;
+    clients []:Client;
     agentFormUpdate: FormGroup;
     closeResult: string;
     
@@ -55,6 +56,7 @@ export class BouttonEditionAgentsComponent implements OnInit {
   ngOnInit() {
      // on initialise l'id de l agent
      this.id=this.agentModal.id;
+     this.clients = this.agentModal.clients;
      console.log(this.id);
      // validation des champs
       this.agentFormUpdate = new FormGroup({

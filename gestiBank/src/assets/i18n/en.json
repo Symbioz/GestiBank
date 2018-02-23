@@ -94,5 +94,6 @@
 
     "dateDebutContrat" :" Date contract early",
     "warningRecherche" :"future functionality",
-    "FicheInfoAgent":"Agent information sheet"
+    "FicheInfoAgent":"Agent information sheet",
+    "QuestionValidation":"Do you really want to reaffect this clients"
 }

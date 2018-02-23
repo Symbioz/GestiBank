@@ -8,7 +8,7 @@
                             <th>{{ 'Matricule' | translate }}</th>
                             <th>{{ 'Nom' | translate }}</th>
                             <th>{{ 'Prenom' | translate }}</th>
-                        <!--<th>{{ 'nbClient' | translate}}</th> -->
+                            <th>{{ 'nbClient' | translate}}</th> 
                             <th>{{ 'dateDebutContrat' | translate }}</th>
                             <th>{{ 'Editer' | translate }}</th>
                             <th>{{ 'Supprimer' | translate }}</th>
@@ -21,7 +21,7 @@
                             <td>{{agent.matricule}}</td>
                             <td>{{agent.nom}}</td>
                             <td>{{agent.prenom}}</td>
-                            <!--<td>{{nbClients}}</td> -->
+                            <td>{{agent.clients.length}}
                             <td>{{agent.dateDebutContrat  | date:'dd/MM/yyyy'}}</td>
                             <td><p><app-boutton-edition-agents [agentModal]='agent'></app-boutton-edition-agents></p></td>
 
