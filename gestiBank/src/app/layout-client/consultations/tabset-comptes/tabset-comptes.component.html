@@ -65,12 +65,12 @@
 				    	<p align=right>Solde au {{ today | date : 'dd/MM'}} : {{selectedCompte.solde}} Euros</p>
 						<div>
 				            <!-- <div class="card-body"> -->
-				            	before
+				            	
 				                <div *ngIf="(isCompteCourant)">
 				                	bouton
 				                    <button type="button" class="btn btn-primary" > Demande de chequier </button>
 				                </div>
-				                after
+				                
 				                <div>
 				                    <button type="button" class="btn btn-link" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
 				                        <p>Voir plus de détails</p>
