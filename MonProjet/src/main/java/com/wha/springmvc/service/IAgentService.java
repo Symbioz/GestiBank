@@ -20,7 +20,7 @@ public interface IAgentService {
 	
 	public Agent getAgentByMatricule(String matricule);
 	
-	public void AffecterAgent(Client client, Agent agent);
+	//public void AffecterAgent(Client client, Agent agent);
 	
 	
 	
